@@ -1,24 +1,31 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux'; //Bindings from redux and React
-//import { store } from './store/store.js';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+//import 'firebase/firestore'
+
+
+import Login from './components/Login/Login';
+import Home from "./components/Home/Home";
+
 
 function App() {
 
-  return (
-    /* <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/' component={Start} />
-        </Switch> 
-      </BrowserRouter>
-    </Provider> */
+
+return (
+    <Router>
+        <div>
+            <Switch >
+                <Route path='/login' component={Login}/>
+                <Route exact path='/home' component={Home}/>
+            </Switch>
+        </div>
+    </Router>
+
+   
     
-      <div className="App">
-        <h1>App</h1>
-      </div>
-      
-  );
+);
 }
 
 export default App;

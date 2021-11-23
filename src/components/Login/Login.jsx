@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import Error from '../Error/Error'
-import { startSesion } from '../../actions/actionLogin';
+import { startSesion } from '../../Store/Actions/actionLogin';
 import { useHistory } from 'react-router';
 
 export default function Login() {

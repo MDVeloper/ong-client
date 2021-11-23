@@ -6,8 +6,8 @@ import {
 //import 'firebase/firestore'
 
 
-import Login from './components/Login/Login';
-import Home from "./components/Home/Home";
+import Login from './Components/Login/Login';
+import Home from "./Components/Home/Home";
 
 
 function App() {

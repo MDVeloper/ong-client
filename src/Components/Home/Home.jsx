@@ -1,5 +1,6 @@
 import React from "react";
-import Footer from "../Footer/Footer";
+import {Link} from 'react-router-dom';
+
 import s from './Home.module.css'
 export default function Home() {
 
@@ -48,9 +49,11 @@ export default function Home() {
      <div className={s.containerAbout}>
         <p>Conoce mas sobre Nosotros</p>
         <p>Texto Descriptivo</p>
+        <Link to='/aboutUs'>
         <button>
             Ir a About us
         </button>
+        </Link>
     </div>
     <div className={s.containerQuestion}>
         <p>Preguntas Frecuentes</p>
@@ -64,7 +67,7 @@ export default function Home() {
 
 
 
-      <Footer />
+      
     </div>
   );
 }

@@ -1,25 +1,37 @@
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Provider } from 'react-redux'; //Bindings from redux and React
-import store  from './Store/Index'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar.jsx';
-import './App.css';
+import Login from './Components/Login/Login';
+import Home from "./Components/Home/Home";
+import Register from "./Components/Register/register";
+import TermsAndConditions from "./Components/Terms and Conditions/termsAndConditions.jsx"
+import AboutUs from "./Components/AboutUs/AboutUs";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
 
-  return (
-   <Provider store={store}>
-      <BrowserRouter>
-        <Switch>
-          <Route exact path='/navbar' component={Navbar} />
-        </Switch> 
-      </BrowserRouter>
-    </Provider> 
+
+return (
+    <Router>
+     <Navbar />
+            <Switch >
+                <Route path='/login' component={Login}/>
+                <Route exact path='/' component={Home}/>
+                <Route exact path="/register" component={Register}/>
+                <Route exact path="/terminosYCondiciones" component={TermsAndConditions}/>
+                <Route exact path='/aboutUs' component={AboutUs}/>
+            </Switch>
+        <Footer />
+    </Router>
+
     
-      // <div className="App">
-      //   <h1>App</h1>
-      // </div>
-      
-  );
+    
+);
+
 }
 
 export default App;

@@ -1,13 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "./LOGO.png";
+import styles from "./Navbar.module.css";
 
 export default function Navbar(){
 
     return(
-        <div>
+        <div className={styles.space}>
             <nav>
-                <ul>
+                <ul className={styles.navbar}>
                     <li>
                         <Link to="/about-us">About Us</Link>
                     </li>
@@ -22,7 +23,7 @@ export default function Navbar(){
                     </li>
                 </ul>
             </nav>
-            <button>Donar</button>
+            <button className={styles.button}>Donar</button>
             <Link to="/home"><img src={logo} alt=" "/></Link>
         </div>
     )

@@ -174,9 +174,9 @@ export default function Register() {
             </div>
 
             <div>
-              <Link to="/terminosYCondiciones">
-                <p>Al crear una cuenta, acepta las <b>Condiciones de uso</b> y el <b>Aviso de privacidad de Coding To Heap</b>.</p>
-              </Link>
+              
+                <p>Al crear una cuenta, acepta las <Link to="/terminosYCondiciones"><b>Condiciones de uso</b></Link> y el <Link to="/terminosYCondiciones"><b>Aviso de privacidad </b></Link> de Coding To Heap.</p>
+              
             
               <ErrorMessage
                 name="termsAndConditions"

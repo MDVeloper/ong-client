@@ -1,168 +1,198 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import Styles from "./register.module.css";
-import { loginRegister } from "../../Store/Actions/actionRegister";
+import { linkClasses } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Register() {
-  const validationSchema = Yup.object({
-    name: Yup.string().required(),
+  const formSchema = Yup.object().shape({
+    name: Yup.string().required("Nombre requerido"),
+
+    lastName: Yup.string().required("Apellido requerido"),
+
+    password: Yup.string()
+      .min(5, "Minimo 5 caracteres")
+      .max(25, "Maximo 25 caracteres")
+      .required("Contraseña requerida"),
+
+    repeatPassword: Yup.string()
+      .min(5, "Minimo 5 caracteres")
+      .max(25, "Maximo 25 caracteres")
+      .required("Contraseña requerida"),
+
+    email: Yup.string()
+      .required("Email requerido")
+      .email("Correo electronico requerido")
+      .max(255, "Maximo 255 caracteres"),
   });
 
-  let dispatch = useDispatch();
-
-  let [input, setInput] = useState({
-    name: "",
-    lastName: "",
-    password: "",
-    repeatPassword: "",
-    email: "",
-    coutry: "",
-    state: "",
-    birthday: "",
-    privilege: "member",
-    volunteer: false,
-    course: false,
-  });
-
-  const handleChange = (e) => {
-    setInput({
-      ...input,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleBox = (e) => {
-    let checked = e.target.checked;
-
-    if (checked) {
-      setInput({
-        ...input,
-        volunteer: true,
-      });
-    }
-  };
-
-  const handleBox2 = (e) => {
-    let checked = e.target.checked;
-
-    if (checked) {
-      setInput({
-        ...input,
-        course: true,
-      });
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // dispatch(loginRegister(input));
-    console.log("Datos de registro: ", input);
-
-    setInput({
-      name: "",
-      lastName: "",
-      password: "",
-      repeatPassword: "",
-      email: "",
-      coutry: "",
-      state: "",
-      birthday: "",
-      privilege: "member",
-      volunteer: false,
-      course: false,
-    });
-  };
+  let [formSended, setFormSended] = useState(false);
 
   return (
     <div className={Styles.container}>
-      <h1>Register Individual Account!</h1>
+      <h1>Registrarse</h1>
 
-      <div>
-        <form onSubmit={handleSubmit} >
-          <label>Name</label>
-          <input
-            type="text"
-            name="name"
-            value={input.name}
-            onChange={handleChange}
-          />
-          <label>Last name</label>
-          <input
-            type="text"
-            name="lastName"
-            value={input.lastName}
-            onChange={handleChange}
-          />
+      <Formik
+        initialValues={{
+          name: "",
+          lastName: "",
+          password: "",
+          repeatPassword: "",
+          email: "",
+          country: "",
+          state: "",
+          birthday: "",
+          privilege: "member",
+          volunteer: false,
+          course: false,
+          termsAndConditions: false
+        }}
+        validationSchema={formSchema}
+        onSubmit={(valores, { resetForm }) => {
+          resetForm();
+          console.log("Formulario enviado:", valores);
 
-          <label>Password</label>
-          <input
-            type="password"
-            name="password"
-            value={input.password}
-            onChange={handleChange}
-          />
+          setFormSended(true);
+          setTimeout(() => setFormSended(false), 3000);
+        }}
+      >
+        {({ errors }) => (
+          <Form>
+            <div>
+              <label htmlFor="name">Nombre</label>
+              <Field type="text" name="name" id="name" />
+              <ErrorMessage
+                name="name"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.name}</div>
+                )}
+              />
+            </div>
 
-          <label>Password repeat</label>
-          <input
-            type="password"
-            name="repeatPassword"
-            value={input.repeatPassword}
-            onChange={handleChange}
-          />
+            <div>
+              <label htmlFor="lastName">Apellido</label>
+              <Field type="text" id="lastName" name="lastName" />
+              <ErrorMessage
+                name="lastName"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.lastName}</div>
+                )}
+              />
+            </div>
 
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            value={input.email}
-            onChange={handleChange}
-          />
+            <div>
+              <label htmlFor="password">Contraseña</label>
+              <Field type="password" id="password" name="password" />
+              <ErrorMessage
+                name="password"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.password}</div>
+                )}
+              />
+            </div>
 
-          <label>Coutry</label>
-          <input
-            type="text"
-            name="coutry"
-            value={input.coutry}
-            onChange={handleChange}
-          />
-          <label>State</label>
-          <input
-            type="text"
-            name="state"
-            value={input.state}
-            onChange={handleChange}
-          />
+            <div>
+              <label htmlFor="repeatPassword">Repetir contraseña</label>
+              <Field
+                type="password"
+                id="repeatPassword"
+                name="repeatPassword"
+              />
+              <ErrorMessage
+                name="repeatPassword"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.repeatPassword}</div>
+                )}
+              />
+            </div>
 
-          <label>Birthday</label>
-          <input
-            type="date"
-            name="birthday"
-            value={input.birthday}
-            onChange={handleChange}
-          />
+            <div>
+              <label htmlFor="email">Email</label>
+              <Field type="text" id="email" name="email" />
+              <ErrorMessage
+                name="email"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.email}</div>
+                )}
+              />
+            </div>
 
-          <label>Volunteer</label>
-          <input
-            type="checkbox"
-            name="volunteer"
-            value={input.volunteer}
-            onChange={handleBox}
-          />
+            <div>
+              <label htmlFor="">Pais</label>
+              <Field type="text" id="country" name="country" />
+              <ErrorMessage
+                name="country"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.country}</div>
+                )}
+              />
+            </div>
 
-          <label>Course</label>
-          <input
-            type="checkbox"
-            name="course"
-            value={input.course}
-            onChange={handleBox2}
-          />
+            <div>
+              <label htmlFor="state">Provincia</label>
+              <Field type="text" id="state" name="state" />
+              <ErrorMessage
+                name="state"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.state}</div>
+                )}
+              />
+            </div>
 
-          <button>Send</button>
-        </form>
-      </div>
+            <div>
+              <label htmlFor="birthday">Cumpleaños</label>
+              <Field type="date" id="birthday" name="birthday" />
+              <ErrorMessage
+                name="birthday"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.birthday}</div>
+                )}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="">Voluntario/a</label>
+              <Field type="checkbox" id="volunteer" name="volunteer" />
+              <ErrorMessage
+                name="birthday"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.birthday}</div>
+                )}
+              />
+            </div>
+
+            <div>
+              <label htmlFor="">Cursos</label>
+              <Field type="checkbox" id="course" name="course" />
+              <ErrorMessage
+                name="course"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.course}</div>
+                )}
+              />
+            </div>
+
+            <div>
+              <Link to="/terminosYCondiciones">
+                <p>Al crear una cuenta, acepta las <b>Condiciones de uso</b> y el <b>Aviso de privacidad de Coding To Heap</b>.</p>
+              </Link>
+            
+              <ErrorMessage
+                name="termsAndConditions"
+                component={() => (
+                  <div style={{ color: "red" }}>{errors.termsAndConditions}</div>
+                )}
+              />
+            </div>
+
+            <button type="submit">Enviar</button>
+            {formSended && (
+              <p style={{ color: "green" }}>Formulario enviado con exito</p>
+            )}
+          </Form>
+        )}
+      </Formik>
     </div>
   );
 }

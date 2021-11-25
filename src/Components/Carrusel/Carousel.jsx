@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import "./Carousel.css"
+
+
 
 export default function Carousel() {
   const dataAux = [
@@ -77,6 +81,7 @@ export default function Carousel() {
       <h1> Galeria de proyectos </h1>
 
       <div className={"sliderContainer"}>
+
         <Slider {...settings} >
             {dataAux.map((data) => {
               return (
@@ -95,6 +100,7 @@ export default function Carousel() {
             })}
 
         </Slider>
+        
       </div>
 
     </div>

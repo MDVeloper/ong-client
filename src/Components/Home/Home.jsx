@@ -1,19 +1,21 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-
+import Button from '@mui/material/Button'
+import Fab from '@mui/material/Fab';
+import NavigationIcon from '@mui/icons-material/Navigation';
 import s from './Home.module.css'
 export default function Home() {
 
   return (
     <div>
-      <div>ESPACIO PARA NAVBAR</div>
+      
 
         <section className={s.mainContainer}>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-            Esse molestiae eius soluta praesentium doloremque necessitatibus 
-            porro bus beatae omnis est quod odit!</p>
-            <button>Apoya la Causa</button>
-            <button>Ser Voluntario</button>
+           <div>
+           <Button variant="contained" size="large" className={s.btn}  aria-label="add">Apoya la causa</Button>
+            <Button variant="contained" size="large" className={s.btn} aria-label="add">Ser Voluntario</Button>
+           </div>
+           
         </section>
         <br/>
         <div>
@@ -25,42 +27,42 @@ export default function Home() {
         </div>
       <section className={s.wrapperVolunteerDonation}>
         <div className={s.containerVolunteer}>
-          <div>
-            <h3>Titulo</h3>
+          <div className={s.containerVolunteerText}>
+            <h3>
+              Manos a la obra
+            </h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-              aliquam quibusdam.
+              Para poder ayudar no solamente es necesaria tu donacion sino que te podes sumar a nuestro equipo manos a la obra
             </p>
           </div>
         </div>
 
         <div className={s.containerDonation}>
-          <div>
-            <h3>Titulo</h3>
+          <div className={s.containerDonationText}>
+            <h3>Entre todos</h3>
             <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-              aliquam quibusdam.
+              Podes acercarte a cualquiera de nuestro puntos y acercarnos tu donacion para compartir tu estilo de vida
             </p>
           </div>
         </div>
       </section>
 
 <section className={s.containerQuestionAbout}>
-     <div className={s.containerAbout}>
-        <p>Conoce mas sobre Nosotros</p>
-        <p>Texto Descriptivo</p>
+     <div>
+       
         <Link to='/aboutUs'>
-        <button>
-            Ir a About us
-        </button>
+        <Fab variant="extended" className={s.btn} aria-label="add">
+  <NavigationIcon sx={{ mr: 1 }} />
+  Sobre Nosotros
+</Fab>
         </Link>
     </div>
-    <div className={s.containerQuestion}>
-        <p>Preguntas Frecuentes</p>
-        <p>Texto Descriptivo</p>
-        <button>
-            Ir a Preguntas Frecuentes
-        </button>
+    <div>
+       
+        <Fab variant="extended" className={s.btn} aria-label="add">
+  <NavigationIcon sx={{ mr: 1 }} />
+  Preguntas frecuentes
+</Fab>
     </div>
 </section>
    

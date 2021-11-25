@@ -3,28 +3,26 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-//import 'firebase/firestore'
 import Login from './Components/Login/Login';
 import Home from "./Components/Home/Home";
-import Carousel from "./Components/Carrusel/Carousel"
 import Register from "./Components/Register/register";
 import TermsAndConditions from "./Components/Terms and Conditions/termsAndConditions.jsx"
+import AboutUs from "./Components/AboutUs/AboutUs";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
 
 
 return (
     <Router>
-        <div>
             <Switch >
                 <Route path='/login' component={Login}/>
-                <Route exact path='/home' component={Home}/>
+                <Route exact path='/' component={Home}/>
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/terminosYCondiciones" component={TermsAndConditions}/>
-                <Carousel/>
+                <Route exact path='/aboutUs' component={AboutUs}/>
             </Switch>
-        </div>
-        
+        <Footer />
     </Router>
 
     

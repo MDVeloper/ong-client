@@ -59,7 +59,7 @@ export default function Register() {
   let [formSended, setFormSended] = useState(false);
 
   return (
-    <div>
+    <>
       <h1>Registrarse</h1>
 
       <Formik
@@ -228,6 +228,6 @@ export default function Register() {
           </Form>
         )}
       </Formik>
-    </div>
+    </>
   );
 }

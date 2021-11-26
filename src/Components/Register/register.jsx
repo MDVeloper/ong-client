@@ -72,7 +72,7 @@ export default function Register() {
           country: "",
           state: "",
           birthday: "",
-          privilege: "member",
+          privilege: "Member",
           volunteer: false,
           course: false,
         }}

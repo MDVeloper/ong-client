@@ -5,7 +5,7 @@ export function loginRegister(values){
     return async function(dispatch){
         try {
 
-            // const registerResponse = await axios.post(`http://localhost:3001/Usuario/Registro`,values)
+            // const registerResponse = await axios.post(`http://localhost:3001/users/register`,values)
 
             return dispatch({
                 type : "LOGIN_REGISTER",

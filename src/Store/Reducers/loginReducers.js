@@ -1,7 +1,6 @@
 const dataInitial = {
     active: false,
-    error: "",
-    register: []
+    error: ""
 }
 
 export default function userReducer(state = dataInitial, action){
@@ -25,12 +24,13 @@ export default function userReducer(state = dataInitial, action){
         case "LOGIN_REGISTER":
             return {
                 ...state,
-                register : action.payload
-            };
+                
+            }
 
         default:
             return{
-                ...state
+                ...state,
+                error : action.payload
             }
     }
 }

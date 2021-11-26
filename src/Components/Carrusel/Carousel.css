@@ -27,8 +27,10 @@
 /* Flechas */
 .slick-prev:before, .slick-next:before {
     color: #FF9F1C;
+    font-size: 40px;
     opacity: 1;
 }
+
 
 /* Contenedor de titulos y descripciones */
 .cardProyectContainer .titleDescriptionContainer{

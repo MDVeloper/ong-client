@@ -1,8 +1,10 @@
+
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+import Navbar from './Components/Navbar/Navbar.jsx';
 import Login from './Components/Login/Login';
 import Home from "./Components/Home/Home";
 import Register from "./Components/Register/register";
@@ -16,6 +18,7 @@ function App() {
 
 return (
     <Router>
+     <Navbar />
             <Switch >
                 <Route path='/login' component={Login}/>
                 <Route exact path='/' component={Home}/>
@@ -30,6 +33,7 @@ return (
     
     
 );
+
 }
 
 export default App;

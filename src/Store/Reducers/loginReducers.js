@@ -13,7 +13,7 @@ export default function userReducer(state = dataInitial, action){
         case "USER_VALIDATE":
             return{
                 ...state,
-                active: true
+                active: action.payload
             };
         case "CLOSE_SESION":
             return{

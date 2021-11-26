@@ -2,6 +2,7 @@ import axios from "axios";
 
 
 export function loginRegister(values){
+    console.log(values)
     return async function(dispatch){
         try {
 

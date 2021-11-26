@@ -5,7 +5,7 @@ import loginReducer from './Reducers/loginReducers'
 
 const rootReducer = combineReducers({
     // aca van los reducers
-    login: loginReducer,
+    login: loginReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

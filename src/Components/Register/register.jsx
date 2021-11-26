@@ -1,36 +1,68 @@
 import React, { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import * as Yup from "yup";
-import Styles from "./register.module.css";
-import { linkClasses } from "@mui/material";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+
+import moment from "moment";
+import { loginRegister } from "../../Store/Actions/actionRegister";
+import { useSelector } from "react-redux";
+
+
+
 export default function Register() {
+  let dispatch = useDispatch()
+
+  // Validaciones Yup para Formik
   const formSchema = Yup.object().shape({
     name: Yup.string().required("Nombre requerido"),
 
     lastName: Yup.string().required("Apellido requerido"),
 
     password: Yup.string()
-      .min(5, "Minimo 5 caracteres")
-      .max(25, "Maximo 25 caracteres")
-      .required("Contraseña requerida"),
+      .required("Por favor, introduzca su contraseña")
+      .matches(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+        "Debe incluir mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número"
+      ),
 
     repeatPassword: Yup.string()
-      .min(5, "Minimo 5 caracteres")
-      .max(25, "Maximo 25 caracteres")
-      .required("Contraseña requerida"),
+      .required("Por favor, introduzca su contraseña")
+      .when("password", {
+        is: (password) => (password && password.length > 0 ? true : false),
+        then: Yup
+          .string()
+          .oneOf([Yup.ref("password")], "La contraseña no coincide"),
+      }),
 
     email: Yup.string()
       .required("Email requerido")
-      .email("Correo electronico requerido")
+      .email("Correo electronico no valido")
       .max(255, "Maximo 255 caracteres"),
+
+    birthday: Yup.string()
+      .required("Debe ingresar su fecha de nacimiento")
+      .test(
+        "DOB",
+        "Debe ser mayor de edad",
+        value => {
+          return moment().diff(moment(value), 'years') >= 18;
+        }
+      ),
+
+    country: Yup.string().required("Debe indicar su pais"),
+
+    state: Yup.string().required("Debe indicar su provincia"),
   });
 
+  // Control del envio del from
   let [formSended, setFormSended] = useState(false);
 
+  let responseRegister = useSelector(state => state.login.error)
+
   return (
-    <div className={Styles.container}>
+    <>
       <h1>Registrarse</h1>
 
       <Formik
@@ -43,18 +75,23 @@ export default function Register() {
           country: "",
           state: "",
           birthday: "",
-          privilege: "member",
+          privilege: "Member",
           volunteer: false,
           course: false,
-          termsAndConditions: false
         }}
+        
         validationSchema={formSchema}
+
         onSubmit={(valores, { resetForm }) => {
           resetForm();
+
+          dispatch(loginRegister(valores))
+
           console.log("Formulario enviado:", valores);
 
           setFormSended(true);
-          setTimeout(() => setFormSended(false), 3000);
+
+          setTimeout(() => (setFormSended(false)), 5000);
         }}
       >
         {({ errors }) => (
@@ -141,7 +178,7 @@ export default function Register() {
             </div>
 
             <div>
-              <label htmlFor="birthday">Cumpleaños</label>
+              <label htmlFor="birthday">Fecha de nacimiento</label>
               <Field type="date" id="birthday" name="birthday" />
               <ErrorMessage
                 name="birthday"
@@ -154,45 +191,46 @@ export default function Register() {
             <div>
               <label htmlFor="">Voluntario/a</label>
               <Field type="checkbox" id="volunteer" name="volunteer" />
-              <ErrorMessage
-                name="birthday"
+              {/* <ErrorMessage
+                name="volunteer"
                 component={() => (
-                  <div style={{ color: "red" }}>{errors.birthday}</div>
+                  <div style={{ color: "red" }}>{errors.volunteer}</div>
                 )}
-              />
+              /> */}
             </div>
 
             <div>
               <label htmlFor="">Cursos</label>
               <Field type="checkbox" id="course" name="course" />
-              <ErrorMessage
+              {/* <ErrorMessage
                 name="course"
                 component={() => (
                   <div style={{ color: "red" }}>{errors.course}</div>
                 )}
-              />
+              /> */}
             </div>
 
             <div>
-              
-                <p>Al crear una cuenta, acepta las <Link to="/terminosYCondiciones"><b>Condiciones de uso</b></Link> y el <Link to="/terminosYCondiciones"><b>Aviso de privacidad </b></Link> de Coding To Heap.</p>
-              
-            
-              <ErrorMessage
-                name="termsAndConditions"
-                component={() => (
-                  <div style={{ color: "red" }}>{errors.termsAndConditions}</div>
-                )}
-              />
+              <p>
+                Al crear una cuenta, acepta las{" "}
+                <Link to="/terminosYCondiciones">
+                  <b>Condiciones de uso</b>
+                </Link>{" "}
+                y el{" "}
+                <Link to="/terminosYCondiciones">
+                  <b>Aviso de privacidad </b>
+                </Link>{" "}
+                de Coding To Heap.
+              </p>
             </div>
 
             <button type="submit">Enviar</button>
             {formSended && (
-              <p style={{ color: "green" }}>Formulario enviado con exito</p>
+              <p style={{ color: "green" }}>{responseRegister}</p>
             )}
           </Form>
         )}
       </Formik>
-    </div>
+    </>
   );
 }

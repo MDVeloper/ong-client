@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Error from '../Error/Error'
 import { startSesion } from '../../Store/Actions/actionLogin';
 import { useHistory } from 'react-router';
+import GoogleValidation from '../Boton google/Validation Google';
 
 export default function Login() {
     const userOn = useSelector((state) => state.active);
@@ -90,6 +91,7 @@ export default function Login() {
                         </Form>
                     )}
                 </Formik>
+                <GoogleValidation/> //Lo sumé aca
             </div>
         )
     )

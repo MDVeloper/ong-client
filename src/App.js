@@ -9,6 +9,7 @@ import Register from "./Components/Register/register";
 import TermsAndConditions from "./Components/Terms and Conditions/termsAndConditions.jsx"
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Footer from "./Components/Footer/Footer";
+import ErrorComponent  from "./Components/Error/ErrorComponent";
 
 function App() {
 
@@ -18,6 +19,7 @@ return (
             <Switch >
                 <Route path='/login' component={Login}/>
                 <Route exact path='/' component={Home}/>
+                <Route exact path='/error' component={ErrorComponent}/>
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/terminosYCondiciones" component={TermsAndConditions}/>
                 <Route exact path='/aboutUs' component={AboutUs}/>

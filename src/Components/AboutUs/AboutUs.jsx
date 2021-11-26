@@ -1,55 +1,68 @@
 import React from 'react'
-
+import s from './AboutUs.module.css'
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 const AboutUs = () => {
     return (
-        <main>
-           <div>Espacio para Navbar</div>
-
-           <div>
-              <h1>Coding for Help</h1>
-
-                <section>
-                    <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis beatae alias enim vel omnis. Beatae minima error dolor laboriosam assumenda eligendi quod earum unde dolorem minus debitis obcaecati, eius ad?
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis vero quisquam saepe facilis quod iusto sunt, iste cum recusandae est, laborum fugiat cupiditate aperiam, perferendis alias delectus hic aliquam! Laborum!
-                    </p>
-
-                    <h4>Principios Fundamentales</h4>
-                    <p>
-                    Humanidad – Imparcialidad – Neutralidad – Independencia – Voluntariado – Unidad – Universalidad
-                    </p>
-                    <h4>Valores Humanitarios</h4>
-                    <p>
-                    Las Personas – La Integridad – La Diversidad – El Liderazgo – La Innovación 
-                    </p>
-                    <h4>Áreas</h4>
-                    <p>
-                    Voluntariado – Juventudes – Gestión de Riesgo y Respuesta a Desastres – Comunicación – Salud – Movilización y Desarrollo de Recursos – Centro de Formación Integral
-                    </p>
-                </section>
-
-                <section>
-                    <div>
-                        Iconito
-                        <h3>Mision</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloremque nisi minima repellendus, dolor, impedit, voluptatum ipsa earum nesciunt eum deleniti. Nihil totam praesentium veniam in alias nemo recusandae sequi.
-                        </p>
-                    </div>
-
-                    <div>
-                        Iconito
-                        <h3>Vision</h3>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem doloremque nisi minima repellendus, dolor, impedit, voluptatum ipsa earum nesciunt eum deleniti. Nihil totam praesentium veniam in alias nemo recusandae sequi.
-                        </p>
-                    </div>
-                </section>
+      
+       <main>
+           <section>
+           <div className={s.containerTitle}>
+                <h1 className={s.title}>
+                    SOBRE CODING TO HELP
+                </h1>
            </div>
+           <div className={s.containerParagraph}>
+               <div className={s.containerP}>
+                 <p className={s.p}>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               </p>
+               <p className={s.p}>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+               </p>  
+               </div>
+               
+            </div>
+            <div className={s.containerQuestionsTitle}>
+                <h3 className={s.Subtitle}>
+                    PREGUNTAS Y RESPUESTAS
+                </h3>
+            </div>
+            <div className={s.containerQuestions}>
+                <div className={s.containerQuestionsInside}>
+                <h4 className={s.h4}><ArrowRightIcon />Preguntas sobre donaciones</h4>
+                <div className={s.span}></div>
+                <h4 className={s.h4}><ArrowRightIcon />Preguntas sobre nuestros proyectos</h4>
+                <span className={s.span}></span>
+                <h4 className={s.h4}><ArrowRightIcon />Preguntas sobre nuestras sedes</h4>
+                <span className={s.span}></span>
+                <h4 className={s.h4}><ArrowRightIcon  />Preguntas sobre los voluntariados</h4>
+                <div className={s.containerLastParagraph}>
+                    <div className={s.containerLastParam}>
+                        <p className={s.lastP}>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor dolorem ex ipsam cum labore. Illo, natus perspiciatis corrupti ut maxime numquam est ipsum, debitis eveniet rerum velit veniam eum eius!
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor dolorem ex ipsam cum labore. Illo, natus perspiciatis corrupti ut maxime numquam est ipsum, debitis eveniet rerum velit veniam eum eius!
+                        </p> 
+                    </div>
+                   
+                </div> 
+                </div>
+                
+            </div>
+           </section>
 
+       </main>
+       
+     
+            
+      
 
            
-        </main>
+        
     )
 }
 

@@ -7,6 +7,7 @@ import * as Yup from "yup";
 
 import moment from "moment";
 import { loginRegister } from "../../Store/Actions/actionRegister";
+import { useSelector } from "react-redux";
 
 
 
@@ -57,6 +58,8 @@ export default function Register() {
 
   // Control del envio del from
   let [formSended, setFormSended] = useState(false);
+
+  let responseRegister = useSelector(state => state.login.error)
 
   return (
     <>
@@ -223,7 +226,7 @@ export default function Register() {
 
             <button type="submit">Enviar</button>
             {formSended && (
-              <p style={{ color: "green" }}>Registro exitoso</p>
+              <p style={{ color: "green" }}>{responseRegister}</p>
             )}
           </Form>
         )}

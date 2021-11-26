@@ -22,11 +22,15 @@ export default function userReducer(state = dataInitial, action){
             };
 
         case "LOGIN_REGISTER":
-            return state;
+            return {
+                ...state,
+                
+            }
 
         default:
             return{
-                ...state
+                ...state,
+                error : action.payload
             }
     }
 }

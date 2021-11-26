@@ -1,21 +1,19 @@
-// import axios from "axios";
+import axios from "axios";
 
 
 export function loginRegister(values){
     return async function(dispatch){
         try {
 
-            // const registerResponse = await axios.post(`http://localhost:3001/users/register`,values)
+            const registerResponse = await axios.post(`http://localhost:3001/users/register`,values)
 
-            return dispatch({
+            dispatch({
                 type : "LOGIN_REGISTER",
-                payload : "Registro exitoso"
-        })
-        } catch (e) {
-            return dispatch({
-                type : "LOGIN_REGISTER",
-                payload : "No se pudo completar el registro, intente nuevamente"
+                payload : "registro exitoso"
             })
+
+        } catch (e) {
+            return "No se pudo completar el registro, intente de nuevo"
         }   
     }
 }

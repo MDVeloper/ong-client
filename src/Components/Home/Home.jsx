@@ -3,7 +3,10 @@ import {Link} from 'react-router-dom';
 import Button from '@mui/material/Button'
 import Fab from '@mui/material/Fab';
 import NavigationIcon from '@mui/icons-material/Navigation';
+import Carousel from "../Carrusel/Carousel"
 import s from './Home.module.css'
+
+
 export default function Home() {
 
   return (
@@ -23,7 +26,7 @@ export default function Home() {
         </div>
                 <br/>
         <div>
-            ACA VA A IR El CARROUSEL
+          <Carousel/>
         </div>
       <section className={s.wrapperVolunteerDonation}>
         <div className={s.containerVolunteer}>

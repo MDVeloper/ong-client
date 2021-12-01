@@ -1,0 +1,25 @@
+/* proyect component container */
+.projectsContainer{
+    display: flex;
+    flex-direction: column; 
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.cardContainer{
+    display: flex;
+    flex-direction: column; 
+    
+    background-color: aqua;
+    
+    width: 80%;
+    min-height: 10rem;
+    margin: 2.5rem 1rem;
+    
+}
+

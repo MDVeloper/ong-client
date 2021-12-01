@@ -59,7 +59,8 @@ export default function Register() {
   // Control del envio del from
   let [formSended, setFormSended] = useState(false);
 
-  let responseRegister = useSelector(state => state.login.error)
+  let messageRegister = useSelector(state => state.login.message)
+  let errorRegister = useSelector(state => state.login.error)
 
   return (
     <>
@@ -225,9 +226,11 @@ export default function Register() {
             </div>
 
             <button type="submit">Enviar</button>
-            {formSended && (
-              <p style={{ color: "green" }}>{responseRegister}</p>
-            )}
+            { errorRegister ?  
+                <p style={{ color: "green" }}>{errorRegister}</p>
+              :
+              <p style={{ color: "green" }}>{messageRegister}</p>
+            }
           </Form>
         )}
       </Formik>

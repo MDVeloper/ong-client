@@ -17,6 +17,7 @@
     "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.3.1",
     "react-loader-spinner": "^4.0.0",
     "react-dropzone": "^11.4.2",
     "react-redux": "^7.2.6",

@@ -1,8 +1,8 @@
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+    BrowserRouter as Router,
+    Switch,
+    Route
 } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar.jsx';
 import Login from './Components/Login/Login';
@@ -15,12 +15,12 @@ import ErrorComponent  from "./Components/Error/ErrorComponent";
 import Donation from "./Components/Donation/Donation";
 import Formulario from "./Components/Formulario/Formulario";
 
+
 function App() {
 
-
-return (
-    <Router>
-     <Navbar />
+    return (
+        <Router>
+            <Navbar />
             <Switch >
                 <Route path='/login' component={Login}/>
                 <Route exact path='/' component={Home}/>
@@ -31,12 +31,12 @@ return (
                 <Route exact path='/donation' component={Donation}/>
                 <Route path='/backoffice/form' component={Formulario} />
             </Switch>
-        <Footer />
-    </Router>
+            <Footer />
+        </Router>
 
-    
-    
-);
+
+
+    );
 
 }
 

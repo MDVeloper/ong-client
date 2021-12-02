@@ -13,21 +13,22 @@ export default function Home() {
     <div>
       
 
-        <section className={s.mainContainer}>
-           <div>
-           <Button variant="contained" size="large" className={s.btn}  aria-label="add">Apoya la causa</Button>
-            <Button variant="contained" size="large" className={s.btn} aria-label="add">Ser Voluntario</Button>
-           </div>
-           
-        </section>
-        <br/>
-        <div>
-            ACA VAN A IR LAS ESTADISTICAS
-        </div>
-                <br/>
-        <div>
-          <Carousel/>
-        </div>
+      <section className={s.mainContainer}>
+          <div>
+          <Button variant="contained" size="large" className={s.btn}  aria-label="add">Apoya la causa</Button>
+          <Button variant="contained" size="large" className={s.btn} aria-label="add">Ser Voluntario</Button>
+          </div>
+          
+      </section>
+      <br/>
+      <div>
+          ACA VAN A IR LAS ESTADISTICAS
+      </div>
+      
+      <div className={s.carouselContainer}>
+        <Carousel/>
+      </div>
+        
       <section className={s.wrapperVolunteerDonation}>
         <div className={s.containerVolunteer}>
           <div className={s.containerVolunteerText}>
@@ -50,25 +51,25 @@ export default function Home() {
         </div>
       </section>
 
-<section className={s.containerQuestionAbout}>
-     <div>
-       
-        <Link to='/aboutUs'>
-        <Fab variant="extended" className={s.btn} aria-label="add">
-  <NavigationIcon sx={{ mr: 1 }} />
-  Sobre Nosotros
-</Fab>
-        </Link>
-    </div>
-    <div>
-       
-        <Fab variant="extended" className={s.btn} aria-label="add">
-  <NavigationIcon sx={{ mr: 1 }} />
-  Preguntas frecuentes
-</Fab>
-    </div>
-</section>
-   
+      <section className={s.containerQuestionAbout}>
+          <div>
+            
+            <Link to='/aboutUs'>
+            <Fab variant="extended" className={s.btn} aria-label="add">
+      <NavigationIcon sx={{ mr: 1 }} />
+      Sobre Nosotros
+      </Fab>
+            </Link>
+        </div>
+        <div>
+            
+            <Fab variant="extended" className={s.btn} aria-label="add">
+      <NavigationIcon sx={{ mr: 1 }} />
+      Preguntas frecuentes
+      </Fab>
+        </div>
+      </section>
+        
 
 
 

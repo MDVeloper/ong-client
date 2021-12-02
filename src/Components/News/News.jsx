@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import Styles from "./Projects.module.css";
+import Styles from "./News.module.css"
 
-export default function Projects(props) {
-  let projects = useSelector((state) => state.project.projects);
+export default function News(props) {
+
+  // Datos de los proyectos
+  let news = useSelector((state) => state.new.news);
 
   // Paginacion
   // Estados de la paginacion
@@ -45,13 +47,13 @@ export default function Projects(props) {
 
   // seteo de la cantiadad de paginas e items que se mostraran
   let pages = [];
-  for (let i = 1; i <= Math.ceil(projects.length / itemForPage); i++) {
+  for (let i = 1; i <= Math.ceil(news.length / itemForPage); i++) {
     pages.push(i);
   }
 
   const indexOfLastItem = currentPage * itemForPage;
   const indexOfFirstItem = indexOfLastItem - itemForPage;
-  const currentItems = projects.slice(indexOfFirstItem, indexOfLastItem);
+  const currentItems = news.slice(indexOfFirstItem, indexOfLastItem);
 
   // renderizado de los numeros de las paginas
   const renderPageNumebers = pages.map((number) => {
@@ -95,34 +97,34 @@ export default function Projects(props) {
           <Link style={{ marginRight: ".3rem", color: "#62A3F7" }} to="/">
             Menu principal
           </Link>
-          {">"} Projectos
+          {">"} Noticias
         </p>
       </div>
 
 
-      <div className={Styles.projectsContainer}>
-        <h1>Conoce nuestros proyectos</h1>
+      <div className={Styles.newsContainer}>
+        <h1>Noticias</h1>
 
         <h3>
-          ¡Conoce lo que estamos logrando gracias al apoyo de personas como vos!
+          Enterate sobre los ultimos temas de interes sobre la ONG
         </h3>
 
         {currentItems.length > 0 ? (
-          currentItems.map((project) => (
+          currentItems.map((news) => (
             <div
-              style={{ backgroundImage: `url(${project.img})` }}
+              style={{ backgroundImage: `url(${news.img})` }}
               className={Styles.cardContainer}
-              key={project.id}
+              key={news.id}
             >
-              <h2>{project.nameProject}</h2>
-              <h4>{project.description}</h4>
-              <Link to={`/project/${project.id}`}>
+              <h2>{news.nameNews}</h2>
+              <h4>{news.description}</h4>
+              <Link to={`/news/${news.id}`}>
                 <button>Ver mas...</button>
               </Link>
             </div>
           ))
         ) : (
-          <h2>No hay projectos</h2>
+          <h2>No hay noticias</h2>
         )}
 
 

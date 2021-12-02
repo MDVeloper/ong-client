@@ -7,7 +7,7 @@
 
 
 /* proyect component container */
-.projectsContainer{
+.newsContainer{
     display: flex;
     flex-direction: column; 
 

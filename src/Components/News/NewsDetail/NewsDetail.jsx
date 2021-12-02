@@ -2,14 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom"
 
-import Styles from "./ProjectDetail.module.css"
+import Styles from "./NewsDetail.module.css"
 
-export default function ProjectsDetail(props) {
+export default function NewsDetail(props) {
   let id = props.match.params.id;
 
-  let projects = useSelector((state) => state.project.projects);
+  let newss = useSelector((state) => state.new.news);
 
-  let project = projects.find((project) => project.id.toString() === id);
+  let news = newss.find((news) => news.id.toString() === id);
 
   return (
     <div>
@@ -25,15 +25,15 @@ export default function ProjectsDetail(props) {
           Menu principal
         </Link>
         {">"} 
-        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/project">
-          Projectos
+        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/news">
+          Noticias
         </Link>
-        {">"} Detalle de projecto
+        {">"} Detalle de la noticia
       </p>
       
-     <div className={Styles.containerDetailProject}>
-        <h1>{project.nameProject}</h1>
-        <h3>{project.longDescription}</h3>
+     <div className={Styles.containerDetailNews}>
+        <h1>{news.nameNews}</h1>
+        <h3>{news.longDescription}</h3>
      </div>
     </div>
   );

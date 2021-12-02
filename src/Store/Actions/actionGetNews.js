@@ -2,12 +2,12 @@
 
 
 
-export function getProject() {
+export function getNews() {
     return async function(dispatch) {
         try {
             
             // Hablitar cuando se sepa la ruta que me trae las cosas del back
-            // const projects = await axios.get(`http://localhost:3001/projects`)
+            // const news = await axios.get(`http://localhost:3001/news`)
             
             
             // data auxioliar hasta traer los datos de la base de datos
@@ -15,7 +15,7 @@ export function getProject() {
                 // data de los proyectos
                 {
                 img: "https://images.pexels.com/photos/10260685/pexels-photo-10260685.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 1",
+                nameNews: "Noticia 1",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -24,7 +24,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/9980612/pexels-photo-9980612.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 2",
+                nameNews: "Noticia 2",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -33,7 +33,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/10001433/pexels-photo-10001433.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 3",
+                nameNews: "Noticia 3",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -42,7 +42,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/9969346/pexels-photo-9969346.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 4",
+                nameNews: "Noticia 4",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -51,7 +51,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/9412345/pexels-photo-9412345.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 5",
+                nameNews: "Noticia 5",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -60,7 +60,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/1423066/pexels-photo-1423066.png?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 6",
+                nameNews: "Noticia 6",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -69,7 +69,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/9937724/pexels-photo-9937724.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 7",
+                nameNews: "Noticia 7",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -78,7 +78,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/1460537/pexels-photo-1460537.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 8",
+                nameNews: "Noticia 8",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -87,7 +87,7 @@ export function getProject() {
                 },
                 {
                 img: "https://images.pexels.com/photos/1460173/pexels-photo-1460173.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                nameProject: "Proyecto 9",
+                nameNews: "Noticia 9",
                 description:
                     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt optio cumque totam quas delectus quo saepe ipsa corporis ullam! Consectetur.",
                 longDescription:
@@ -97,15 +97,15 @@ export function getProject() {
             ];
             
             dispatch({
-                type : "GET_PROJECT",
+                type : "GET_NEWS",
                 payload : dataAux
             })
         
 
         } catch (e) {
             dispatch({
-                type : "ERROR_GETPROJECTS",
-                payload : "No se pudieron cargar los proyectos"
+                type : "ERROR_GETNEWS",
+                payload : "No se pudieron cargar las noticias"
             })
         }
     }

@@ -12,6 +12,7 @@ import TermsAndConditions from "./Components/Terms and Conditions/termsAndCondit
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Footer from "./Components/Footer/Footer";
 import ErrorComponent  from "./Components/Error/ErrorComponent";
+import Donation from "./Components/Donation/Donation"
 
 function App() {
 
@@ -26,6 +27,7 @@ return (
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/terminosYCondiciones" component={TermsAndConditions}/>
                 <Route exact path='/aboutUs' component={AboutUs}/>
+                <Route exact path='/donation' component={Donation}/>
             </Switch>
         <Footer />
     </Router>

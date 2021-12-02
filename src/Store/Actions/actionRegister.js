@@ -2,6 +2,7 @@
 
 
 export function loginRegister(values){
+    console.log(values)
     return async function(dispatch){
         try {
             

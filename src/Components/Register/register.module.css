@@ -1,0 +1,38 @@
+/* Container register */
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    height: 100vh;
+
+    background-image: url("../img/backGround-register.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.effectBack {
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+.containerFormRegister {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 60%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.45);
+
+}
+
+
+/* Button send register */
+.buttonSendRegister {
+    background-color: #2EC4B6;
+}

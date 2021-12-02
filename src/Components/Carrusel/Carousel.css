@@ -1,7 +1,6 @@
 * {
     padding: 0;
     margin: 0;
-    text-decoration: none;
 } 
 
 
@@ -33,7 +32,7 @@
 
 
 /* Contenedor de titulos y descripciones */
-.cardProyectContainer .titleDescriptionContainer{
+.cardProjectContainer .titleDescriptionContainer{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,30 +40,29 @@
     word-break:break-all;
     width: 80%;
     margin: auto;
-    cursor: pointer;
 }
 
 /* Titulo de proyecto */
-.cardProyectContainer .titleDescriptionContainer h2 {
+.cardProjectContainer .titleDescriptionContainer h2 {
     color: #2EC4B6;
+    font-size: 1.5rem;
 }
 
 /* Descripcion de proyecto */
-.cardProyectContainer .titleDescriptionContainer p {
-    padding: 1rem 0 ;
+.cardProjectContainer .titleDescriptionContainer p {
+    padding-top: 1rem ;
     color: #000;
 }
 
 /* Contenedor de imagen de proyecto */
-.imgProyectContainer {
+.imgProjectContainer {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
 }
 
 /* Imagen de proyecto */
-.imgProyectContainer img{
+.imgProjectContainer img{
     width: 80%;
     height: auto;
     margin-bottom: 1rem;

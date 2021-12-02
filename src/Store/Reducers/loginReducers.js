@@ -3,7 +3,7 @@ const dataInitial = {
     error: ""
 }
 
-export default function userReducer(state = dataInitial, action){
+export default function loginReducers(state = dataInitial, action){
     switch (action.type){
         case "USER_INVALID":
             return{

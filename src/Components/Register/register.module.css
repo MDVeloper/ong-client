@@ -1,10 +1,15 @@
-/* Container register */
+html{
+    font-size: 16px;
+}
+
+    /* Container register */
 .registerContainer {
     display: flex;
     flex-direction: column;
 
     align-items: center;
 
+    width: 100%;
     height: 100vh;
 
     background-image: url("../img/backGround-register.jpg");
@@ -12,12 +17,14 @@
     background-repeat: no-repeat;
 }
 
+/* Black effect from image */
 .effectBack {
     height: 100vh;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.45);
 }
 
+    /* Container from  register form */
 .containerFormRegister {
     display: flex;
     flex-direction: column;
@@ -25,10 +32,17 @@
     align-items: center;
     justify-content: center;
 
-    width: 60%;
+    width: 70%;
     height: 80%;
-    background-color: rgba(0, 0, 0, 0.45);
+    margin: 1rem auto auto auto;
 
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Title from register */
+.titleFromRegister {
+    color: #fff;
+    font-size: 1.5rem;
 }
 
 
@@ -36,3 +50,4 @@
 .buttonSendRegister {
     background-color: #2EC4B6;
 }
+

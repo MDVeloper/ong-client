@@ -65,7 +65,7 @@ export default function Register() {
       <div className={Styles.effectBack}>
 
       <div className={Styles.containerFormRegister}>
-        <h1 className={Styles.titleRegister}>Registra tu cuenta personal</h1>
+        <h1 className={Styles.titleFromRegister}>Registrate</h1>
 
         <Formik 
           initialValues={{

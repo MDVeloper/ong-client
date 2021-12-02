@@ -18,7 +18,7 @@ export default function Login() {
 
   useEffect(() => {
     if (userOn) {
-      history.push("/home");
+      history.push("/");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userOn]);
@@ -41,13 +41,14 @@ export default function Login() {
   const handleSubmit = (value, { setSubmitting }) => {
     setSubmitting(false);
     dispatch(startSesion(value));
-    setTimeout(() => {
-      if (userOn) {
-        history.push("/home");
-      } else {
-        history.push("/error")
-      }
-    }, 2000);
+    // setTimeout(() => {
+    //   console.log(userOn);
+    //   if (userOn) {
+    //     history.push("/");
+    //   }else{
+    //       history.push("/error")
+    //   }
+    // }, 2000);
   };
 
   const signInWithGoogle = () => {

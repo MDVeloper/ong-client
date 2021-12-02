@@ -7,7 +7,7 @@ import { startSesion } from "../../Store/Actions/actionLogin";
 import { useHistory } from "react-router";
 import { auth } from "../../firebase-config";
 import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
-import { PayPalButton } from "react-paypal-button-v2";
+
 
 
 export default function Login() {

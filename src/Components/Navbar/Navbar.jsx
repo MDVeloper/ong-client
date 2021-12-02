@@ -37,7 +37,9 @@ export default function Navbar(){
                     }
                 </ul>
             </nav>
+            <Link to="/donaciones">
             <button className={styles.button}>Donar</button>
+            </Link>
             <Link to="/"><img src={logo} alt=" "/></Link>
         </div>
     )

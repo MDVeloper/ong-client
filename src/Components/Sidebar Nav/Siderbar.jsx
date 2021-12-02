@@ -10,7 +10,7 @@ function Siderbar() {
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
-        <>
+        <div>
             <div className="navbar">
                 <Link to="#" >
                     <FaIcons.FaBars onClick={showSidebar}/>
@@ -37,7 +37,7 @@ function Siderbar() {
 
                 </nav> : sidebar
             }
-        </>
+        </div>
     )
 }
 

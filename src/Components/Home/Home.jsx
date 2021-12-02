@@ -4,12 +4,13 @@ import Button from '@mui/material/Button'
 import Fab from '@mui/material/Fab';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import s from './Home.module.css'
+
+
 export default function Home() {
 
   return (
     <div>
       
-
         <section className={s.mainContainer}>
            <div>
            <Button variant="contained" size="large" className={s.btn}  aria-label="add">Apoya la causa</Button>

@@ -17,7 +17,7 @@ export default function Navbar(){
             <nav>
                 <ul className={styles.navbar}>
                     <li>
-                        <Link to="/about-us">About Us</Link>
+                        <Link to="/aboutUs">About Us</Link>
                     </li>
                     <li>
                         <Link to="/noticias">Noticias</Link>
@@ -38,7 +38,7 @@ export default function Navbar(){
                 </ul>
             </nav>
             <button className={styles.button}>Donar</button>
-            <Link to="/home"><img src={logo} alt=" "/></Link>
+            <Link to="/"><img src={logo} alt=" "/></Link>
         </div>
     )
 }

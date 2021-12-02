@@ -1,10 +1,9 @@
 const dataInitial = {
     active: false,
-    error: "",
-    register: []
+    error: ""
 }
 
-export default function userReducer(state = dataInitial, action){
+export default function loginReducers(state = dataInitial, action){
     switch (action.type){
         case "USER_INVALID":
             return{
@@ -14,7 +13,7 @@ export default function userReducer(state = dataInitial, action){
         case "USER_VALIDATE":
             return{
                 ...state,
-                active: true
+                active: action.payload
             };
         case "CLOSE_SESION":
             return{
@@ -25,12 +24,13 @@ export default function userReducer(state = dataInitial, action){
         case "LOGIN_REGISTER":
             return {
                 ...state,
-                register : action.payload
-            };
+                
+            }
 
         default:
             return{
-                ...state
+                ...state,
+                error : action.payload
             }
     }
 }

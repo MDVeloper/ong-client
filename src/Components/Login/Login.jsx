@@ -5,6 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import ErrorComponent from "../Error/ErrorComponent";
 import { startSesion } from "../../Store/Actions/actionLogin";
 import { useHistory } from "react-router";
+import { auth } from "../../firebase-config";
+import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
+
+
 
 export default function Login() {
   const userOn = useSelector((state) => state.login.active);
@@ -46,6 +50,15 @@ export default function Login() {
     //   }
     // }, 2000);
   };
+
+  const signInWithGoogle = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((res) => {
+        console.log(res)
+        history.push("/")
+      })
+  }
 
   return (
     !userOn && (
@@ -97,6 +110,8 @@ export default function Login() {
             </Form>
           )}
         </Formik>
+        <button onClick={() => signInWithGoogle()}>Google</button>
+
       </div>
     )
   );

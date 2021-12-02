@@ -9,9 +9,9 @@ import s from './Home.module.css'
 export default function Home() {
   return (
     <div>
-      <section className={s.mainContainer}>
+       <section className={s.mainContainer}>
         <div>
-          <Link to="/donations">
+          <Link to="/donaciones">
             <Button
               variant="contained"
               size="large"
@@ -34,11 +34,13 @@ export default function Home() {
           </Link>
             ACA VAN A IR LAS ESTADISTICAS
         </div>
-
-        <div>
-          <Carousel/>
-        </div>
+       
       </section>
+
+      <div className={s.carouselContainer}>
+        <Carousel/>
+      </div>
+
 
       <section className={s.wrapperVolunteerDonation}>
         <div className={s.containerVolunteer}>
@@ -50,7 +52,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-
         <div className={s.containerDonation}>
           <div className={s.containerDonationText}>
             <h3>Entre todos</h3>
@@ -61,9 +62,8 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className={s.containerQuestionAbout}>
-        <div>
+       <div>
           <Link to="/aboutUs">
             <Fab variant="extended" className={s.btn} aria-label="add">
               <NavigationIcon sx={{ mr: 1 }} />

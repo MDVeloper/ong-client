@@ -1,11 +1,11 @@
 
 .mainContainer {
 background-image: url('../img/ayuda-internacional-en-africa.png');
-width: 98vw;
+width: 100%;
 background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
-height: 600px;
+height: 50%;
 color: white;
 
 }
@@ -19,7 +19,7 @@ color: white;
 }
 /** Contenedor Volunteer **/
 .wrapperVolunteerDonation {
-    max-width: 70vw;
+    max-width: 70%;
     margin: auto;
     
 }
@@ -106,4 +106,9 @@ text-align: center;
 
 a  {
     text-decoration: none;
+}
+
+
+.carouselContainer {
+    margin: 2rem 6rem 1rem 6rem;
 }

@@ -1,10 +1,23 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import s from './AboutUs.module.css'
+import Loading from '../Loading/Loading'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 const AboutUs = () => {
+
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+       setTimeout(() => {
+           setIsLoading(false)
+       }, 2500); 
+    })
+
+
     return (
       
        <main>
+           {isLoading===true ? <Loading /> 
+           :
            <section>
            <div className={s.containerTitle}>
                 <h1 className={s.title}>
@@ -54,6 +67,8 @@ const AboutUs = () => {
                 
             </div>
            </section>
+           }
+          
 
        </main>
        

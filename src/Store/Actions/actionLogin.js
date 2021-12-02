@@ -33,7 +33,6 @@ import axios from "axios";
 
 export function startSesion(value) {
   return async function (dispatch) {
-    console.log(value);
     const { email, password } = value;
     try {
       await axios.post("http://localhost:3001/users/login", {
@@ -43,7 +42,6 @@ export function startSesion(value) {
         (respuesta) => {
             console.log(respuesta)
             let status = respuesta.data;
-            console.log(respuesta.data);
           //const user = userCredential.user;
           //localStorage.setItem("token", user);
           return dispatch({

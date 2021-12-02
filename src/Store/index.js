@@ -7,7 +7,7 @@ import articlesReducers from './Reducers/articlesReducers';
 const rootReducer = combineReducers({
     // aca van los reducers
     login: loginReducer,
-    articles: articlesReducers
+    articles: articlesReducers,
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

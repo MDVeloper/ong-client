@@ -10,7 +10,7 @@ export default function Navbar(){
             <nav>
                 <ul className={styles.navbar}>
                     <li>
-                        <Link to="/aboutus">About Us</Link>
+                        <Link to="/aboutUs">About Us</Link>
                     </li>
                     <li>
                         <Link to="/noticias">Noticias</Link>

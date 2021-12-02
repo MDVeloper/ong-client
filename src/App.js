@@ -11,6 +11,7 @@ import Register from "./Components/Register/register";
 import TermsAndConditions from "./Components/Terms and Conditions/termsAndConditions.jsx"
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Footer from "./Components/Footer/Footer";
+import Userpanel from "./Components/User Panel/Userpanel.jsx";
 
 function App() {
 
@@ -24,6 +25,7 @@ return (
                 <Route exact path="/register" component={Register}/>
                 <Route exact path="/terminosYCondiciones" component={TermsAndConditions}/>
                 <Route exact path='/aboutUs' component={AboutUs}/>
+                <Route exact path="/profile" component={Userpanel} />
             </Switch>
         <Footer />
     </Router>

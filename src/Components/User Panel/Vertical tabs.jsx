@@ -4,6 +4,15 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import { createTheme } from '@mui/material';
+
+const theme = createTheme({
+  MuiTabs: {
+    
+  }
+})
+
+
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -47,7 +56,7 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 200 }}
+      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500}}
     >
       <Tabs
         orientation="vertical"
@@ -55,7 +64,7 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider' }}
+        sx={{ borderRight: 1, borderColor: 'divider'}}
       >
         <Tab label="Donaciones" {...a11yProps(0)} />
         <Tab label="Proyectos" {...a11yProps(1)} />

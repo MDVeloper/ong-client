@@ -9,16 +9,26 @@
     box-sizing: border-box;
     border-radius: 23px;
     height: 170px;
-    width: 60vw;
+    width: 81.5vw;
     justify-content: center;
+    align-items: center;
+    margin: 100px;
+    margin-left: 153px;
     }
 
 .div1 { 
     width: 130px;
     border-radius: 100px;
     grid-area: 1 / 1 / 3 / 2; 
+    margin-left: 40px;
 }
 
-.div2 { grid-area: 1 / 2 / 3 / 3; }
+.div2 { 
+    margin-left: -300px;
+    grid-area: 1 / 2 / 3 / 3; }
+
+.div2 h1 {
+    color: #2EC4B6;
+}
 
 .div3 { grid-area: 1 / 3 / 3 / 4; }

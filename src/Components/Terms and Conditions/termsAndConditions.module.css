@@ -1,0 +1,33 @@
+/* * Contenedor principal del componente */
+
+* {
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.container {
+    background-color: #EDEDED;
+    
+    text-align: center;
+    min-height: 100%;
+
+    padding: 2rem 0;
+}
+
+/* Contenedor del texto de terminos y condiciones */
+.termsAndConditionsTextContainer {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    background-color: #fff;
+
+    padding: 1rem;
+    margin-top: 2rem;   
+    border-radius: .4rem;
+
+}
+
+.termsAndConditionsTextContainer p{
+    margin-top: 1rem;
+    font-size: .9rem;
+}

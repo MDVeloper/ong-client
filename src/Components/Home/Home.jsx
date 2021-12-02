@@ -1,9 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
-import Fab from "@mui/material/Fab";
-import NavigationIcon from "@mui/icons-material/Navigation";
-import s from "./Home.module.css";
+import {Link} from 'react-router-dom';
+import Button from '@mui/material/Button'
+import Fab from '@mui/material/Fab';
+import NavigationIcon from '@mui/icons-material/Navigation';
+import Carousel from "../Carrusel/Carousel"
+import s from './Home.module.css'
+
 export default function Home() {
   return (
     <div>
@@ -30,6 +32,11 @@ export default function Home() {
               Ser Voluntario
             </Button>
           </Link>
+            ACA VAN A IR LAS ESTADISTICAS
+        </div>
+
+        <div>
+          <Carousel/>
         </div>
       </section>
 

@@ -11,7 +11,7 @@ export default function Home() {
     <div>
        <section className={s.mainContainer}>
         <div>
-          <Link to="/donations">
+          <Link to="/donaciones">
             <Button
               variant="contained"
               size="large"
@@ -34,10 +34,14 @@ export default function Home() {
           </Link>
             ACA VAN A IR LAS ESTADISTICAS
         </div>
-        <div className={s.carouselContainer}>
-        <Carousel/>
-        </div>
+       
       </section>
+
+      <div className={s.carouselContainer}>
+        <Carousel/>
+      </div>
+
+
       <section className={s.wrapperVolunteerDonation}>
         <div className={s.containerVolunteer}>
           <div className={s.containerVolunteerText}>

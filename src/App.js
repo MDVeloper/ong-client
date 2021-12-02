@@ -47,13 +47,13 @@ function App() {
                 <Route exact path='/' component={Home}/>
                 <Route exact path='/error' component={ErrorComponent}/>
                 <Route exact path="/register" component={Register}/>
-                <Route exact path="/project" component={Projects}/>   
-                <Route exact path="/project/:id" component={ProjectDetail}/> 
-                <Route exact path="/news" component={News}/>
-                <Route exact path="/news/:id" component={NewsDetail}/>
-                <Route exact path="/termsAndConditions" component={TermsAndConditions}/>
+                <Route exact path="/proyectos" component={Projects}/>   
+                <Route exact path="/proyectos/:id" component={ProjectDetail}/> 
+                <Route exact path="/noticias" component={News}/>
+                <Route exact path="/noticias/:id" component={NewsDetail}/>
+                <Route exact path="/terminosYCondiciones" component={TermsAndConditions}/>
                 <Route exact path='/aboutUs' component={AboutUs}/>
-                <Route exact path='/donation' component={Donation}/>
+                <Route exact path='/donaciones' component={Donation}/>
                 <Route path='/backoffice/form' component={Formulario} />
             </Switch>
             <Footer />

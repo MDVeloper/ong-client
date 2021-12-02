@@ -25,7 +25,7 @@ export default function ProjectsDetail(props) {
           Menu principal
         </Link>
         {">"} 
-        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/project">
+        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/proyectos">
           Projectos
         </Link>
         {">"} Detalle de projecto

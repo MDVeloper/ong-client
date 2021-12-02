@@ -120,7 +120,7 @@ export default function Projects(props) {
             >
               <h2>{project.nameProject}</h2>
               <h4>{project.description}</h4>
-              <Link to={`/project/${project.id}`}>
+              <Link to={`/proyectos/${project.id}`}>
                 <button>Ver mas...</button>
               </Link>
             </div>

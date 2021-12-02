@@ -37,7 +37,7 @@ export default function Carousel() {
                     <div className={"titleDescriptionContainer"}>
                       <h2>{data.nameProject}</h2>
                       <p>{data.description}</p>
-                      <Link to={`/project/${data.id}`}>
+                      <Link to={`/proyectos/${data.id}`}>
                         <Button variant="text" style={{ color: "#FF9F1C" }}>
                           ver mas...
                         </Button>
@@ -48,7 +48,7 @@ export default function Carousel() {
               })}
             </Slider>
 
-            <Link to="/project" style={{ color: "#fff" }}>
+            <Link to="/proyectos" style={{ color: "#fff" }}>
               <Button
                 variant="contained"
                 style={{ marginTop: "2rem", background: "#FF9F1C" }}

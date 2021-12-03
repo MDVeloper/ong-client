@@ -1,3 +1,4 @@
+
 html {
     font-size: 16px;
 }
@@ -74,14 +75,28 @@ html {
 
 /* Imagen de proyecto */
 .imgProjectContainer img{
-    width: 80%;
-    height: 15rem;
+    width: 75%;
+    height: 12rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
 }
 
+.MuiButton-root, .button {
+    background-color: black;
+}
 
-
+@media screen and (max-width:800px) {
+    html {
+        font-size: 12px;
+    }
+    /* Imagen de proyecto */
+    .imgProjectContainer img{
+        width: 98%;
+        height: 9rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+    }
+}
 
 @media screen and (max-width:540px) {
     html {
@@ -89,7 +104,7 @@ html {
     }
 
     .container{ 
-        margin: 2rem .5rem 1rem .5rem;
+        margin: 2rem 2rem 1rem 2rem;
     }
     
     /* Flechas */
@@ -105,15 +120,14 @@ html {
 
     /* Imagen de proyecto */
     .imgProjectContainer img{
-    width: 90%;
-    height: 8rem;
+    width: 98%;
+    height: 9rem;
     margin-bottom: 1rem;
     border-radius: 1rem;
-}
+    }
 
+}
 
     
     
-}
-
 

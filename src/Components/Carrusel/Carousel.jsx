@@ -44,7 +44,8 @@ export default function Carousel() {
                     </div>
 
                     <Link to={`/proyectos/${data.id}`}>
-                      <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", marginTop:".2rem" }}>
+            
+                      <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", margin:".2rem .5rem 0 .5rem", fontSize:".8rem"}}>
                         Saber mas
                       </Button>
                     </Link>

@@ -1,15 +1,21 @@
 import React from "react";
-import Styles from "./termsAndConditions.module.css"
-import { Container } from '@mui/material';
 import { Link } from "react-router-dom";
+
+import { Container } from '@mui/material';
+import Styles from "./termsAndConditions.module.css"
+
+
+
 
 
 export default function TermsAndConditions() {
+
+
     return(
         <Container maxWidth={'xl'} className={Styles.container} >
+
             <p 
                 style={{display:"flex", justifyContent:"flex-start", marginLeft:"1rem", marginBottom:"1rem"}}>
-                    
                     <Link 
                         style={{marginRight:".3rem", color:"#62A3F7"}} to="/register">
                         Registro

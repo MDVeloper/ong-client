@@ -224,11 +224,11 @@ export default function Register() {
                 <div className={Styles.containersLabelFieldTermsAndConditions}>
                   <p>
                     Al crear una cuenta, acepta las{" "}
-                    <Link to="/terminosYCondiciones">
+                    <Link to="/terminosYCondiciones" style={{color:"#2EC4B6"}}>
                       <b>Condiciones de uso</b>
                     </Link>{" "}
                     y el{" "}
-                    <Link to="/terminosYCondiciones">
+                    <Link to="/terminosYCondiciones" style={{color:"#2EC4B6"}}>
                       <b>Aviso de privacidad </b>
                     </Link>{" "}
                     de Coding To Heap.
@@ -236,6 +236,7 @@ export default function Register() {
                 </div>
 
                 <div className={Styles.containerButtonSended}>
+                  
                   <Button className={Styles.buttonSendRegister} variant="contained"  type="submit">Registrar cuenta</Button>
                   { formSended ?  errorRegister ?
                     <p style={{ color: "red" }}>{errorRegister}</p>
@@ -243,11 +244,13 @@ export default function Register() {
                     <p style={{ color: "green" }}>{messageRegister}</p>
                     : ""
                   }
-                  <p style={{color:"#fff", margin:"1rem 0"}}> ------ O ------ </p>
+                  <p style={{color:"#fff", margin:"1rem 0"}}>  o  </p>
+
                   <button className={Styles.containerIcon}>
                     <FcGoogle style={{fontSize:"2rem"}}/>
                     <p>Registrate con google</p>
                   </button>
+
                 </div>
                 
             </Form>

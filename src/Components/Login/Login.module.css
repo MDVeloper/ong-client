@@ -1,0 +1,167 @@
+/* Al ser un module.css el htlm solo influye a los elementos de este componente */
+/* lo uso para el responsive, usando la medida rem que se fija en la el size de la fuente */
+html {
+    font-size: 15px; 
+}
+
+
+
+    /* Container from login */
+.containerFromLogin {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("../img/3.jpg");
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+    
+}   
+
+/* Black effect from image */
+.effectBack {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.185);
+} 
+
+
+
+    /* Container form and form items*/
+.containerFromFormAndFormItems {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    
+    width: 30rem;
+    height: auto;
+    margin: 4rem auto 4rem auto;
+    border-radius: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+
+
+/* Title login */
+.titleLogin {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+
+    /* Container Label, inputs and error component */
+.containersLabelField {
+    display: flex;
+    flex-direction: column;
+
+    margin: 1rem;
+
+    color: #fff;
+}
+
+
+/* Inputs */
+.containersLabelField input {
+    color: #fff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: "color 9999s ease-out, background-color 9999s ease-out";
+    transition-delay: 9999s;
+}
+
+
+/* Errors login */
+.errors {
+    color: red;
+    font-size:.85rem; 
+}
+
+
+
+    /* Container button send */
+.containerButtonSend {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+/* Button send login */
+.containerButtonSend .buttonSendRegister {
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem 9rem;
+
+    cursor: pointer;
+
+    background-color: #2EC4B6;
+}
+
+.containerButtonSend .buttonSendRegister:hover {
+    background-color: #2EC4B6;
+}
+
+
+
+    /* Container from icon google */
+.containerIcon {
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+
+    border: none;
+    border-radius: 1rem;
+    padding: 0.266rem 4.272rem;
+    cursor: pointer;
+}
+
+.containerIcon p {
+    padding-left: 3rem;
+    font-size: 1rem;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+
+
+@media screen and (max-width:540px) {
+    html{
+        font-size: 12px;
+    }
+
+
+        /* Container form and form items*/
+    .containerFromFormAndFormItems {     
+        width: 25rem;
+        height: auto;
+        margin: 3rem auto 3rem auto;
+        border-radius: 1rem;
+
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+}

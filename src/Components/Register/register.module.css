@@ -1,6 +1,10 @@
-html{
-    font-size: 16px;
+/* Al ser un module.css el htlm solo influye a los elementos de este componente */
+/* lo uso para el responsive, usando la medida rem que se fija en la el size de la fuente */
+html {
+    font-size: 15px; 
 }
+
+
 
     /* Container register */
 .registerContainer {
@@ -12,8 +16,9 @@ html{
     width: 100%;
     height: 100%;
 
-    background-image: url("../img/backGround-register.jpg");
+    background-image: url("../img/3.jpg");
     background-size: cover;
+    background-position: 0;
     background-repeat: no-repeat;
 }
 
@@ -25,8 +30,10 @@ html{
     flex-direction: column;
     align-items: center;
 
-    background-color: rgba(0, 0, 0, 0.45);
+    background-color: rgba(0, 0, 0, 0.185);
 }
+
+
 
     /* Container from  register form */
 .containerFormRegister {
@@ -43,6 +50,8 @@ html{
 
     background-color: rgba(0, 0, 0, 0.45);
 }
+
+
 
     /* formColumnGrid */
 .formColumnGrid {
@@ -70,6 +79,7 @@ html{
     color: #fff;
 }
 
+/* Inputs */
 .containersLabelField input {
     color: #fff;
 }
@@ -80,7 +90,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: "color 9999s ease-out, background-color 9999s ease-out";
     transition-delay: 9999s;
-    
 }
 
 
@@ -103,14 +112,6 @@ input:-webkit-autofill:active {
     position: relative;
     bottom: 0.1rem;
 }
-
-/* CheckBox form */
-.containerLabelFieldCheckBox label{
-    position: relative;
-    bottom: 0.2rem;
-}
-
-
 
 
 
@@ -137,7 +138,8 @@ input:-webkit-autofill:active {
     
     border: none;
     border-radius: 1rem;
-    padding: .9rem 4rem;
+    padding: .5rem 7rem;
+
     cursor: pointer;
 
     background-color: #2EC4B6;
@@ -146,6 +148,7 @@ input:-webkit-autofill:active {
 .containerButtonSended .buttonSendRegister:hover {
     background-color: #2EC4B6;
 }
+
 
     /* Container from icon google */
 .containerIcon {
@@ -156,23 +159,21 @@ input:-webkit-autofill:active {
 
     border: none;
     border-radius: 1rem;
-    padding: 0.6rem 1.85rem;
+    padding: 0.266rem 3.928rem;
     cursor: pointer;
 }
 
 .containerIcon p {
-    margin-left: 1rem;
+    padding-left: 3rem;
     font-size: 1rem;
 }
-
-
+    
 
 @media screen and (max-width: 700px) {
     html{
         font-size: 12px;
     }
 }
-
 
 
 

@@ -1,5 +1,5 @@
 html{
-    font-size: 14px;
+    font-size: 16px;
 }
 
     /* Container register */
@@ -21,6 +21,9 @@ html{
 .effectBack {
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
     background-color: rgba(0, 0, 0, 0.45);
 }
@@ -45,7 +48,7 @@ html{
 .formColumnGrid {
     display: grid;
     grid-template-columns: 50% 50%;
-    padding: 3rem;
+    padding: 1rem 3rem 1rem 3rem ;
 }
 
 /* Title from register */
@@ -86,13 +89,13 @@ input:-webkit-autofill:active {
 .containerFromCheckBox{
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    margin: 0 1rem 1rem 1rem;
 }
 
 /* Div from label and field checkBox */
 .containerLabelFieldCheckBox{
     color: #fff;
-    margin: 1rem;
+    margin: 0 1rem;
 }
 
 /* CheckBox form */
@@ -100,6 +103,14 @@ input:-webkit-autofill:active {
     position: relative;
     bottom: 0.1rem;
 }
+
+/* CheckBox form */
+.containerLabelFieldCheckBox label{
+    position: relative;
+    bottom: 0.2rem;
+}
+
+
 
 
 
@@ -154,6 +165,17 @@ input:-webkit-autofill:active {
     font-size: 1rem;
 }
 
+
+
+@media screen and (max-width: 700px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+
+
+
 @media screen and (max-width:540px) {
     html{
         font-size: 12px;
@@ -176,20 +198,10 @@ input:-webkit-autofill:active {
     
         width: 23rem;
         height: 80%;
-        margin: 3rem auto 3rem auto;
+        margin: 2rem auto 2rem auto;
         border-radius: 1rem;
     
         background-color: rgba(0, 0, 0, 0.45);
     }
 
-        
-    /* CheckBox form */
-    .containerLabelFieldCheckBox label{
-        position: relative;
-        bottom: 0.2rem;
-    }
-
 }
-
-
-

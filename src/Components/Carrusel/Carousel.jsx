@@ -15,15 +15,19 @@ export default function Carousel() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 700,
     slidesToShow: 3,
     slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 4000
   };
 
+
+  
   return (
     <div className={"container"}>
       {projects.length > 0 && (
-        <div>
+        <div className={"containerCard"}>
           <h1> Galeria de proyectos </h1>
 
           <div className={"sliderContainer"}>
@@ -37,12 +41,13 @@ export default function Carousel() {
                     <div className={"titleDescriptionContainer"}>
                       <h2>{data.nameProject}</h2>
                       <p>{data.description}</p>
-                      <Link to={`/proyectos/${data.id}`}>
-                        <Button variant="text" style={{ color: "#FF9F1C" }}>
-                          ver mas...
-                        </Button>
-                      </Link>
                     </div>
+
+                    <Link to={`/proyectos/${data.id}`}>
+                      <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", marginTop:".2rem" }}>
+                        Saber mas
+                      </Button>
+                    </Link>
                   </div>
                 );
               })}

@@ -38,9 +38,9 @@ export default function Home() {
       
       ACA VAN A IR LAS ESTADISTICAS
 
-      <div className={s.carouselContainer}>
-        <Carousel/>
-      </div>
+      
+      <Carousel/>
+      
 
 
       <section className={s.wrapperVolunteerDonation}>

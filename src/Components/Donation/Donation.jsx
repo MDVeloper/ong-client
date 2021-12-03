@@ -78,9 +78,9 @@ function Donation() {
           </div>
         </div>
       </div>
-      <div style={{margin: "2rem 6rem 1rem 6rem"}}>
-        <Carousel />
-      </div>
+
+      <Carousel />
+ 
       <div className={styles.box_preguntasFrecuentes}>
         <div className={styles.box_preguntasFrecuentes_container}>
           <h2>Preguntas Frecuentes</h2>

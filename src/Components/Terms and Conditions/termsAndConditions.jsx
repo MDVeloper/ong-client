@@ -101,7 +101,7 @@ export default function TermsAndConditions() {
 
                 <p>El comprador puede revocar la compra dentro de un plazo de 10 días desde que recibe el producto o podrá pedir el cambio o devolución del mismo en los términos de los programas de Compra Protegida, Mercado Puntos y demás Anexos, hasta 30 días después de la recepción del producto. Si el Usuario cumple con los requisitos previamente señalados y efectivamente revoca la compra y/o proceda una devolución en relación con la misma, el Usuario autoriza para que Mercado Libre haga el reembolso del importe en relación con dicha compra en la cuenta de Mercado Pago del Usuario, el cuál estará disponible de forma inmediata y desde la cual podrá transferir el dinero de manera gratuita a la cuenta bancaria de su preferencia, enviarlo a la cuenta bancaria de otra persona, retirarlo y/o utilizarlo para compras dentro de la propia plataforma.</p>
 
-                <p>Las ofertas de compra sólo serán consideradas válidas, una vez que hayan sido procesadas por el sistema informático de Mercado Libre.
+                <p>Las ofertas de compra sólo serán consideradas válidas, una vez que hayan sido procesadas por el sistema informático de Mercado Libre.</p>
 
                 <p>Impuestos. Tal como lo establece la normativa fiscal vigente, el comprador debe exigir factura o ticket al vendedor como comprobante de la operación. El vendedor no estará obligado a emitir factura o ticket sólo en el caso de tratarse de una persona física que efectúa ventas ocasionalmente.</p>
 
@@ -131,7 +131,7 @@ export default function TermsAndConditions() {
                 Se fija como domicilio de MercadoLibre Colombia LTDA., con NIT 830067394-6, la Carrera 17 No 93-09, piso 3, Bogotá D.C., Colombia. Teléfono (1) 7053050.</p>
 
                 <p>Si tienes alguna duda sobre los Términos y Condiciones Generales o demás políticas y principios que rigen Mercado Libre consulta nuestra página de Ayuda.</p>
-                </p>
+                
             </Container>
         </Container>
     )

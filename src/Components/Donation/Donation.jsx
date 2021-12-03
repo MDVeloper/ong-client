@@ -7,6 +7,8 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import charityIMG from "../img/charity.jpg";
+
+
 function Donation() {
   const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -76,7 +78,7 @@ function Donation() {
           </div>
         </div>
       </div>
-      <div>
+      <div style={{margin: "2rem 6rem 1rem 6rem"}}>
         <Carousel />
       </div>
       <div className={styles.box_preguntasFrecuentes}>

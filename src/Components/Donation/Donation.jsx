@@ -2,12 +2,24 @@ import React from "react";
 import styles from "./Donation.module.css";
 import Carousel from "../Carrusel/Carousel";
 import { Typography } from "@mui/material";
-import { styled } from "@mui/material/styles";
+
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import charityIMG from "../img/charity.jpg";
+import { PayPalButton } from "react-paypal-button-v2";
+import { styled } from "@mui/material/styles";
+import { useState } from "react";
+import axios from "axios";
+
 function Donation() {
+  const [donationAmount, setDonationAmount] = useState(1);
+
+    const handleDonationInput = function (e) {
+        e.preventDefault();
+        setDonationAmount(e.target.value)
+    }
+
   const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
   ))(({ theme }) => ({
@@ -73,6 +85,29 @@ function Donation() {
             <button onClick={() => alert("PRESIONADO XD")}>
               <Typography variant="h5">Donar</Typography>
             </button>
+
+            <input type='number' placeholder="Digita aqui tu ayuda" onChange={handleDonationInput} value={donationAmount} />
+            <PayPalButton className={styles.pepe}
+              amount={donationAmount}
+              // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+              onSuccess={(details, data) => {
+                alert("Transaction completed by " + details.payer.name.given_name);
+                console.log(details, data)
+
+                // OPTIONAL: Call your server to save the transaction
+                return axios.post("http://localhost:3001/donations", {
+                  amount: donationAmount,
+                  date: details.create_time,
+                  estatus: details.status,
+                  email: details.payer.email_address
+                });
+              }}
+              options={{
+                clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
+                disableFunding:'credit,card'
+              }}
+            />
+
           </div>
         </div>
       </div>

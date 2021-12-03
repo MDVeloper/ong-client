@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useDispatch, useSelector } from "react-redux";
 import ErrorComponent from "../Error/ErrorComponent";
@@ -7,7 +8,8 @@ import { startSesion } from "../../Store/Actions/actionLogin";
 import { useHistory } from "react-router";
 import { auth } from "../../firebase-config";
 import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
-
+import Styles from "./Login.module.css"
+import { Button } from "@mui/material";
 
 
 export default function Login() {
@@ -111,7 +113,11 @@ export default function Login() {
           )}
         </Formik>
         <button onClick={() => signInWithGoogle()}>Google</button>
-
+        <p>o</p>
+        
+        <Link to="/register">
+          <Button variant="contained">Registrarse</Button>
+        </Link>
       </div>
     )
   );

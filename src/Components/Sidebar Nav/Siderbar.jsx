@@ -19,7 +19,7 @@ function Siderbar() {
             { sidebar? 
                 <nav>
                     <ul> 
-                        <li> <img src=" " alt="Image Not Found"/> </li>
+                        <li> <picture src="" alt="Image Not Found" /></li>
                         <li>"Nombre de la persona logueada"</li>
                         <li>"(moderador o usuario)" </li>
                        

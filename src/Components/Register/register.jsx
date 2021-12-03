@@ -2,13 +2,16 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 import moment from "moment";
 
 import { loginRegister } from "../../Store/Actions/actionRegister";
-import { Button, Container } from "@mui/material";
+
+import { Button, Input, InputBase } from "@mui/material";
+import { FcGoogle } from "react-icons/fc";
 import Styles from "./register.module.css"
+
 
 
 export default function Register() {
@@ -65,7 +68,7 @@ export default function Register() {
       <div className={Styles.effectBack}>
 
       <div className={Styles.containerFormRegister}>
-        <h1 className={Styles.titleFromRegister}>Registrate</h1>
+        <h1 className={Styles.titleFromRegister}>Registrarse</h1>
 
         <Formik 
           initialValues={{
@@ -89,149 +92,164 @@ export default function Register() {
 
             dispatch(loginRegister(valores))
 
-            console.log("Formulario enviado:", valores);
-
             setFormSended(true);
 
             setTimeout(() => (setFormSended(false)), 5000);
           }}
         >
           {({ errors }) => (
-            <Form>
-              <div>
-                <label htmlFor="name">Nombre</label>
-                <Field type="text" name="name" id="name" />
-                <ErrorMessage
-                  name="name"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.name}</div>
-                  )}
-                />
-              </div>
+            <Form >
+              <div className={Styles.formColumnGrid}>
 
-              <div>
-                <label htmlFor="lastName">Apellido</label>
-                <Field type="text" id="lastName" name="lastName" />
-                <ErrorMessage
-                  name="lastName"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.lastName}</div>
-                  )}
-                />
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="name">Nombre</label>
+                  <Input variant="contained"  placeholder="Ingrese su nombre" type="text" name="name" id="name" />
+                  <ErrorMessage
+                    name="name"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.name}</div>
+                    )}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="password">Contraseña</label>
-                <Field type="password" id="password" name="password" />
-                <ErrorMessage
-                  name="password"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.password}</div>
-                  )}
-                />
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="lastName">Apellido</label>
+                  <Input placeholder="Ingrese su apellido" type="text" id="lastName" name="lastName" />
+                  <ErrorMessage
+                    name="lastName"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.lastName}</div>
+                    )}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="repeatPassword">Repetir contraseña</label>
-                <Field
-                  type="password"
-                  id="repeatPassword"
-                  name="repeatPassword"
-                />
-                <ErrorMessage
-                  name="repeatPassword"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.repeatPassword}</div>
-                  )}
-                />
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="password">Contraseña</label>
+                  <Input placeholder="Ingrese su contraseña" type="password" id="password" name="password" />
+                  <ErrorMessage
+                    name="password"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.password}</div>
+                    )}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="email">Email</label>
-                <Field type="text" id="email" name="email" />
-                <ErrorMessage
-                  name="email"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.email}</div>
-                  )}
-                />
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="repeatPassword">Repetir contraseña</label>
+                  <Input
+                    placeholder="Repita su contraseña" 
+                    type="password"
+                    id="repeatPassword"
+                    name="repeatPassword"
+                  />
+                  <ErrorMessage
+                    name="repeatPassword"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.repeatPassword}</div>
+                    )}
+                  />
 
-              <div>
-                <label htmlFor="">Pais</label>
-                <Field type="text" id="country" name="country" />
-                <ErrorMessage
-                  name="country"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.country}</div>
-                  )}
-                />
-              </div>
+                </div>
 
-              <div>
-                <label htmlFor="state">Provincia</label>
-                <Field type="text" id="state" name="state" />
-                <ErrorMessage
-                  name="state"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.state}</div>
-                  )}
-                />
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="email">Email</label>
+                  <Input placeholder="Ingrese su correo electronico"  type="text" id="email" name="email" />
+                  <ErrorMessage
+                    name="email"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.email}</div>
+                    )}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="birthday">Fecha de nacimiento</label>
-                <Field type="date" id="birthday" name="birthday" />
-                <ErrorMessage
-                  name="birthday"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.birthday}</div>
-                  )}
-                />
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="">Pais</label>
+                  <Input placeholder="Ingrese su pais"  type="text" id="country" name="country" />
+                  <ErrorMessage
+                    name="country"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.country}</div>
+                    )}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="">Voluntario/a</label>
-                <Field type="checkbox" id="volunteer" name="volunteer" />
-                {/* <ErrorMessage
-                  name="volunteer"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.volunteer}</div>
-                  )}
-                /> */}
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="state">Provincia</label>
+                  <Input placeholder="Ingrese su provincia" type="text" id="state" name="state" />
+                  <ErrorMessage
+                    name="state"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.state}</div>
+                    )}
+                  />
+                </div>
 
-              <div>
-                <label htmlFor="">Cursos</label>
-                <Field type="checkbox" id="course" name="course" />
-                {/* <ErrorMessage
-                  name="course"
-                  component={() => (
-                    <div style={{ color: "red" }}>{errors.course}</div>
-                  )}
-                /> */}
-              </div>
+                <div className={Styles.containersLabelField}>
+                  <label htmlFor="birthday">Fecha de nacimiento</label>
+                  <Input type="date" id="birthday" name="birthday" />
+                  <ErrorMessage
+                    name="birthday"
+                    component={() => (
+                      <div style={{ color: "red", fontSize:".85rem" }}>{errors.birthday}</div>
+                    )}
+                    />
+                </div>
+                
+              </div>  
 
-              <div>
-                <p>
-                  Al crear una cuenta, acepta las{" "}
-                  <Link to="/terminosYCondiciones">
-                    <b>Condiciones de uso</b>
-                  </Link>{" "}
-                  y el{" "}
-                  <Link to="/terminosYCondiciones">
-                    <b>Aviso de privacidad </b>
-                  </Link>{" "}
-                  de Coding To Heap.
-                </p>
-              </div>
+                <div className={Styles.containerFromCheckBox}>
+                  <div className={Styles.containerLabelFieldCheckBox}>
+                    <label style={{verticalAlign: "sub"}} htmlFor="">Voluntario/a</label>
+                    <Field style={{verticalAlign: "sub"}} type="checkbox" id="volunteer" name="volunteer" />
+                    {/* <ErrorMessage
+                      name="volunteer"
+                      component={() => (
+                        <div style={{ color: "red", fontSize:".85rem" }}>{errors.volunteer}</div>
+                      )}
+                    /> */}
+                  </div>
 
-              <Button variant="contained" className={Styles.buttonSendRegister} type="submit">Enviar</Button>
-              { errorRegister ?  
-                  <p style={{ color: "green" }}>{errorRegister}</p>
-                :
-                <p style={{ color: "green" }}>{messageRegister}</p>
-              }
+                  <div className={Styles.containerLabelFieldCheckBox}>
+                    <label style={{verticalAlign: "sub"}} htmlFor="">Cursos</label>
+                    <Field style={{verticalAlign: "sub"}} type="checkbox" id="course" name="course" />
+                    {/* <ErrorMessage
+                      name="course"
+                      component={() => (
+                        <div style={{ color: "red", fontSize:".85rem" }}>{errors.course}</div>
+                      )}
+                    /> */}
+                  </div>
+                </div>
+
+                <div className={Styles.containersLabelFieldTermsAndConditions}>
+                  <p>
+                    Al crear una cuenta, acepta las{" "}
+                    <Link to="/terminosYCondiciones">
+                      <b>Condiciones de uso</b>
+                    </Link>{" "}
+                    y el{" "}
+                    <Link to="/terminosYCondiciones">
+                      <b>Aviso de privacidad </b>
+                    </Link>{" "}
+                    de Coding To Heap.
+                  </p>
+                </div>
+
+                <div className={Styles.containerButtonSended}>
+                  <Button className={Styles.buttonSendRegister} variant="contained"  type="submit">Registrar cuenta</Button>
+                  { formSended ?  errorRegister ?
+                    <p style={{ color: "red" }}>{errorRegister}</p>
+                    :
+                    <p style={{ color: "green" }}>{messageRegister}</p>
+                    : ""
+                  }
+                  <p style={{color:"#fff", margin:"1rem 0"}}> ------ O ------ </p>
+                  <button className={Styles.containerIcon}>
+                    <FcGoogle style={{fontSize:"2rem"}}/>
+                    <p>Registrate con google</p>
+                  </button>
+                </div>
+                
             </Form>
           )}
         </Formik>

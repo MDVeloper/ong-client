@@ -32,10 +32,11 @@ export default function Home() {
               Ser Voluntario
             </Button>
           </Link>
-            ACA VAN A IR LAS ESTADISTICAS
         </div>
        
       </section>
+      
+      ACA VAN A IR LAS ESTADISTICAS
 
       <div className={s.carouselContainer}>
         <Carousel/>

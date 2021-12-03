@@ -1,15 +1,11 @@
-* {
-    padding: 0;
-    margin: 0;
-} 
-
-
     /* Contenedor de todo el componente */
 .container{ 
     display: flex;
     flex-direction: column;
     color: #000;
     text-align: center;
+
+    margin: 4rem 0;
 }
 
 .container h1 {
@@ -20,7 +16,7 @@
 
     /* Contenedor de todo el slider */
 .sliderContainer {
-    padding: 4%;
+    margin-top: 1rem;
 }
 
 /* Flechas */

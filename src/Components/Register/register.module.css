@@ -10,7 +10,7 @@ html{
     align-items: center;
 
     width: 100%;
-    height: 100vh;
+    height: 100%;
 
     background-image: url("../img/backGround-register.jpg");
     background-size: cover;
@@ -19,8 +19,9 @@ html{
 
 /* Black effect from image */
 .effectBack {
-    height: 100vh;
+    height: 100%;
     width: 100%;
+
     background-color: rgba(0, 0, 0, 0.45);
 }
 
@@ -32,22 +33,143 @@ html{
     align-items: center;
     justify-content: center;
 
-    width: 70%;
+    width: 40rem;
     height: 80%;
-    margin: 1rem auto auto auto;
+    margin: 3rem auto 3rem auto;
+    border-radius: 1rem;
 
     background-color: rgba(0, 0, 0, 0.45);
+}
+
+    /* formColumnGrid */
+.formColumnGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 3rem;
 }
 
 /* Title from register */
 .titleFromRegister {
     color: #fff;
     font-size: 1.5rem;
+    margin-top: 1rem;
 }
 
+
+
+    /* Container from Label and Field */
+.containersLabelField {
+    display: flex;
+    flex-direction: column;
+
+    margin: 1rem;
+
+    color: #fff;
+}
+
+.containersLabelField input {
+    color: #fff;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: "color 9999s ease-out, background-color 9999s ease-out";
+    transition-delay: 9999s;
+    
+}
+
+
+
+    /* Container from checkBox */
+.containerFromCheckBox{
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+/* Div from label and field checkBox */
+.containerLabelFieldCheckBox{
+    color: #fff;
+    margin: 1rem;
+}
+
+
+
+    /* Container form terms and conditions */
+.containersLabelFieldTermsAndConditions {
+    color: #fff;
+    text-align: center;
+    
+    margin: 0 1rem 2rem 1rem;
+}
+
+
+
+    /* Container from button send */
+.containerButtonSended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
 
 /* Button send register */
 .buttonSendRegister {
+    
+    border: none;
+    border-radius: 1rem;
+    padding: .9rem 4rem;
+    cursor: pointer;
+
     background-color: #2EC4B6;
 }
+
+    /* Container from icon google */
+.containerIcon {
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+
+    border: none;
+    border-radius: 1rem;
+    padding: 0.6rem 1.85rem;
+    cursor: pointer;
+}
+
+.containerIcon p {
+    margin-left: 1rem;
+    font-size: 1rem;
+}
+
+@media screen and (max-width:540px) {
+    html{
+        font-size: 12px;
+    }
+
+    .formColumnGrid {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+    }
+
+    .containerFormRegister {
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    
+        width: 23rem;
+        height: 80%;
+        margin: 3rem auto 3rem auto;
+        border-radius: 1rem;
+    
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+}
+
+
 

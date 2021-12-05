@@ -5,8 +5,24 @@ import { useDispatch, useSelector } from "react-redux";
 import ErrorComponent from "../Error/ErrorComponent";
 import { startSesion } from "../../Store/Actions/actionLogin";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import { auth } from "../../firebase-config";
 import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
+
+const validation = (value) => {
+  const errors = {};
+  if (!value.email) {
+    errors.email = "Email is required";
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.email)) {
+    errors.email = "Email is not valid";
+  }
+  if (!value.password) {
+    errors.password = "Password is required";
+  } else if (value.password.length < 5) {
+    errors.password = "Password must have 5 characters";
+  }
+  return errors;
+};
 
 
 
@@ -18,37 +34,16 @@ export default function Login() {
 
   useEffect(() => {
     if (userOn) {
-      history.push("/");
+      history.push("/users");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userOn]);
-
-  const validation = (value) => {
-    const errors = {};
-    if (!value.email) {
-      errors.email = "Email is required";
-    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.email)) {
-      errors.email = "Email is not valid";
-    }
-    if (!value.password) {
-      errors.password = "Password is required";
-    } else if (value.password.length < 5) {
-      errors.password = "Password must have 5 characters";
-    }
-    return errors;
-  };
-
+console.log(userOn)
+  
   const handleSubmit = (value, { setSubmitting }) => {
     setSubmitting(false);
     dispatch(startSesion(value));
-    // setTimeout(() => {
-    //   console.log(userOn);
-    //   if (userOn) {
-    //     history.push("/");
-    //   }else{
-    //       history.push("/error")
-    //   }
-    // }, 2000);
+    dispatch(history.push('/users'))
   };
 
   const signInWithGoogle = () => {
@@ -56,7 +51,9 @@ export default function Login() {
     signInWithPopup(auth, provider)
       .then((res) => {
         console.log(res)
-        history.push("/")
+
+        history.push("/users")
+
       })
   }
 
@@ -111,6 +108,10 @@ export default function Login() {
           )}
         </Formik>
         <button onClick={() => signInWithGoogle()}>Google</button>
+
+        <Link to='/register'>
+          Create user
+        </Link>
 
       </div>
     )

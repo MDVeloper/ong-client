@@ -83,9 +83,9 @@ function Donation() {
               vulnerabilidad en todo el país
             </Typography>
 
-            <button onClick={() => alert("PRESIONADO XD")}>
+            {/* <button onClick={() => alert("PRESIONADO XD")}>
               <Typography variant="h5">Donar</Typography>
-            </button>
+            </button> */}
 
             <input type='number' placeholder="Digita aqui tu ayuda" onChange={handleDonationInput} value={donationAmount} />
             <PayPalButton

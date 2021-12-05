@@ -5,7 +5,7 @@ export function startSesion(value) {
     const { email, password } = value;
     try {
       const res = await axios
-        .post("http://localhost:3001/users/login", {
+        .post("/users/login", {
           email,
           password,
         })
@@ -28,7 +28,7 @@ export function startSesion(value) {
       }, 3000);
     }
   };
-}}
+}
 
 
 export function statusUser() {

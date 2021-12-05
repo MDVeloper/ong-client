@@ -1,0 +1,39 @@
+.space {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5vh;
+    align-items: center;
+}
+
+.navbar{
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    width: 21vw;
+    list-style: none;
+    background-color: #2EC4B6;
+    border-radius: 10px;
+    padding-inline-start: 0px;
+}
+.navbar>li {
+    padding: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-family: "Ubuntu";
+    font-weight: normal;
+}
+
+.button {
+    width: 137px;
+    height: 59px;
+    top: 89px;
+    background: linear-gradient(106.11deg, #FFBF69 27.75%, #2EC4B6 100%);
+    border-radius: 44px;
+    border: none;
+    color: white;
+    font-size: 35px;
+
+}

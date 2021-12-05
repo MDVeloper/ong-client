@@ -1,0 +1,133 @@
+
+html {
+    font-size: 16px;
+}
+
+/* Contenedor de todo el componente */
+.container{ 
+    display: flex;
+    flex-direction: column;
+    color: #000;
+    text-align: center;
+
+    margin: 3rem 7rem 3rem 7rem;
+}
+
+.container h1 {
+    color: #FF9F1C;
+}
+ 
+
+
+    /* Contenedor de todo el slider */
+.sliderContainer {
+    margin-top: 1rem;
+}
+
+/* Flechas */
+.slick-prev:before, .slick-next:before {
+    color: #FF9F1C;
+    font-size: 40px;
+    opacity: 1;
+}
+
+.slick-next:before {
+    content: "▶";
+}  
+
+.slick-prev:before{
+    content: "◀ ";
+    position: relative;
+    left: -1rem;
+}
+
+
+/* Contenedor de titulos y descripciones */
+.cardProjectContainer .titleDescriptionContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    word-break:break-all;
+    width: 80%;
+    margin: auto;
+}
+
+/* Titulo de proyecto */
+.cardProjectContainer .titleDescriptionContainer h2 {
+    color: #2EC4B6;
+    font-size: 1.5rem;
+}
+
+/* Descripcion de proyecto */
+.cardProjectContainer .titleDescriptionContainer p {
+    padding-top: 1rem ;
+    color: #000;
+}
+
+/* Contenedor de imagen de proyecto */
+.imgProjectContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Imagen de proyecto */
+.imgProjectContainer img{
+    width: 75%;
+    height: 12rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+}
+
+.MuiButton-root, .button {
+    background-color: black;
+}
+
+@media screen and (max-width:800px) {
+    html {
+        font-size: 12px;
+    }
+    /* Imagen de proyecto */
+    .imgProjectContainer img{
+        width: 98%;
+        height: 9rem;
+        margin-bottom: 1rem;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (max-width:540px) {
+    html {
+        font-size: 12px;
+    }
+
+    .container{ 
+        margin: 2rem 2rem 1rem 2rem;
+    }
+    
+    /* Flechas */
+    .slick-prev:before, .slick-next:before {
+        display: none;
+    }
+
+    /* Titulo de proyecto */
+    .cardProjectContainer .titleDescriptionContainer h2 {
+        color: #2EC4B6;
+        font-size: 1.2rem;
+    }
+
+    /* Imagen de proyecto */
+    .imgProjectContainer img{
+    width: 98%;
+    height: 9rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    }
+
+}
+
+    
+    
+

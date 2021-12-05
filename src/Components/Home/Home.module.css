@@ -1,0 +1,110 @@
+
+.mainContainer {
+background-image: url('../img/ayuda-internacional-en-africa.png');
+width: 100%;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 50%;
+color: white;
+
+}
+.mainContainer .btn {
+    margin-top: 520px;
+    margin-left: 20px;
+    
+}
+.mainContainer div {
+    margin-left: 50%;
+}
+/** Contenedor Volunteer **/
+.wrapperVolunteerDonation {
+    max-width: 70%;
+    margin: auto;
+    
+}
+.containerVolunteerText {
+    
+    padding-top: 20px;
+    padding-right: 30px;
+   
+    
+}
+.containerVolunteerText h3 {
+    font-size: 40px;
+    font-family: 'Ubuntu';
+    text-align: end;
+}
+.containerVolunteerText p {
+    font-size: 14px;
+    font-family: 'Ubuntu';
+    padding-top: 25px;
+    margin-left: 700px;
+    max-width: 450px;
+}
+.containerVolunteer {
+    background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.438) 84%, rgba(0, 0, 0, 0.199) 100%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 300px;
+color: white;
+text-align: center;
+}
+/** Contenedor Donation **/
+.containerDonation {
+    background-image: url('../img/Untitled-4.png');
+background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.438) 84%, rgba(0, 0, 0, 0.199) 100%), url('../img/Untitled-4.png');
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+height: 300px;
+color: white;
+text-align: center;
+}
+.containerDonationText h3 {
+    font-size: 40px;
+    font-family: 'Ubuntu';
+    padding-top: 20px;
+    text-align: start;
+    margin-left: 40px;
+}
+.containerDonationText p {
+    font-size: 14px;
+    font-family: 'Ubuntu';
+    padding-top: 25px;
+   
+    max-width: 280px;
+    margin-left: 15px;
+}
+.containerQuestionAbout {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.containerAbout{
+    margin-left: 20px;
+    border: 6px solid #FFBF69;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.containerQuestion{
+    margin-left: 20px;
+    border: 6px solid #2EC4B6;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.btn {
+    color:  black!important;
+    background-color: #FFBF69!important;
+   border: 1px solid #FFBF69!important;
+}
+
+a  {
+    text-decoration: none;
+}
+

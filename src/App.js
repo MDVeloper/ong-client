@@ -40,11 +40,7 @@ function App() {
         <Route exact path="/proyectos/:id" component={ProjectDetail} />
         <Route exact path="/noticias" component={News} />
         <Route exact path="/noticias/:id" component={NewsDetail} />
-        <Route
-          exact
-          path="/terminosYCondiciones"
-          component={TermsAndConditions}
-        />
+        <Route exact path="/terminosYCondiciones" component={TermsAndConditions} />
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
         <PrivateRoute exact path="/backoffice/form" component={Formulario} />
@@ -53,6 +49,7 @@ function App() {
       <Footer />
     </Router>
   );
+
 }
 
 export default App;

@@ -28,7 +28,7 @@ export function startSesion(value) {
       }, 3000);
     }
   };
-}
+}}
 
 
 export function statusUser() {

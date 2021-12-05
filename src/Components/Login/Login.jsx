@@ -25,6 +25,7 @@ const validation = (value) => {
 };
 
 
+
 export default function Login() {
   const userOn = useSelector((state) => state.login.active);
   const error = useSelector((state) => state.login.error);
@@ -50,7 +51,9 @@ console.log(userOn)
     signInWithPopup(auth, provider)
       .then((res) => {
         console.log(res)
+
         history.push("/users")
+
       })
   }
 
@@ -105,9 +108,11 @@ console.log(userOn)
           )}
         </Formik>
         <button onClick={() => signInWithGoogle()}>Google</button>
+
         <Link to='/register'>
           Create user
         </Link>
+
       </div>
     )
   );

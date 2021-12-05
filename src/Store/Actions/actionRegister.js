@@ -1,4 +1,4 @@
-import axios from "axios";
+// import axios from "axios";
 
 
 export function loginRegister(values){
@@ -9,7 +9,9 @@ export function loginRegister(values){
             // Habilitar linea cuando se pueda conectar con la base de datos 
             // y pasarle la respuesta al payload para que se genere un estado con la 
             // respúesta del back end
+
             const registerResponse = await axios.post(`http://localhost:3001/users/register`,values)
+
 
             dispatch({
                 type : "SUCCESSFUL_REGISTER",

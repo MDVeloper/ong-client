@@ -37,9 +37,11 @@ export default function Home() {
 
         </div>
       </section>
+
       <div className={s.carouselContainer}>
         <Carousel/>
       </div>
+
 
       <section className={s.wrapperVolunteerDonation}>
         <div className={s.containerVolunteer}>

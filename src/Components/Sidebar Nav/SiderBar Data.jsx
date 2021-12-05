@@ -1,7 +1,3 @@
-import React from 'react'
-import { icons } from 'react-icons'
-
-
 export const SidebarData = [
     {
         title:"Ver mis donaciones",

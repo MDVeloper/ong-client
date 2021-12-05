@@ -6,6 +6,7 @@ import loginReducer from './Reducers/loginReducers'
 import projectReducer from './Reducers/getProjectsReducers'
 import newsReducer from "./Reducers/getNewsReducers"
 import articlesReducers from './Reducers/articlesReducers';
+import donationsReducers from './Reducers/donationsReducers';
 
 
 const rootReducer = combineReducers({
@@ -14,10 +15,11 @@ const rootReducer = combineReducers({
     project: projectReducer,
     new: newsReducer,
     articles: articlesReducers,
+    donations: donationsReducers
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))    
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 export default store;

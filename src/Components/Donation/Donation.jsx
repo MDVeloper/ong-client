@@ -87,7 +87,7 @@ function Donation() {
             </button>
 
             <input type='number' placeholder="Digita aqui tu ayuda" onChange={handleDonationInput} value={donationAmount} />
-            <PayPalButton className={styles.pepe}
+            <PayPalButton
               amount={donationAmount}
               // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
               onSuccess={(details, data) => {

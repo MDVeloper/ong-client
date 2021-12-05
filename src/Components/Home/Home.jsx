@@ -5,6 +5,8 @@ import Fab from '@mui/material/Fab';
 import NavigationIcon from '@mui/icons-material/Navigation';
 import Carousel from "../Carrusel/Carousel"
 import s from './Home.module.css'
+import Statistics from "../Statistics/Statistics";
+
 
 export default function Home() {
   return (
@@ -32,15 +34,13 @@ export default function Home() {
               Ser Voluntario
             </Button>
           </Link>
-        </div>
-       
-      </section>
-      
-      ACA VAN A IR LAS ESTADISTICAS
 
-      
-      <Carousel/>
-      
+        </div>
+      </section>
+
+      <div className={s.carouselContainer}>
+        <Carousel/>
+      </div>
 
 
       <section className={s.wrapperVolunteerDonation}>
@@ -63,6 +63,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Statistics />
+
       <section className={s.containerQuestionAbout}>
        <div>
           <Link to="/aboutUs">

@@ -16,7 +16,7 @@ export const getCategories = (query) => {
       })
       .catch((error) => console.log(error));
   };
-};
+}
 
 const postArticleSucces = (data) => {
   return {

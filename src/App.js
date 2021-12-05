@@ -8,6 +8,7 @@ import Register from "./Components/Register/register";
 import TermsAndConditions from "./Components/Terms and Conditions/termsAndConditions.jsx";
 import AboutUs from "./Components/AboutUs/AboutUs";
 import Footer from "./Components/Footer/Footer";
+import Userpanel from "./Components/User Panel/Userpanel.jsx";
 import ErrorComponent from "./Components/Error/ErrorComponent";
 import Donation from "./Components/Donation/Donation";
 import Formulario from "./Components/Formulario/Formulario";
@@ -21,6 +22,11 @@ import Users from "./Components/Users/Users.jsx";
 import PrivateRoute from "./Store/PrivateRoute";
 
 function App() {
+
+ 
+   
+
+
   let dispatch = useDispatch();
 
   useEffect(() => {
@@ -43,12 +49,14 @@ function App() {
         <Route exact path="/terminosYCondiciones" component={TermsAndConditions} />
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
+        <Route exact path="/profile" component={Userpanel} />
         <PrivateRoute exact path="/backoffice/form" component={Formulario} />
         <PrivateRoute exact path="/users" component={Users} />
       </Switch>
       <Footer />
     </Router>
   );
+
 
 }
 

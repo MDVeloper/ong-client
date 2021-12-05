@@ -12,6 +12,7 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import axios from "axios";
 
+
 function Donation() {
   const [donationAmount, setDonationAmount] = useState(1);
 
@@ -111,9 +112,9 @@ function Donation() {
           </div>
         </div>
       </div>
-      <div>
-        <Carousel />
-      </div>
+
+      <Carousel />
+ 
       <div className={styles.box_preguntasFrecuentes}>
         <div className={styles.box_preguntasFrecuentes_container}>
           <h2>Preguntas Frecuentes</h2>

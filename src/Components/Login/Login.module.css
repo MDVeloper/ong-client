@@ -6,11 +6,11 @@ html {
 
 
 
-    /* Container register */
-.registerContainer {
+    /* Container from login */
+.containerFromLogin {
     display: flex;
     flex-direction: column;
-
+    
     align-items: center;
 
     width: 100%;
@@ -20,7 +20,8 @@ html {
     background-size: cover;
     background-position: 0;
     background-repeat: no-repeat;
-}
+    
+}   
 
 /* Black effect from image */
 .effectBack {
@@ -31,21 +32,21 @@ html {
     align-items: center;
 
     background-color: rgba(0, 0, 0, 0.185);
-}
+} 
 
 
 
-    /* Container from  register form */
-.containerFormRegister {
+    /* Container form and form items*/
+.containerFromFormAndFormItems {
     display: flex;
     flex-direction: column;
 
     align-items: center;
     justify-content: center;
-
-    width: 40rem;
-    height: 80%;
-    margin: 3rem auto 3rem auto;
+    
+    width: 30rem;
+    height: auto;
+    margin: 4rem auto 4rem auto;
     border-radius: 1rem;
 
     background-color: rgba(0, 0, 0, 0.45);
@@ -53,15 +54,8 @@ html {
 
 
 
-    /* formColumnGrid */
-.formColumnGrid {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    padding: 1rem 3rem 1rem 3rem ;
-}
-
-/* Title from register */
-.titleFromRegister {
+/* Title login */
+.titleLogin {
     color: #fff;
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -69,7 +63,7 @@ html {
 
 
 
-    /* Container from Label and Field */
+    /* Container Label, inputs and error component */
 .containersLabelField {
     display: flex;
     flex-direction: column;
@@ -78,6 +72,7 @@ html {
 
     color: #fff;
 }
+
 
 /* Inputs */
 .containersLabelField input {
@@ -93,61 +88,37 @@ input:-webkit-autofill:active {
 }
 
 
-
-    /* Container from checkBox */
-.containerFromCheckBox{
-    display: flex;
-    justify-content: center;
-    margin: 0 1rem 1rem 1rem;
-}
-
-/* Div from label and field checkBox */
-.containerLabelFieldCheckBox{
-    color: #fff;
-    margin: 0 1rem;
-}
-
-/* CheckBox form */
-.containerLabelFieldCheckBox label{
-    position: relative;
-    bottom: 0.1rem;
+/* Errors login */
+.errors {
+    color: red;
+    font-size:.85rem; 
 }
 
 
 
-    /* Container form terms and conditions */
-.containersLabelFieldTermsAndConditions {
-    color: #fff;
-    text-align: center;
-    
-    margin: 0 1rem 2rem 1rem;
-}
-
-
-
-    /* Container from button send */
-.containerButtonSended {
+    /* Container button send */
+.containerButtonSend {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 1rem;
+    margin: 2rem 0;
 }
 
-/* Button send register */
-.containerButtonSended .buttonSendRegister {
-    
+/* Button send login */
+.containerButtonSend .buttonSendRegister {
     border: none;
     border-radius: 1rem;
-    padding: .5rem 7rem;
+    padding: .5rem 9rem;
 
     cursor: pointer;
 
     background-color: #2EC4B6;
 }
 
-.containerButtonSended .buttonSendRegister:hover {
+.containerButtonSend .buttonSendRegister:hover {
     background-color: #2EC4B6;
 }
+
 
 
     /* Container from icon google */
@@ -159,7 +130,7 @@ input:-webkit-autofill:active {
 
     border: none;
     border-radius: 1rem;
-    padding: 0.266rem 3.928rem;
+    padding: 0.266rem 4.272rem;
     cursor: pointer;
 }
 
@@ -167,7 +138,8 @@ input:-webkit-autofill:active {
     padding-left: 3rem;
     font-size: 1rem;
 }
-    
+
+
 
 @media screen and (max-width: 700px) {
     html{
@@ -181,28 +153,15 @@ input:-webkit-autofill:active {
     html{
         font-size: 12px;
     }
-    
-    /* formColumnGrid */
-    .formColumnGrid {
-        display: flex;
-        flex-direction: column;
-        padding: 3rem;
-    }
 
-    /* Container from  register form */
-    .containerFormRegister {
-        display: flex;
-        flex-direction: column;
-    
-        align-items: center;
-        justify-content: center;
-    
-        width: 23rem;
-        height: 80%;
-        margin: 2rem auto 2rem auto;
+
+        /* Container form and form items*/
+    .containerFromFormAndFormItems {     
+        width: 25rem;
+        height: auto;
+        margin: 3rem auto 3rem auto;
         border-radius: 1rem;
-    
+
         background-color: rgba(0, 0, 0, 0.45);
     }
-
 }

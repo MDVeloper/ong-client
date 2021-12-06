@@ -32,7 +32,7 @@ export default function Userpanel(props) {
             </div>
 
             <VerticalTabs/>
-
+            
             
 
         

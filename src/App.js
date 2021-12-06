@@ -48,10 +48,10 @@ function App() {
         <Route exact path="/terminosYCondiciones" component={TermsAndConditions} />
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
-        <Route exact path="/profile" component={Userpanel} />
+        {/* <Route exact path="/profile" component={Userpanel} /> */}
         <Route path='/mp' component={MercadoPagoForm} />
         <PrivateRoute exact path="/backoffice/form" component={Formulario} />
-        {/* <PrivateRoute exact path="/users" component={Users} /> */}
+        <PrivateRoute exact path="/users" component={Userpanel} />
       </Switch>
       <Footer />
     </Router>

@@ -7,7 +7,8 @@ export const setAmountMP = (amount) => {
     };
   };
 
- const getAllTransactionsSuccess = (data) => {
+
+  const getAllTransactionsSuccess = (data) => {
     return {
       type: "GET_TRANSACTIONS",
       payload: data,
@@ -25,3 +26,4 @@ export const getAllTransactions = (dispatch) => {
         .catch((error) => console.log(error));
     };
   }
+

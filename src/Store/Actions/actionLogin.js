@@ -12,8 +12,10 @@ export function startSesion(value) {
         
         console.log(res)
       sessionStorage.setItem("token", JSON.stringify(res.data.token));
+  
       return dispatch({
         type: "USER_VALIDATE",
+        payload: true
       });
     } catch (e) {
       if (!e) return;
@@ -21,11 +23,11 @@ export function startSesion(value) {
         type: "USER_INVALID",
         payload: e.response.data,
       });
-      setTimeout(() => {
-        dispatch({
-          type: "CLOSE_SESION",
-        });
-      }, 3000);
+      // setTimeout(() => {
+      //   dispatch({
+      //     type: "CLOSE_SESION",
+      //   });
+      // }, 3000);
     }
   };
 }
@@ -33,7 +35,7 @@ export function startSesion(value) {
 
 export function statusUser() {
   return function (dispatch) {
-    if (localStorage.getItem("token")) {
+    if (sessionStorage.getItem("token")) {
       dispatch({
         type: "USER_VALIDATE",
       });
@@ -46,7 +48,7 @@ export function statusUser() {
 }
 
 export const closeSesion = () => (dispatch) => {
-  localStorage.removeItem("token");
+  sessionStorage.removeItem("token");
   dispatch({
     type: "CLOSE_SESION",
   });

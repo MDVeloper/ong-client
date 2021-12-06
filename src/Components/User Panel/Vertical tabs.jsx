@@ -12,14 +12,13 @@ import style from "./UserPanel.module.css";
 
 const theme = createTheme({
   MuiTabs: {
-    
+
   }
 })
 
-
-
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+
 
   return (
     <div
@@ -58,6 +57,11 @@ export default function VerticalTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+  const allTransactions = useSelector((state) => state.donations.allTransactions);
+
+  useEffect(() => {
+    dispatch(getAllTransactions());
+  }, [dispatch]);
 
 const allTransactions = useSelector((state) => state.donations.allTransactions);
 
@@ -67,7 +71,7 @@ const allTransactions = useSelector((state) => state.donations.allTransactions);
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500}}
+      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500 }}
     >
       <Tabs
         orientation="vertical"
@@ -75,7 +79,7 @@ const allTransactions = useSelector((state) => state.donations.allTransactions);
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider'}}
+        sx={{ borderRight: 1, borderColor: 'divider' }}
       >
         <Tab label="Donaciones" {...a11yProps(0)} />
         <Tab label="Proyectos" {...a11yProps(1)} />

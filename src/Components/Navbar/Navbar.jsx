@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 import logo from "./LOGO.png";
 import styles from "./Navbar.module.css";
 import { useSelector } from "react-redux";
-import Siderbar  from "../Sidebar Nav/Siderbar";
+
 
 export default function Navbar(){
 
-    const active = useSelector(state => state.active)
-
-
+    const active = useSelector(state => state.login.active)
+    console.log(active)
     return(
         <div className={styles.space}>
             
-            <Siderbar/>
+
             <nav>
                 <ul className={styles.navbar}>
                     <li>
@@ -31,7 +30,7 @@ export default function Navbar(){
                         <Link to="/login">Log In/Register</Link>
                     </li> : 
                     <li>
-                        <Link to="/profile">Mi Perfil</Link>
+                        <Link to="/users">Mi Perfil</Link>
                     </li>
 
                     }

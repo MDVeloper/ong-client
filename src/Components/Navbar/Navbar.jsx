@@ -30,7 +30,7 @@ export default function Navbar(){
                         <Link to="/login">Log In/Register</Link>
                     </li> : 
                     <li>
-                        <Link to="/profile">Mi Perfil</Link>
+                        <Link to="/users">Mi Perfil</Link>
                     </li>
 
                     }

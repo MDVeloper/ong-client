@@ -127,16 +127,8 @@ export default function Login() {
               )}
             </Formik>
 
-
-
-
           </div>
         </div>
-
-        <Link to='/register'>
-          Create user
-        </Link>
-
       </div>
     )
   );

@@ -19,7 +19,7 @@ import { getProject } from "./Store/Actions/actionGetProjects";
 import News from "./Components/News/News";
 import NewsDetail from "./Components/News/NewsDetail/NewsDetail";
 import { getNews } from "./Store/Actions/actionGetNews";
-import Users from "./Components/Users/Users.jsx";
+// import Users from "./Components/Users/Users.jsx";
 import PrivateRoute from "./Store/PrivateRoute";
 
 function App() {
@@ -48,10 +48,10 @@ function App() {
         <Route exact path="/terminosYCondiciones" component={TermsAndConditions} />
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
-        <Route exact path="/profile" component={Userpanel} />
+        {/* <Route exact path="/profile" component={Userpanel} /> */}
         <Route path='/mp' component={MercadoPagoForm} />
         <PrivateRoute exact path="/backoffice/form" component={Formulario} />
-        <PrivateRoute exact path="/users" component={Users} />
+        <PrivateRoute exact path="/users" component={Userpanel} />
       </Switch>
       <Footer />
     </Router>

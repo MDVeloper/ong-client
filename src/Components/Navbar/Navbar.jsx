@@ -7,9 +7,8 @@ import { useSelector } from "react-redux";
 
 export default function Navbar(){
 
-    const active = useSelector(state => state.active)
-
-
+    const active = useSelector(state => state.login.active)
+    console.log(active)
     return(
         <div className={styles.space}>
             
@@ -31,7 +30,7 @@ export default function Navbar(){
                         <Link to="/login">Log In/Register</Link>
                     </li> : 
                     <li>
-                        <Link to="/profile">Mi Perfil</Link>
+                        <Link to="/users">Mi Perfil</Link>
                     </li>
 
                     }

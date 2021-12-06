@@ -83,9 +83,9 @@ function Donation() {
               vulnerabilidad en todo el país
             </Typography>
 
-            <button onClick={() => alert("PRESIONADO XD")}>
+            {/* <button onClick={() => alert("PRESIONADO XD")}>
               <Typography variant="h5">Donar</Typography>
-            </button>
+            </button> */}
 
             <input type='number' placeholder="Digita aqui tu ayuda" onChange={handleDonationInput} value={donationAmount} />
             <PayPalButton
@@ -96,7 +96,7 @@ function Donation() {
                 console.log(details, data)
 
                 // OPTIONAL: Call your server to save the transaction
-                return axios.post("http://localhost:3001/donations", {
+                return axios.post("/donations", {
                   amount: donationAmount,
                   date: details.create_time,
                   estatus: details.status,

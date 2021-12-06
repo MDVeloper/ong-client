@@ -56,18 +56,18 @@ export default function Login() {
 
       })
   }
-
+  console.log("AAA", userOn)
   return (
     !userOn && (
       // Contenedor principal de todo el componente
-      <div className={Styles.containerFromLogin}> 
+      <div className={Styles.containerFromLogin}>
         {/* Segundo contenedor para darle el efecto negro transparente */}
         <div className={Styles.effectBack}>
           {/* Tercer contenedor para el formulario y los elementos de este mas efecto negro */}
           <div className={Styles.containerFromFormAndFormItems}>
 
             <h1 className={Styles.titleLogin}>Ingresa a tu cuenta</h1>
-            
+
             <Formik
               initialValues={{ email: "", password: "" }}
               validate={validation}
@@ -76,60 +76,60 @@ export default function Login() {
               {({ isSubmitting, isValid }) => (
                 <Form>
 
-                    <div className={Styles.containersLabelField}>
-                      <label>Email</label>
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Ingrese su correo electronico"
-                      />
-                      <ErrorMessage
-                        name="email"
-                        component="div"
-                        className={Styles.errors} 
-                      />
-                    </div>
+                  <div className={Styles.containersLabelField}>
+                    <label>Email</label>
+                    <Field
+                      type="email"
+                      name="email"
+                      placeholder="Ingrese su correo electronico"
+                    />
+                    <ErrorMessage
+                      name="email"
+                      component="div"
+                      className={Styles.errors}
+                    />
+                  </div>
 
-                    <div className={Styles.containersLabelField}>
-                      <label>Password</label>
-                      <Input
-                        type="password"
-                        name="password"
-                        placeholder="Ingrese su contraseña"
-                      />
-                      <ErrorMessage
-                        name="password"
-                        component="div"
-                        className={Styles.errors}
-                      />
-                    </div>
+                  <div className={Styles.containersLabelField}>
+                    <label>Password</label>
+                    <Field
+                      type="password"
+                      name="password"
+                      placeholder="Ingrese su contraseña"
+                    />
+                    <ErrorMessage
+                      name="password"
+                      component="div"
+                      className={Styles.errors}
+                    />
+                  </div>
 
-                    <div className={Styles.containerButtonSend}>
+                  <div className={Styles.containerButtonSend}>
 
-                      <Button variant="contained" type="submit" className={Styles.buttonSendRegister}>
-                        Ingresar
-                      </Button>
+                    <Button variant="contained" type="submit" className={Styles.buttonSendRegister}>
+                      Ingresar
+                    </Button>
 
-                      <p style={{color:"#fff", margin:"1rem 0"}}> o </p>
+                    <p style={{ color: "#fff", margin: "1rem 0" }}> o </p>
 
 
-                      <button className={Styles.containerIcon} onClick={() => signInWithGoogle()}>
-                        <FcGoogle style={{fontSize:"2rem"}}/>
-                        <p>Ingresar con google</p>
-                      </button>
-            
-                      
-                        <p style={{color:"#fff", marginTop:"1rem"}}>Si todavia no tenes tu cuenta puedes<Link  style={{color:"#2EC4B6"}}  to="/register"> <b>registrarte aqui</b> </Link> </p>
-                      
+                    <button className={Styles.containerIcon} onClick={() => signInWithGoogle()}>
+                      <FcGoogle style={{ fontSize: "2rem" }} />
+                      <p>Ingresar con google</p>
+                    </button>
 
-                    </div>
+
+                    <p style={{ color: "#fff", marginTop: "1rem" }}>Si todavia no tenes tu cuenta puedes<Link style={{ color: "#2EC4B6" }} to="/register"> <b>registrarte aqui</b> </Link> </p>
+
+
+                  </div>
                 </Form>
               )}
             </Formik>
 
 
 
-            
+
           </div>
         </div>
 

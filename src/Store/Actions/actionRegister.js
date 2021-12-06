@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 
 
 export function loginRegister(values){
@@ -10,8 +10,7 @@ export function loginRegister(values){
             // y pasarle la respuesta al payload para que se genere un estado con la 
             // respúesta del back end
 
-            const registerResponse = await axios.post(`http://localhost:3001/users/register`,values)
-
+            const registerResponse = await axios.post(`/users/register`,values)
 
             dispatch({
                 type : "SUCCESSFUL_REGISTER",

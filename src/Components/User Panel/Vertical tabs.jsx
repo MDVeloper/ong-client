@@ -57,7 +57,7 @@ export default function VerticalTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const allTransactions = useSelector((state) => state.donations.allTransactions);
+  const allTransactionsss = useSelector((state) => state.donations.allTransactions);
 
   useEffect(() => {
     dispatch(getAllTransactions());
@@ -88,7 +88,7 @@ const allTransactions = useSelector((state) => state.donations.allTransactions);
       </Tabs>
       <TabPanel value={value} index={0}>
         Información de las donaciones
-        {allTransactions && allTransactions.map(t => {
+        {allTransactionsss && allTransactionsss.map(t => {
           return (
             <div className={style.transactionDiv}>
               <h6>{t.id}</h6>

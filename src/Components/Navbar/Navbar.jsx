@@ -7,9 +7,8 @@ import { useSelector } from "react-redux";
 
 export default function Navbar(){
 
-    const active = useSelector(state => state.active)
-
-
+    const active = useSelector(state => state.login.active)
+    console.log(active)
     return(
         <div className={styles.space}>
             

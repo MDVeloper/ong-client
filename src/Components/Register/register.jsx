@@ -103,7 +103,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="name">Nombre</label>
-                  <Input variant="contained"  placeholder="Ingrese su nombre" type="text" name="name" id="name" />
+                  <Field variant="contained"  placeholder="Ingrese su nombre" type="text" name="name" id="name" />
                   <ErrorMessage
                     name="name"
                     component={() => (
@@ -114,7 +114,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="lastName">Apellido</label>
-                  <Input placeholder="Ingrese su apellido" type="text" id="lastName" name="lastName" />
+                  <Field placeholder="Ingrese su apellido" type="text" id="lastName" name="lastName" />
                   <ErrorMessage
                     name="lastName"
                     component={() => (
@@ -125,7 +125,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="password">Contraseña</label>
-                  <Input placeholder="Ingrese su contraseña" type="password" id="password" name="password" />
+                  <Field placeholder="Ingrese su contraseña" type="password" id="password" name="password" />
                   <ErrorMessage
                     name="password"
                     component={() => (
@@ -136,7 +136,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="repeatPassword">Repetir contraseña</label>
-                  <Input
+                  <Field
                     placeholder="Repita su contraseña" 
                     type="password"
                     id="repeatPassword"
@@ -153,7 +153,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="email">Email</label>
-                  <Input placeholder="Ingrese su correo electronico"  type="text" id="email" name="email" />
+                  <Field placeholder="Ingrese su correo electronico"  type="text" id="email" name="email" />
                   <ErrorMessage
                     name="email"
                     component={() => (
@@ -164,7 +164,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="">Pais</label>
-                  <Input placeholder="Ingrese su pais"  type="text" id="country" name="country" />
+                  <Field placeholder="Ingrese su pais"  type="text" id="country" name="country" />
                   <ErrorMessage
                     name="country"
                     component={() => (
@@ -175,7 +175,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="state">Provincia</label>
-                  <Input placeholder="Ingrese su provincia" type="text" id="state" name="state" />
+                  <Field placeholder="Ingrese su provincia" type="text" id="state" name="state" />
                   <ErrorMessage
                     name="state"
                     component={() => (
@@ -186,7 +186,7 @@ export default function Register() {
 
                 <div className={Styles.containersLabelField}>
                   <label htmlFor="birthday">Fecha de nacimiento</label>
-                  <Input type="date" id="birthday" name="birthday" />
+                  <Field type="date" id="birthday" name="birthday" />
                   <ErrorMessage
                     name="birthday"
                     component={() => (

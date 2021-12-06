@@ -6,3 +6,22 @@ export const setAmountMP = (amount) => {
       payload: amount,
     };
   };
+
+ const getAllTransactionsSuccess = (data) => {
+    return {
+      type: "GET_TRANSACTIONS",
+      payload: data,
+    };
+  };
+
+export const getAllTransactions = (dispatch) => {
+    return (dispatch) => {
+      axios
+        .get(`/donations`)
+        .then((response) => {
+          console.log(response.data)
+          dispatch(getAllTransactionsSuccess(response.data));
+        })
+        .catch((error) => console.log(error));
+    };
+  }

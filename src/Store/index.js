@@ -1,5 +1,6 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import { loadState, saveState} from './tokensave.js'
 
 
 import loginReducer from './Reducers/loginReducers'
@@ -8,6 +9,7 @@ import newsReducer from "./Reducers/getNewsReducers"
 import articlesReducers from './Reducers/articlesReducers';
 import donationsReducers from './Reducers/donationsReducers';
 
+const initialData = loadState()
 
 const rootReducer = combineReducers({
     // aca van los reducers
@@ -20,6 +22,9 @@ const rootReducer = combineReducers({
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
+const store = createStore(rootReducer,initialData, composeEnhancers(applyMiddleware(thunk)))
 
+store.subscribe ( function () {
+    saveState(store.getState())
+})
 export default store;

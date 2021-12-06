@@ -37,20 +37,6 @@ const thumb = {
   boxSizing: 'border-box',
 };
 
-// function validate(form){
-//   let error ={};
-//   if(!form.name){
-//       error.name = "name is required";
-//   } else if (!form.img){
-//       error.img = "description is required";
-//   } else if (!form.description){
-//       error.description = "released is required";
-//   } else if (!form.category){
-//       error.category = "description is required";
-//   }
-//   return error;
-// }
-
 export default function Formulario() {
   let { id } = useParams()
   console.log(useParams())
@@ -69,34 +55,7 @@ export default function Formulario() {
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
-  // const [files, setFiles] = useState([]);
-  // const { getRootProps, getInputProps } = useDropzone({
-  //   accept: 'image/png, image/jpg',
-  //   onDrop: (acceptedFiles) => {
-  //     setForm({
-  //       ...form,
-  //       img: acceptedFiles.map((file) =>
-  //         Object.assign(file, {
-  //           preview: URL.createObjectURL(file),
-  //         }),
-  //       ),
-  //     });
-  //     setFiles(
-  //       acceptedFiles.map((file) =>
-  //         Object.assign(file, {
-  //           preview: URL.createObjectURL(file),
-  //         }),
-  //       ),
-  //     );
-  //   },
-  // });
-  // const thumbs = files.map((file) => (
-  //   <div key={file.name} style={thumb}>
-  //     <div className="thumb-inner">
-  //       <img src={file.preview} />
-  //     </div>
-  //   </div>
-  // ));
+
 
   const handleDrop = (acceptedFiles, fileRejections) => {
 
@@ -144,24 +103,6 @@ export default function Formulario() {
         imageValidation();
       }, [fileRejections]);
 
-  // useEffect(
-  //   () => () => {
-  //     // Make sure to revoke the data uris to avoid memory leaks
-  //     files.forEach((file) => URL.revokeObjectURL(file.preview));
-  //   },
-  //   [files],
-  // );
-  // function handleChange(e){
-  //   e.preventDefault()
-  //   setForm({
-  //     ...form,
-  //     [e.target.name]: e.target.value
-  //   })
-  //   setError(validate({
-  //     ...form,
-  //     [e.target.name]: e.target.value
-  //   }))
-  // }
   const descriptionChange = (e, editor) => {
     const data = editor.getData();
 
@@ -178,8 +119,9 @@ export default function Formulario() {
 
   function handleSubmit(e){
     
-    // id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
-    id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
+    console.log(form)
+    id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
+    // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
     alert("enviado satisfactoriamente")
   }
   return (
@@ -263,23 +205,6 @@ export default function Formulario() {
                 name="name"
               />
               <InputLabel id="demo-simple-select-label">Imagen</InputLabel>
-              {/* <section className="form">
-                <div
-                  {...getRootProps({ className: 'dropzone' })}
-                  style={{ margin: '10px auto' }}>
-                  <input
-                    {...getInputProps({
-                      id: 'image',
-                      name: 'image',
-                      display: 'block',
-                    })}
-                  />
-                  <p style={{ textAlign: 'center' }}>
-                    Arrastre y suelte su imagen, o click para seleccionar una.
-                  </p>
-                  <aside className="thumbs-container">{thumbs}</aside>
-                </div>
-              </section> */}
               <Box className="dropzone-container" component="div" {...getRootProps()}>
         <input {...getInputProps()} />
         <p>

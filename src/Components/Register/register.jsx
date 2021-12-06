@@ -195,7 +195,7 @@ export default function Register() {
                     />
                 </div>
                 
-              </div>  
+              </div>
 
                 <div className={Styles.containerFromCheckBox}>
                   <div className={Styles.containerLabelFieldCheckBox}>

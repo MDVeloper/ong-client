@@ -8,20 +8,21 @@ import style from "./UserPanel.module.css";
 import image from "./image-1.png"
 import { useSelector } from 'react-redux'
 import { statusUser } from '../../Store/Actions/actionLogin'
-import axios from 'axios'
-import { ConstructionOutlined } from '@mui/icons-material'
 
 export default function Userpanel({ history }) {
     const usuarioActivo = useSelector((state) => state.login.active);
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
         if (!usuarioActivo) {
             return history.push('/users')
         }
         dispatch(statusUser())
     }, [usuarioActivo])
-
+    
+    if (!localStorage.getItem("token")){
+        history.push('/login')
+    }
 
     return (
         <div>
@@ -41,13 +42,6 @@ export default function Userpanel({ history }) {
             </div>
 
             <VerticalTabs />
-
-
-
-
-
-
-
         </div>
     )
 }

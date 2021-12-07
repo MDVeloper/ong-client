@@ -32,3 +32,16 @@
 }
 
 .div3 { grid-area: 1 / 3 / 3 / 4; }
+
+.transactionDiv{
+    background-color: white;
+    font-size: 15px;
+    width: 400px;
+    height: 20px;
+    margin-bottom: 2px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 3px;
+    color: rgb(47, 47, 47);
+}

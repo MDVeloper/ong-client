@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-
+import { getProject } from "../../Store/Actions/actionGetProjects.js"
+import { useDispatch } from "react-redux";
 import Styles from "./Projects.module.css";
 
 
@@ -10,7 +11,9 @@ import Styles from "./Projects.module.css";
 export default function Projects(props) {
 
   let projects = useSelector((state) => state.project.projects);
+  const dispatch = useDispatch()
 
+  console.log("TOY AQUI",projects)
   // Paginacion
   // Estados de la paginacion
   let [currentPage, setCurrentPage] = useState(1);
@@ -20,6 +23,9 @@ export default function Projects(props) {
   let [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
   let [minPagaNumberLimit, setminPagaNumberLimit] = useState(0);
 
+  useEffect(() => {
+    dispatch(getProject())
+}, [dispatch])
   // manejadores de los eventos de los clicks
   const handleClick = (e) => {
     setCurrentPage(Number(e.target.id));
@@ -87,23 +93,6 @@ export default function Projects(props) {
 
   return (
     <>
-      <div>
-        <p
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            marginLeft: "1rem",
-            marginBottom: "1rem",
-          }}
-        >
-          <Link style={{ marginRight: ".3rem", color: "#62A3F7" }} to="/">
-            Menu principal
-          </Link>
-          {">"} Projectos
-        </p>
-      </div>
-
-
       <div className={Styles.projectsContainer}>
         <h1>Conoce nuestros proyectos</h1>
 
@@ -118,7 +107,7 @@ export default function Projects(props) {
               className={Styles.cardContainer}
               key={project.id}
             >
-              <h2>{project.nameProject}</h2>
+              <h2>{project.title}</h2>
               <h4>{project.description}</h4>
               <Link to={`/proyectos/${project.id}`}>
                 <button>Ver mas...</button>

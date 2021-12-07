@@ -10,13 +10,13 @@ const getCategoriesSucces = (data) => {
 export const getCategories = (query) => {
   return (dispatch) => {
     axios
-      .get(`http://localhost:3001/articles?category=${query}`)
+      .get(`/articles?category=${query}`)
       .then((response) => {
         dispatch(getCategoriesSucces(response.data));
       })
       .catch((error) => console.log(error));
   };
-};
+}
 
 const postArticleSucces = (data) => {
   return {
@@ -28,7 +28,7 @@ const postArticleSucces = (data) => {
 export const postArticle = (body) => {
   return (dispatch) => {
     axios
-      .post("http://localhost:3001/articles/creacion", body)
+      .post("/articles/creacion", body)
       .then((response) => {
         dispatch(postArticleSucces(response));
       })
@@ -45,7 +45,7 @@ const putArticleSucces = (data) => {
 
 export const putArticles = (data) => {
   return (dispatch) => {
-    axios.put(`http://localhost:3001/articles/${data.id}`, data).then((response) => {
+    axios.put(`/articles/${data.id}`, data).then((response) => {
       dispatch(putArticleSucces(response));
     })
     .catch((error) => console.log(error));
@@ -61,7 +61,7 @@ const deleteArticleSucces = (data) => {
 
 export const deleteArticles = (id) => {
   return (dispatch) => {
-    axios.delete("http://localhost:3001/articles/delete", id).then((response) => {
+    axios.delete("/articles/delete", id).then((response) => {
       dispatch(deleteArticleSucces(response));
     })((error) => console.log(error));
   };

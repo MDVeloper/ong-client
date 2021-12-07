@@ -22,8 +22,6 @@ export default function Carousel() {
     autoplaySpeed: 4000
   };
 
-
-  
   return (
     <div className={"container"}>
       {projects.length > 0 && (
@@ -55,12 +53,6 @@ export default function Carousel() {
             </Slider>
 
             <Link to="/proyectos" style={{ color: "#fff" }}>
-              <Button
-                variant="contained"
-                style={{ marginTop: "2rem", background: "#FF9F1C" }}
-              >
-                Ver todos
-              </Button>
             </Link>
           </div>
         </div>

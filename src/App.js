@@ -13,18 +13,15 @@ import ErrorComponent from "./Components/Error/ErrorComponent";
 import Donation from "./Components/Donation/Donation";
 import Formulario from "./Components/Formulario/Formulario";
 import Projects from "./Components/Projects/Projects.jsx";
+import MercadoPagoForm from "./Components/MERCA/MercadoPagoForm.jsx";
 import ProjectDetail from "./Components/Projects/ProjectsDetail/ProjectDetail.jsx";
 import { getProject } from "./Store/Actions/actionGetProjects";
 import News from "./Components/News/News";
 import NewsDetail from "./Components/News/NewsDetail/NewsDetail";
 import { getNews } from "./Store/Actions/actionGetNews";
-import Users from "./Components/Users/Users.jsx";
-import PrivateRoute from "./Store/PrivateRoute";
 
 function App() {
 
- 
-   
 
 
   let dispatch = useDispatch();
@@ -49,9 +46,9 @@ function App() {
         <Route exact path="/terminosYCondiciones" component={TermsAndConditions} />
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
-        <Route exact path="/profile" component={Userpanel} />
-        <PrivateRoute exact path="/backoffice/form" component={Formulario} />
-        <PrivateRoute exact path="/users" component={Users} />
+        <Route path='/mp' component={MercadoPagoForm} />
+        <Route exact path="/backoffice/form" component={Formulario} />
+        <Route exact path="/users" component={Userpanel} />
       </Switch>
       <Footer />
     </Router>

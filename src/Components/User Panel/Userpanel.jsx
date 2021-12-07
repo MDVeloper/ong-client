@@ -8,6 +8,7 @@ import style from "./UserPanel.module.css";
 import image from "./image-1.png"
 import { useSelector } from 'react-redux'
 import { statusUser } from '../../Store/Actions/actionLogin'
+import jwt_decode from "jwt-decode"
 
 export default function Userpanel({ history }) {
     const usuarioActivo = useSelector((state) => state.login.active);
@@ -23,6 +24,10 @@ export default function Userpanel({ history }) {
     if (!localStorage.getItem("token")){
         history.push('/login')
     }
+    
+    // const data = localStorage.getItem("token")
+    // let tokendata = jwt_decode(data)
+    // console.log(tokendata)
 
     return (
         <div>

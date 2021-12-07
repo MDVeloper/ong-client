@@ -19,7 +19,6 @@ export const getAllTransactions = (dispatch) => {
       axios
         .get(`/donations`)
         .then((response) => {
-          console.log(response.data)
           dispatch(getAllTransactionsSuccess(response.data));
         })
         .catch((error) => console.log(error));

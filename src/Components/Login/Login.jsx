@@ -9,7 +9,6 @@ import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase-config";
 import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
-// import ErrorComponent from "../Error/ErrorComponent";
 
 const validation = (value) => {
   const errors = {};
@@ -56,7 +55,7 @@ export default function Login() {
 
       })
   }
-  console.log("AAA", userOn)
+
   return (
     !userOn && (
       // Contenedor principal de todo el componente

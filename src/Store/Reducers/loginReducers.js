@@ -1,3 +1,5 @@
+import { ConstructionOutlined } from "@mui/icons-material";
+
 const dataInitial = {
     active: false,
     error: "",
@@ -12,6 +14,7 @@ export default function loginReducers(state = dataInitial, action){
                 error: action.payload
             };
         case "USER_VALIDATE":
+            console.log("ACTION",action.payload)
             return{
                 ...state,
                 active: action.payload

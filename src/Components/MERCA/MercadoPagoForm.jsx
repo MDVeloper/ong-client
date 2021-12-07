@@ -18,7 +18,7 @@ const INITIAL_STATE = {
     cardholderEmail: "",
     choosenAmount: 0
 };
-console.log("FORMAMOUNT", INITIAL_STATE.choosenAmount)
+
 export default function MercadoPagoForm() {
     const [state, setState] = useState(INITIAL_STATE);
     const resultPayment = useMercadoPago();

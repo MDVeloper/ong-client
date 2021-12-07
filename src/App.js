@@ -22,8 +22,6 @@ import { getNews } from "./Store/Actions/actionGetNews";
 
 function App() {
 
-
-
   let dispatch = useDispatch();
 
   useEffect(() => {

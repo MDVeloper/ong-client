@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const getCategoriesSucces = (data) => {
   return {
     type: "GET_CATEGORIES",

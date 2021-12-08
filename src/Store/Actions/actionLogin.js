@@ -10,8 +10,8 @@ export function startSesion(value) {
           password,
         })
         
-        console.log(res)
-      sessionStorage.setItem("token", JSON.stringify(res.data.token));
+        // console.log(res)
+      localStorage.setItem("token", JSON.stringify(res.data.token));
   
       return dispatch({
         type: "USER_VALIDATE",
@@ -35,7 +35,7 @@ export function startSesion(value) {
 
 export function statusUser() {
   return function (dispatch) {
-    if (sessionStorage.getItem("token")) {
+    if (localStorage.getItem("token")) {
       dispatch({
         type: "USER_VALIDATE",
       });
@@ -47,9 +47,3 @@ export function statusUser() {
   };
 }
 
-export const closeSesion = () => (dispatch) => {
-  sessionStorage.removeItem("token");
-  dispatch({
-    type: "CLOSE_SESION",
-  });
-};

@@ -5,15 +5,17 @@ export function startSesion(value) {
     const { email, password } = value;
     try {
       const res = await axios
-        .post("http://localhost:3001/users/login", {
+        .post("/users/login", {
           email,
           password,
         })
         
-        console.log(res)
-      sessionStorage.setItem("token", JSON.stringify(res.data.token));
+        // console.log(res)
+      localStorage.setItem("token", JSON.stringify(res.data.token));
+  
       return dispatch({
         type: "USER_VALIDATE",
+        payload: true
       });
     } catch (e) {
       if (!e) return;
@@ -21,14 +23,14 @@ export function startSesion(value) {
         type: "USER_INVALID",
         payload: e.response.data,
       });
-      setTimeout(() => {
-        dispatch({
-          type: "CLOSE_SESION",
-        });
-      }, 3000);
+      // setTimeout(() => {
+      //   dispatch({
+      //     type: "CLOSE_SESION",
+      //   });
+      // }, 3000);
     }
   };
-}}
+}
 
 
 export function statusUser() {
@@ -45,9 +47,3 @@ export function statusUser() {
   };
 }
 
-export const closeSesion = () => (dispatch) => {
-  localStorage.removeItem("token");
-  dispatch({
-    type: "CLOSE_SESION",
-  });
-};

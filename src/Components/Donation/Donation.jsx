@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Donation.module.css";
 import Carousel from "../Carrusel/Carousel";
 import { Typography } from "@mui/material";
-
+import { initializeMercadopago } from "../MERCA/mercadopago";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
@@ -16,10 +16,21 @@ import axios from "axios";
 function Donation() {
   const [donationAmount, setDonationAmount] = useState(1);
 
-    const handleDonationInput = function (e) {
-        e.preventDefault();
-        setDonationAmount(e.target.value)
+  const handleDonationInput = function (e) {
+    e.preventDefault();
+    setDonationAmount(e.target.value)
+  };
+
+  const handleMp = async function () {
+    const mp = {
+      description: "Donation For CTL",
+      price: donationAmount,
+      quantity: 1,
     }
+    console.log("ENTRO", mp)
+    let { data } = await axios.post('mp/create_preference', mp);
+    initializeMercadopago(data.id)
+  }
 
   const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -105,16 +116,17 @@ function Donation() {
               }}
               options={{
                 clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
-                disableFunding:'credit,card'
+                disableFunding: 'credit,card'
               }}
             />
+            <button onClick={() => handleMp()}>MERCADOPAGO</button>
 
           </div>
         </div>
       </div>
 
       <Carousel />
- 
+
       <div className={styles.box_preguntasFrecuentes}>
         <div className={styles.box_preguntasFrecuentes_container}>
           <h2>Preguntas Frecuentes</h2>

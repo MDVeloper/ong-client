@@ -9,6 +9,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllTransactions } from '../../Store/Actions/actionDonations';
 import { useEffect } from 'react';
 import style from "./UserPanel.module.css";
+import jwt_decode from "jwt-decode";
+import axios from "axios";
+import { useState } from 'react';
 
 const theme = createTheme({
   MuiTabs: {
@@ -50,10 +53,29 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs({ history }) {
   const [value, setValue] = React.useState(0);
   const dispatch = useDispatch()
+  const [userinfo, setuserinfo] = useState("")
+  const [userid, setuserid] = useState("")
 
+  if (!localStorage.getItem("token")){
+      history.push('/login')
+  }
+  
+  if (localStorage.getItem("token") && userid === ""){
+      const data = localStorage.getItem("token")
+      setuserid(jwt_decode(data))
+  };
+
+  const actinfo = () => {
+      axios.get(`/users/detail?id=${userid.id}`)
+      .then(response => setuserinfo(response.data))
+  }
+
+  if (userinfo === "" && userid.id){
+      actinfo()
+  }
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -82,7 +104,7 @@ export default function VerticalTabs() {
       </Tabs>
       <TabPanel value={value} index={0}>
         Información de las donaciones
-        {allTransactionsss && allTransactionsss.map(t => {
+        {userinfo.donations && userinfo.donations.map(t => {
           return (
             <div className={style.transactionDiv}>
               <h6>{t.id}</h6>

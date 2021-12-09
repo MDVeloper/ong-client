@@ -13,7 +13,6 @@ import ErrorComponent from "./Components/Error/ErrorComponent";
 import Donation from "./Components/Donation/Donation";
 import Formulario from "./Components/Formulario/Formulario";
 import Projects from "./Components/Projects/Projects.jsx";
-import MercadoPagoForm from "./Components/MERCA/MercadoPagoForm.jsx";
 import ProjectDetail from "./Components/Projects/ProjectsDetail/ProjectDetail.jsx";
 import { getProject } from "./Store/Actions/actionGetProjects";
 import News from "./Components/News/News";
@@ -44,7 +43,6 @@ function App() {
         <Route exact path="/terminosYCondiciones" component={TermsAndConditions} />
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
-        <Route path='/mp' component={MercadoPagoForm} />
         <Route exact path="/backoffice/form" component={Formulario} />
         <Route exact path="/users" component={Userpanel} />
       </Switch>

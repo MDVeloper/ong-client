@@ -36,8 +36,6 @@ export default function loginReducers(state = dataInitial, action){
                 ...state,
                 error: action.payload
             }
-            
-        
         default:
             return state;
     }

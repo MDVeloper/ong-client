@@ -7,9 +7,6 @@ import Styles from "./Login.module.css"
 import { FcGoogle } from "react-icons/fc";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
-import { auth } from "../../firebase-config";
-import { signInWithPopup, GoogleAuthProvider } from "@firebase/auth";
-// import ErrorComponent from "../Error/ErrorComponent";
 
 const validation = (value) => {
   const errors = {};
@@ -46,17 +43,7 @@ export default function Login() {
     dispatch(history.push('/users'))
   };
 
-  const signInWithGoogle = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider)
-      .then((res) => {
-        console.log(res)
 
-        history.push("/users")
-
-      })
-  }
-  console.log("AAA", userOn)
   return (
     !userOn && (
       // Contenedor principal de todo el componente
@@ -113,7 +100,7 @@ export default function Login() {
                     <p style={{ color: "#fff", margin: "1rem 0" }}> o </p>
 
 
-                    <button className={Styles.containerIcon} onClick={() => signInWithGoogle()}>
+                    <button className={Styles.containerIcon} >
                       <FcGoogle style={{ fontSize: "2rem" }} />
                       <p>Ingresar con google</p>
                     </button>

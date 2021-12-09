@@ -33,7 +33,7 @@ export default function Navbar() {
                             localStorage.removeItem("token");
                             window.location.href = "/"
                         }}>
-                            SingOFF
+                         Log Out
                         </div>
                     </li> : null}
 

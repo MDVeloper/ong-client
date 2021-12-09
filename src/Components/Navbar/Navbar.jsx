@@ -8,6 +8,10 @@ export default function Navbar() {
         <div className={styles.space}>
 
 
+            <Link to="/"><img src={logo} alt=" " /></Link>
+            <Link to="/donaciones">
+                <button className={styles.button}>Donar</button>
+            </Link>
             <nav>
                 <ul className={styles.navbar}>
                     <li>
@@ -36,10 +40,6 @@ export default function Navbar() {
 
                 </ul>
             </nav>
-            <Link to="/donaciones">
-                <button className={styles.button}>Donar</button>
-            </Link>
-            <Link to="/"><img src={logo} alt=" " /></Link>
         </div>
     )
 }

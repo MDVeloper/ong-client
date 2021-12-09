@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap');
+@font-face {
+  font-family: 'Code Text';
+  src: url(./transfonter.org-20211208-033256/);
+}
 
 
 body {

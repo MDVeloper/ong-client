@@ -1,8 +1,12 @@
 .space {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: 5vw;
+    margin-right: 2vw;
     align-items: center;
+    padding-right: 4vw;
 }
 
 .navbar{
@@ -35,5 +39,12 @@
     border: none;
     color: white;
     font-size: 35px;
+    font-family: 'Code Next';
+    font-weight: bold;
+    cursor: pointer;
 
+}
+
+.button:hover{
+    background: linear-gradient(106.11deg, #2EC4B6 5%, #FFBF69 100%);
 }

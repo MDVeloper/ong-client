@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -12,7 +13,7 @@ export default function News(props) {
   // Paginacion
   // Estados de la paginacion
   let [currentPage, setCurrentPage] = useState(1);
-  let [itemForPage, setItemForPage] = useState(1);
+  let [itemForPage, setItemForPage] = useState(6);
 
   let [pageNumberLimit, setpageNumberLimit] = useState(5);
   let [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
@@ -83,8 +84,9 @@ export default function News(props) {
     pagesIncrementBtn = <li onClick={handleClickNext}>&hellip;</li>;
   }
 
+
   return (
-    <>
+    <div className={Styles.container}>
       <div>
         <p
           style={{
@@ -103,32 +105,45 @@ export default function News(props) {
 
 
       <div className={Styles.newsContainer}>
+
         <h1>Noticias</h1>
 
         <h3>
           Enterate sobre los ultimos temas de interes sobre la ONG
         </h3>
 
-        {currentItems.length > 0 ? (
-          currentItems.map((news) => (
-            <div
-              style={{ backgroundImage: `url(${news.img})` }}
-              className={Styles.cardContainer}
-              key={news.id}
-            >
-              <h2>{news.nameNews}</h2>
-              <h4>{news.description}</h4>
-              <Link to={`/news/${news.id}`}>
-                <button>Ver mas...</button>
-              </Link>
-            </div>
-          ))
-        ) : (
-          <h2>No hay noticias</h2>
-        )}
+        <div className={Styles.cardsNewsContainer}>
+          {currentItems.length > 0 ? (
+            currentItems.map((news) => (
+              <div
+                className={Styles.cardContainer}
+                key={news.id}
+              >
+                <div className={Styles.containerImg}>
+                  <img className={Styles.imgFromCard}  src={news.img} alt="" />
+                </div>
+
+                <div className={Styles.containerTitleDescriptionFromNew}>
+                  <h2>{news.title}</h2>
+
+                  <h4 >{news.description.substr(0,200)}...</h4>
+                </div>
+
+                <div className={Styles.viewMoreButton}>
+                  <Link  to={`/noticias/${news.id}`}>
+                    <Button  variant="outlined" style={{ color: "#2EC4B6", borderColor:"#2EC4B6", margin:".2rem .5rem 0 .5rem", fontSize:".8rem"}}>Ver mas...</Button>
+                  </Link>
+                </div>
+
+              </div>
+            ))
+          ) : (
+            <h2>No hay noticias</h2>
+          )}
+        </div>
 
 
-        <div >
+        <div className={Styles.pagedStyle} >
           <ul className={Styles.pageNumbers}>
             <li
               className={currentPage === pages[0] ? null : Styles.buttonPrevNext}
@@ -151,8 +166,9 @@ export default function News(props) {
             </li>
           </ul>
         </div>
+
       </div>
 
-    </>
+    </div>
   );
 }

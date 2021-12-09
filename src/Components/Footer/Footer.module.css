@@ -1,120 +1,283 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500&family=Poppins:wght@200;300;400;900&family=Ubuntu:wght@300;400;700&display=swap');
-* {
-    margin: 0;
-    padding: 0;
+html   {
+  font-size: 16px;
+  font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
-.btnFooter {
-    color:  black!important;
-    background-color: #FFBF69!important;
-   border: 1px solid #FFBF69!important;
-   border-radius: 20px!important;
-   width: 150px!important;
-   height: 20px!important;
-   margin-left: 44.2%!important;
-}
+
+
+
+  /* Container from footer component */
 .footerDark {
-    padding:50px 0;
-    color:#f0f9ff;
-    background-color:#282d32;
-    font-family: 'Ubuntu', sans-serif;
+  background-color:#282d32;
+  color:#fff;
+
+  margin-top: 2rem;
+  padding: 2rem;
+}
+ 
+
+
+  /* Conteiner footer */
+.containerFooter {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+    /* Container icons */
+.row {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: 100%;
+
+  justify-content: space-evenly;
+}
+
+
+
+  /* Container filials */
+.filials {
+  margin-right: 3rem;
+}
+
+/* Text Contactos */
+.footerDark h3 {
+  margin-top:0;
+  margin-bottom: 1rem;
+
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Email and phone */
+.footerDark ul {
+  padding: 0;
+  margin-bottom: 0;
+
+  list-style: none;
+  line-height: 1.6;
+
+  font-size:.9rem;
+}
+  
+.footerDark ul a {
+  color: inherit;
+
+  text-decoration: none;
+
+  opacity: 0.6;
+}
+
+.footerDark ul a:hover {
+
+  opacity: 0.8;
+}
+
+.socialImg {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 1rem;
+}
+
+.socialImg img {
+  width: 2rem;
+}
+  
+.footerDark .item.social > a:hover {
+  opacity:0.9;
+}
+  
+
+
+  /* Container button donate and others */
+.containerButtonDoneteAndOthers {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+}
+
+/* Button donate */
+.btnFooter {
+  color:  black !important;
+  background-color: #FFBF69 !important;
+
+  border: 1px solid #FFBF69 !important;
+  border-radius: 20px !important;
+
+  width: 9rem !important;
+  height: 1.4rem !important;
+
+  margin-top: 1rem;
+}
+
+/* Text coding for help 2021 */
+.containerButtonDoneteAndOthers p {
+  width: 100%;
+
+  margin-top: 2rem;
+  margin-bottom: 0;
+
+  opacity:0.3;
+
+  font-size: .9rem;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+  html {
+    font-size: 15px;
   }
+}
+
+
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  html {
+    font-size: 13px;
+  }
+
+    /* Container filials */
   .row {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: auto auto;
+
+    width: 100%;
+    height: 100%;
   }
-  .filials {
-    margin-right: 40px;
+
+  /* Filials */
+  .filials  {
+    margin: .5rem .5rem 1.5rem 0;
   }
-  .footerDark h3 {
-    margin-top:0;
-    margin-bottom:12px;
-    font-weight:bold;
-    font-size:16px;
+}
+
+
+@media screen and (max-width: 480px) {
+  html {
+    font-size: 13px;
   }
-  
-  .footerDark ul {
-    padding:0;
-    list-style:none;
-    line-height:1.6;
-    font-size:14px;
-    margin-bottom:0;
-  }
-  
-  .footerDark ul a {
-    color:inherit;
-    text-decoration:none;
-    opacity:0.6;
-  }
-  
-  .footerDark ul a:hover {
-    opacity:0.8;
-  }
-  .socialImg {
-      display: grid;
-      grid-template-columns: repeat(3, 2fr);
-      gap: 15px;
-  }
-  .socialImg img {
-    width: 30px;
-  }
-  
-  @media (max-width:767px) {
-    .footerDark .item:not(.social) {
-      text-align:center;
-      padding-bottom:20px;
-    }
-  }
-  
-  .footerDark .item.text {
-    margin-bottom:36px;
-  }
-  
-  @media (max-width:767px) {
-    .footerDark .item.text {
-      margin-bottom:0;
-    }
-  }
-  
-  .footerDark .item.text p {
-    opacity:0.6;
-    margin-bottom:0;
-  }
-  
-  .footerDark .item.social {
-    text-align:center;
-  }
-  
-  @media (max-width:991px) {
-    .footerDark .item.social {
-      text-align:center;
-      margin-top:20px;
-    }
-  }
-  
-  .footerDark .item.social > a {
-    font-size:20px;
-    width:36px;
-    height:36px;
-    line-height:36px;
-    display:inline-block;
-    text-align:center;
-    border-radius:50%;
-    box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-    margin:0 8px;
+
+  /* Container from footer component */
+  .footerDark {
+    background-color:#282d32;
     color:#fff;
-    opacity:0.75;
+
+    margin-top: 1.3rem;
+    padding: 1rem .5rem;
   }
   
-  .footerDark .item.social > a:hover {
-    opacity:0.9;
+
+    /* Container filials */
+  .row {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Filials */
+  .filials  {
+    margin: .5rem .5rem 1.5rem 0;
+  }
+
+  /* Title filial */
+  .filials h3 {
+    font-size: 1rem;
+  }
+
+  /* Content from filial */
+  .filials li {
+    font-size: .9rem;
+  }
+
+
+  /* Container icons */
+  .socialImg {
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: .8rem;
+  }
+
+  /* Icons */
+  .socialImg img {
+    width: 1.8rem;
+  }
+}
+
+
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 12px;
+  }
+
+
+    /* Container from footer component */
+  .footerDark {
+    background-color:#282d32;
+    color:#fff;
+
+    margin-top: 1rem;
+    padding: .5rem;
+  }
+ 
+
+    /* Container filials */
+  .row {
+    display: grid;
+    grid-template-columns: auto auto;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Title filial */
+  .filials h3 {
+    font-size: .9rem;
+  }
+
+  /* Content from filial */
+  .filials li {
+    font-size: .8rem;
+  }
+
+
+  /* Container icons */
+  .socialImg {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: .5rem;
+  }
+
+  /* Icons */
+  .socialImg img {
+    width: 1.5rem;
   }
   
-  .footerDark .copyright {
-    
-    padding-top:24px;
-    opacity:0.3;
-    font-size:13px;
-    margin-bottom:0;
-    margin-left: 45%;
-  }
+}

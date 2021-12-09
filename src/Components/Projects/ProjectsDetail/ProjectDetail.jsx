@@ -12,7 +12,7 @@ export default function ProjectsDetail(props) {
   let project = projects.find((project) => project.id.toString() === id);
 
   return (
-    <div>
+    <div className={Styles.componentContainerFromProjectDetail}>
       <p
         style={{
           display: "flex",
@@ -32,8 +32,13 @@ export default function ProjectsDetail(props) {
       </p>
       
      <div className={Styles.containerDetailProject}>
-        <h1>{project.nameProject}</h1>
-        <h3>{project.longDescription}</h3>
+        <h1>{project.title}</h1>
+
+        <div className={Styles.containerImg}>
+          <img src={project.img} alt="imagen del proyecto" />
+        </div>
+
+        <h3>{project.description}</h3>
      </div>
     </div>
   );

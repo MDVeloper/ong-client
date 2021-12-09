@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./Donation.module.css";
 import Carousel from "../Carrusel/Carousel";
 import { Typography } from "@mui/material";
-
+import { initializeMercadopago } from "../MERCA/mercadopago";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
@@ -11,15 +11,48 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode"
+import { useDispatch } from "react-redux";
 
-
-function Donation() {
+function Donation({ history }) {
   const [donationAmount, setDonationAmount] = useState(1);
+  const [userinfo, setuserinfo] = useState("")
+  const [userid, setuserid] = useState("")
+  const dispatch = useDispatch();
 
-    const handleDonationInput = function (e) {
-        e.preventDefault();
-        setDonationAmount(e.target.value)
+  if (!localStorage.getItem("token")) {
+    history.push('/login')
+  }
+
+  if (localStorage.getItem("token") && userid === "") {
+    const data = localStorage.getItem("token")
+    setuserid(jwt_decode(data))
+  };
+
+  const actinfo = () => {
+    axios.get(`/users/detail?id=${userid.id}`)
+      .then(response => setuserinfo(response.data))
+  }
+
+  if (userinfo === "" && userid.id) {
+    actinfo()
+  }
+  const handleDonationInput = function (e) {
+    e.preventDefault();
+    setDonationAmount(e.target.value)
+  };
+
+  const handleMp = async function () {
+    const mp = {
+      description: "Donation For CTL",
+      price: donationAmount,
+      quantity: 1,
+      email: userinfo.email
     }
+    console.log("ENTRO", mp)
+    let { data } = await axios.post('mp/create_preference', mp);
+    initializeMercadopago(data.id)
+  }
 
   const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -99,22 +132,22 @@ function Donation() {
                 return axios.post("/donations", {
                   amount: donationAmount,
                   date: details.create_time,
-                  estatus: details.status,
-                  email: details.payer.email_address
+                  email: userinfo.email
                 });
               }}
               options={{
                 clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
-                disableFunding:'credit,card'
+                disableFunding: 'credit,card'
               }}
             />
+            <button onClick={() => handleMp()}>MERCADOPAGO</button>
 
           </div>
         </div>
       </div>
 
       <Carousel />
- 
+
       <div className={styles.box_preguntasFrecuentes}>
         <div className={styles.box_preguntasFrecuentes_container}>
           <h2>Preguntas Frecuentes</h2>

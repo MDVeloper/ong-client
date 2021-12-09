@@ -31,21 +31,20 @@ export default function Userpanel({ history }) {
     if (userinfo === "" && userid.id){
         actinfo()
     }
-
+    
     console.log("SOY LA INFO", userinfo)
     // TIENE QUE USAR EL ESTADO DE "USERINFO" para manejar la informacion de dicho usuario
 
     
     return (
         <div>
-
             <div className={style.parent}>
                 {/* <img className={style.div1} src={image} alt=" " /> */}
                 <div className={style.div2}>
-                    <h1>Serafin Dericks</h1>
-                    <h4>serafin.dericks@gmail.com</h4>
-                    <h4>Argentina</h4>
-                    <h4>Usuario</h4>
+                    <h1>{userinfo.name && userinfo.name[0].toUpperCase() + userinfo.name.slice(1) + " " + userinfo.lastName[0].toUpperCase() + userinfo.lastName.slice(1)}</h1>
+                    <h4>{userinfo.email}</h4>
+                    <h4>{userinfo.country && userinfo.country[0].toUpperCase() + userinfo.country.slice(1)}</h4>
+                    <h4>{userinfo.privilege}</h4>
                 </div>
                 <div className={style.div3}>
                     <h4><Link to="#">Editar mi información personal</Link></h4>

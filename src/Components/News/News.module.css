@@ -1,13 +1,13 @@
-.containerProjects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+html {
+    font-size: 16px;
+    font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
-
-/* proyect component container */
+/* News component container */
 .newsContainer{
+
     display: flex;
     flex-direction: column; 
 
@@ -19,14 +19,108 @@
     text-align: center;
 }
 
+/* Title from news component */
+.newsContainer h1 {
+
+    color: #2EC4B6;
+    font-size: 2.5rem;
+    margin: 1.5rem 0 0 0;
+}
+
+/* Descripton from news component */
+.newsContainer h3 {
+
+    font-size: 1.6rem;
+    margin: 1rem 0 2rem 0;
+}
+
+
+
+    /* Cards container grid */
+.cardsNewsContainer {
+
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+
+    gap: 7rem;
+    padding: 2rem;
+
+}
+
+    /* Card container */ 
 .cardContainer{
+
     display: flex;
     flex-direction: column; 
+    align-items: center;
+    text-align: center;
+
+    background-color: #EAEAEA;
     
-    width: 80%;
-    min-height: 10rem;
-    margin: 2.5rem 1rem;
-    
+    border-radius: 10px;
+}
+
+
+
+    /* Container img */
+.containerImg {
+
+    width: 85%;
+    height: 50%;
+
+    margin: .7rem 0;
+}
+
+
+/* img from card */
+.imgFromCard {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+}
+
+
+    /* Container description and title */
+.containerTitleDescriptionFromNew {
+
+    width: 100%;
+
+    word-wrap: break-word;
+    text-align: center;
+}
+
+/* Title new */
+.cardContainer h2{
+
+    font-size: 1.3rem;
+
+    margin: 0;
+    padding: .2rem;
+    color: #2EC4B6;
+}
+
+
+/* Description */
+.cardContainer h4 {
+
+    margin: .5rem .3rem .8rem .3rem;
+    font-size: 1.1rem;
+}
+
+
+/* View more button */
+.viewMoreButton {
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+
+    /* Container from paged */
+.pagedStyle {
+    margin: 3rem 0 1rem 0;
 }
 
 /* style for paged */
@@ -63,4 +157,95 @@
 
 .buttonPrevNext:focus {
     outline: none;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    html { 
+        font-size: 15px;
+    }
+
+    /* Cards container grid */
+    .cardsNewsContainer {
+        gap: 3rem;
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    html { 
+        font-size: 14px;
+    }
+
+    .newsContainer h1 {
+        font-size: 2.5rem;
+    }
+    
+    .newsContainer h3 {
+    
+        font-size: 1.4rem;
+        margin: 1rem 0 2rem 0
+    }
+
+        /* Cards container grid */
+    .cardsNewsContainer {
+        gap: 3rem;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    html { 
+        font-size: 13px;
+    }
+
+        /* Cards container grid */
+    .cardsNewsContainer {
+
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+
+        gap: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    html { 
+        font-size: 12px;
+    }
+
+    .cardsNewsContainer {
+
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+
+        gap: 1rem;
+    }
+}
+
+
+
+@media screen and (max-width: 320px) {
+    html { 
+        font-size: 12px;
+    }
+
+
+    .newsContainer h1 {
+        font-size: 2rem;
+    }
+    
+    .newsContainer h3 {
+    
+        font-size: 1.2rem;
+        margin: 1rem 0 2rem 0
+    }
 }

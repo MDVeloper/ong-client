@@ -11,8 +11,10 @@ export default function NewsDetail(props) {
 
   let news = newss.find((news) => news.id.toString() === id);
 
+  console.log(news)
+
   return (
-    <div>
+    <div className={Styles.componentContainerFromNewsDetail}>
       <p
         style={{
           display: "flex",
@@ -25,16 +27,23 @@ export default function NewsDetail(props) {
           Menu principal
         </Link>
         {">"} 
-        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/news">
+        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/noticias">
           Noticias
         </Link>
         {">"} Detalle de la noticia
       </p>
       
-     <div className={Styles.containerDetailNews}>
-        <h1>{news.nameNews}</h1>
-        <h3>{news.longDescription}</h3>
-     </div>
+
+      <div className={Styles.containerDetailNews}>
+          <h1>{news.title}</h1>
+
+          <div className={Styles.containerImg}>
+            <img src={`${news.img}`} alt="Imagen del proyecto" />
+          </div>
+
+          <h3>{news.description}</h3>
+      </div>
+
     </div>
   );
 }

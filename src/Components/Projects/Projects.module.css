@@ -1,13 +1,14 @@
-.containerProjects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+html {
+
+    font-size: 16px;
+    font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
-
-/* proyect component container */
+    /* Project component container */
 .projectsContainer{
+
     display: flex;
     flex-direction: column; 
 
@@ -19,23 +20,115 @@
     text-align: center;
 }
 
-.cardContainer{
-    display: flex;
-    flex-direction: column; 
+/* Title from project component */
+.projectsContainer h1 {
     
-    width: 80%;
-    min-height: 10rem;
-    margin: 2.5rem 1rem;
-    
+    color: #2EC4B6;
+    font-size: 2.5rem;
+    margin: 1.5rem 0 0 0;
 }
 
-/* style for paged */
+/* Descripton from project component */
+.projectsContainer h3 {
+
+    font-size: 1.6rem;
+    margin: 1rem 0 2rem 0;
+}
+
+
+    /* Container from cards */
+.cardContainer{
+
+    display: flex;
+    flex-direction: column; 
+
+    justify-content: center;
+    align-items: center;
+
+    width: 80%;
+    height: 25rem;
+
+    border-radius: 10px;
+    margin: 2.5rem 1rem;  
+
+    background-size: cover;
+    background-position: 0 ;
+    background-repeat: no-repeat;
+
+    word-wrap: break-word;
+}
+
+/* Black effect */
+.blackEffect {
+    display: flex;
+
+    /* align-items: flex-start; */
+    
+    height: 94%;
+    width: 97%;
+
+    border-radius: 10px;
+
+    background-color: rgba(0, 0, 0, 0.400);
+
+    color: #fff;
+
+    word-wrap: break-word;
+}
+
+
+    /* Container description and title */
+.containerDescriptionAndTitle {
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+    margin-left: 1rem;
+
+    width: 70%;
+    height: auto;
+
+    word-wrap: break-word;
+}
+
+/* Title from project */
+.blackEffect h2 {
+    font-size: 1.8rem;
+}
+
+/* Description from project */
+.blackEffect h4 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+/* Container View more button */
+.viewMoreButton {
+    display: flex;
+    
+    margin-top: auto;
+    margin-left: auto;
+    
+    margin-bottom: .5rem;
+    margin-right: .5rem;
+}
+
+.viewMoreButton button {
+    font-size: 1rem;
+    color: #FFBF69;
+    border-color: #FFBF69;
+}
+
+
+    /* style for paged */
 .pageNumbers {
+
     list-style: none;
     display: flex;
 }
 
 .pageNumbers li {
+
     padding: 1rem;
     border: none;
     border-radius: 3rem;
@@ -44,11 +137,13 @@
 
 
 .pageNumbers li.active {
+
     background-color: #FFBF69;
     color: #fff;
 }
 
 .buttonPrevNext  {
+
     background-color: transparent;
     border: none;
     color: #000;
@@ -56,11 +151,159 @@
     padding: 1rem;
     cursor: pointer;
 }
+
 .buttonPrevNext:hover {
+
     background-color: #FFBF69;
     color: #fff;
 }
 
 .buttonPrevNext:focus {
     outline: none;
+}
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    html { 
+        font-size: 15px;
+    }
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    html { 
+        font-size: 14px;
+    }
+
+    .projectsContainer h1 {
+        font-size: 2.5rem;
+    }
+    
+    .projectsContainer h3 {
+    
+        font-size: 1.4rem;
+        margin: 1rem 0 2rem 0
+    }
+
+}
+
+
+
+@media screen and (max-width: 768px) {
+    html { 
+        font-size: 13px;
+    }
+
+
+    /* Title from project */
+    .blackEffect h2 {
+        font-size: 1.6rem;
+        margin: .1rem 0 .3rem 0;
+    }
+
+    /* Description from project */
+    .blackEffect h4 {
+        font-size: 1.15rem;
+        margin: 0;
+    }
+
+    /* Container View more button */
+    .viewMoreButton button {
+        font-size: .8rem;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 580px) {
+    html { 
+        font-size: 13px;
+    }
+
+
+    /* Description from project */
+    .blackEffect h4 {
+        font-size: 1.09rem;
+        margin: 0;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    html { 
+        font-size: 12px;
+    }
+
+        /* Container from cards */
+    .cardContainer{
+
+        width: 90%;
+        height: 30rem;
+    }
+
+
+    /* Title from project */
+    .blackEffect h2 {
+        font-size: 1.4rem;
+        margin: .1rem 0 .7rem 0;
+    }
+
+    /* Description from project */
+    .blackEffect h4 {
+        font-size: 1.07rem;
+        margin: 0;
+    }
+
+    /* Container View more button */
+    .viewMoreButton button {
+        font-size: .7rem;
+    }
+
+}
+
+
+
+@media screen and (max-width: 320px) {
+    html { 
+        font-size: 12px;
+    }
+
+
+
+        /* Container from cards */
+    .cardContainer{
+
+        width: 90%;
+        height: 30rem;
+    }
+
+    /* Title from project */
+    .blackEffect h2 {
+        font-size: 1.3rem;
+        margin: .1rem 0 .3rem 0;
+    }
+
+    /* Description from project */
+    .blackEffect h4 {
+        font-size: 1.04rem;
+        margin: 0;
+    }
+
+    /* Container View more button */
+    .viewMoreButton {
+        margin-left: 1rem;
+        margin-bottom: .3rem;
+        margin-right: .3rem;
+    }
+    
+    .viewMoreButton button {
+        font-size: .5rem;
+    }
+
 }

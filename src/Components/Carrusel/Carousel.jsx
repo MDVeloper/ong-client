@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 export default function Carousel() {
   let projects = useSelector((state) => state.project.projects);
 
+  
   const settings = {
     dots: true,
     infinite: true,
@@ -30,19 +31,18 @@ export default function Carousel() {
 
           <div className={"sliderContainer"}>
             <Slider {...settings}>
-              {projects.map((data) => {
+              {projects.slice(0,9).map((data) => {
                 return (
-                  <div key={data.id} className={"cardProjectContainer"}>
+                  <div key={data.id} className={"cardProjectContainer"} >
                     <div className={"imgProjectContainer"}>
                       <img src={data.img} alt="" />
                     </div>
                     <div className={"titleDescriptionContainer"}>
-                      <h2>{data.nameProject}</h2>
-                      <p>{data.description}</p>
+                      <h2>{data.title}</h2>
+                      <p>{data.description.substr(0,200)}</p>
                     </div>
-
-                    <Link to={`/proyectos/${data.id}`}>
-            
+                    
+                    <Link to={`/proyectos/${data.id}`} style={{Button:"0"}}>
                       <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", margin:".2rem .5rem 0 .5rem", fontSize:".8rem"}}>
                         Saber mas
                       </Button>
@@ -52,7 +52,7 @@ export default function Carousel() {
               })}
             </Slider>
 
-            <Link to="/proyectos" style={{ color: "#fff" }}>
+            <Link to="/proyectos" style={{ color: "#fff" }}>  
             </Link>
           </div>
         </div>

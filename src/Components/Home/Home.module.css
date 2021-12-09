@@ -72,7 +72,8 @@ margin-left: 14.8vw;
     font-family: 'Code Next';
     text-align: initial;
     margin-left: 89px;
-    margin-top: 10px;
+    margin-top: 6px;
+    margin-bottom: -8px;
 }
 .containerVolunteerText p {
     font-size: 16px;
@@ -96,7 +97,7 @@ margin-left: 14.8vw;
 
 .btnVolunteer {
     margin-right: 764px;
-    margin-top: 24px;
+    margin-top: 13px;
     border: none;
     height: 47px;
     width: 180px;
@@ -131,10 +132,12 @@ margin-left: 14.8vw;
 .containerDonationText h3 {
     font-size: 40px;
     font-family: 'Code Next';
-    padding-top: 20px;
+    /* padding-top: 20px; */
     text-align: start;
     margin-right: 125px;
     max-width: 450px;
+    margin-bottom: 4px;
+    margin-top: 20px;
 }
 .containerDonationText p {
     font-size: 16px;
@@ -154,7 +157,7 @@ margin-left: 14.8vw;
     font-family: 'Code Next';
     font-size: 20px;
     cursor: pointer;
-    margin-top: 28px;
+    margin-top: 18px;
     margin-right: 170px;
 }
 
@@ -204,9 +207,8 @@ margin-left: 14.8vw;
     cursor: pointer;
     font-weight: 550px;
 }
-
 .container1>a>button:hover{
-    box-shadow: 0 0 8px 3px #cfcfcf57;
+    box-shadow: 0 0 6px 3px #cfcfcf57;
 }
 
 .container1 p {
@@ -254,7 +256,7 @@ margin-left: 14.8vw;
     font-weight: 550px;
 }
 .container2>a>button:hover{
-    box-shadow: 0 0 8px 3px #cfcfcf57;
+    box-shadow: 0 0 6px 3px #cfcfcf57;
 }
 
 .containerAbout{

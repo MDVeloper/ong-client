@@ -14,6 +14,10 @@ import Select from '@mui/material/Select';
 import CardHeader from '@mui/material/CardHeader';
 import { Alert } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
+import { actionRefreshArticles } from '../../Store/Actions/actionRefreshArticles';
+
+
+
 
 export const listHasValues = (list) => list.length > 0;
 export const isEmptyList = (list) => list.length === 0;
@@ -61,7 +65,7 @@ export default function Formulario({ history }) {
   }
 
   const handleDrop = (acceptedFiles, fileRejections) => {
-
+    
         const imageFileWithPreview = addImagePreviewtoImageFile(acceptedFiles);
     
         setImageFiles(imageFileWithPreview);
@@ -120,13 +124,22 @@ export default function Formulario({ history }) {
     setForm({ ...form, category: e.target.value });
   };
 
+
+
+
   function handleSubmit(e){
     
-    console.log(form)
     id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
     alert("enviado satisfactoriamente")
+
+    setTimeout(() => {
+      dispatch(actionRefreshArticles())
+    }, 2000)
   }
+
+  
+
   return (
     <Formik
       initialValues={{

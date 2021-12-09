@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Navbar from "./Components/Navbar/Navbar.jsx";
 import Login from "./Components/Login/Login";
 import Home from "./Components/Home/Home";
@@ -20,13 +20,13 @@ import NewsDetail from "./Components/News/NewsDetail/NewsDetail";
 import { getNews } from "./Store/Actions/actionGetNews";
 
 function App() {
-
   let dispatch = useDispatch();
+  let refreshArticles = useSelector( state => state.refreshArticles.aux)
 
   useEffect(() => {
     dispatch(getProject());
     dispatch(getNews());
-  });
+  },[refreshArticles]);
 
   return (
     <Router>

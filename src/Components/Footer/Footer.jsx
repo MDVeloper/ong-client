@@ -6,9 +6,9 @@ import Fab from '@mui/material/Fab';
 const Footer = () => {
   return (
     <div className={s.footerDark}>
-    <footer>
-        <div className={s.container}>
+        <footer className={s.containerFooter}>
             <div className={s.row}>
+
                 <div className={s.filials} >
                     <h3>Direccion</h3>
                     <ul>
@@ -17,22 +17,23 @@ const Footer = () => {
                         <li>Cordoba, Cordoba</li>
                     </ul>
                 </div>
+
                 <div className={s.filials}>
                     <h3>Contacto</h3>
                     <ul>
                         <li>codingforhelp@gmail.com</li>
                         <li>Telefono: 1879543216</li>
-                        
                     </ul>
                 </div>
+
                 <div className={s.filials}>
-                    <Link to="/terminosYCondiciones">
-                    <h3>Terminos y condiciones</h3>
-                    <p>Lee sobre nuestros terminos</p>
+                    <Link style={{color:"#fff"}} to="/terminosYCondiciones">
+                        <h3>Terminos y condiciones</h3>
+                        <p>Lee sobre nuestros terminos</p>
                     </Link>
                 </div>
+
                 <div className={s.filials}>
-                
                     <h3>Nuestras Redes</h3>
                     <ul className={s.socialImg}>
                         <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="" /> </Link></li>
@@ -43,17 +44,20 @@ const Footer = () => {
                         <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Whatsapp2_colored_svg-128.png" alt="" /> </Link></li>
                     </ul>
                 </div>
-              
+                
             </div>
-            <Fab className={s.btnFooter} aria-label="add">
-                <Link to="/donaciones">
-                    Dona
-                </Link>
+            
+            <div className={s.containerButtonDoneteAndOthers}>
+                <Fab className={s.btnFooter} aria-label="add">
+                    <Link to="/donaciones">
+                        Dona
+                    </Link>
                 </Fab>
-            <p className={s.copyright}>Coding For Help 2021</p>
-        </div>
-    </footer>
-</div>
+                <p className={s.copyright}>Coding For Help 2021</p>
+            </div>
+
+        </footer>
+    </div>
   );
 };
 

@@ -11,11 +11,32 @@ import { PayPalButton } from "react-paypal-button-v2";
 import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import axios from "axios";
+import jwt_decode from "jwt-decode"
+import { useDispatch } from "react-redux";
 
-
-function Donation() {
+function Donation({ history }) {
   const [donationAmount, setDonationAmount] = useState(1);
+  const [userinfo, setuserinfo] = useState("")
+  const [userid, setuserid] = useState("")
+  const dispatch = useDispatch();
 
+  if (!localStorage.getItem("token")) {
+    history.push('/login')
+  }
+
+  if (localStorage.getItem("token") && userid === "") {
+    const data = localStorage.getItem("token")
+    setuserid(jwt_decode(data))
+  };
+
+  const actinfo = () => {
+    axios.get(`/users/detail?id=${userid.id}`)
+      .then(response => setuserinfo(response.data))
+  }
+
+  if (userinfo === "" && userid.id) {
+    actinfo()
+  }
   const handleDonationInput = function (e) {
     e.preventDefault();
     setDonationAmount(e.target.value)
@@ -26,6 +47,7 @@ function Donation() {
       description: "Donation For CTL",
       price: donationAmount,
       quantity: 1,
+      email: userinfo.email
     }
     console.log("ENTRO", mp)
     let { data } = await axios.post('mp/create_preference', mp);
@@ -110,8 +132,7 @@ function Donation() {
                 return axios.post("/donations", {
                   amount: donationAmount,
                   date: details.create_time,
-                  estatus: details.status,
-                  email: details.payer.email_address
+                  email: userinfo.email
                 });
               }}
               options={{

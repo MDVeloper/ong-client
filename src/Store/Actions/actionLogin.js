@@ -10,7 +10,7 @@ export function startSesion(value) {
           password,
         })
         
-        console.log(res)
+        // console.log(res)
       localStorage.setItem("token", JSON.stringify(res.data.token));
   
       return dispatch({

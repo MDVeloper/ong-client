@@ -37,7 +37,7 @@ const thumb = {
   boxSizing: 'border-box',
 };
 
-export default function Formulario() {
+export default function Formulario({ history }) {
   let { id } = useParams()
   console.log(useParams())
   const dispatch = useDispatch();
@@ -56,6 +56,9 @@ export default function Formulario() {
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
 
+  if (!localStorage.getItem("token")){
+    history.push('/login')
+  }
 
   const handleDrop = (acceptedFiles, fileRejections) => {
 

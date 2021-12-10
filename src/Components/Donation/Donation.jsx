@@ -143,6 +143,7 @@ function Donation({ history }) {
                   // OPTIONAL: Call your server to save the transaction
                   return axios.post("/donations", {
                   amount: donationAmountPayPal,
+
                   date: details.create_time,
                   email: userinfo.email
                   });

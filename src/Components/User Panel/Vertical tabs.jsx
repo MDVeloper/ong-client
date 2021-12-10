@@ -82,6 +82,12 @@ export default function VerticalTabs({ history }) {
     dispatch(getAllTransactions());
   }, [dispatch]);
 
+const allTransactions = useSelector((state) => state.donations.allTransactions);
+
+  useEffect(() => {
+    dispatch(getAllTransactions());
+  }, [dispatch]);
+
   return (
     <Box
       sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500 } } className={style.userContainer}

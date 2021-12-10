@@ -127,7 +127,12 @@ function Donation({ history }) {
               onSuccess={(details, data) => {
                 alert("Transaction completed by " + details.payer.name.given_name);
                 console.log(details, data)
-
+                console.log({
+                  amount: donationAmount,
+                  date: details.create_time,
+                  estatus: details.status,
+                  email: details.payer.email_address
+                })
                 // OPTIONAL: Call your server to save the transaction
                 return axios.post("/donations", {
                   amount: donationAmount,

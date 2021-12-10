@@ -12,7 +12,7 @@ export function startSesion(value) {
         
         // console.log(res)
       localStorage.setItem("token", JSON.stringify(res.data.token));
-  
+      window.location.href = "/users"
       return dispatch({
         type: "USER_VALIDATE",
         payload: true

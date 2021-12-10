@@ -59,10 +59,6 @@ export default function VerticalTabs({ history }) {
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
 
-  if (!localStorage.getItem("token")){
-      history.push('/login')
-  }
-  
   if (localStorage.getItem("token") && userid === ""){
       const data = localStorage.getItem("token")
       setuserid(jwt_decode(data))

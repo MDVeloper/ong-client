@@ -49,7 +49,7 @@ const AboutUs = () => {
     useEffect(() => {
        setTimeout(() => {
            setIsLoading(false)
-       }, 2500); 
+       }, 2500);
     })
 
 

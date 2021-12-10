@@ -60,10 +60,6 @@ export default function VerticalTabs({ history }) {
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
 
-  if (!localStorage.getItem("token")){
-      history.push('/login')
-  }
-  
   if (localStorage.getItem("token") && userid === ""){
       const data = localStorage.getItem("token")
       setuserid(jwt_decode(data))
@@ -107,7 +103,7 @@ export default function VerticalTabs({ history }) {
         Información de las donaciones
         {userinfo.donations && userinfo.donations.map(t => {
           return (
-            <div className={style.transactionDiv}>
+            <div key={t.id} className={style.transactionDiv}>
               <h6>{t.id}</h6>
               <h6>{t.email}</h6>
               <h6>${t.amount}</h6>
@@ -126,6 +122,15 @@ export default function VerticalTabs({ history }) {
       </TabPanel>
       <TabPanel value={value} index={3}>
         Toda la informacion de los cursos tomados
+        {userinfo.articles && userinfo.articles.map(t => {
+          return (
+            <div key={t.id} className={style.transactionDiv}>
+              <h6>{t.id}</h6>
+              <h6>{t.title}</h6>
+              <h6>{t.description}</h6>
+            </div>
+          )
+        })}
       </TabPanel>
     </Box>
   );

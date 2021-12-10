@@ -12,6 +12,7 @@ import style from "./UserPanel.module.css";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useState } from 'react';
+import styles from "./UserPanel.module.css"
 
 const theme = createTheme({
   MuiTabs: {
@@ -83,7 +84,7 @@ export default function VerticalTabs({ history }) {
 
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500 }}
+      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500 } } className={style.userContainer}
     >
       <Tabs
         orientation="vertical"

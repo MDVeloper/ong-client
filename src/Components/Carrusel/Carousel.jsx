@@ -43,7 +43,7 @@ export default function Carousel() {
                     </div>
                     
                     <Link to={`/proyectos/${data.id}`} style={{Button:"0"}}>
-                      <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", margin:".2rem .5rem 0 .5rem", fontSize:".8rem"}}>
+                      <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", margin:".2rem .5rem 0 .5rem", fontSize:"auto"}}>
                         Saber mas
                       </Button>
                     </Link>
@@ -51,9 +51,6 @@ export default function Carousel() {
                 );
               })}
             </Slider>
-
-            <Link to="/proyectos" style={{ color: "#fff" }}>  
-            </Link>
           </div>
         </div>
       )}

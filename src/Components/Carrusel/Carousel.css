@@ -128,8 +128,8 @@ html {
 
     /* Boton ver mas button */
     .cardProjectContainer button {
-        width: 7rem;
-        height: 1.5rem;
+        width: 5rem;
+        height: 1rem;
     }
 
 
@@ -195,9 +195,12 @@ html {
 
     /* Boton ver mas button */
     .cardProjectContainer button {
-        width: 3rem;
-        height: 3rem;
+        width: auto;
+        height: auto;
+
+        font-size: .5rem;
     }
+
 
 }
 

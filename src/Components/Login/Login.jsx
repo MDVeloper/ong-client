@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { startSesion } from "../../Store/Actions/actionLogin";
@@ -7,6 +7,7 @@ import Styles from "./Login.module.css"
 import { FcGoogle } from "react-icons/fc";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 
 const validation = (value) => {
@@ -25,22 +26,40 @@ const validation = (value) => {
 };
 
 export default function Login() {
+  const TEST_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+  // const HOST_KEY_IZI = "6LeBD5sdAAAAALHeT_1mXuoBeWcgXsXhl5FNYJTw";
+  // const LOCAL_HOST_KEY = "6LeBD5sdAAAAAP7hM3JryC8L0QBgxwJvWIX0DMOm"
 
   const userOn = useSelector((state) => state.login.active);
   const error = useSelector((state) => state.login.error);
+
+  const reCaptchaRef = React.createRef()
   const dispatch = useDispatch();
-  const history = useHistory();
+
+  const [captcha, setcaptcha] = useState("")
 
   useEffect(() => {
   }, [userOn]);
 
   const handleSubmit = (value, { setSubmitting }) => {
-    setSubmitting(false);
-    dispatch(startSesion(value));
-    // Se comento porque apenas se logeaba lo redirigia y no le daba tiempo a generar el token!!
-    // dispatch(history.push('/users'))
+    if (captcha) {
+      setSubmitting(false);
+      dispatch(startSesion(value));
+    }
+    else{
+      alert("Falta el captcha")
+    }
   };
 
+  function onChange(value) {
+    setcaptcha(value)
+    console.log("Captcha value:", value);
+  }
+
+  const onSubmit = () => {
+    const recaptchaValue = reCaptchaRef.current.getValue();
+    this.props.onSubmit(recaptchaValue);
+  }
 
   return (
     !userOn && (
@@ -88,7 +107,13 @@ export default function Login() {
                       className={Styles.errors}
                     />
                   </div>
-
+                  <form onSubmit={onSubmit} >
+                    <ReCAPTCHA
+                      ref={reCaptchaRef}
+                      sitekey={TEST_SITE_KEY}
+                      onChange={onChange}
+                    />
+                  </form>
                   <div className={Styles.containerButtonSend}>
 
                     <Button variant="contained" type="submit" className={Styles.buttonSendRegister}>

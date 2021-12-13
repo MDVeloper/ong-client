@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
        <section className={s.mainContainer}>
-        <div>
+        <div className={s.btnContainer}>
           <Link to="/donaciones">
             {/* <Button
               variant="contained"

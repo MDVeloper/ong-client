@@ -7,6 +7,15 @@
     margin-right: 3vw;
     align-items: center;
     padding-right: 4vw;
+    max-width: 90%;
+}
+
+.logo1 {
+    display: flex;
+}
+
+.logo2{
+    display: none;
 }
 
 .navbar{
@@ -20,9 +29,11 @@
     padding-inline-start: 0px;
     color: white;
     font-family: "Ubuntu";
+    text-align: center;
 }
 .navbar>li {
     padding: 10px;
+    justify-content: center;
 }
 
 .navbar div {
@@ -36,6 +47,28 @@
     font-family: "Ubuntu";
     font-weight: normal;
 }
+
+.iconMenu{
+    width: 50px;
+    height: 50px;
+    top: 20px;
+    margin-right: 16px;
+    font-size: 20px;
+    background-color: #fafafa ;
+    border-radius: 100%;
+    color: #2EC4B6;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.iconMenu:hover{
+   opacity: 0.8;
+}
+
+
 
 .button {
     width: 137px;
@@ -54,7 +87,130 @@
 
 .button:hover{
     background: linear-gradient(106.11deg, #2EC4B6 5%, #FFBF69 100%);
+    transition: 0.5s;
 }
 .navbar>li:hover {
     border-bottom: 2px solid #FFBF69;
+}
+
+
+/* Responsive Desing - adaptable a dispositivos moviles */
+@media screen and (max-width: 1880px){
+    .space{
+        justify-content: space-around;
+        justify-items: center;
+    }
+}
+
+
+@media screen and (max-width: 1350px) {
+    .space {
+        max-width: 1300px;
+        margin-left: 3vw;
+        margin-right: -9vw;
+    }
+    .navbar {
+        display: none;
+    }
+    .iconMenu{
+        display: flex;
+    }
+
+}
+
+@media screen and (max-width: 850px) {
+    
+    .space{
+        max-width: 700px;
+        padding-right: 0px;
+        margin-left: 12vw;
+        margin-right: -15vw;
+    }
+    
+    .logo1{
+        width: 220px;
+    }
+
+}
+
+@media screen and (max-width: 700px) {
+
+    .space {
+        max-width: 600px;
+        margin-left: 11vw;
+        margin-right: 4vw;
+    }
+}
+
+
+@media screen and (max-width: 580px) {
+
+    .space{
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0px;
+    }
+
+    .logo1{
+        display: none;
+    }
+    .logo2{
+        display: flex;
+
+    }
+
+    .button {
+        width: 130px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .space {
+        justify-content: space-around;
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0px;
+    }
+
+    .button {
+        width: 90px;
+        font-size: 23px;
+    }
+    .logo2 {
+        width: 80px;
+    }
+    .iconMenu{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .space {
+        max-width: 220px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .logo2{
+        width: 50px;
+        margin-right: 21px;
+    }
+
+    .button {
+        width: 70px;
+        height: 50px;
+        font-size: 19px;
+        text-align: center;
+        margin-right: 21px;
+    }
+
+    .iconMenu {
+        width: 30px;
+        height: 30px;
+        margin-right: 0px;
+    }
 }

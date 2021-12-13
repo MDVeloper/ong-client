@@ -18,6 +18,8 @@ import { getProject } from "./Store/Actions/actionGetProjects";
 import News from "./Components/News/News";
 import NewsDetail from "./Components/News/NewsDetail/NewsDetail";
 import { getNews } from "./Store/Actions/actionGetNews";
+import Curse from "./Components/Cursos/Cursos.jsx";
+import Filiales from "./Components/Filiales/Filiales.jsx";
 
 function App() {
   let dispatch = useDispatch();
@@ -45,6 +47,8 @@ function App() {
         <Route exact path="/donaciones" component={Donation} />
         <Route exact path="/backoffice/form" component={Formulario} />
         <Route exact path="/users" component={Userpanel} />
+        <Route exact path="/curse" component={Curse} />
+        <Route exact path="/Filials" component={Filiales} />
       </Switch>
       <Footer />
     </Router>

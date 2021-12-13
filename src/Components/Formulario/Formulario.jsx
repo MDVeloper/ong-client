@@ -7,7 +7,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
-import { Button, Box} from '@mui/material';
+import { Button, Box } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -16,7 +16,8 @@ import { Alert } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import { actionRefreshArticles } from '../../Store/Actions/actionRefreshArticles';
 import Styles from './Formulario.module.css'
-
+import jwt_decode from "jwt-decode"
+import Loading from '../Loading/Loading'
 
 
 export const listHasValues = (list) => list.length > 0;
@@ -45,25 +46,41 @@ export default function Formulario({ history }) {
   let { id } = useParams()
 
   const dispatch = useDispatch();
-  const result = useSelector( (state) => state.articles.articles)
+
+  const result = useSelector((state) => state.articles.articles)
+  console.log(result)
 
   const [error, setError] = useState({})
+
   const [form, setForm] = useState({
     id: id,
     title: "",
     img: "",
     description: "",
     category: "",
-    voteCount:0,
+    voteCount: 0,
   })
   
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
+  const [userid, setuserid] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
 
-  if (!localStorage.getItem("token")){
-    history.push('/login')
+  if (!localStorage.getItem("token")) {
+    window.location.href = '/login'
   }
+
+  if (localStorage.getItem("token") && userid === "") {
+    const data = localStorage.getItem("token")
+    setuserid(jwt_decode(data))
+    if (jwt_decode(data).privilege !== "Admin") {
+      window.location.href = '/';
+    }
+    if (jwt_decode(data).privilege === "Admin") {
+      setIsLoading(false)
+    }
+  };
 
   const handleDrop = (acceptedFiles, fileRejections) => {
 
@@ -126,16 +143,9 @@ export default function Formulario({ history }) {
     setForm({ ...form, category: e.target.value });
   };
 
+  function handleSubmit(e) {
 
-  function handleSubmit(e){
-    
-    
-  }
-
-
-  function handleSubmit(e){
-    
-    id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
+    id !== true ? dispatch(postArticle(form, form.img = base64ImageFile)) : dispatch(putArticles(form, form.img = base64ImageFile))
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
     alert("enviado satisfactoriamente")
 
@@ -144,7 +154,6 @@ export default function Formulario({ history }) {
     }, 2000)
   }
 
-  
 
   return (
     <div className={Styles.container}>
@@ -179,10 +188,9 @@ export default function Formulario({ history }) {
 
         handleSubmit(values);
       }}>
-        {({ errors, touched }) => {
+      {({ errors, touched }) => {
         return (
           <Card className={Styles.CardContainer}>
-        
             {
               id 
               ?
@@ -190,8 +198,6 @@ export default function Formulario({ history }) {
               :
               <h1>CREAR ARTICULO</h1>
             }
-
-
             <Form className={Styles.containerInputs}>
       
                 <InputLabel className={Styles.label}>Titulo</InputLabel>
@@ -199,6 +205,8 @@ export default function Formulario({ history }) {
                   className={Styles.inputs}
                   component={TextField}
                   id="title"
+//           <>
+//             {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
                   name="title"
                   placeholder="Ingrese el titulo"
                   type="text"

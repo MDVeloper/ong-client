@@ -24,6 +24,9 @@ html {
 
     margin: 3rem;
     border-radius: 10px;
+    padding: 1rem;
+
+    word-wrap: break-word;
 }
 
 /* Title */
@@ -54,8 +57,7 @@ html {
 .containerDetailNews h3 {
     color: #fff;
     font-size: 1rem;
-
-    margin: 3rem 1rem;
+    width: 100%;
 }
 
 
@@ -66,8 +68,8 @@ html {
 
     /* Cantainer img */
     .containerImg {
-        width: 60%;
-        height: auto;
+        width: 70%;
+        height: 30rem;
     }
 }
 
@@ -76,6 +78,13 @@ html {
     html { 
         font-size: 14px;
     }
+
+        /* Cantainer img */
+    .containerImg {
+    width: 70%;
+    height: 30rem;
+    }
+    
 }
 
 
@@ -93,8 +102,8 @@ html {
 
         /* Cantainer img */
     .containerImg {
-        width: 70%;
-        height: auto;
+        width: 90%;
+        height: 30rem;
     }
 
 }
@@ -113,8 +122,8 @@ html {
 
         /* Cantainer img */
     .containerImg {
-        width: 70%;
-        height: auto;
+        width: 100%;
+        height: 25rem;
     }
 }
 
@@ -127,8 +136,8 @@ html {
 
         /* Cantainer img */
     .containerImg {
-        width: 70%;
-        height: auto;
+        width: 100%;
+        height: 20rem;
     }
 
 }

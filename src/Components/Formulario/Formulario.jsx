@@ -7,7 +7,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
-import { Button, Box} from '@mui/material';
+import { Button, Box } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -15,9 +15,8 @@ import CardHeader from '@mui/material/CardHeader';
 import { Alert } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import { actionRefreshArticles } from '../../Store/Actions/actionRefreshArticles';
-
-
-
+import jwt_decode from "jwt-decode"
+import Loading from '../Loading/Loading'
 
 export const listHasValues = (list) => list.length > 0;
 export const isEmptyList = (list) => list.length === 0;
@@ -45,70 +44,84 @@ export default function Formulario({ history }) {
   let { id } = useParams()
   console.log(useParams())
   const dispatch = useDispatch();
-  const result = useSelector( (state) => state.articles.articles)
+  const result = useSelector((state) => state.articles.articles)
   console.log(result)
   const [error, setError] = useState({})
+
   const [form, setForm] = useState({
     id: id,
     title: "",
     img: "",
     description: "",
     category: "",
-    voteCount:0,
+    voteCount: 0,
   })
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
+  const [userid, setuserid] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
 
-  if (!localStorage.getItem("token")){
-    history.push('/login')
+  if (!localStorage.getItem("token")) {
+    window.location.href = '/login'
   }
 
-  const handleDrop = (acceptedFiles, fileRejections) => {
-    
-        const imageFileWithPreview = addImagePreviewtoImageFile(acceptedFiles);
-    
-        setImageFiles(imageFileWithPreview);
-        if (isEmptyList(fileRejections)) imageFileToBase64File(acceptedFiles);
-      };
-    
-      const imageFileToBase64File = (acceptedFiles) => {
-        const reader = new FileReader();
-    
-        reader.readAsDataURL(acceptedFiles[0]);
-        reader.onload = () => {
-          const base64 = reader.result;
-    
-          setBase64ImageFile(base64);
-        };
-      };
-      const addImagePreviewtoImageFile = (acceptedFiles) => {
-        return acceptedFiles.map((file) =>
-          Object.assign(file, {
-            preview: URL.createObjectURL(file),
-          }),
-        );
-      };
-      const { getRootProps, getInputProps, fileRejections } = useDropzone({
-        multiple: multipleFiles,
-        maxFiles,
-        accept: validImages,
-        onDrop: (acceptedFiles, fileRejections) =>
-          handleDrop(acceptedFiles, fileRejections),
-      });
-    
-      const imageValidation = () => {
-        if (listHasValues(fileRejections)) {
-          setImageError(true);
+  if (localStorage.getItem("token") && userid === "") {
+    const data = localStorage.getItem("token")
+    setuserid(jwt_decode(data))
+    if (jwt_decode(data).privilege !== "Admin") {
+      window.location.href = '/';
+    }
+    if (jwt_decode(data).privilege === "Admin") {
+      setIsLoading(false)
+    }
+  };
 
-          return;
-        }
-        setImageError(false);
-      };
-    
-      useEffect(() => {
-        imageValidation();
-      }, [fileRejections]);
+  const handleDrop = (acceptedFiles, fileRejections) => {
+
+    const imageFileWithPreview = addImagePreviewtoImageFile(acceptedFiles);
+
+    setImageFiles(imageFileWithPreview);
+    if (isEmptyList(fileRejections)) imageFileToBase64File(acceptedFiles);
+  };
+
+  const imageFileToBase64File = (acceptedFiles) => {
+    const reader = new FileReader();
+
+    reader.readAsDataURL(acceptedFiles[0]);
+    reader.onload = () => {
+      const base64 = reader.result;
+
+      setBase64ImageFile(base64);
+    };
+  };
+  const addImagePreviewtoImageFile = (acceptedFiles) => {
+    return acceptedFiles.map((file) =>
+      Object.assign(file, {
+        preview: URL.createObjectURL(file),
+      }),
+    );
+  };
+  const { getRootProps, getInputProps, fileRejections } = useDropzone({
+    multiple: multipleFiles,
+    maxFiles,
+    accept: validImages,
+    onDrop: (acceptedFiles, fileRejections) =>
+      handleDrop(acceptedFiles, fileRejections),
+  });
+
+  const imageValidation = () => {
+    if (listHasValues(fileRejections)) {
+      setImageError(true);
+
+      return;
+    }
+    setImageError(false);
+  };
+
+  useEffect(() => {
+    imageValidation();
+  }, [fileRejections]);
 
   const descriptionChange = (e, editor) => {
     const data = editor.getData();
@@ -127,9 +140,9 @@ export default function Formulario({ history }) {
 
 
 
-  function handleSubmit(e){
-    
-    id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
+  function handleSubmit(e) {
+
+    id !== true ? dispatch(postArticle(form, form.img = base64ImageFile)) : dispatch(putArticles(form, form.img = base64ImageFile))
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
     alert("enviado satisfactoriamente")
 
@@ -138,7 +151,7 @@ export default function Formulario({ history }) {
     }, 2000)
   }
 
-  
+
 
   return (
     <Formik
@@ -165,83 +178,84 @@ export default function Formulario({ history }) {
         if (!values.description) {
           errors.description = 'Please submit a description';
         }
-        if (!values.category){
+        if (!values.category) {
           errors.category = 'Please submit a category'
         }
       }}
       onSubmit={(values) => {
         handleSubmit(values);
       }}>
-        {({ errors, touched }) => {
+      {({ errors, touched }) => {
         return (
-          <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
-            <CardHeader title={id ? 'EDITAR NOTICIA' : 'CREAR NOTICIA'} />
-            <Form
-              sx={{
-                padding: '60px',
-                marginLeft: 'auto',
-                marginRight: 'auto',
-                width: '600px',
-                height: '100%',
-              }}>
-              <InputLabel id="demo-simple-select-label">Titulo</InputLabel>
-              <Field
-                fullWidth
-                component={TextField}
-                error={Boolean(touched.title && errors.title)}
-                id="title"
-                label="title"
-                name="title"
-                placeholder="Ingrese el titulo"
-                type="text"
-                value={form.title}
-                onChange={(e, values) => nameChange(e, values)}
-              />
-              <ErrorMessage
-                component={() => (
-                  <Alert severity="warning">{errors.title}</Alert>
-                )}
-                name="title"
-              />
-              <InputLabel id="demo-simple-select-label">Descripcion</InputLabel>
-              <section style={{ width: '80%', margin: '20px auto' }}>
-                <CKEditor
-                  required
+          <>
+            {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
+              <CardHeader title={id ? 'EDITAR NOTICIA' : 'CREAR NOTICIA'} />
+              <Form
+                sx={{
+                  padding: '60px',
+                  marginLeft: 'auto',
+                  marginRight: 'auto',
+                  width: '600px',
+                  height: '100%',
+                }}>
+                <InputLabel id="demo-simple-select-label">Titulo</InputLabel>
+                <Field
+                  fullWidth
                   component={TextField}
-                  data={form.description}
-                  editor={ClassicEditor}
-                  label="Description"
-                  onChange={descriptionChange}
+                  error={Boolean(touched.title && errors.title)}
+                  id="title"
+                  label="title"
+                  name="title"
+                  placeholder="Ingrese el titulo"
+                  type="text"
+                  value={form.title}
+                  onChange={(e, values) => nameChange(e, values)}
                 />
-              </section>
-              <ErrorMessage
-                component={() => (
-                  <Alert severity="warning">{errors.description}</Alert>
-                )}
-                name="name"
-              />
-              <InputLabel id="demo-simple-select-label">Imagen</InputLabel>
-              <Box className="dropzone-container" component="div" {...getRootProps()}>
-        <input {...getInputProps()} />
-        <p>
-          Arrastra una imagen o haz click aqui para agregarla ( .png o .jpg )
-        </p>
-        <div className="thumbs-container">
-          <div className="thumb">
-            <div className="thumbInner">
-              {listHasValues(imageFiles) && (
-                <img className="thumb-image" src={imageFiles[0].preview} />
-              )}
-            </div>
-          </div>
-        </div>
-      </Box>
-              <ErrorMessage
-                component={() => (
-                  <Alert severity="warning">{errors.image}</Alert>
-                )}
-                name="image"
-              />
+                <ErrorMessage
+                  component={() => (
+                    <Alert severity="warning">{errors.title}</Alert>
+                  )}
+                  name="title"
+                />
+                <InputLabel id="demo-simple-select-label">Descripcion</InputLabel>
+                <section style={{ width: '80%', margin: '20px auto' }}>
+                  <CKEditor
+                    required
+                    component={TextField}
+                    data={form.description}
+                    editor={ClassicEditor}
+                    label="Description"
+                    onChange={descriptionChange}
+                  />
+                </section>
+                <ErrorMessage
+                  component={() => (
+                    <Alert severity="warning">{errors.description}</Alert>
+                  )}
+                  name="name"
+                />
+                <InputLabel id="demo-simple-select-label">Imagen</InputLabel>
+                <Box className="dropzone-container" component="div" {...getRootProps()}>
+                  <input {...getInputProps()} />
+                  <p>
+                    Arrastra una imagen o haz click aqui para agregarla ( .png o .jpg )
+                  </p>
+                  <div className="thumbs-container">
+                    <div className="thumb">
+                      <div className="thumbInner">
+                        {listHasValues(imageFiles) && (
+                          <img className="thumb-image" src={imageFiles[0].preview} />
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Box>
+                <ErrorMessage
+                  component={() => (
+                    <Alert severity="warning">{errors.image}</Alert>
+                  )}
+                  name="image"
+                />
                 <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
                 <Select fullWidth
                   labelId="demo-simple-select-label"
@@ -252,20 +266,21 @@ export default function Formulario({ history }) {
                 >
                   <MenuItem value={"News"}>Noticias</MenuItem>
                   <MenuItem value={"Projects"}>Proyectos</MenuItem>
-                 <MenuItem value={30}>Thirty</MenuItem>
-               </Select>
-              <Button 
-                className="submit-btn"
-                type="submit"
-                variant="contained"
-                onClick={() => handleSubmit()}>
-                Send
-              </Button>
-            </Form>
-          </Card>
+                  <MenuItem value={30}>Thirty</MenuItem>
+                </Select>
+                <Button
+                  className="submit-btn"
+                  type="submit"
+                  variant="contained"
+                  onClick={() => handleSubmit()}>
+                  Send
+                </Button>
+              </Form>
+            </Card>}
+          </>
         );
       }}
-      </Formik>
+    </Formik>
     // <div>
     //   <h1>FORMULARIO DE CREACION</h1>
     //   <form>

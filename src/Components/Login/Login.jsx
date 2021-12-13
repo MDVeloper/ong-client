@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, {useState, useEffect} from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { startSesion } from "../../Store/Actions/actionLogin";
@@ -7,6 +7,7 @@ import Styles from "./Login.module.css"
 import { FcGoogle } from "react-icons/fc";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
+
 
 const validation = (value) => {
   const errors = {};
@@ -31,16 +32,13 @@ export default function Login() {
   const history = useHistory();
 
   useEffect(() => {
-    if (userOn) {
-      history.push("/users");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userOn]);
 
   const handleSubmit = (value, { setSubmitting }) => {
     setSubmitting(false);
     dispatch(startSesion(value));
-    dispatch(history.push('/users'))
+    // Se comento porque apenas se logeaba lo redirigia y no le daba tiempo a generar el token!!
+    // dispatch(history.push('/users'))
   };
 
 
@@ -107,7 +105,6 @@ export default function Login() {
 
 
                     <p style={{ color: "#fff", marginTop: "1rem" }}>Si todavia no tenes tu cuenta puedes<Link style={{ color: "#2EC4B6" }} to="/register"> <b>registrarte aqui</b> </Link> </p>
-
 
                   </div>
                 </Form>

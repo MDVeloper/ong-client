@@ -18,6 +18,7 @@ export default function Navbar() {
 
             <Link to="/"><img src={logo} alt=" " className={styles.logo1}/></Link>
             <Link to="/"><img src={logo2} alt=" " className={styles.logo2} /></Link>
+            <Link to="/"><img src={logo} alt=" " /></Link>
             <Link to="/donaciones">
                 <button className={styles.button}>Donar</button>
             </Link>
@@ -42,11 +43,9 @@ export default function Navbar() {
                     <li>
                         <Link to="/proyectos" onClick={showMenu}>Proyectos</Link>
                     </li>
-
                     <li>
                         {localStorage.getItem("token") ? <Link to="/users" onClick={showMenu}>Mi Perfil</Link> : <Link to="/login" onClick={showMenu}>Log In/Register</Link>}
                     </li>
-
                     {localStorage.getItem("token") ? <li>
                         <div onClick={() => {
                             localStorage.removeItem("token");
@@ -55,8 +54,6 @@ export default function Navbar() {
                             Cerrar Sesion
                         </div>
                     </li> : null}
-
-
                 </ul>
             </nav>
         </div>

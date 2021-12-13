@@ -18,7 +18,7 @@ export default function Navbar() {
 
             <Link to="/"><img src={logo} alt=" " className={styles.logo1}/></Link>
             <Link to="/"><img src={logo2} alt=" " className={styles.logo2} /></Link>
-            <Link to="/"><img src={logo} alt=" " /></Link>
+
             <Link to="/donaciones">
                 <button className={styles.button}>Donar</button>
             </Link>

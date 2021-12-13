@@ -17,3 +17,4 @@ export const getAllTransactions = (body) => {
         .catch((error) => console.log(error));
     };
   }
+

@@ -12,28 +12,15 @@ export default function ProjectsDetail(props) {
   let project = projects.find((project) => project.id.toString() === id);
 
   return (
-    <div>
-      <p
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          marginLeft: "1rem",
-          marginBottom: "1rem",
-        }}
-      > 
-        <Link style={{ marginRight: ".5rem", color: "#62A3F7" }} to="/">
-          Menu principal
-        </Link>
-        {">"} 
-        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/proyectos">
-          Projectos
-        </Link>
-        {">"} Detalle de projecto
-      </p>
-      
+    <div className={Styles.componentContainerFromProjectDetail}>
      <div className={Styles.containerDetailProject}>
-        <h1>{project.nameProject}</h1>
-        <h3>{project.longDescription}</h3>
+        <h1>{project.title}</h1>
+
+        <div className={Styles.containerImg}>
+          <img src={project.img} alt="imagen del proyecto" />
+        </div>
+
+        <h3>{project.description}</h3>
      </div>
     </div>
   );

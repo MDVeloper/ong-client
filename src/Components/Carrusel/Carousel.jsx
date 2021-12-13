@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import "./Carousel.css";
-import { Button } from "@mui/material";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material"
 
 export default function Carousel() {
   let projects = useSelector((state) => state.project.projects);
+
 
   const settings = {
     dots: true,
@@ -30,30 +29,24 @@ export default function Carousel() {
 
           <div className={"sliderContainer"}>
             <Slider {...settings}>
-              {projects.map((data) => {
+              {projects.slice(0, 9).map((data) => {
                 return (
-                  <div key={data.id} className={"cardProjectContainer"}>
-                    <div className={"imgProjectContainer"}>
-                      <img src={data.img} alt="" />
-                    </div>
+                  <div key={data.id} className={"cardProjectContainer"} >
+
+                    <Link to={`/proyectos/${data.id}`} style={{ Button: "0" }}>
+                      <div className={"imgProjectContainer"}>
+                        <img src={data.img} alt="" />
+                      </div>
+                    </Link>
+
                     <div className={"titleDescriptionContainer"}>
-                      <h2>{data.nameProject}</h2>
-                      <p>{data.description}</p>
+                      <h2>{data.title}</h2>
                     </div>
 
-                    <Link to={`/proyectos/${data.id}`}>
-            
-                      <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", margin:".2rem .5rem 0 .5rem", fontSize:".8rem"}}>
-                        Saber mas
-                      </Button>
-                    </Link>
                   </div>
                 );
               })}
             </Slider>
-
-            <Link to="/proyectos" style={{ color: "#fff" }}>
-            </Link>
           </div>
         </div>
       )}

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { getProject } from "../../Store/Actions/actionGetProjects.js"
 import { useDispatch } from "react-redux";
 import Styles from "./Projects.module.css";
+import { Button } from "@mui/material";
 
 
 
@@ -17,7 +18,7 @@ export default function Projects(props) {
   // Paginacion
   // Estados de la paginacion
   let [currentPage, setCurrentPage] = useState(1);
-  let [itemForPage, setItemForPage] = useState(1);
+  let [itemForPage, setItemForPage] = useState(6);
 
   let [pageNumberLimit, setpageNumberLimit] = useState(5);
   let [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
@@ -103,21 +104,29 @@ export default function Projects(props) {
         {currentItems.length > 0 ? (
           currentItems.map((project) => (
             <div
-              style={{ backgroundImage: `url(${project.img})` }}
-              className={Styles.cardContainer}
-              key={project.id}
-            >
-              <h2>{project.title}</h2>
-              <h4>{project.description}</h4>
-              <Link to={`/proyectos/${project.id}`}>
-                <button>Ver mas...</button>
-              </Link>
+                className={Styles.cardContainer}
+                style={{ backgroundImage: `url(${project.img})`}}
+                key={project.id}
+              >
+              <div className={Styles.blackEffect}>
+              
+                  <div className={Styles.containerDescriptionAndTitle}>
+                    <h2>{project.title}</h2>
+                    <h4>{project.description.substr(0,500)}...</h4>
+                  </div>
+
+                  <div className={Styles.viewMoreButton}>
+                    <Link to={`/proyectos/${project.id}`}>
+                      <Button  variant="outlined">Ver mas</Button>
+                    </Link>
+                  </div>
+                  
+              </div>
             </div>
           ))
         ) : (
           <h2>No hay projectos</h2>
         )}
-
 
         <div >
           <ul className={Styles.pageNumbers}>

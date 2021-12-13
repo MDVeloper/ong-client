@@ -1,18 +1,57 @@
 
 .mainContainer {
-background-image: url('../img/ayuda-internacional-en-africa.png');
-width: 100%;
-background-size: cover;
+background-image: url('../img/Group 18.png');
+width: 70vw;
+height: 70vh;
 background-position: center;
 background-repeat: no-repeat;
-height: 50%;
+background-size: cover;
 color: white;
+margin-left: auto;
+margin-right: auto;
 
 }
-.mainContainer .btn {
-    margin-top: 520px;
-    margin-left: 20px;
-    
+
+.btn1 {
+   color: white;
+   font-family: 'Code Next';
+   font-weight: bold;
+   font-size: 27px;
+   position: absolute;
+   width: 260px;
+   height: 70px;
+   left: 364px;
+   top: 736px;
+   background: #2EC4B6;
+   border-radius: 20px;
+   border: none;  
+   cursor: pointer;
+}
+
+.btn2 {
+    color: white;
+   font-family: 'Code Next';
+   font-weight: bold;
+   font-size: 27px;
+   position: absolute;
+   width: 260px;
+   height: 70px;
+   left: 669px;
+   top: 736px;
+   background: #2EC4B6;
+   border-radius: 20px;
+   border: none;
+   cursor: pointer;  
+}
+
+.btn1:hover {
+    background-color: white;
+    color: #2EC4B6;
+}
+
+.btn2:hover {
+    background-color: white;
+    color: #2EC4B6;
 }
 .mainContainer div {
     margin-left: 50%;
@@ -32,56 +71,194 @@ color: white;
 }
 .containerVolunteerText h3 {
     font-size: 40px;
-    font-family: 'Ubuntu';
-    text-align: end;
+    font-family: 'Code Next';
+    text-align: initial;
+    margin-left: 89px;
+    margin-top: 6px;
+    margin-bottom: -8px;
 }
 .containerVolunteerText p {
-    font-size: 14px;
-    font-family: 'Ubuntu';
-    padding-top: 25px;
-    margin-left: 700px;
+    font-size: 16px;
+    font-family: 'Code Next';
+    padding-top: 4px;
+    margin-left: 45px;
     max-width: 450px;
 }
+
+
 .containerVolunteer {
     background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
-    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.438) 84%, rgba(0, 0, 0, 0.199) 100%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-height: 300px;
-color: white;
-text-align: center;
+    background-image: linear-gradient(90deg, rgb(0 0 0 / 44%) 40%, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0) 43.26%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    color: white;
+    text-align: center;
 }
-/** Contenedor Donation **/
+
+.btnVolunteer {
+    margin-right: 764px;
+    margin-top: 13px;
+    border: none;
+    height: 47px;
+    width: 180px;
+    border-radius: 50px;
+    background-color: #FF9F1C;
+    color: white;
+    font-family: 'Code Next';
+    font-size: 20px;
+    cursor: pointer;
+}
+.btnVolunteer:hover{
+    background-color: white;
+    color: #FF9F1C;
+}
+
 .containerDonation {
     background-image: url('../img/Untitled-4.png');
-background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.72) 30%, rgba(0, 0, 0, 0.438) 84%, rgba(0, 0, 0, 0.199) 100%), url('../img/Untitled-4.png');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-height: 300px;
-color: white;
-text-align: center;
+    background-image: linear-gradient(-90deg, rgb(0 0 0 / 44%) 40%, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0) 43.26%), url('../img/Untitled-4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    color: white;
+    text-align: center;
+}
+.containerDonationText {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: flex-end;
 }
 .containerDonationText h3 {
     font-size: 40px;
-    font-family: 'Ubuntu';
-    padding-top: 20px;
+    font-family: 'Code Next';
+    /* padding-top: 20px; */
     text-align: start;
-    margin-left: 40px;
+    margin-right: 125px;
+    max-width: 450px;
+    margin-bottom: 4px;
+    margin-top: 20px;
 }
 .containerDonationText p {
-    font-size: 14px;
-    font-family: 'Ubuntu';
-    padding-top: 25px;
-   
-    max-width: 280px;
-    margin-left: 15px;
+    font-size: 16px;
+    font-family: 'Code Next';
+    max-width: 450px;
+    margin-right: 40px;
+    margin-top: 5px;
 }
+
+.btnDonation {
+    border: none;
+    height: 47px;
+    width: 180px;
+    border-radius: 50px;
+    background-color: #FF9F1C;
+    color: white;
+    font-family: 'Code Next';
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 18px;
+    margin-right: 170px;
+}
+
+.btnDonation:hover{
+    background-color: white;
+    color: #FF9F1C;
+}
+
+
 .containerQuestionAbout {
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 30px;
+    justify-content: center;    
+    padding-left: 64px;
+    padding: 73px;
+    margin-left: 213px;
+    margin-right: 211px;
+}
+
+.container1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    margin-right: 120px;
+    border: 7px solid;
+    border-color: #FFBF69;
+    padding: 70px 80px 70px 80px;
+}
+
+.container1 h3 {
+    font-family: 'Code Next';
+    margin-bottom: 23px;
+    font-size: 24px;
+    color: #FFBF69;
+}
+
+.container1 button {
+    margin-top: 35px;
+    width: 300px;
+    height: 40px;
+    background: #FFBF69;
+    border-radius: 109px;
+    border: none;
+    font-family: 'Ubuntu';
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 550px;
+}
+.container1>a>button:hover{
+    box-shadow: 0 0 6px 3px #cfcfcf57;
+}
+
+.container1 p {
+    font-family: 'Ubuntu';
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    border: 7px solid;
+    border-color: #2EC4B6;
+    padding: 70px 80px 70px 80px;
+}
+
+.container2 h3 {
+    font-family: 'Code Next';
+    margin-bottom: 23px;
+    font-size: 24px;
+    color: #2EC4B6;
+}
+
+.container2 p {
+    font-family: 'Ubuntu';
+    text-align: center;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.container2 button {
+    margin-top: 35px;
+    width: 300px;
+    height: 40px;
+    background: #2EC4B6;
+    border-radius: 109px;
+    border: none;
+    font-family: 'Ubuntu';
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 550px;
+}
+.container2>a>button:hover{
+    box-shadow: 0 0 6px 3px #cfcfcf57;
 }
 
 .containerAbout{
@@ -98,11 +275,7 @@ text-align: center;
     margin-top: 20px;
 }
 
-.btn {
-    color:  black!important;
-    background-color: #FFBF69!important;
-   border: 1px solid #FFBF69!important;
-}
+
 
 a  {
     text-decoration: none;

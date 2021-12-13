@@ -62,7 +62,7 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={members} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allUsers.length}</h1>
-                            <p className={Styles.p}>Cantidad de miembros de la comunidad</p>
+                            <p className={Styles.p}>Miembros de la comunidad</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -81,6 +81,7 @@ export default function Statistics() {
                             <img className={Styles.img} src={qdonations} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allDonations.length}</h1>
                             <p className={Styles.p}>Cantidad de donaciones</p>
+                            
                         </Item>
                     </Card>
                 </Grid>
@@ -89,7 +90,8 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={projectDone} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "Approved").length}</h1>
-                            <p className={Styles.p}>Cantidad de proyectos terminados</p>
+                            <p className={Styles.p}>Proyectos terminados</p>
+                            <p className={Styles.hide}>Filler</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -98,7 +100,8 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={projectCurso} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "InProgress").length}</h1>
-                            <p className={Styles.p}>Cantidad de proyectos en curso</p>
+                            <p className={Styles.p}>Proyectos en curso</p>
+                            <p className={Styles.hide}>Filler</p>
                         </Item>
                     </Card>
                 </Grid>

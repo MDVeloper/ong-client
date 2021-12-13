@@ -8,6 +8,7 @@ import { FcGoogle } from "react-icons/fc";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios"
 
 
 const validation = (value) => {
@@ -46,7 +47,7 @@ export default function Login() {
       setSubmitting(false);
       dispatch(startSesion(value));
     }
-    else{
+    else {
       alert("Falta el captcha")
     }
   };
@@ -54,6 +55,14 @@ export default function Login() {
   function onChange(value) {
     setcaptcha(value)
     console.log("Captcha value:", value);
+  }
+
+  const googleOnClick = () => {
+    return axios.get("/users/google")
+      .then(response => {
+        // localStorage.setItem("token", JSON.stringify(reponse.data.token))
+        console.log(response)
+      })
   }
 
   const onSubmit = () => {
@@ -122,8 +131,7 @@ export default function Login() {
 
                     <p style={{ color: "#fff", margin: "1rem 0" }}> o </p>
 
-
-                    <button className={Styles.containerIcon} >
+                    <button className={Styles.containerIcon} onClick={googleOnClick}>
                       <FcGoogle style={{ fontSize: "2rem" }} />
                       <p>Ingresar con google</p>
                     </button>

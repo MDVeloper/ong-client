@@ -1,15 +1,17 @@
 
 .mainContainer {
 background-image: url('../img/Group 18.png');
-width: 69vw;
+width: 70vw;
 height: 70vh;
 background-position: center;
 background-repeat: no-repeat;
 background-size: cover;
 color: white;
-margin-left: 14.8vw;
+margin-left: auto;
+margin-right: auto;
 
 }
+
 .btn1 {
    color: white;
    font-family: 'Code Next';
@@ -31,7 +33,7 @@ margin-left: 14.8vw;
    font-family: 'Code Next';
    font-weight: bold;
    font-size: 27px;
-    position: absolute;
+   position: absolute;
    width: 260px;
    height: 70px;
    left: 669px;

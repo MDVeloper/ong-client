@@ -8,7 +8,7 @@ import moment from "moment";
 
 import { loginRegister } from "../../Store/Actions/actionRegister";
 
-import { Button, Input, InputBase } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import Styles from "./register.module.css"
 

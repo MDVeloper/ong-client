@@ -15,8 +15,10 @@ import CardHeader from '@mui/material/CardHeader';
 import { Alert } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import { actionRefreshArticles } from '../../Store/Actions/actionRefreshArticles';
+import Styles from './Formulario.module.css'
 import jwt_decode from "jwt-decode"
 import Loading from '../Loading/Loading'
+
 
 export const listHasValues = (list) => list.length > 0;
 export const isEmptyList = (list) => list.length === 0;
@@ -42,10 +44,12 @@ const thumb = {
 
 export default function Formulario({ history }) {
   let { id } = useParams()
-  console.log(useParams())
+
   const dispatch = useDispatch();
+
   const result = useSelector((state) => state.articles.articles)
   console.log(result)
+
   const [error, setError] = useState({})
 
   const [form, setForm] = useState({
@@ -56,6 +60,7 @@ export default function Formulario({ history }) {
     category: "",
     voteCount: 0,
   })
+  
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
@@ -128,17 +133,15 @@ export default function Formulario({ history }) {
 
     setForm({ ...form, description: data });
   };
+  
   const nameChange = (e, values) => {
-    // eslint-disable-next-line no-console
-    console.log(values);
+
     setForm({ ...form, title: e.target.value });
   };
+
   const categoryChange = (e) => {
     setForm({ ...form, category: e.target.value });
   };
-
-
-
 
   function handleSubmit(e) {
 
@@ -152,59 +155,58 @@ export default function Formulario({ history }) {
   }
 
 
-
   return (
-    <Formik
+    <div className={Styles.container}>
+      <Formik
       initialValues={{
         title: '',
         img: '',
         description: '',
         category: '',
       }}
+
       validate={(values) => {
         let errors = {};
 
         //Name
-        if (!values.title) {
-          errors.title = 'Please submit a email';
+        if (form.title === "") {
+          errors.title = 'Requerido';
         }
-        //Image
-        if (values.img === null) {
-          errors.img = 'Please submit a image';
-        } else if (values.img) {
-          errors.img = false;
-        }
+
         //Description
-        if (!values.description) {
-          errors.description = 'Please submit a description';
+        if (form.description === "" || form.description.length < 200) {
+          errors.description = 'Ingrese descripcion con mas de 200 caracteres';
         }
-        if (!values.category) {
-          errors.category = 'Please submit a category'
+        if (form.category=== ""){
+          errors.category = 'Requerido'
         }
-      }}
-      onSubmit={(values) => {
+
+        return errors;
+      }}  
+
+      onSubmit={(values,errors) => {
+
         handleSubmit(values);
       }}>
       {({ errors, touched }) => {
         return (
-          <>
-            {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
-              <CardHeader title={id ? 'EDITAR NOTICIA' : 'CREAR NOTICIA'} />
-              <Form
-                sx={{
-                  padding: '60px',
-                  marginLeft: 'auto',
-                  marginRight: 'auto',
-                  width: '600px',
-                  height: '100%',
-                }}>
-                <InputLabel id="demo-simple-select-label">Titulo</InputLabel>
+          <Card className={Styles.CardContainer}>
+            {
+              id 
+              ?
+              <h1>MODIFICAR ARTICULO</h1>
+              :
+              <h1>CREAR ARTICULO</h1>
+            }
+            <Form className={Styles.containerInputs}>
+      
+                <InputLabel className={Styles.label}>Titulo</InputLabel>
                 <Field
-                  fullWidth
+                  className={Styles.inputs}
                   component={TextField}
-                  error={Boolean(touched.title && errors.title)}
                   id="title"
-                  label="title"
+//           <>
+//             {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
                   name="title"
                   placeholder="Ingrese el titulo"
                   type="text"
@@ -213,51 +215,47 @@ export default function Formulario({ history }) {
                 />
                 <ErrorMessage
                   component={() => (
-                    <Alert severity="warning">{errors.title}</Alert>
+                    <Alert style={{width:"95%"}} severity="warning">{errors.title}</Alert>
                   )}
                   name="title"
                 />
-                <InputLabel id="demo-simple-select-label">Descripcion</InputLabel>
-                <section style={{ width: '80%', margin: '20px auto' }}>
+
+                <InputLabel className={Styles.label}>Descripcion</InputLabel>
+                <div className={Styles.inputs}>
                   <CKEditor
-                    required
-                    component={TextField}
                     data={form.description}
                     editor={ClassicEditor}
                     label="Description"
                     onChange={descriptionChange}
                   />
-                </section>
+                </div>
                 <ErrorMessage
                   component={() => (
-                    <Alert severity="warning">{errors.description}</Alert>
+                    <Alert style={{width:"95%"}} severity="warning">{errors.description}</Alert>
                   )}
-                  name="name"
+                  name="description"
                 />
-                <InputLabel id="demo-simple-select-label">Imagen</InputLabel>
-                <Box className="dropzone-container" component="div" {...getRootProps()}>
+                
+                <InputLabel className={Styles.label}>Imagen</InputLabel>
+                <Box className={Styles.inputs}  component="div" {...getRootProps()}>
                   <input {...getInputProps()} />
                   <p>
                     Arrastra una imagen o haz click aqui para agregarla ( .png o .jpg )
                   </p>
                   <div className="thumbs-container">
                     <div className="thumb">
-                      <div className="thumbInner">
+                      <div style={{width:"100%"}} className="thumbInner">
                         {listHasValues(imageFiles) && (
-                          <img className="thumb-image" src={imageFiles[0].preview} />
+                          <img style={{width:"100%"}} className="thumb-image" src={imageFiles[0].preview} />
                         )}
                       </div>
                     </div>
                   </div>
                 </Box>
-                <ErrorMessage
-                  component={() => (
-                    <Alert severity="warning">{errors.image}</Alert>
-                  )}
-                  name="image"
-                />
-                <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
-                <Select fullWidth
+
+                <InputLabel className={Styles.label}>Categoria</InputLabel>
+                <Select 
+                  className={Styles.inputs}
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={form.category}
@@ -266,21 +264,29 @@ export default function Formulario({ history }) {
                 >
                   <MenuItem value={"News"}>Noticias</MenuItem>
                   <MenuItem value={"Projects"}>Proyectos</MenuItem>
-                  <MenuItem value={30}>Thirty</MenuItem>
+                  <MenuItem value={"Curses"}>Cursos</MenuItem>
                 </Select>
-                <Button
+                <ErrorMessage
+                  component={() => (
+                    <Alert style={{width:"95%"}} severity="warning">{errors.category}</Alert>
+                  )}
+                  name="category"
+                />
+
+
+                <Button 
                   className="submit-btn"
                   type="submit"
-                  variant="contained"
-                  onClick={() => handleSubmit()}>
+                  variant="contained">
                   Send
                 </Button>
-              </Form>
-            </Card>}
-          </>
+            
+            </Form>
+          </Card>
         );
       }}
-    </Formik>
+      </Formik>
+    </div>
     // <div>
     //   <h1>FORMULARIO DE CREACION</h1>
     //   <form>

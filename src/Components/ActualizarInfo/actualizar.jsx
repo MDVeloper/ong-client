@@ -7,7 +7,7 @@ import moment from "moment";
 
 import { Button, TextField } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
-import Styles from "./actualizar.module.css"
+import Styles from "./Actualizar.module.css"
 import Loading from '../Loading/Loading'
 
 import jwt_decode from "jwt-decode"
@@ -56,7 +56,7 @@ export default function Actualizar() {
 
     return (
         <>
-        {isLoading === true ? <Loading /> :
+        {/* {isLoading === true ? <Loading /> : */}
         <div className={Styles.registerContainer}>
             <div className={Styles.effectBack}>
 
@@ -84,7 +84,7 @@ export default function Actualizar() {
 
                             infonueva(valores)
 
-                            setTimeout(() => (setFormSended(false)), 5000);
+                            setTimeout(() => (setFormSended(false)), (setIsLoading(false)), 5000);
                         }}
                     >
                         {({ errors, values }) => (
@@ -189,7 +189,7 @@ export default function Actualizar() {
                     </Formik>
                 </div>
             </div>
-        </div>}
+        </div>
         </>
     );
 }

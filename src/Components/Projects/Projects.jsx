@@ -109,7 +109,7 @@ export default function Projects(props) {
               
                   <div className={Styles.containerDescriptionAndTitle}>
                     <h2>{project.title}</h2>
-                    <h4>{project.description.substr(0,500)}...</h4>
+                    <h4>{project.description.substr(0,500).replace(/<[^>]+>/g, '')}...</h4>
                   </div>
 
                   <div className={Styles.viewMoreButton}>

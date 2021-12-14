@@ -56,7 +56,7 @@ export default function Userpanel({ history }) {
                     </div>
                     <div className={style.div3}>
                         <h4><Link to="/actualizar">Editar mi información personal</Link></h4>
-                        <h4><Link to="#">Cambiar mi contraseña</Link></h4>
+                        <h4><Link to="/newpassword">Cambiar mi contraseña</Link></h4>
                         {
                             userid && userid.privilege === "Admin" ?
                                 <Link to="/backoffice/form">

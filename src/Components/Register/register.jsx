@@ -70,7 +70,7 @@ export default function Register() {
       <div className={Styles.containerFormRegister}>
         <h1 className={Styles.titleFromRegister}>Registrarse</h1>
 
-        <Formik 
+        <Formik
           initialValues={{
             name: "",
             lastName: "",
@@ -84,7 +84,7 @@ export default function Register() {
             volunteer: false,
             course: false,
           }}
-          
+
           validationSchema={formSchema}
 
           onSubmit={(valores, { resetForm }) => {

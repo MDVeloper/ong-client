@@ -6,9 +6,6 @@ import { useDispatch } from "react-redux";
 import Styles from "./Projects.module.css";
 import { Button } from "@mui/material";
 
-
-
-
 export default function Projects(props) {
 
   let projects = useSelector((state) => state.project.projects);

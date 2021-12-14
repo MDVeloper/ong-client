@@ -20,7 +20,7 @@ export default function ProjectsDetail(props) {
           <img src={project.img} alt="imagen del proyecto" />
         </div>
 
-        <h3>{project.description}</h3>
+        <h3>{project.description.replace(/<[^>]+>/g, '')}</h3>
      </div>
     </div>
   );

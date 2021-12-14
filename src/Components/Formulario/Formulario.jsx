@@ -127,8 +127,7 @@ export default function Formulario({ history }) {
 
   const descriptionChange = (e, editor) => {
     const data = editor.getData();
-
-    setForm({ ...form, description: data.replace(/<[^>]+>/g, '') });
+    setForm({ ...form, description: data });
   };
 
   const nameChange = (e, values) => {
@@ -171,7 +170,7 @@ export default function Formulario({ history }) {
           }
 
           //Description
-          if (form.description === "" || form.description.length < 200) {
+          if (form.description === "" || form.description.length < 100) {
             errors.description = 'Ingrese descripcion con mas de 200 caracteres';
           }
           if (form.category === "") {
@@ -261,7 +260,7 @@ export default function Formulario({ history }) {
                     >
                       <MenuItem value={"News"}>Noticias</MenuItem>
                       <MenuItem value={"Projects"}>Proyectos</MenuItem>
-                      <MenuItem value={"Curses"}>Cursos</MenuItem>
+                      <MenuItem value={"Course"}>Cursos</MenuItem>
                     </Select>
                     <ErrorMessage
                       component={() => (

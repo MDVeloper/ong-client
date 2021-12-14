@@ -123,7 +123,7 @@ export default function Curse({history}) {
           <h3>
             Enterate sobre los cursos que ofrecemos
           </h3>
-  
+
           <div className={Styles.cardsNewsContainer}>
             {currentItems.length > 0 ? (
               currentItems.map((cursos) => (
@@ -138,7 +138,7 @@ export default function Curse({history}) {
                   <div className={Styles.containerTitleDescriptionFromNew}>
                     <h2>{cursos.title}</h2>
 
-                    <h4 >{cursos.description.substr(0,200)}...</h4>
+                    <h4 >{cursos.description.substr(0,200).replace(/<[^>]+>/g, '')}...</h4>
                   </div>
 
                   <div className={Styles.viewMoreButton}>

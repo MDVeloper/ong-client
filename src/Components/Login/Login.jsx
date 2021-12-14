@@ -116,7 +116,7 @@ export default function Login() {
                       className={Styles.errors}
                     />
                   </div>
-                  <form onSubmit={onSubmit} >
+                  <form style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }} onSubmit={onSubmit} >
                     <ReCAPTCHA
                       ref={reCaptchaRef}
                       sitekey={TEST_SITE_KEY}
@@ -136,9 +136,9 @@ export default function Login() {
                       <p>Ingresar con google</p>
                     </button>
 
+                    <p style={{ color: "#fff", marginTop: "1rem" }}>Si todavia no tenes tu cuenta puedes<Link style={{ color: "#2EC4B6" }} to="/register"> <b>registrarte aquí</b> </Link> </p>
 
-                    <p style={{ color: "#fff", marginTop: "1rem" }}>Si todavia no tenes tu cuenta puedes<Link style={{ color: "#2EC4B6" }} to="/register"> <b>registrarte aqui</b> </Link> </p>
-
+                    <p style={{ color: "#fff", marginTop: "1rem" }}>Olvidaste tu contraseña?<Link style={{ color: "#2EC4B6" }} to="/newpassword"> <b>cambiala aquí</b> </Link> </p>
                   </div>
                 </Form>
               )}

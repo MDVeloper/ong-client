@@ -94,7 +94,7 @@ input:-webkit-autofill:active {
 .containerFromCheckBox{
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin: 0 1rem 1rem 1rem;
 }
 
 /* Div from label and field checkBox */

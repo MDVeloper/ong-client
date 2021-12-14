@@ -16,6 +16,7 @@
     width: 80%;
     display: flex;
     text-align: center;
+    min-height: 100vh;
   }
   .slideContainer2 {
     background: linear-gradient(106.11deg, #FFBF69 27.75%, #2EC4B6 100%);

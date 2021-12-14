@@ -15,8 +15,8 @@ export default function NewsDetail(props) {
 
   return (
     <div className={Styles.componentContainerFromNewsDetail}>
-    
 
+    
       <div className={Styles.containerDetailNews}>
           <h1>{news.title}</h1>
 
@@ -24,7 +24,7 @@ export default function NewsDetail(props) {
             <img src={`${news.img}`} alt="Imagen del proyecto" />
           </div>
 
-          <h3>{news.description}</h3>
+          <h3>{news.description.replace(/<[^>]+>/g, '')}</h3>
       </div>
 
     </div>

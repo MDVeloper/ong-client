@@ -5,8 +5,10 @@ import { getProject } from "../../Store/Actions/actionGetProjects.js"
 import { useDispatch } from "react-redux";
 import Styles from "./Projects.module.css";
 import { Button } from "@mui/material";
+
 import { AiOutlineHeart } from "react-icons/ai";
 import { AiFillHeart } from "react-icons/ai";
+
 
 
 export default function Projects(props) {
@@ -121,10 +123,14 @@ export default function Projects(props) {
               
                   <div className={Styles.containerDescriptionAndTitle}>
                     <h2>{project.title}</h2>
+
+                    <h4>{project.description.substr(0,500).replace(/<[^>]+>/g, '')}...</h4>
+
                     <h4>{project.description.substr(0,500)}...</h4>
                     <div className={Styles.containerStatus}>
                       <h4 className={Styles.status}>{project.status === "Approved" ? "Estado: Aprobado" : project.status === "InProgres" ? "Estado: En proceso" : "Estado: Pausado" }</h4>
                     </div>
+
                   </div>
 
                   <div className={Styles.viewMoreButton}>

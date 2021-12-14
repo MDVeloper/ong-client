@@ -111,9 +111,9 @@ export default function News(props) {
                 <div className={Styles.containerTitleDescriptionFromNew}>
                   <h2>{news.title}</h2>
 
-                  <h4 >{news.description.substr(0,200)}...</h4>
+                <h4 >{news.description.substr(0,200).replace(/<[^>]+>/g, '')}...</h4>
 
-                  <h5>{news.createdAt}</h5>
+                <h5>{news.createdAt}</h5>
                 </div>
 
                 <div className={Styles.viewMoreButton}>

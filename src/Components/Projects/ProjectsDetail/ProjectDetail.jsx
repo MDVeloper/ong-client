@@ -14,7 +14,6 @@ export default function ProjectsDetail(props) {
 
   return (
     <div className={Styles.componentContainerFromProjectDetail}>
-      
      
       <div className={Styles.containerDetailProject}>
         {
@@ -26,14 +25,16 @@ export default function ProjectsDetail(props) {
           </Link>
         }
 
+
         <h1>{project.title}</h1>
 
         <div className={Styles.containerImg}>
           <img src={project.img} alt="imagen del proyecto" />
         </div>
 
-        <h3>{project.description}</h3>
-      </div>
+
+        <h3>{project.description.replace(/<[^>]+>/g, '')}</h3>
+     </div>
     </div>
   );
 }

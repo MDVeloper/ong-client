@@ -61,8 +61,10 @@ export default function Formulario({ history }) {
     status: ""
   })
 
+
   const [sendForm, setSendForm] = useState(false);
   
+
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
@@ -73,6 +75,7 @@ export default function Formulario({ history }) {
 
   const [userid, setuserid] = useState("")
   const [isLoading, setIsLoading] = useState(true)
+  const [sendForm, setSendForm] = useState(false);
 
   if (!localStorage.getItem("token")) {
     window.location.href = '/login'
@@ -125,7 +128,6 @@ export default function Formulario({ history }) {
   const imageValidation = () => {
     if (listHasValues(fileRejections)) {
       setImageError(true);
-
       return;
     }
     setImageError(false);
@@ -137,10 +139,9 @@ export default function Formulario({ history }) {
 
   const descriptionChange = (e, editor) => {
     const data = editor.getData();
-
     setForm({ ...form, description: data });
   };
-  
+
   const nameChange = (e, values) => {
 
     setForm({ ...form, title: e.target.value });
@@ -169,7 +170,6 @@ export default function Formulario({ history }) {
       setSendForm(false)
     }, 2000)
   }
-
 
   return (
     <div className={Styles.container}>
@@ -295,7 +295,7 @@ export default function Formulario({ history }) {
                 >
                   <MenuItem value={"News"}>Noticias</MenuItem>
                   <MenuItem value={"Projects"}>Proyectos</MenuItem>
-                  <MenuItem value={"Curses"}>Cursos</MenuItem>
+                  <MenuItem value={"Courses"}>Cursos</MenuItem>
                 </Select>
                 <ErrorMessage
                   component={() => (
@@ -344,8 +344,11 @@ export default function Formulario({ history }) {
                 }
 
             </Form>
+
           </Card>
-        );
+        }
+        </>
+      );
       }}
       </Formik>
     </div>

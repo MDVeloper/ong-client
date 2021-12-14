@@ -16,11 +16,11 @@ const dataFilials = [
         responsable: "Matias Vallejos"
     },
     {
-        zonaName: "Cordoba",
+        zonaName: "Córdoba",
         telefono: 47448971,
         img: cordoba,
         direccion: "Mogote Nº 1893",
-        localidad: "Cordoba Capital",
+        localidad: "Córdoba Capital",
         email: "cordoba@codingtohelp.org",
         responsable: "Leonardo Irusta"
     },
@@ -40,7 +40,7 @@ const dataFilials = [
         direccion: "Montevideo Nº 1893",
         localidad: "Montevideo",
         email: "montevideo@codingtohelp.org",
-        responsable: "Matias Vallejos"
+        responsable: "Jonathan Armesto"
     },
     {
         zonaName: "San Fernando",
@@ -59,6 +59,15 @@ const dataFilials = [
         localidad: "Junin",
         email: "junin@codingtohelp.org",
         responsable: "Ludmila Balbi"
+    },
+    {
+        zonaName: "Ciudad Autonoma",
+        telefono: 47448971,
+        img: junin,
+        direccion: "Junin Nº 1893",
+        localidad: "CA BA",
+        email: "caba@codingtohelp.org",
+        responsable: "Serafín Dericks"
     },
 ];
 

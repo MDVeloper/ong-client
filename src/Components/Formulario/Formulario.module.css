@@ -5,7 +5,7 @@ html {
   font-size: 16px;
   font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
   'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif;   
+  sans-serif;
 }
 
 /* Container */
@@ -19,7 +19,6 @@ html {
 .CardContainer {
     height: 100%;
     width: 50%;
-    
     margin: 2rem auto;
     padding: 1rem;
 
@@ -36,10 +35,10 @@ html {
   flex-direction: column;
 
   align-items: center;
- 
+
   width: 90%;
 }
-    
+
 
 /* Title form */
 .CardContainer h1 {
@@ -49,9 +48,9 @@ html {
 
 
 /* Labels */
-.CardContainer label{ 
-    font-size: 1rem;   
-    margin-top: 1.5rem;     
+.CardContainer label{
+    font-size: 1rem;
+    margin-top: 1.5rem;
     color: #000;
     margin-right: auto;
 }

@@ -88,18 +88,19 @@ html {
     width: 70%;
     height: auto;
 
-    word-wrap: break-word;
 }
 
 /* Title from project */
 .blackEffect h2 {
     font-size: 1.8rem;
+    width: 100%;
 }
 
 /* Description from project */
 .blackEffect h4 {
     font-size: 1.3rem;
     margin: 0;
+    width: 100%;
 }
 
 /* Container View more button */
@@ -198,6 +199,13 @@ html {
         font-size: 13px;
     }
 
+    /* Container from cards */
+    .cardContainer{
+
+        width: 90%;
+        height: 20rem;
+    }
+
 
     /* Title from project */
     .blackEffect h2 {
@@ -242,9 +250,7 @@ html {
 
         /* Container from cards */
     .cardContainer{
-
         width: 90%;
-        height: 30rem;
     }
 
 
@@ -280,7 +286,7 @@ html {
     .cardContainer{
 
         width: 90%;
-        height: 30rem;
+        height: 25rem;
     }
 
     /* Title from project */
@@ -295,13 +301,6 @@ html {
         margin: 0;
     }
 
-    /* Container View more button */
-    .viewMoreButton {
-        margin-left: 1rem;
-        margin-bottom: .3rem;
-        margin-right: .3rem;
-    }
-    
     .viewMoreButton button {
         font-size: .5rem;
     }

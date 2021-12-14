@@ -1,0 +1,204 @@
+/* Al ser un module.css el htlm solo influye a los elementos de este componente */
+/* lo uso para el responsive, usando la medida rem que se fija en la el size de la fuente */
+html {
+    font-size: 16px; 
+}
+    /* Container register */
+.registerContainer {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/3.jpg");
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+}
+
+/* Black effect from image */
+.effectBack {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.185);
+}
+
+
+
+    /* Container from  register form */
+.containerFormRegister {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 40rem;
+    height: 80%;
+    margin: 3rem auto 3rem auto;
+    border-radius: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+
+
+    /* formColumnGrid */
+.formColumnGrid {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 1rem 3rem 1rem 3rem ;
+}
+
+/* Title from register */
+.titleFromRegister {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+
+
+    /* Container from Label and Field */
+.containersLabelField {
+    display: flex;
+    flex-direction: column;
+
+    margin: 1rem;
+
+    color: #fff;
+}
+
+/* Inputs */
+.containersLabelField input {
+    color: black;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: "color 9999s ease-out, background-color 9999s ease-out";
+    transition-delay: 9999s;
+}
+
+
+
+    /* Container from checkBox */
+.containerFromCheckBox{
+    display: flex;
+    justify-content: center;
+    margin: 0 1rem 1rem 1rem;
+}
+
+/* Div from label and field checkBox */
+.containerLabelFieldCheckBox{
+    color: #fff;
+    margin: 0 1rem;
+}
+
+/* CheckBox form */
+.containerLabelFieldCheckBox label{
+    position: relative;
+    bottom: 0.1rem;
+}
+
+
+
+    /* Container form terms and conditions */
+.containersLabelFieldTermsAndConditions {
+    color: #fff;
+    text-align: center;
+    
+    margin: 0 1rem 2rem 1rem;
+}
+
+
+
+    /* Container from button send */
+.containerButtonSended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+/* Button send register */
+.containerButtonSended .buttonSendRegister {
+    
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem 7rem;
+
+    cursor: pointer;
+
+    background-color: #2EC4B6;
+}
+
+.containerButtonSended .buttonSendRegister:hover {
+    background-color: #2EC4B6;
+}
+
+
+    /* Container from icon google */
+.containerIcon {
+    display: flex;
+    align-items: center;
+
+    background-color: #fff;
+
+    border: none;
+    border-radius: 1rem;
+    padding: 0.266rem 3.928rem;
+    cursor: pointer;
+}
+
+.containerIcon p {
+    padding-left: 3rem;
+    font-size: 1rem;
+}
+    
+
+@media screen and (max-width: 700px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+
+
+@media screen and (max-width:540px) {
+    html{
+        font-size: 12px;
+    }
+    
+    /* formColumnGrid */
+    .formColumnGrid {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+    }
+
+    /* Container from  register form */
+    .containerFormRegister {
+        display: flex;
+        flex-direction: column;
+    
+        align-items: center;
+        justify-content: center;
+    
+        width: 23rem;
+        height: 80%;
+        margin: 2rem auto 2rem auto;
+        border-radius: 1rem;
+    
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+
+}

@@ -11,8 +11,7 @@ html   {
 .footerDark {
   background-color:#282d32;
   color:#fff;
-
-  margin-top: 2rem;
+  margin: 0;
   padding: 2rem;
 }
  
@@ -188,7 +187,6 @@ html   {
     background-color:#282d32;
     color:#fff;
 
-    margin-top: 1.3rem;
     padding: 1rem .5rem;
   }
   
@@ -243,7 +241,6 @@ html   {
     background-color:#282d32;
     color:#fff;
 
-    margin-top: 1rem;
     padding: .5rem;
   }
  

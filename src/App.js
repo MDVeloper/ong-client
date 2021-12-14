@@ -19,6 +19,9 @@ import News from "./Components/News/News";
 import NewsDetail from "./Components/News/NewsDetail/NewsDetail";
 import { getNews } from "./Store/Actions/actionGetNews";
 import Curse from "./Components/Cursos/Cursos.jsx";
+import Filiales from "./Components/Filiales/Filiales.jsx";
+import ActualizarInfo from "./Components/ActualizarInfo/Actualizar.jsx"
+import ActualizarContr from "./Components/ActualizarContraseña/Actualizar.jsx"
 
 function App() {
   let dispatch = useDispatch();
@@ -47,6 +50,10 @@ function App() {
         <Route exact path="/backoffice/form" component={Formulario} />
         <Route exact path="/users" component={Userpanel} />
         <Route exact path="/curse" component={Curse} />
+        <Route exact path="/Filials" component={Filiales} />
+        <Route exact path="/actualizar" component={ActualizarInfo} />
+        <Route exact path="/newpassword" component={ActualizarContr} />
+
       </Switch>
       <Footer />
     </Router>

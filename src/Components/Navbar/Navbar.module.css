@@ -63,8 +63,8 @@
     justify-content: space-evenly;
     margin-top: 5vh;
     margin-bottom: 5vh;
-    margin-left: 6vw;
-    *margin-right: 3vw;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
     *padding-right: 4vw;
     max-width: 90%;
@@ -157,8 +157,9 @@
 
 .button:hover{
     background: linear-gradient(106.11deg, #2EC4B6 5%, #FFBF69 100%);
-    transition: 0.5s;
+    transition: all .5s;
 }
+
 .navbar>li:hover {
     border-bottom: 2px solid #FFBF69;
 }

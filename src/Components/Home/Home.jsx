@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 // import Button from '@mui/material/Button'
 // import Fab from '@mui/material/Fab';
-import NavigationIcon from '@mui/icons-material/Navigation';
+//import NavigationIcon from '@mui/icons-material/Navigation';
 import Carousel from "../Carrusel/Carousel"
 import s from './Home.module.css'
 import Statistics from "../Statistics/Statistics";
@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <div>
        <section className={s.mainContainer}>
+          <h1>Donde la tecnología y las personas se unen para ayudar.</h1>
         <div className={s.btnContainer}>
           <Link to="/donaciones">
             {/* <Button
@@ -74,7 +75,7 @@ export default function Home() {
             <h3>CONOCE SOBRE NUESTROS CURSOS</h3>
             <p>En Coding To Help no solo nos gusta ayudar si no que también capacitar para que todos tengan oportunidades de seguir avanzando en su vida con la ayuda de profesionales en el área.</p>
             
-          <Link to="/aboutUs">
+          <Link to="/courses">
             {/* <Fab variant="extended" className={s.btn} aria-label="add">
               <NavigationIcon sx={{ mr: 1 }} />
               Sobre Nosotros

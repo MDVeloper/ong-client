@@ -49,14 +49,15 @@ export default function Statistics() {
     }, [])
     console.log(dolar)
     return (
-        <div>
+        <div className={Styles.bkg}>
             <Grid
                 container
-                mt={1}
+                // mt={1}
                 spacing={3}
                 direction="row"
                 justifyContent="center"
-                alignItems="center">
+                alignItems="center"
+                >
                 <Grid item xs={2}>
                     <Card border={2}>
                         <Item>
@@ -71,7 +72,7 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={donations} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>${allDonationsAmount}</h1>
-                            <p className={Styles.p}>Toda la ayuda monetaria</p>
+                            <p className={Styles.p}>Cantidad de donaciones monetarias recibidas</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -80,7 +81,7 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={qdonations} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allDonations.length}</h1>
-                            <p className={Styles.p}>Cantidad de donaciones</p>
+                            <p className={Styles.p}>Cantidad de objetos donados en las sedes </p>
                         </Item>
                     </Card>
                 </Grid>
@@ -98,7 +99,7 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={projectCurso} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "InProgress").length}</h1>
-                            <p className={Styles.p}>Cantidad de proyectos en curso</p>
+                            <p className={Styles.p}>Cantidad de proyectos votados en curso</p>
                         </Item>
                     </Card>
                 </Grid>

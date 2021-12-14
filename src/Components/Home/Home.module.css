@@ -1,7 +1,7 @@
 
 .mainContainer {
 background-image: url('../img/Group 18.png');
-width: 70vw;
+width: 72.5vw;
 height: 70vh;
 background-position: center;
 background-repeat: no-repeat;
@@ -9,7 +9,18 @@ background-size: cover;
 color: white;
 margin-left: auto;
 margin-right: auto;
+display: flex;
+justify-content: flex-start;
 
+
+}
+
+.mainContainer h1 {
+    max-width: 450px;
+    font-size: 60px;
+    font-family: 'Code Next';
+    margin-left: 85px;
+    line-height: 4.5rem;
 }
 
 .btn1 {
@@ -20,7 +31,7 @@ margin-right: auto;
    position: absolute;
    width: 260px;
    height: 70px;
-   left: 364px;
+   left: 342px;
    top: 736px;
    background: #2EC4B6;
    border-radius: 20px;
@@ -47,11 +58,13 @@ margin-right: auto;
 .btn1:hover {
     background-color: white;
     color: #2EC4B6;
+    transition: all .5s;
 }
 
 .btn2:hover {
     background-color: white;
     color: #2EC4B6;
+    transition: all .5s;
 }
 .mainContainer div {
     margin-left: 50%;
@@ -90,6 +103,8 @@ margin-right: auto;
     background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
     background-image: linear-gradient(90deg, rgb(0 0 0 / 44%) 40%, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0) 43.26%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
     background-size: cover;
+    margin-left: -29px;
+    width: 72.5vw;
     background-position: center;
     background-repeat: no-repeat;
     height: 300px;
@@ -113,6 +128,7 @@ margin-right: auto;
 .btnVolunteer:hover{
     background-color: white;
     color: #FF9F1C;
+    transition: all .5s;
 }
 
 .containerDonation {
@@ -124,6 +140,8 @@ margin-right: auto;
     height: 300px;
     color: white;
     text-align: center;
+    margin-left: -29px;
+    width: 72.5vw;
 }
 .containerDonationText {
     display: flex;
@@ -166,6 +184,7 @@ margin-right: auto;
 .btnDonation:hover{
     background-color: white;
     color: #FF9F1C;
+    transition: all .5s;
 }
 
 
@@ -173,9 +192,9 @@ margin-right: auto;
     display: flex;
     justify-content: center;    
     padding-left: 64px;
-    padding: 73px;
-    margin-left: 213px;
-    margin-right: 211px;
+    padding: 76px;
+    margin-left: 181px;
+    margin-right: 179px;
 }
 
 .container1{
@@ -281,3 +300,123 @@ a  {
     text-decoration: none;
 }
 
+/*RESPONSIVE*/
+
+@media screen and (max-width: 2560px) {
+    .mainContainer h1 {
+        max-width: 554px;
+        font-size: 70px;
+        line-height: 4.5rem;
+    }
+
+    .btn1 {
+        width: 300px;
+        height: 78px;
+        left: 442px;
+        top: 871px;
+        font-size: 30px;
+    }
+
+    .btn2 {
+        width: 300px;
+        height: 78px;
+        font-size: 30px;
+        left: 815px;
+        top: 871px;
+    }
+
+    .containerVolunteer {
+        height: 38vh;
+    }
+
+    .containerVolunteerText h3 {
+        margin-left: 149px;
+        font-size: 48px;
+    }
+
+    .containerVolunteerText p {
+        margin-left: 118px;
+        font-size: 24px;
+        max-width: 500px;
+        font-weight: lighter;
+        
+    }
+
+    .btnVolunteer {
+        margin-right: 1106px;
+        height: 61px;
+        width: 303px;
+        font-size: 30px;
+    }
+
+    .containerDonation {
+        height: 38vh;
+    }
+
+    .containerDonationText h3 {
+        font-size: 48px;
+        margin-right: 197px;        
+    }
+
+    .containerDonationText p {
+        font-size: 24px;
+        max-width: 500px;
+        margin-right: 105px;
+    }
+
+    .btnDonation {
+        height: 61px;
+    width: 303px;
+    font-size: 30px;
+    margin-right: 205px;
+    }
+
+    .containerQuestionAbout{
+        padding: 148px;
+        max-width: 1856px;
+        margin-left: 208px;
+    }
+
+    .container1 {
+        width: 800px;
+        height: 400px;
+    }
+
+    .container1 h3 {
+        font-size: 30px;
+
+    }
+
+    .container1 p {
+        font-size: 28px
+
+    }
+
+    .container1 button {
+        width: 324px;
+        height: 63px;
+        font-size: 28px;
+    }
+
+    .container2 button {
+        width: 324px;
+        height: 63px;
+        font-size: 26px;
+    }
+    
+    .container2 p {
+        font-size: 28px
+    }
+
+    .container2 h3 {
+        font-size: 30px;
+
+    }
+
+    .container2 {
+        width: 800px;
+        height: 400px;
+    }
+
+
+}

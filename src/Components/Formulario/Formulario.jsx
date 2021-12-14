@@ -7,7 +7,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import TextField from '@mui/material/TextField';
 import Card from '@mui/material/Card';
-import { Button, Box} from '@mui/material';
+import { Button, Box } from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
@@ -15,7 +15,8 @@ import { Alert } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import { actionRefreshArticles } from '../../Store/Actions/actionRefreshArticles';
 import Styles from './Formulario.module.css'
-
+import jwt_decode from "jwt-decode"
+import Loading from '../Loading/Loading'
 
 
 export const listHasValues = (list) => list.length > 0;
@@ -45,17 +46,24 @@ export default function Formulario({ history }) {
   let { id } = useParams()
 
   const dispatch = useDispatch();
-  const result = useSelector( (state) => state.articles.articles)
+
+  const result = useSelector((state) => state.articles.articles)
+  console.log(result)
 
   const [error, setError] = useState({})
+
   const [form, setForm] = useState({
     id: id,
     title: "",
     img: "",
     description: "",
     category: "",
+<<<<<<< HEAD
     voteCount:0,
     status: ""
+=======
+    voteCount: 0,
+>>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
   })
 
   const [sendForm, setSendForm] = useState(false);
@@ -63,10 +71,29 @@ export default function Formulario({ history }) {
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
+<<<<<<< HEAD
   
   if (!localStorage.getItem("token")){
     history.push('/login')
+=======
+  const [userid, setuserid] = useState("")
+  const [isLoading, setIsLoading] = useState(true)
+
+  if (!localStorage.getItem("token")) {
+    window.location.href = '/login'
+>>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
   }
+
+  if (localStorage.getItem("token") && userid === "") {
+    const data = localStorage.getItem("token")
+    setuserid(jwt_decode(data))
+    if (jwt_decode(data).privilege !== "Admin") {
+      window.location.href = '/';
+    }
+    if (jwt_decode(data).privilege === "Admin") {
+      setIsLoading(false)
+    }
+  };
 
   const handleDrop = (acceptedFiles, fileRejections) => {
 
@@ -129,6 +156,7 @@ export default function Formulario({ history }) {
     setForm({ ...form, category: e.target.value });
   };
 
+<<<<<<< HEAD
   
   const statusChange = (e) => {
     setForm({ ...form, status: e.target.value });
@@ -139,6 +167,11 @@ export default function Formulario({ history }) {
   function handleSubmit(e){
 
     id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
+=======
+  function handleSubmit(e) {
+
+    id !== true ? dispatch(postArticle(form, form.img = base64ImageFile)) : dispatch(putArticles(form, form.img = base64ImageFile))
+>>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
 
     setSendForm(true)
@@ -149,7 +182,6 @@ export default function Formulario({ history }) {
     }, 2000)
   }
 
-  
 
   return (
     <div className={Styles.container}>
@@ -196,10 +228,9 @@ export default function Formulario({ history }) {
       onSubmit={(values) => {
         handleSubmit(values);
       }}>
-        {({ errors, touched }) => {
+      {({ errors, touched }) => {
         return (
           <Card className={Styles.CardContainer}>
-        
             {
               id 
               ?
@@ -207,15 +238,19 @@ export default function Formulario({ history }) {
               :
               <h1>CREAR ARTICULO</h1>
             }
-
-
             <Form className={Styles.containerInputs}>
       
                 <InputLabel className={Styles.label}>Titulo</InputLabel>
                 <Field
                   className={Styles.inputs}
                   component={TextField}
+<<<<<<< HEAD
                   id="input"
+=======
+                  id="title"
+//           <>
+//             {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
+>>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
                   name="title"
                   placeholder="Ingrese el titulo"
                   type="text"

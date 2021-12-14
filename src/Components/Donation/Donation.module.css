@@ -44,12 +44,12 @@
 
 .box_buttonMercadoPago_der_h2 {
   color: #fff;
-  font-weight: 600;
+  font-weight: 800;
 }
 .box_buttonMercadoPago_der_p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin: 0 150px;
-  margin-top: 10px;
+  margin-top: 20px!important;
   margin-bottom: 20px;
   letter-spacing: 0.1px;
 }
@@ -104,3 +104,74 @@
   display: none !important;
 }
 
+
+.containerPagos {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.paypalContainer {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-right: 200px;
+  padding-top: 150px;
+ 
+}
+.paypalContainer input {
+  width: 150px;
+  height: 25px;
+  font-size: 20px;
+  border-radius: 3px;
+  margin-left: 50px;
+  border: none;
+  margin-top: 7px;
+}
+.paypalContainer label {
+  color: rgba(44, 43, 43, 0.938);
+  font-size: 18px;
+  font-weight: bold;
+}
+.mpContainer label {
+  color: rgba(44, 43, 43, 0.938);
+  font-size: 18px;
+  font-weight: bold;
+}
+.inputPaypal {
+  margin-bottom: 40px;
+}
+.mpContainer {
+  display: flex;
+  flex-direction: column;
+  padding-top: 150px;
+  
+  width: 250px;
+}
+.mpContainer input {
+  width: 150px;
+  height: 25px;
+  font-size: 20px;
+  border-radius: 3px;
+  margin-left: 50px;
+  border: none;
+  margin-top: 7px;
+}
+.mpContainer > button {
+  margin-top: 40px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  margin-bottom: 5px;
+  
+}
+.mpContainer > button:hover {
+  background-color: #2ec4b523;
+  border: none;
+  
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

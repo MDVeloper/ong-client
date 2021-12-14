@@ -29,6 +29,7 @@
 
 .div2 h1 {
     color: #2EC4B6;
+    margin-top: 35px;
 }
 
 .div3 { grid-area: 1 / 3 / 3 / 4; }
@@ -45,3 +46,11 @@
     border-radius: 3px;
     color: rgb(47, 47, 47);
 }
+
+.userContainer {
+    width: 81.5vw;
+    margin-left: 8vw;
+    border-radius: 23px;
+    border: 1px solid #C8C8C8;
+}
+

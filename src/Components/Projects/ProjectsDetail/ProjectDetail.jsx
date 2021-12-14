@@ -1,4 +1,5 @@
 import React from "react";
+import {BsPencilSquare} from "react-icons/bs"
 import { useSelector } from "react-redux";
 import {Link} from "react-router-dom"
 
@@ -13,12 +14,24 @@ export default function ProjectsDetail(props) {
 
   return (
     <div className={Styles.componentContainerFromProjectDetail}>
-     <div className={Styles.containerDetailProject}>
+     
+      <div className={Styles.containerDetailProject}>
+        {
+
+          // &&
+          <Link  className={Styles.containerEditIcon} to={`/backoffice/form/${id}`}>
+            <p>Editar</p>
+            <BsPencilSquare className={Styles.editIcon}/>
+          </Link>
+        }
+
+
         <h1>{project.title}</h1>
 
         <div className={Styles.containerImg}>
           <img src={project.img} alt="imagen del proyecto" />
         </div>
+
 
         <h3>{project.description.replace(/<[^>]+>/g, '')}</h3>
      </div>

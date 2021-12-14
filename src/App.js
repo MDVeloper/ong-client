@@ -48,6 +48,7 @@ function App() {
         <Route exact path="/aboutUs" component={AboutUs} />
         <Route exact path="/donaciones" component={Donation} />
         <Route exact path="/backoffice/form" component={Formulario} />
+        <Route exact path="/backoffice/form/:id" component={Formulario} />
         <Route exact path="/users" component={Userpanel} />
         <Route exact path="/curse" component={Curse} />
         <Route exact path="/Filials" component={Filiales} />

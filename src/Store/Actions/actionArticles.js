@@ -20,6 +20,8 @@ export const getCategories = (query) => {
 }
 
 const postArticleSucces = (data) => {
+  console.log("2postArticleSucces:",data)
+
   return {
     type: "POST_ARTICLES",
     payload: data,
@@ -28,6 +30,8 @@ const postArticleSucces = (data) => {
 
 export const postArticle = (body) => {
   return (dispatch) => {
+  console.log("1postArticleSucces:",body)
+
     axios
       .post("/articles/creacion", body)
       .then((response) => {

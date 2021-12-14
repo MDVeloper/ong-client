@@ -6,6 +6,11 @@ import { useDispatch } from "react-redux";
 import Styles from "./Projects.module.css";
 import { Button } from "@mui/material";
 
+import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
+
+
+
 export default function Projects(props) {
 
   let projects = useSelector((state) => state.project.projects);
@@ -89,6 +94,15 @@ export default function Projects(props) {
     pagesIncrementBtn = <li onClick={handleClickNext}>&hellip;</li>;
   }
 
+  // Votar proyectos
+  let [vote, setVote] = useState(false);
+  
+  const voteHandler =  () => {
+    setVote(!vote)
+    console.log(vote)
+  }
+
+
   return (
     <>
       <div className={Styles.projectsContainer}>
@@ -109,12 +123,28 @@ export default function Projects(props) {
               
                   <div className={Styles.containerDescriptionAndTitle}>
                     <h2>{project.title}</h2>
+
                     <h4>{project.description.substr(0,500).replace(/<[^>]+>/g, '')}...</h4>
+
+                    <h4>{project.description.substr(0,500)}...</h4>
+                    <div className={Styles.containerStatus}>
+                      <h4 className={Styles.status}>{project.status === "Approved" ? "Estado: Aprobado" : project.status === "InProgres" ? "Estado: En proceso" : "Estado: Pausado" }</h4>
+                    </div>
+
                   </div>
 
                   <div className={Styles.viewMoreButton}>
-                    <Link to={`/proyectos/${project.id}`}>
-                      <Button  variant="outlined">Ver mas</Button>
+                    {
+                      project.status === "InProgres" ? vote === false 
+                      ?
+                      <AiFillHeart onClick={voteHandler} color="red" className={Styles.heart}/>
+                      :
+                      <AiOutlineHeart onClick={voteHandler} className={Styles.heart}/>
+                      :
+                      null
+                    }
+                    <Link style={{marginTop:"auto"}} to={`/proyectos/${project.id}`}>
+                      <Button variant="outlined">Ver mas</Button>
                     </Link>
                   </div>
                   

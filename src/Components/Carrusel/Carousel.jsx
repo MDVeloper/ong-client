@@ -5,7 +5,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import { useSelector } from "react-redux";
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
+
 
 export default function Carousel() {
   let projects = useSelector((state) => state.project.projects);

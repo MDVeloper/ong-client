@@ -15,6 +15,8 @@ export default function NewsDetail(props) {
 
   return (
     <div className={Styles.componentContainerFromNewsDetail}>
+
+    
       <div className={Styles.containerDetailNews}>
           <h1>{news.title}</h1>
 

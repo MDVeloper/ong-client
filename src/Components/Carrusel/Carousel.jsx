@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Carousel.css";
 import { useSelector } from "react-redux";
+import { Button } from "@mui/material";
 
 export default function Carousel() {
   let projects = useSelector((state) => state.project.projects);
@@ -31,19 +32,17 @@ export default function Carousel() {
               {projects.slice(0,9).map((data) => {
                 return (
                   <div key={data.id} className={"cardProjectContainer"} >
-                    <Link to={`/proyectos/${data.id}`} style={{Button:"0"}}>
-                    <div className={"imgProjectContainer"}>
-                      <img src={data.img} alt="" />
-                    </div>
-                    <div className={"titleDescriptionContainer"}>
-                      <h2>{data.title}</h2>
-                    </div>
+                      <div className={"imgProjectContainer"}>
+                        <img src={data.img} alt="" />
+                      </div>
+                      <div className={"titleDescriptionContainer"}>
+                        <h2>{data.title}</h2>
+                      </div>
  
                     <Link to={`/proyectos/${data.id}`} style={{Button:"0"}}>
                       <Button variant="outlined" style={{ color: "#FF9F1C", borderColor:"#FF9F1C", margin:".2rem .5rem 0 .5rem", fontSize:"auto"}}>
                         Saber mas
                       </Button>
-
                     </Link>
                   </div>
                 );

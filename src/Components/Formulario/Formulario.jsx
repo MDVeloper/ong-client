@@ -48,7 +48,6 @@ export default function Formulario({ history }) {
   const dispatch = useDispatch();
 
   const result = useSelector((state) => state.articles.articles)
-  console.log(result)
 
   const [error, setError] = useState({})
 
@@ -58,12 +57,8 @@ export default function Formulario({ history }) {
     img: "",
     description: "",
     category: "",
-<<<<<<< HEAD
     voteCount:0,
     status: ""
-=======
-    voteCount: 0,
->>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
   })
 
   const [sendForm, setSendForm] = useState(false);
@@ -71,17 +66,16 @@ export default function Formulario({ history }) {
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
-<<<<<<< HEAD
   
   if (!localStorage.getItem("token")){
     history.push('/login')
-=======
+  }
+
   const [userid, setuserid] = useState("")
   const [isLoading, setIsLoading] = useState(true)
 
   if (!localStorage.getItem("token")) {
     window.location.href = '/login'
->>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
   }
 
   if (localStorage.getItem("token") && userid === "") {
@@ -156,7 +150,6 @@ export default function Formulario({ history }) {
     setForm({ ...form, category: e.target.value });
   };
 
-<<<<<<< HEAD
   
   const statusChange = (e) => {
     setForm({ ...form, status: e.target.value });
@@ -167,11 +160,6 @@ export default function Formulario({ history }) {
   function handleSubmit(e){
 
     id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
-=======
-  function handleSubmit(e) {
-
-    id !== true ? dispatch(postArticle(form, form.img = base64ImageFile)) : dispatch(putArticles(form, form.img = base64ImageFile))
->>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
 
     setSendForm(true)
@@ -228,6 +216,7 @@ export default function Formulario({ history }) {
       onSubmit={(values) => {
         handleSubmit(values);
       }}>
+
       {({ errors, touched }) => {
         return (
           <Card className={Styles.CardContainer}>
@@ -239,18 +228,11 @@ export default function Formulario({ history }) {
               <h1>CREAR ARTICULO</h1>
             }
             <Form className={Styles.containerInputs}>
-      
+                {/* {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}> */}
                 <InputLabel className={Styles.label}>Titulo</InputLabel>
                 <Field
                   className={Styles.inputs}
                   component={TextField}
-<<<<<<< HEAD
-                  id="input"
-=======
-                  id="title"
-//           <>
-//             {isLoading === true ? <Loading /> : <Card sx={{ margin: '20px auto', width: '600px', height: '100%' }}>
->>>>>>> f905dacd4c2d323ee4704a856647df7df28333be
                   name="title"
                   placeholder="Ingrese el titulo"
                   type="text"
@@ -367,56 +349,6 @@ export default function Formulario({ history }) {
       }}
       </Formik>
     </div>
-
-    // <div>
-    //   <h1>FORMULARIO DE CREACION</h1>
-    //   <form>
-    //     <input 
-    //     type="text"
-    //     name="title"
-    //     value={form.title}
-    //     placeholder="title"
-    //     onChange={(e) => handleChange(e)}
-    //     required
-    //     />
-    //     {error.title &&(
-    //         <p >{error.title}</p>
-    //     )}
-    //     <input 
-    //     type="text"
-    //     name="description"
-    //     value={form.description}
-    //     placeholder="description"
-    //     onChange={(e) => handleChange(e)}
-    //     required
-    //     />
-    //     {error.description &&(
-    //         <p >{error.description}</p>
-    //     )}
-    //     <input 
-    //     type="text"
-    //     name="img"
-    //     value={form.img}
-    //     placeholder="img"
-    //     onChange={(e) => handleChange(e)}
-    //     required
-    //     />
-    //     {error.img &&(
-    //         <p >{error.img}</p>
-    //     )}
-    //     <input 
-    //     type="text"
-    //     name="category"
-    //     value={form.category}
-    //     placeholder="category"
-    //     onChange={(e) => handleChange(e)}
-    //     required
-    //     />
-    //     {error.category &&(
-    //         <p >{error.category}</p>
-    //     )}
-    //   </form>
-    //   <button onClick={(e) => handleSubmit(e)} type="submit">create</button>
-    // </div>
   )
 }
+    

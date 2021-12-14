@@ -29,6 +29,22 @@ html {
     word-wrap: break-word;
 }
 
+/* Container edit icon */
+.containerEditIcon {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+
+    color: black    ;
+}   
+
+/* Icon edit */
+.editIcon {
+    font-size: 2rem;
+}
+
+
 /* Title */
 .containerDetailProject h1 {
     color: #fff;

@@ -87,21 +87,6 @@ export default function News(props) {
 
   return (
     <div className={Styles.container}>
-      <div>
-        <p
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            marginLeft: "1rem",
-            marginBottom: "1rem",
-          }}
-        >
-          <Link style={{ marginRight: ".3rem", color: "#62A3F7" }} to="/">
-            Menu principal
-          </Link>
-          {">"} Noticias
-        </p>
-      </div>
 
 
       <div className={Styles.newsContainer}>
@@ -127,6 +112,8 @@ export default function News(props) {
                   <h2>{news.title}</h2>
 
                   <h4 >{news.description.substr(0,200)}...</h4>
+
+                  <h5>{news.createdAt}</h5>
                 </div>
 
                 <div className={Styles.viewMoreButton}>

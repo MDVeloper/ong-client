@@ -11,7 +11,6 @@ import { Button, Box} from '@mui/material';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import CardHeader from '@mui/material/CardHeader';
 import { Alert } from '@mui/material';
 import { useDropzone } from 'react-dropzone';
 import { actionRefreshArticles } from '../../Store/Actions/actionRefreshArticles';
@@ -42,6 +41,7 @@ const thumb = {
 };
 
 export default function Formulario({ history }) {
+
   let { id } = useParams()
 
   const dispatch = useDispatch();
@@ -55,12 +55,15 @@ export default function Formulario({ history }) {
     description: "",
     category: "",
     voteCount:0,
+    status: ""
   })
+
+  const [sendForm, setSendForm] = useState(false);
   
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState('');
   const [imageError, setImageError] = useState(false);
-
+  
   if (!localStorage.getItem("token")){
     history.push('/login')
   }
@@ -121,26 +124,28 @@ export default function Formulario({ history }) {
 
     setForm({ ...form, title: e.target.value });
   };
-
+  
   const categoryChange = (e) => {
     setForm({ ...form, category: e.target.value });
   };
 
+  
+  const statusChange = (e) => {
+    setForm({ ...form, status: e.target.value });
+  };
+
+
 
   function handleSubmit(e){
-    
-    
-  }
 
-
-  function handleSubmit(e){
-    
     id !== true ? dispatch(postArticle(form, form.img= base64ImageFile)) : dispatch(putArticles(form, form.img= base64ImageFile))
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))
-    alert("enviado satisfactoriamente")
 
+    setSendForm(true)
+    
     setTimeout(() => {
       dispatch(actionRefreshArticles())
+      setSendForm(false)
     }, 2000)
   }
 
@@ -154,6 +159,7 @@ export default function Formulario({ history }) {
         img: '',
         description: '',
         category: '',
+        status: ''
       }}
 
       validate={(values) => {
@@ -168,15 +174,26 @@ export default function Formulario({ history }) {
         if (form.description === "" || form.description.length < 200) {
           errors.description = 'Ingrese descripcion con mas de 200 caracteres';
         }
-        if (form.category=== ""){
+
+        //Category
+        if (form.category === ""){
           errors.category = 'Requerido'
+        }
+
+        //Status
+        if (form.status === "" ) {
+          errors.status = 'Requerido'
+        }
+
+        //Img
+        if (imageFiles.length === 0) {
+          errors.img = 'Requerido'
         }
 
         return errors;
       }}  
 
-      onSubmit={(values,errors) => {
-
+      onSubmit={(values) => {
         handleSubmit(values);
       }}>
         {({ errors, touched }) => {
@@ -198,7 +215,7 @@ export default function Formulario({ history }) {
                 <Field
                   className={Styles.inputs}
                   component={TextField}
-                  id="title"
+                  id="input"
                   name="title"
                   placeholder="Ingrese el titulo"
                   type="text"
@@ -244,6 +261,12 @@ export default function Formulario({ history }) {
                     </div>
                   </div>
                 </Box>
+                <ErrorMessage
+                  component={() => (
+                    <Alert style={{width:"95%"}} severity="warning">{errors.img}</Alert>
+                  )}
+                  name="img"
+                />
 
                 <InputLabel className={Styles.label}>Categoria</InputLabel>
                 <Select 
@@ -251,7 +274,6 @@ export default function Formulario({ history }) {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   value={form.category}
-                  label="category"
                   onChange={(e) => categoryChange(e)}
                 >
                   <MenuItem value={"News"}>Noticias</MenuItem>
@@ -266,19 +288,51 @@ export default function Formulario({ history }) {
                 />
 
 
+                {
+                  form.category === "Projects" 
+                  ?
+                  <>
+                    <InputLabel className={Styles.label}>Estado</InputLabel>
+                    <Select 
+                      className={Styles.inputs}
+                      value={form.status}
+                      onChange={(e) => statusChange(e)} 
+                    >
+                      <MenuItem value={"Pause"}>Pausado</MenuItem>
+                      <MenuItem value={"InProgres"}>En proceso</MenuItem>
+                      <MenuItem value={"Approved"}>Finalizado</MenuItem>
+                    </Select>
+                    <ErrorMessage
+                      component={() => (
+                        <Alert style={{width:"95%"}} severity="warning">{errors.status}</Alert>
+                      )}
+                      name="status"
+                    />
+                  </>
+                  :
+                  null
+                }
+
+
                 <Button 
                   className="submit-btn"
                   type="submit"
                   variant="contained">
                   Send
                 </Button>
-            
+                {
+                sendForm 
+                &&
+                <Alert style={{width:"95%"}} severity="success">Creado exitosamente</Alert>
+                }
+
             </Form>
           </Card>
         );
       }}
       </Formik>
     </div>
+
     // <div>
     //   <h1>FORMULARIO DE CREACION</h1>
     //   <form>

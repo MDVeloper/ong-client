@@ -7,7 +7,7 @@ export function getProject() {
         try {
             // Hablitar cuando se sepa la ruta que me trae las cosas del back
             const projects = await axios.get(`http://localhost:3001/articles/?category=Projects`)
-
+            console.log(projects)
             dispatch({
                 type : "GET_PROJECT",
                 payload : projects.data

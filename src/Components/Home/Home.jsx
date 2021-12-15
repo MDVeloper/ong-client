@@ -15,26 +15,10 @@ export default function Home() {
           <h1>Donde la tecnología y las personas se unen para ayudar.</h1>
         <div className={s.btnContainer}>
           <Link to="/donaciones">
-            {/* <Button
-              variant="contained"
-              size="large"
-              className={s.btn}
-              aria-label="add"
-            >
-              Apoya la causa
-            </Button> */}
             <button className={s.btn1}>Apoya la causa</button>
           </Link>
 
           <Link to="/voluntariado">
-            {/* <Button
-              variant="contained"
-              size="large"
-              className={s.btn}
-              aria-label="add"
-            >
-              Ser Voluntario
-            </Button> */}
             <button className={s.btn2}>Ser Voluntario</button>
           </Link>
 
@@ -76,6 +60,7 @@ export default function Home() {
             <p>En Coding To Help no solo nos gusta ayudar si no que también capacitar para que todos tengan oportunidades de seguir avanzando en su vida con la ayuda de profesionales en el área.</p>
             
           <Link to="/courses">
+            
             {/* <Fab variant="extended" className={s.btn} aria-label="add">
               <NavigationIcon sx={{ mr: 1 }} />
               Sobre Nosotros

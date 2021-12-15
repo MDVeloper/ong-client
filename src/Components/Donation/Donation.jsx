@@ -12,13 +12,15 @@ import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode"
-import { useDispatch } from "react-redux";
+import mercadopagoLogo from '../img/mercadopago-logo.png';
+
 
 function Donation({ history }) {
-  const [donationAmount, setDonationAmount] = useState(1);
+  const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
+  const [donationAmountMercadoPago, setDonationAmountMercadoPago] = useState(1);
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
-  const dispatch = useDispatch();
+
 
   if (!localStorage.getItem("token")) {
     history.push('/login')
@@ -37,15 +39,20 @@ function Donation({ history }) {
   if (userinfo === "" && userid.id) {
     actinfo()
   }
-  const handleDonationInput = function (e) {
+  const handleInputPayPal = function (e) {
     e.preventDefault();
-    setDonationAmount(e.target.value)
+    setDonationAmountPayPal(e.target.value)
+  };
+
+  const handleInputMercadoPago = function (e) {
+    e.preventDefault();
+    setDonationAmountMercadoPago(e.target.value)
   };
 
   const handleMp = async function () {
     const mp = {
       description: "Donation For CTL",
-      price: donationAmount,
+      price: donationAmountMercadoPago,
       quantity: 1,
       email: userinfo.email
     }
@@ -109,7 +116,7 @@ function Donation({ history }) {
 
             <Typography
               className={styles.box_buttonMercadoPago_der_p}
-              variant="body2"
+              variant="h6"
             >
               Tu solidaridad de hoy se puede transformar en la esperanza y
               resiliencia de miles de personas que se encuentran en situación de
@@ -120,27 +127,46 @@ function Donation({ history }) {
               <Typography variant="h5">Donar</Typography>
             </button> */}
 
-            <input type='number' placeholder="Digita aqui tu ayuda" onChange={handleDonationInput} value={donationAmount} />
-            <PayPalButton
-              amount={donationAmount}
-              // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-              onSuccess={(details, data) => {
-                alert("Transaction completed by " + details.payer.name.given_name);
-                console.log(details, data)
 
-                // OPTIONAL: Call your server to save the transaction
-                return axios.post("/donations", {
-                  amount: donationAmount,
-                  date: details.create_time,
-                  email: userinfo.email
-                });
-              }}
-              options={{
-                clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
-                disableFunding: 'credit,card'
-              }}
-            />
-            <button onClick={() => handleMp()}>MERCADOPAGO</button>
+            <div className={styles.containerPagos}>
+              <div className={styles.paypalContainer}>
+                <label htmlFor="">Por donaciones en dolares:</label>
+                <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} />
+                <div className={styles.buttonPaypal}>
+                  <PayPalButton
+                    amount={donationAmountPayPal}
+                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                    onSuccess={(details, data) => {
+                      alert("Transaction completed");
+                      console.log(details, data)
+
+                      // OPTIONAL: Call your server to save the transaction
+                      return axios.post("/donations", {
+                        amount: donationAmountPayPal,
+                        estatus: details.status,
+                        date: details.create_time,
+                        email: userinfo.email
+                      });
+                    }}
+                    options={{
+                      clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
+                      disableFunding: 'credit,card'
+                    }}
+                  />
+                </div>
+
+              </div>
+              <div className={styles.mpContainer}>
+                <label htmlFor="">Por donaciones en pesos:</label>
+                <input type='text' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}></input>
+                <button onClick={() => handleMp()}>
+                  <img width="114.5" src={mercadopagoLogo} alt="" />
+                </button>
+
+              </div>
+            </div>
+
+
 
           </div>
         </div>
@@ -160,9 +186,7 @@ function Donation({ history }) {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                Nuestros dos principales medios de pagos son para dolares, Paypal, y para pesos contamos con MercadoPago
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -177,9 +201,7 @@ function Donation({ history }) {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                Podes participar en nuestro sistema de "Manos A La Obra" para colaborar presencialmente en alguna de nuestras filiales.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -188,13 +210,11 @@ function Donation({ history }) {
               aria-controls="panel3a-content"
               id="panel3a-header"
             >
-              <Typography>¿Como puedo saber a donde va mi donación?</Typography>
+              <Typography>¿Hay un monto minimo para poder donar?</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                No contamos con un minimo, cualquier tipo de donacion por mas minima que sea es bienvenida.
               </Typography>
             </AccordionDetails>
           </Accordion>

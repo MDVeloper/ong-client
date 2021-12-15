@@ -142,7 +142,7 @@ export default function Formulario({ history }) {
 
   function handleSubmit(e) {
     console.log(form);
-    id !== true
+    !id 
       ? dispatch(postArticle(form, (form.img = base64ImageFile)))
       : dispatch(putArticles(form, (form.img = base64ImageFile)));
     // id !== true ? dispatch(postArticle(form)) : dispatch(putArticles(form))

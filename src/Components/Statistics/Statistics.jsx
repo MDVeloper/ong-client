@@ -30,7 +30,7 @@ export default function Statistics() {
     const dispatch = useDispatch();
     const [dolar, setDolar] = useState(0)
 
-
+console.log(allProjects)
     let allDonationsAmount = allDonations.reduce((acc, obj) => {
         if (obj.paymentMethod === "PayPal") {
             return acc + (Number(obj.amount) * dolar);
@@ -79,7 +79,7 @@ export default function Statistics() {
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={qdonations} alt="statistics_proyects" />
-                            <h1 className={Styles.h1}>{allDonations.length}</h1>
+                            <h1 className={Styles.h1}>{allDonations.filter(d => d.status === 'Approved').length}</h1>
                             <p className={Styles.p}>Cantidad de donaciones</p>
                             
                         </Item>

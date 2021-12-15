@@ -30,7 +30,7 @@ export default function Statistics() {
     const dispatch = useDispatch();
     const [dolar, setDolar] = useState(0)
 
-
+console.log(allProjects)
     let allDonationsAmount = allDonations.reduce((acc, obj) => {
         if (obj.paymentMethod === "PayPal") {
             return acc + (Number(obj.amount) * dolar);

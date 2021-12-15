@@ -10,6 +10,7 @@ import jwt_decode from "jwt-decode"
 import axios from "axios"
 import createPalette from '@mui/material/styles/createPalette'
 import Loading from '../Loading/Loading'
+import ScreenMembersList from './prueba'
 
 
 export default function Userpanel({ history }) {
@@ -70,6 +71,8 @@ export default function Userpanel({ history }) {
                 </div>
 
                 <VerticalTabs />
+
+                <ScreenMembersList/>
             </div>}
         </>)
 }

@@ -67,15 +67,10 @@ const AboutUs = () => {
            <div className={s.containerParagraph}>
                <div className={s.containerP}>
                  <p className={s.p}>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+                  Coding to help nació con un pequeño grupo de alumnos que quería utilizar lo que estaban aprendiendo para poder ayudar a los demás ¿Por que no poder utilizar las nuevas tecnologías de desarrollo para mejorar la situación de muchas personas alrededor del país? Nuestra misión final es lograr que eso se haga realidad.
                </p>
                <p className={s.p}>
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
-               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis soluta dolor error, quo, eveniet, corporis cupiditate consectetur rem maxime sit quibusdam et facere aliquid! Sequi dolore unde quidem maiores similique.
+                  Nos dedicamos a brindar ayuda a todo el país, reunimos donaciones para apoyar diferentes sectores, brindamos cursos y capacitaciones de manera gratuita a mano de expertos en el área que deciden donar sus conocimientos para brindar nuevas oportunidades a aquellos que lo necesiten, compartimos y damos exposición a noticias de interes. Siempre estamos en crecimiento buscando nuevos colaboradores y voluntarios, te recomendamos mirar las preguntas frecuentes para descubrir las diferentes formas de ayudar.
                </p>  
                </div>
                
@@ -95,9 +90,7 @@ const AboutUs = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                Para donaciones monetarias contamos con las plataformas Paypal y Mercado Pago, cada una con sus diferentes formas de pago.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -112,9 +105,7 @@ const AboutUs = () => {
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                Hay diferentes maneras, podes acercarte a las diferentes filiales para poder dejar tus donaciones, también está nuestro programa MANOS A LA OBRA en el cual podés participar siendo voluntario dando click <a href='/voluntariado'>aquí</a>, en donde no solo podes colaborar en diferentes proyectos si no que también podes ofrecerte para dictar un curso, ¡Toda ayuda es bienvenida!
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -123,13 +114,11 @@ const AboutUs = () => {
               aria-controls="panel3a-content"
               id="panel3a-header"
             >
-              <Typography>¿Como puedo saber a donde va mi donación?</Typography>
+              <Typography>¿Como puedo votar por proyectos?</Typography>
             </AccordionSummary>
             <AccordionDetails>
               <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
+                La votación es exclusiva para aquellos que se registraron, es una forma de que la comunidad apoye aquellos proyectos en los que les gustaría participar.
               </Typography>
             </AccordionDetails>
           </Accordion>

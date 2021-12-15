@@ -13,12 +13,9 @@ import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useState } from 'react';
 import styles from "./UserPanel.module.css"
+import DenseTable from './InternTables';
 
-const theme = createTheme({
-  MuiTabs: {
 
-  }
-})
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -100,7 +97,7 @@ export default function VerticalTabs({ history }) {
         <Tab label="Cursos" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        Información de las donaciones
+        <h4> Información de las donaciones  </h4> 
         {userinfo.donations && userinfo.donations.map(t => {
           return (
             <div key={t.id} className={style.transactionDiv}>
@@ -114,8 +111,11 @@ export default function VerticalTabs({ history }) {
           )
         })}
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={value} index={1}> {
+        userid && userid.privilege === "Admin" ? 
+      }
         Toda la información respectiva de los proyectos etc
+        <DenseTable/>
       </TabPanel>
       <TabPanel value={value} index={2}>
         Toda la información respectiva de las votaciones

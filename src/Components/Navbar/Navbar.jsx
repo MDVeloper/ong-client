@@ -44,6 +44,9 @@ export default function Navbar() {
                         <Link to="/proyectos" onClick={showMenu}>Proyectos</Link>
                     </li>
                     <li>
+                        <Link to="/courses" onClick={showMenu}>Cursos</Link>
+                    </li>
+                    <li>
                         {localStorage.getItem("token") ? <Link to="/users" onClick={showMenu}>Mi Perfil</Link> : <Link to="/login" onClick={showMenu}>Log In/Register</Link>}
                     </li>
                     {localStorage.getItem("token") ? <li>

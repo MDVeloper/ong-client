@@ -54,10 +54,11 @@ export default function Statistics() {
                 container
                 mt={1}
                 spacing={3}
+                columns={{ xs: 3 }}
                 direction="row"
                 justifyContent="center"
                 alignItems="center">
-                <Grid item xs={2}>
+                <Grid item>
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={members} alt="statistics_proyects" />
@@ -66,7 +67,7 @@ export default function Statistics() {
                         </Item>
                     </Card>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item >
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={donations} alt="statistics_proyects" />
@@ -75,7 +76,7 @@ export default function Statistics() {
                         </Item>
                     </Card>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item >
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={qdonations} alt="statistics_proyects" />
@@ -85,23 +86,23 @@ export default function Statistics() {
                         </Item>
                     </Card>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item >
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={projectDone} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "Approved").length}</h1>
                             <p className={Styles.p}>Proyectos terminados</p>
-                            <p className={Styles.hide}>Filler</p>
+                            
                         </Item>
                     </Card>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item >
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={projectCurso} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "InProgress").length}</h1>
                             <p className={Styles.p}>Proyectos en curso</p>
-                            <p className={Styles.hide}>Filler</p>
+                           
                         </Item>
                     </Card>
                 </Grid>

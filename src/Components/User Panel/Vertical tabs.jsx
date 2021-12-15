@@ -9,6 +9,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAllTransactions } from '../../Store/Actions/actionDonations';
 import { useEffect } from 'react';
 import style from "./UserPanel.module.css";
+import jwt_decode from "jwt-decode";
+import axios from "axios";
+import { useState } from 'react';
+import styles from "./UserPanel.module.css"
 
 const theme = createTheme({
   MuiTabs: {
@@ -50,10 +54,25 @@ function a11yProps(index) {
   };
 }
 
-export default function VerticalTabs() {
+export default function VerticalTabs({ history }) {
   const [value, setValue] = React.useState(0);
   const dispatch = useDispatch()
+  const [userinfo, setuserinfo] = useState("")
+  const [userid, setuserid] = useState("")
 
+  if (localStorage.getItem("token") && userid === ""){
+      const data = localStorage.getItem("token")
+      setuserid(jwt_decode(data))
+  };
+
+  const actinfo = () => {
+      axios.get(`/users/detail?id=${userid.id}`)
+      .then(response => setuserinfo(response.data))
+  }
+
+  if (userinfo === "" && userid.id){
+      actinfo()
+  }
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -63,9 +82,15 @@ export default function VerticalTabs() {
     dispatch(getAllTransactions());
   }, [dispatch]);
 
+const allTransactions = useSelector((state) => state.donations.allTransactions);
+
+  useEffect(() => {
+    dispatch(getAllTransactions());
+  }, [dispatch]);
+
   return (
     <Box
-      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500 }}
+      sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 500 } } className={style.userContainer}
     >
       <Tabs
         orientation="vertical"
@@ -82,9 +107,9 @@ export default function VerticalTabs() {
       </Tabs>
       <TabPanel value={value} index={0}>
         Información de las donaciones
-        {allTransactionsss && allTransactionsss.map(t => {
+        {userinfo.donations && userinfo.donations.map(t => {
           return (
-            <div className={style.transactionDiv}>
+            <div key={t.id} className={style.transactionDiv}>
               <h6>{t.id}</h6>
               <h6>{t.email}</h6>
               <h6>${t.amount}</h6>
@@ -103,6 +128,15 @@ export default function VerticalTabs() {
       </TabPanel>
       <TabPanel value={value} index={3}>
         Toda la informacion de los cursos tomados
+        {userinfo.articles && userinfo.articles.map(t => {
+          return (
+            <div key={t.id} className={style.transactionDiv}>
+              <h6>{t.id}</h6>
+              <h6>{t.title}</h6>
+              <h6>{t.description}</h6>
+            </div>
+          )
+        })}
       </TabPanel>
     </Box>
   );

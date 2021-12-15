@@ -8,6 +8,8 @@ import projectReducer from './Reducers/getProjectsReducers'
 import newsReducer from "./Reducers/getNewsReducers"
 import articlesReducers from './Reducers/articlesReducers';
 import donationsReducers from './Reducers/donationsReducers';
+import refheshReducerArticles from './Reducers/refheshArticlesReducer'
+import statisticsReducer from "./Reducers/statisticsReducer.js";
 
 const initialData = loadState()
 
@@ -17,7 +19,9 @@ const rootReducer = combineReducers({
     project: projectReducer,
     new: newsReducer,
     articles: articlesReducers,
-    donations: donationsReducers
+    donations: donationsReducers,
+    refreshArticles : refheshReducerArticles,
+    statistics: statisticsReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

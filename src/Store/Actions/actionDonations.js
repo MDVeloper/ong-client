@@ -1,12 +1,5 @@
 import axios from "axios";
 
-export const setAmountMP = (amount) => {
-    return {
-      type: "SET_AMOUNT_MP",
-      payload: amount,
-    };
-  };
-
   const getAllTransactionsSuccess = (data) => {
     return {
       type: "GET_TRANSACTIONS",
@@ -14,13 +7,14 @@ export const setAmountMP = (amount) => {
     };
   };
 
-export const getAllTransactions = (dispatch) => {
+export const getAllTransactions = (body) => {
     return (dispatch) => {
       axios
-        .get(`/donations`)
+        .get(`/donations`, body)
         .then((response) => {
           dispatch(getAllTransactionsSuccess(response.data));
         })
         .catch((error) => console.log(error));
     };
   }
+

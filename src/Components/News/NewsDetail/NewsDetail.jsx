@@ -17,8 +17,8 @@ export default function NewsDetail(props) {
 
   return (
     <div className={Styles.componentContainerFromNewsDetail}>
-
-    
+      {news 
+      &&
       <div className={Styles.containerDetailNews}>
 
           {jwt_decode(localStorage.getItem("token")).privilege === "Admin" && (
@@ -37,9 +37,11 @@ export default function NewsDetail(props) {
             <img src={`${news.img}`} alt="Imagen del proyecto" />
           </div>
 
-          <h3>{news.description.replace(/<[^>]+>/g, '')}</h3>
+          <div style={{width:"100%", wordWrap:"break-word"}}>
+            <h3>{news.description.replace(/<[^>]+>/g, '')}</h3>
+          </div>
       </div>
-
+}
     </div>
   );
 }

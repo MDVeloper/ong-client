@@ -16,6 +16,8 @@ import mercadopagoLogo from '../img/mercadopago-logo.png';
 import { useDispatch } from "react-redux";
 
 function Donation({ history }) {
+
+
   const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
   const [donationAmountMercadoPago, setDonationAmountMercadoPago] = useState(1);
   const [userinfo, setuserinfo] = useState("")

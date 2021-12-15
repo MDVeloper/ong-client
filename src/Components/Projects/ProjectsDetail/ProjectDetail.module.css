@@ -88,10 +88,31 @@ html {
 /* Description */
 .containerDetailProject h3 {
     color: #fff;
-    font-size: 1rem;
+    font-size: 1.2rem;
 
     margin-left: 6rem;
     margin-right: 6rem;
+}
+
+
+/* Button donate */
+.btnFooter {
+    color:  black !important;
+    background-color: #FFBF69 !important;
+  
+    border: 1px solid #FFBF69 !important;
+    border-radius: 20px !important;
+  
+    width: 9rem !important;
+    height: 1.4rem !important;
+  
+    margin-top: 1rem;
+  }
+
+
+/* Status */
+.status {
+    color: #fff;
 }
 
 
@@ -133,6 +154,17 @@ html {
         height: auto;
     }
 
+    /* Description */
+    .containerDetailProject h3 {
+    color: #fff;
+    font-size: 1.1rem;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    }
+    
+
+
 }
 
 
@@ -165,6 +197,16 @@ html {
     .containerImg {
         width: 70%;
         height: auto;
+    }
+
+    
+    /* Description */
+    .containerDetailProject h3 {
+        color: #fff;
+        font-size: 1rem;
+    
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
 }

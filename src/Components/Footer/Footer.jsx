@@ -49,7 +49,7 @@ const Footer = () => {
             
             <div className={s.containerButtonDoneteAndOthers}>
                 <Fab className={s.btnFooter} aria-label="add">
-                    <Link to="/donaciones">
+                    <Link style={{color:"#000"}} to="/donaciones">
                         Dona
                     </Link>
                 </Fab>

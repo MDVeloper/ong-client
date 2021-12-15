@@ -147,10 +147,10 @@ export default function Curse({ history }, props) {
                     </div>
                     {jwt_decode(localStorage.getItem("token")).privilege ===
                       "Admin" && (
-                      <Link
-                        className={Styles.containerEditIcon}
-                        to={`/backoffice/form/${cursos.id}`}
-                      >
+                        <Link
+                          className={Styles.containerEditIcon}
+                          to={`/backoffice/form/${cursos.id}`}
+                        >
                         <p style={{ color: "#FFBF69" }}>Editar</p>
                         <BsPencilSquare
                           style={{ color: "#FFBF69" }}

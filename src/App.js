@@ -54,7 +54,6 @@ function App() {
         <Route exact path="/Filials" component={Filiales} />
         <Route exact path="/actualizar" component={ActualizarInfo} />
         <Route exact path="/newpassword" component={ActualizarContr} />
-
       </Switch>
       <Footer />
     </Router>

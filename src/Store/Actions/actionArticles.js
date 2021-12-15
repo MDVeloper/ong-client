@@ -72,3 +72,12 @@ export const deleteArticles = (id) => {
     })((error) => console.log(error));
   };
 };
+
+export const saveDetailCurrent = (data) => {
+  return (dispatch) => {
+    dispatch({
+      type: "SAVE_DETAIL",
+      payload: data
+    })
+  }
+}

@@ -12,8 +12,6 @@ import { Button, TextField } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import Styles from "./register.module.css"
 
-
-
 export default function Register() {
   let dispatch = useDispatch()
 
@@ -26,7 +24,7 @@ export default function Register() {
     password: Yup.string()
       .required("Por favor, introduzca su contraseña")
       .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/,
+        /^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/,
         "Debe incluir mínimo ocho caracteres, al menos una letra mayúscula, una letra minúscula y un número"
       ),
     repeatPassword: Yup.string()

@@ -56,6 +56,7 @@ export default function Formulario({ history }) {
     description: "",
     category: "",
     voteCount: 0,
+    status: "InProgress"
   })
 
   const [imageFiles, setImageFiles] = useState([]);

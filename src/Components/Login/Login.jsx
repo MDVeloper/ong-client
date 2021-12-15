@@ -16,12 +16,13 @@ const validation = (value) => {
   if (!value.email) {
     errors.email = "Email is required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.email)) {
+
     errors.email = "Email is not valid";
   }
   if (!value.password) {
     errors.password = "Password is required";
-  } else if (value.password.length < 5) {
-    errors.password = "Password must have 5 characters";
+  } else if (!/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/i.test(value.password)) {
+    errors.password = "La contraseña no coincide";
   }
   return errors;
 };
@@ -32,7 +33,7 @@ export default function Login() {
   // const LOCAL_HOST_KEY = "6LeBD5sdAAAAAP7hM3JryC8L0QBgxwJvWIX0DMOm"
 
   const userOn = useSelector((state) => state.login.active);
-  const error = useSelector((state) => state.login.error);
+  // const error = useSelector((state) => state.login.error);
 
   const reCaptchaRef = React.createRef()
   const dispatch = useDispatch();
@@ -96,11 +97,11 @@ export default function Login() {
                       name="email"
                       placeholder="Ingrese su correo electronico"
                     />
-                    <ErrorMessage
+                    {/* <ErrorMessage
                       name="email"
                       component="div"
                       className={Styles.errors}
-                    />
+                    /> */}
                   </div>
 
                   <div className={Styles.containersLabelField}>

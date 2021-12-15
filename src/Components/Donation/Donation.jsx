@@ -127,46 +127,46 @@ function Donation({ history }) {
               <Typography variant="h5">Donar</Typography>
             </button> */}
 
-       
-       <div className={styles.containerPagos}>
-          <div className={styles.paypalContainer}>
-                  <label htmlFor="">Por donaciones en dolares:</label> 
-                  <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} />
+
+            <div className={styles.containerPagos}>
+              <div className={styles.paypalContainer}>
+                <label htmlFor="">Por donaciones en dolares:</label>
+                <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} />
                 <div className={styles.buttonPaypal}>
-                   <PayPalButton
-                  amount={donationAmountPayPal}
-                  // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                  onSuccess={(details, data) => {
-                  alert("Transaction completed by " + details.payer.name.given_name);
-                  console.log(details, data)
+                  <PayPalButton
+                    amount={donationAmountPayPal}
+                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                    onSuccess={(details, data) => {
+                      alert("Transaction completed");
+                      console.log(details, data)
 
-                  // OPTIONAL: Call your server to save the transaction
-                  return axios.post("/donations", {
-                  amount: donationAmountPayPal,
+                      // OPTIONAL: Call your server to save the transaction
+                      return axios.post("/donations", {
+                        amount: donationAmountPayPal,
 
-                  date: details.create_time,
-                  email: userinfo.email
-                  });
-                  }}
-                  options={{
-                  clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
-                  disableFunding: 'credit,card'
-                  }}
-                  /> 
+                        date: details.create_time,
+                        email: userinfo.email
+                      });
+                    }}
+                    options={{
+                      clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
+                      disableFunding: 'credit,card'
+                    }}
+                  />
                 </div>
-                  
+
               </div>
               <div className={styles.mpContainer}>
-              <label htmlFor="">Por donaciones en pesos:</label>
-                  <input type='number' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} />
-                  <button  onClick={() => handleMp()}>
-                    <img width="114.5" src={mercadopagoLogo} alt="" />
-                   </button>
-                 
+                <label htmlFor="">Por donaciones en pesos:</label>
+                <input type='number' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} />
+                <button onClick={() => handleMp()}>
+                  <img width="114.5" src={mercadopagoLogo} alt="" />
+                </button>
+
               </div>
-       </div>
-             
-          
+            </div>
+
+
 
           </div>
         </div>

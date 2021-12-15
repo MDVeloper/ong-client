@@ -14,26 +14,10 @@ export default function Home() {
        <section className={s.mainContainer}>
         <div className={s.btnContainer}>
           <Link to="/donaciones">
-            {/* <Button
-              variant="contained"
-              size="large"
-              className={s.btn}
-              aria-label="add"
-            >
-              Apoya la causa
-            </Button> */}
             <button className={s.btn1}>Apoya la causa</button>
           </Link>
 
           <Link to="/voluntariado">
-            {/* <Button
-              variant="contained"
-              size="large"
-              className={s.btn}
-              aria-label="add"
-            >
-              Ser Voluntario
-            </Button> */}
             <button className={s.btn2}>Ser Voluntario</button>
           </Link>
 

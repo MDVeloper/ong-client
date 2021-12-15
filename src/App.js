@@ -22,6 +22,7 @@ import Curse from "./Components/Cursos/Cursos.jsx";
 import Filiales from "./Components/Filiales/Filiales.jsx";
 import ActualizarInfo from "./Components/ActualizarInfo/Actualizar.jsx"
 import ActualizarContr from "./Components/ActualizarContraseña/Actualizar.jsx"
+import Voluntario from "./Components/Voluntariado/Voluntario.jsx";
 
 function App() {
   let dispatch = useDispatch();
@@ -53,7 +54,7 @@ function App() {
         <Route exact path="/Filials" component={Filiales} />
         <Route exact path="/actualizar" component={ActualizarInfo} />
         <Route exact path="/newpassword" component={ActualizarContr} />
-
+        <Route exact path="/voluntariado" component={Voluntario}/>
       </Switch>
       <Footer />
     </Router>

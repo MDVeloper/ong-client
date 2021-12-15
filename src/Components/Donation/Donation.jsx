@@ -13,14 +13,14 @@ import { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode"
 import mercadopagoLogo from '../img/mercadopago-logo.png';
-import { useDispatch } from "react-redux";
+
 
 function Donation({ history }) {
   const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
   const [donationAmountMercadoPago, setDonationAmountMercadoPago] = useState(1);
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
-  const dispatch = useDispatch();
+
 
   if (!localStorage.getItem("token")) {
     history.push('/login')

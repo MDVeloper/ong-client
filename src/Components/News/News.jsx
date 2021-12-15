@@ -87,23 +87,6 @@ export default function News(props) {
 
   return (
     <div className={Styles.container}>
-      <div>
-        <p
-          style={{
-            display: "flex",
-            justifyContent: "flex-start",
-            marginLeft: "1rem",
-            marginBottom: "1rem",
-          }}
-        >
-          <Link style={{ marginRight: ".3rem", color: "#62A3F7" }} to="/">
-            Menu principal
-          </Link>
-          {">"} Noticias
-        </p>
-      </div>
-
-
       <div className={Styles.newsContainer}>
 
         <h1>Noticias</h1>
@@ -126,7 +109,7 @@ export default function News(props) {
                 <div className={Styles.containerTitleDescriptionFromNew}>
                   <h2>{news.title}</h2>
 
-                  <h4 >{news.description.substr(0,200)}...</h4>
+                  <h4 >{news.description.substr(0,200).replace(/<[^>]+>/g, '')}...</h4>
                 </div>
 
                 <div className={Styles.viewMoreButton}>

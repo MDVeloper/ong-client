@@ -13,24 +13,6 @@ export default function ProjectsDetail(props) {
 
   return (
     <div className={Styles.componentContainerFromProjectDetail}>
-      <p
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          marginLeft: "1rem",
-          marginBottom: "1rem",
-        }}
-      > 
-        <Link style={{ marginRight: ".5rem", color: "#62A3F7" }} to="/">
-          Menu principal
-        </Link>
-        {">"} 
-        <Link style={{marginLeft: ".5rem", marginRight: ".5rem", color: "#62A3F7" }} to="/proyectos">
-          Projectos
-        </Link>
-        {">"} Detalle de projecto
-      </p>
-      
      <div className={Styles.containerDetailProject}>
         <h1>{project.title}</h1>
 
@@ -38,7 +20,7 @@ export default function ProjectsDetail(props) {
           <img src={project.img} alt="imagen del proyecto" />
         </div>
 
-        <h3>{project.description}</h3>
+        <h3>{project.description.replace(/<[^>]+>/g, '')}</h3>
      </div>
     </div>
   );

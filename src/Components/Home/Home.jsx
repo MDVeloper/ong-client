@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div>
        <section className={s.mainContainer}>
-        <div>
+        <div className={s.btnContainer}>
           <Link to="/donaciones">
             {/* <Button
               variant="contained"
@@ -74,7 +74,7 @@ export default function Home() {
             <h3>CONOCE SOBRE NUESTROS CURSOS</h3>
             <p>En Coding To Help no solo nos gusta ayudar si no que también capacitar para que todos tengan oportunidades de seguir avanzando en su vida con la ayuda de profesionales en el área.</p>
             
-          <Link to="/aboutUs">
+          <Link to="/curse">
             {/* <Fab variant="extended" className={s.btn} aria-label="add">
               <NavigationIcon sx={{ mr: 1 }} />
               Sobre Nosotros

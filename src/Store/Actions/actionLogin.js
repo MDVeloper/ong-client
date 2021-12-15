@@ -9,7 +9,7 @@ export function startSesion(value) {
           email,
           password,
         })
-        
+
         // console.log(res)
       localStorage.setItem("token", JSON.stringify(res.data.token));
       window.location.href = "/users"

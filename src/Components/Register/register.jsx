@@ -12,8 +12,6 @@ import { Button, TextField } from "@mui/material";
 import { FcGoogle } from "react-icons/fc";
 import Styles from "./register.module.css"
 
-
-
 export default function Register() {
   let dispatch = useDispatch()
 

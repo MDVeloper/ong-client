@@ -14,14 +14,6 @@ export default function TermsAndConditions() {
     return(
         <Container maxWidth={'xl'} className={Styles.container} >
 
-            <p 
-                style={{display:"flex", justifyContent:"flex-start", marginLeft:"1rem", marginBottom:"1rem"}}>
-                    <Link 
-                        style={{marginRight:".3rem", color:"#62A3F7"}} to="/register">
-                        Registro
-                    </Link> 
-                {">"} Terminos y condiciones
-            </p>
 
             <h1>Términos y condiciones de uso del sitio</h1>
 

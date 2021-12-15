@@ -20,7 +20,7 @@ import NewsDetail from "./Components/News/NewsDetail/NewsDetail";
 import { getNews } from "./Store/Actions/actionGetNews";
 import Curse from "./Components/Cursos/Cursos.jsx";
 import Filiales from "./Components/Filiales/Filiales.jsx";
-import ActualizarInfo from "./Components/ActualizarInfo/Actualizar.jsx"
+import ActualizarInfo from "./Components/ActualizarInfo/actualizar.jsx"
 import ActualizarContr from "./Components/ActualizarContraseña/Actualizar.jsx"
 
 function App() {

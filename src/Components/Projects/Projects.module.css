@@ -86,6 +86,7 @@ html {
     width: 70%;
     height: auto;
 
+    word-wrap: break-word;
 }
 
 /* Title from project */
@@ -98,19 +99,20 @@ html {
     font-size: 1.3rem;
     margin: 0;
     width: 100%;
+    text-align: start;
 }
 
 
 .containerStatus {
-    margin-top: auto;
-    margin-bottom: .5rem;
+    margin-top: 1rem;
+    margin-bottom: auto;
     background-color: black;
     border-radius: 10px;
     padding: .4rem;
 }
 
 .status{
-    color: #2EC4B6;
+    color: #FFBF69;
     width: 100%;
 }
 
@@ -135,9 +137,21 @@ html {
     border-color: #FFBF69;
 }
 
-.heart {
-    /* width: 3rem; */
-    font-size: 2rem;
+
+.link {
+    display: flex;
+    
+    height: 100%;
+    width: 100%;
+
+    border-radius: 10px;
+
+    color: #fff;
+
+    word-wrap: break-word;
+
+    margin: 0;
+    padding: 0;
 }
 
 
@@ -201,6 +215,27 @@ html {
         font-size: 14px;
     }
 
+    
+    /* Container description and title */
+    .containerDescriptionAndTitle {
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        margin-left: 1rem;
+
+        width: 85%;
+        height: auto;
+
+    }
+
+
+    /* Container button status */
+    .containerStatus h4 {
+        font-size: 1rem;
+    }
+
+
     .projectsContainer h1 {
         font-size: 2.5rem;
     }
@@ -210,6 +245,15 @@ html {
         font-size: 1.4rem;
         margin: 1rem 0 2rem 0
     }
+        
+    /* Description from project */
+    .blackEffect h4 {
+        font-size: 1.2rem;
+        margin: 0;
+        width: 100%;
+        text-align: start;
+    }
+
 
 }
 
@@ -245,6 +289,15 @@ html {
         font-size: .8rem;
     }
 
+    /* Description from project */
+    .blackEffect h4 {
+        font-size: 1.1rem;
+        margin: 0;
+        width: 100%;
+        text-align: start;
+    }
+
+
 
 }
 
@@ -269,9 +322,11 @@ html {
         font-size: 12px;
     }
 
+
         /* Container from cards */
     .cardContainer{
         width: 90%;
+        height: 26rem;
     }
 
 
@@ -292,6 +347,12 @@ html {
         font-size: .7rem;
     }
 
+    /* Container button status */
+    .containerStatus h4 {
+        font-size: .8rem;
+    }
+    
+
 }
 
 
@@ -299,15 +360,6 @@ html {
 @media screen and (max-width: 320px) {
     html { 
         font-size: 12px;
-    }
-
-
-
-        /* Container from cards */
-    .cardContainer{
-
-        width: 90%;
-        height: 25rem;
     }
 
     /* Title from project */
@@ -318,12 +370,18 @@ html {
 
     /* Description from project */
     .blackEffect h4 {
-        font-size: 1.04rem;
+        font-size: .9rem;
         margin: 0;
+        text-align: center;
     }
 
     .viewMoreButton button {
         font-size: .5rem;
+    }
+
+    /* Container button status */
+    .containerStatus h4 {
+        font-size: .6rem;
     }
 
 }

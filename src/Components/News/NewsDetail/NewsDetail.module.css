@@ -61,6 +61,28 @@ html {
 }
 
 
+
+
+/* Container edit icon */
+.containerEditIcon {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+
+    color: #FFBF69  ;   
+}   
+
+/* Icon edit */
+.editIcon {
+    font-size: 2rem;
+}
+
+
+
+
+
+
 @media screen and (max-width: 1200px) {
     html { 
         font-size: 15px;

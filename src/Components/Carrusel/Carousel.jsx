@@ -24,7 +24,7 @@ export default function Carousel() {
 
   return (
     <div className={"container"}>
-      {projects.length > 0 && (
+      {projects.length > 5 && (
         <div className={"containerCard"}>
           <h1> Galeria de proyectos </h1>
 

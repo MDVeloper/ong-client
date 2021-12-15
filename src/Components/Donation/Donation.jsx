@@ -16,12 +16,13 @@ import mercadopagoLogo from '../img/mercadopago-logo.png';
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 
+
 function Donation({ history }) {
   const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
   const [donationAmountMercadoPago, setDonationAmountMercadoPago] = useState(1);
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
-  const dispatch = useDispatch();
+
 
   if (!localStorage.getItem("token")) {
     history.push('/login')
@@ -130,11 +131,11 @@ function Donation({ history }) {
               <Typography variant="h5">Donar</Typography>
             </button> */}
 
-       
-       <div className={styles.containerPagos}>
-          <div className={styles.paypalContainer}>
-                  <label htmlFor="">Por donaciones en dolares:</label> 
-                  <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} />
+
+            <div className={styles.containerPagos}>
+              <div className={styles.paypalContainer}>
+                <label htmlFor="">Por donaciones en dolares:</label>
+                <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} />
                 <div className={styles.buttonPaypal}>
                    <PayPalButton
                   amount={donationAmountPayPal}
@@ -146,6 +147,7 @@ function Donation({ history }) {
                   // OPTIONAL: Call your server to save the transaction
                   return axios.post("/donations", {
                   amount: donationAmountPayPal,
+                  estatus: details.status,
                   target: detailProject.id, 
                   date: details.create_time,
                   email: userinfo.email
@@ -156,20 +158,21 @@ function Donation({ history }) {
                   disableFunding: 'credit,card'
                   }}
                   /> 
+
                 </div>
-                  
+
               </div>
               <div className={styles.mpContainer}>
-              <label htmlFor="">Por donaciones en pesos:</label>
-                  <input type='number' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} />
-                  <button  onClick={() => handleMp()}>
-                    <img width="114.5" src={mercadopagoLogo} alt="" />
-                   </button>
-                 
+                <label htmlFor="">Por donaciones en pesos:</label>
+                <input type='text' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}></input>
+                <button onClick={() => handleMp()}>
+                  <img width="114.5" src={mercadopagoLogo} alt="" />
+                </button>
+
               </div>
-       </div>
-             
-          
+            </div>
+
+
 
           </div>
         </div>

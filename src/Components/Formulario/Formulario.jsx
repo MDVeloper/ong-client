@@ -57,6 +57,7 @@ export default function Formulario({ history }) {
     voteCount: 0,
   });
 
+
   const [imageFiles, setImageFiles] = useState([]);
   const [base64ImageFile, setBase64ImageFile] = useState("");
   const [imageError, setImageError] = useState(false);

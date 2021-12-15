@@ -21,7 +21,8 @@ const validation = (value) => {
   }
   if (!value.password) {
     errors.password = "Password is required";
-  } else if (!/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/i.test(value.password)) {
+  }  else if (!/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/i.test(value.password)) {
+
     errors.password = "La contraseña no coincide";
   }
   return errors;

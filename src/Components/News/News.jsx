@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
-import Styles from "./News.module.css"
+import Styles from "./News.module.css";
 
 export default function News(props) {
-
   // Datos de los proyectos
   let news = useSelector((state) => state.new.news);
 
@@ -84,40 +83,55 @@ export default function News(props) {
     pagesIncrementBtn = <li onClick={handleClickNext}>&hellip;</li>;
   }
 
-
   return (
     <div className={Styles.container}>
       <div className={Styles.newsContainer}>
-
         <h1>Noticias</h1>
 
-        <h3>
-          Enterate sobre los ultimos temas de interes sobre la ONG
-        </h3>
+        <h3>Enterate sobre los ultimos temas de interes sobre la ONG</h3>
 
         <div className={Styles.cardsNewsContainer}>
           {currentItems.length > 0 ? (
             currentItems.map((news) => (
-              <div
-                className={Styles.cardContainer}
-                key={news.id}
-              >
-                <div className={Styles.containerImg}>
-                  <img className={Styles.imgFromCard}  src={news.img} alt="" />
-                </div>
+              <div>
+                <Link to={`/noticias/${news.id}`}>
+                  <div className={Styles.cardContainer} key={news.id}>
+                      <div className={Styles.containerImg}>
+                        <img
+                          className={Styles.imgFromCard}
+                          src={news.img}
+                          alt=""
+                        />
+                      </div>
 
-                <div className={Styles.containerTitleDescriptionFromNew}>
-                  <h2>{news.title}</h2>
+                      <div className={Styles.containerTitleDescriptionFromNew}>
+                        <h2>{news.title}</h2>
 
-                  <h4 >{news.description.substr(0,200).replace(/<[^>]+>/g, '')}...</h4>
-                </div>
+                        <h4>
+                          {news.description
+                            .substr(0, 200)
+                            .replace(/<[^>]+>/g, "")}
+                          ...
+                        </h4>
 
-                <div className={Styles.viewMoreButton}>
-                  <Link  to={`/noticias/${news.id}`}>
-                    <Button  variant="outlined" style={{ color: "#2EC4B6", borderColor:"#2EC4B6", margin:".2rem .5rem 0 .5rem", fontSize:".8rem"}}>Ver mas...</Button>
-                  </Link>
-                </div>
+                        <h5 style={{color:"#000"}}>{news.createdAt}</h5>
+                      </div>
 
+                      <div className={Styles.viewMoreButton}>
+                        <Button
+                          variant="outlined"
+                          style={{
+                            color: "#2EC4B6",
+                            borderColor: "#2EC4B6",
+                            margin: ".2rem .5rem 0 .5rem",
+                            fontSize: ".8rem",
+                          }}
+                        >
+                          Ver mas...
+                        </Button>
+                      </div>
+                  </div>
+                </Link>
               </div>
             ))
           ) : (
@@ -125,11 +139,12 @@ export default function News(props) {
           )}
         </div>
 
-
-        <div className={Styles.pagedStyle} >
+        <div className={Styles.pagedStyle}>
           <ul className={Styles.pageNumbers}>
             <li
-              className={currentPage === pages[0] ? null : Styles.buttonPrevNext}
+              className={
+                currentPage === pages[0] ? null : Styles.buttonPrevNext
+              }
               onClick={handleClickPrev}
             >
               Prev
@@ -149,9 +164,7 @@ export default function News(props) {
             </li>
           </ul>
         </div>
-
       </div>
-
     </div>
   );
 }

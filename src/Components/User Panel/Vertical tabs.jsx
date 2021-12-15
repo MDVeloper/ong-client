@@ -12,7 +12,6 @@ import style from "./UserPanel.module.css";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useState } from 'react';
-import styles from "./UserPanel.module.css"
 
 const theme = createTheme({
   MuiTabs: {
@@ -99,13 +98,14 @@ const allTransactions = useSelector((state) => state.donations.allTransactions);
         onChange={handleChange}
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider' }}
+        className={style.containerButtonTabs}
       >
         <Tab label="Donaciones" {...a11yProps(0)} />
         <Tab label="Proyectos" {...a11yProps(1)} />
         <Tab label="Votaciones" {...a11yProps(2)} />
         <Tab label="Cursos" {...a11yProps(3)} />
       </Tabs>
-      <TabPanel value={value} index={0}>
+      <TabPanel  value={value} index={0}>
         Información de las donaciones
         {userinfo.donations && userinfo.donations.map(t => {
           return (
@@ -119,7 +119,7 @@ const allTransactions = useSelector((state) => state.donations.allTransactions);
             </div>
           )
         })}
-      </TabPanel>
+      </TabPanel >
       <TabPanel value={value} index={1}>
         Toda la información respectiva de los proyectos etc
       </TabPanel>

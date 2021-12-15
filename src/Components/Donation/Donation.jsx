@@ -13,6 +13,8 @@ import { useState } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode"
 import mercadopagoLogo from '../img/mercadopago-logo.png';
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 
 function Donation({ history }) {
@@ -99,6 +101,8 @@ function Donation({ history }) {
     borderTop: "1px solid rgba(0, 0, 0, .125)",
   }));
 
+  var detailProject = useSelector(state => state.articles.currentDetailProject)
+
   return (
     <div>
       <div className={styles.box_buttonMercadoPago}>
@@ -133,26 +137,28 @@ function Donation({ history }) {
                 <label htmlFor="">Por donaciones en dolares:</label>
                 <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} />
                 <div className={styles.buttonPaypal}>
-                  <PayPalButton
-                    amount={donationAmountPayPal}
-                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                    onSuccess={(details, data) => {
-                      alert("Transaction completed");
-                      console.log(details, data)
+                   <PayPalButton
+                  amount={donationAmountPayPal}
+                  // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                  onSuccess={(details, data) => {
+                  alert("Transaction completed by " + details.payer.name.given_name);
+                  console.log(details, data)
 
-                      // OPTIONAL: Call your server to save the transaction
-                      return axios.post("/donations", {
-                        amount: donationAmountPayPal,
-                        estatus: details.status,
-                        date: details.create_time,
-                        email: userinfo.email
-                      });
-                    }}
-                    options={{
-                      clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
-                      disableFunding: 'credit,card'
-                    }}
-                  />
+                  // OPTIONAL: Call your server to save the transaction
+                  return axios.post("/donations", {
+                  amount: donationAmountPayPal,
+                  estatus: details.status,
+                  target: detailProject.id, 
+                  date: details.create_time,
+                  email: userinfo.email
+                  });
+                  }}
+                  options={{
+                  clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
+                  disableFunding: 'credit,card'
+                  }}
+                  /> 
+
                 </div>
 
               </div>

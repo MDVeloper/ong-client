@@ -6,14 +6,15 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { createTheme } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllTransactions } from '../../Store/Actions/actionDonations';
+
 import { useEffect } from 'react';
 import style from "./UserPanel.module.css";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useState } from 'react';
 import styles from "./UserPanel.module.css"
-import DenseTable from './InternTables';
+import { getProject } from "../../Store/Actions/actionGetProjects.js"
+import { getAllTransactions } from '../../Store/Actions/actionDonations';
 
 
 
@@ -56,6 +57,25 @@ export default function VerticalTabs({ history }) {
   const dispatch = useDispatch()
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
+  
+
+  //ME TRAIGO LA INFO DE PROYECTOS PARA LA PARTE DEL ADMIN
+  useEffect(() => {
+    dispatch(getProject())
+    }, [dispatch])
+
+  let projects = useSelector((state) => state.project.projects);
+
+  //----------------------------------------------------------
+
+  //TODO LO QUE NECESITO DE LAS TRANSACCIONES PARA EL ADMIN
+  useEffect(async () => {
+    dispatch(getAllTransactions())
+    }, [])
+
+  const allDonations = useSelector(state => state.donations.allTransactions);
+
+  //----------------------------------------------------------
 
   if (localStorage.getItem("token") && userid === ""){
       const data = localStorage.getItem("token")
@@ -97,25 +117,57 @@ export default function VerticalTabs({ history }) {
         <Tab label="Cursos" {...a11yProps(3)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <h4> Información de las donaciones  </h4> 
-        {userinfo.donations && userinfo.donations.map(t => {
-          return (
-            <div key={t.id} className={style.transactionDiv}>
-              <h6>{t.id}</h6>
-              <h6>{t.email}</h6>
-              <h6>${t.amount}</h6>
-              <h6>{t.date.slice(0, 10)}</h6>
-              <h6>{t.paymentMethod}</h6>
-              <h6>{t.status}</h6>
-            </div>
-          )
-        })}
+        <h2> Información de las donaciones </h2> 
+
+        {
+          userinfo.privilege === "Admin" ?
+          allDonations.map( t => {
+            return (
+              <div>
+                <h6>{t.id}</h6>
+                <h6>{t.email}</h6>
+                <h6>${t.amount}</h6>
+                <h6>{t.date.slice(0, 10)}</h6>
+                <h6>{t.paymentMethod}</h6>
+                <h6>{t.status}</h6>
+              </div>
+            )
+          }) :
+          userinfo.donatios ? userinfo.donations.map(t => {
+            return (
+              <div key={t.id} className={style.transactionDiv}>
+                <p>Acá podrás ver un historial de tus donaciones hechas</p>
+                <h6>{t.id}</h6>
+                <h6>{t.email}</h6>
+                <h6>${t.amount}</h6>
+                <h6>{t.date.slice(0, 10)}</h6>
+                <h6>{t.paymentMethod}</h6>
+                <h6>{t.status}</h6>
+              </div>
+            )
+          }) :
+           <div>
+             <p>Acá podrás ver un historial de tus donaciones hechas</p>
+             <h4>De momento no has hecho ninguna donacion</h4>
+           </div>
+        }
       </TabPanel>
-      <TabPanel value={value} index={1}> {
-        userid && userid.privilege === "Admin" ? 
-      }
-        Toda la información respectiva de los proyectos etc
-        <DenseTable/>
+      <TabPanel value={value} index={1}> 
+
+           <h2> Toda la información de los proyectos </h2>
+
+        {
+          userinfo.privilege === "Admin" ? 
+          projects.map( p => {
+            return(
+              <div>
+                <h5></h5>
+              </div>
+            )
+          }) : <h2>hola</h2>
+
+        }
+        
       </TabPanel>
       <TabPanel value={value} index={2}>
         Toda la información respectiva de las votaciones

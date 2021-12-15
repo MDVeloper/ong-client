@@ -113,7 +113,7 @@ justify-content: flex-start;
 }
 
 .btnVolunteer {
-    margin-right: 764px;
+    margin-right: 825px;
     margin-top: 13px;
     border: none;
     height: 47px;
@@ -302,7 +302,8 @@ a  {
 
 /*RESPONSIVE*/
 
-@media screen and (max-width: 2560px) {
+ @media screen and (max-width: 2560px) {
+
     .mainContainer h1 {
         max-width: 554px;
         font-size: 70px;
@@ -420,3 +421,969 @@ a  {
 
 
 }
+
+@media screen and (max-width: 1920px) {
+
+    .mainContainer{
+        width: 72.5vw;
+        height: 70vh;
+    }
+
+    .mainContainer h1 {
+        max-width: 450px;
+        font-size: 60px;
+        font-family: 'Code Next';
+        margin-left: 85px;
+        line-height: 4.5rem;
+    }
+
+    .btn1{
+        width: 260px;
+        height: 70px;
+        left: 342px;
+        top: 736px;
+    }
+
+    .btn2 {
+        width: 260px;
+        height: 70px;
+        left: 669px;
+        top: 736px;
+    }
+
+    .containerVolunteer {
+        margin-left: -29px;
+        width: 72.5vw;
+        height: 300px;
+    }
+
+    .containerVolunteerText h3 {
+        font-size: 40px;
+        font-family: 'Code Next';
+        text-align: initial;
+        margin-left: 89px;
+        margin-top: 6px;
+        margin-bottom: -8px;
+    }
+
+    .containerVolunteerText p {
+        font-size: 16px;
+        font-family: 'Code Next';
+        padding-top: 4px;
+        margin-left: 45px;
+        max-width: 450px;
+    }
+
+    .containerDonationText h3 {
+        font-size: 40px;
+        font-family: 'Code Next';
+        text-align: start;
+        margin-right: 125px;
+        max-width: 450px;
+        margin-bottom: 4px;
+        margin-top: 20px;
+    }
+
+    .containerDonationText p {
+        font-size: 16px;
+        font-family: 'Code Next';
+        max-width: 450px;
+        margin-right: 40px;
+        margin-top: 5px;
+    }
+
+    .btnVolunteer{
+        margin-right: 825px;
+        margin-top: 13px;
+        border: none;
+        height: 47px;
+        width: 180px;
+        border-radius: 50px;
+        background-color: #FF9F1C;
+        color: white;
+        font-family: 'Code Next';
+        font-size: 20px;
+        cursor: pointer;
+
+    }
+
+    .containerDonation {
+        height: 300px;
+        color: white;
+        text-align: center;
+        margin-left: -29px;
+        width: 72.5vw;
+    }
+
+    .btnDonation {
+        border: none;
+        height: 47px;
+        width: 180px;
+        border-radius: 50px;
+        background-color: #FF9F1C;
+        color: white;
+        font-family: 'Code Next';
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 18px;
+        margin-right: 170px;
+    }
+
+    .containerQuestionAbout {
+        display: flex;
+        justify-content: center;    
+        padding-left: 64px;
+        padding: 76px;
+        margin-left: 181px;
+        margin-right: 179px;
+    }
+
+    .container1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        margin-right: 120px;
+        border: 7px solid;
+        border-color: #FFBF69;
+        padding: 70px 80px 70px 80px;
+        height: 270px;
+    }
+    .container1 p {
+        font-family: 'Ubuntu';
+        text-align: center;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    
+    .container1 h3 {
+        font-family: 'Code Next';
+        margin-bottom: 23px;
+        font-size: 24px;
+        color: #FFBF69;
+    }
+    
+    .container1 button {
+        margin-top: 35px;
+        width: 300px;
+        height: 40px;
+        background: #FFBF69;
+        border-radius: 109px;
+        border: none;
+        font-family: 'Ubuntu';
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 550px;
+    }
+
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        border: 7px solid;
+        border-color: #2EC4B6;
+        padding: 70px 80px 70px 80px;
+        height: 270px;
+    }
+    
+    .container2 h3 {
+        font-family: 'Code Next';
+        margin-bottom: 23px;
+        font-size: 24px;
+        color: #2EC4B6;
+    }
+    
+    .container2 p {
+        font-family: 'Ubuntu';
+        text-align: center;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    
+    .container2 button {
+        margin-top: 35px;
+        width: 300px;
+        height: 40px;
+        background: #2EC4B6;
+        border-radius: 109px;
+        border: none;
+        font-family: 'Ubuntu';
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 550px;
+    }
+
+    
+
+    
+
+
+
+}
+
+@media screen and (max-width: 1880px) {
+    .mainContainer {
+        width: 79.5vw;
+    }
+
+    .btn1 {
+        left: 279px;
+        top: 860px;
+    }
+
+    .btn2 {
+        left: 596px;
+        top: 860px;
+    }
+
+} 
+
+@media screen and (max-width: 1440px) {
+    .mainContainer {
+        width: 80.5vw;
+    }
+
+    .mainContainer h1 {
+        max-width: 394px;
+        font-size: 50px;
+        font-family: 'Code Next';
+        margin-left: 85px;
+        line-height: 3.5rem;
+    }
+
+    .btn1 {
+        left: 228px;
+        top: 632px;
+    }
+
+    .btn2 {
+        left: 534px;
+        top: 632px;
+    }
+
+    .containerQuestionAbout{
+        max-width: 76.6%;
+    }
+
+    .containerVolunteer {
+        width: 80.6vw;
+        margin-left: -5.3vw;
+    }
+
+    .containerVolunteer p {
+        margin-left: 22px;
+        max-width: 426px;
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 56px;
+    }
+
+    .btnVolunteer {
+        margin-right: 655px;
+    }
+
+
+
+
+    .containerDonation{
+        width: 80.6vw;
+        margin-left: -5.3vw;
+    }
+
+    .containerDonation h3 {
+        margin-right: 92px;
+    }
+
+    .containerDonation p {
+        max-width: 400px;
+        margin-right: 31px;
+    }
+
+    .btnDonation {
+        margin-right: 135px;
+    }
+
+
+    .containerQuestionAbout {
+        max-width: 81%;
+        width: 1162px;
+        margin-left: 63px;
+    }
+
+    .container1 {
+        width: 550px;
+
+    }
+    .container1 h3 {
+        margin-top: -4px;
+        text-align: center;
+    }
+
+
+
+    .container2 {
+        width: 550px;
+    }
+    
+
+} 
+
+@media screen and (max-width: 1350px) {
+    .containerVolunteer h3 {
+        margin-left: 40px;
+    }
+    .containerVolunteer p {
+        margin-left: 14px;
+        max-width: 409px;
+    }
+
+    .btnVolunteer {
+        margin-right: 616px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 80px;
+    }
+
+    .containerDonation p {
+        margin-right: 17px;
+    }
+
+    .btnDonation {
+        margin-right: 118px;
+    }
+
+    .containerQuestionAbout {
+        width: 1090px;
+        margin-left: 55px;
+    }
+
+    .container2 h3 {
+        margin-top: -4px;
+        text-align: center;
+    }
+
+
+}
+
+@media screen and (max-width: 1200px) {
+
+    .btn1 {
+        left: 203px;
+    }
+
+    .containerVolunteer h3 {
+        font-size: 30px;
+        margin-left: 60px;
+
+    }
+
+    .containerVolunteer p {
+        max-width: 359px;
+    }
+    
+    .btnVolunteer {
+        margin-right: 540px;
+    }
+
+    .containerDonation h3 {
+        font-size: 30px;
+        margin-right: 89px;
+    }
+
+    .containerDonation p {
+        max-width: 336px;
+        margin-right: 26px;
+    }
+
+    .btnDonation {
+        margin-right: 98px;
+    }
+
+    .containerQuestionAbout {
+        margin-left: 39px;
+    }
+
+    .container1 {
+        width: 250.5px;
+    }
+
+    .container1 button {
+        margin-top: 12px;
+    }
+
+    .container2 {
+        width: 250.5px;
+    }
+
+    
+}
+
+@media screen and (max-width: 1024px) {
+    .btn1 {
+        left: 187px;
+    }
+
+    .btn2 {
+        left: 498px;
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 29px;
+
+    }
+
+    .containerVolunteer p {
+        max-width: 306px;
+    }
+
+    .btnVolunteer {
+        margin-top: -2px;
+        margin-right: 465px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 60px;
+    }
+
+    .containerDonation p {
+        max-width: 279px;
+    }
+
+    .containerDonation button {
+        margin-right: 75px;
+        margin-top: 3px;
+    }
+
+    .containerQuestionAbout {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container1 {
+        padding: 19px 65px 70px 65px;
+        width: 190.5px;
+        margin-right: 162px;
+    }
+
+    .container1 h3 {
+        font-size: 22px;
+    }
+
+    .container1 p {
+        margin-top: -13px;
+        font-size: 16px;
+    }
+
+    .container1 button {
+        width: 218px;
+    }
+
+    .container2 {
+        padding: 19px 65px 70px 65px;
+        width: 190.5px;
+    }
+
+    .container2 h3 {
+        font-size: 22px;
+    }
+
+    .container2 p {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .container2 button {
+        width: 218px;
+        margin-top: 12px;
+        font-size: 16px;
+
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .mainContainer h1 {
+        line-height: 3rem;
+        font-size: 45px;
+    }
+    .btn1 {
+        left: 171px;
+        top: 595px;
+        width: 238px;
+        font-size: 25px;
+    }
+
+    .btn2 {
+        top: 595px;
+        left: 452px;
+        width: 238px;
+        font-size: 25px;
+    }
+
+    .containerVolunteer h3 {
+        font-size: 25px;
+        margin-left: 22px;
+    }
+
+    .containerVolunteer p {
+        max-width: 244px;
+        font-size: 14px;
+    }
+    .containerVolunteer button {
+        margin-top: 13px;
+        margin-right: 378px;
+    }
+
+    .containerDonation h3 {
+        font-size: 25px;
+        margin-right: 50px;
+    }
+
+    .containerDonation p {
+        font-size: 14px;
+        max-width: 227px;
+    }
+
+    .containerDonation button {
+        margin-right: 46px;
+    }
+
+    .container1 {
+        margin-right: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mainContainer h1 {
+        margin-left: 45px;
+    }
+
+    .btn1 {
+        left: 121px;
+    }
+    .btn2 {
+        left: 408px;
+    }
+
+    .containerVolunteer {
+        background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+        background-image: linear-gradient(90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 55%, rgba(255,255,255,0) 55%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg'); 
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 54px;
+    }
+
+    .containerVolunteer p {
+        margin-left: 49px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 255px;
+    }
+
+    .containerDonation {
+        background-image: url('../img/Untitled-4.png');
+    background-image: linear-gradient(-90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 55%, rgba(255,255,255,0) 55%), url('../img/Untitled-4.png');
+    }
+
+    .containerDonation h3 {
+        margin-right: 85px;
+    }
+
+    .containerDonation p {
+        max-width: 238px;
+        margin-right: 50px;
+    }
+
+    .containerDonation button {
+        margin-right: 81px;
+        margin-top: 15px;
+    }
+
+    .containerQuestionAbout {
+        margin-left: 78px;
+    }
+
+    .container1 {
+        width: 150.5px;
+        margin-right: 35px;
+        height: 270px;;
+    }
+    
+    .container1 h3 {
+        font-size: 17px;
+    }
+
+    .container1 p {
+        font-size: 14px;
+
+    }
+
+    .container2 {
+        width: 150.5px;
+    }
+
+    .container2 h3 {
+        font-size: 17px;
+    }
+
+    .container2 p {
+        font-size: 14px;
+
+    }
+
+    .container2 button {
+        margin-top: 35px;
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    .btn1 {
+        width: 195px;
+        font-size: 20px;
+    }
+
+    .btn2 {
+        width: 195px;
+        left: 378px;
+        font-size: 20px;
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 40px;
+    }
+
+    .containerVolunteer p {
+        margin-left: 34px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 220px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 65px;
+    }
+
+    .containerDonation p {
+        margin-right: 35px;
+        
+    }
+
+    .containerDonation button {
+        margin-right: 65px;
+    }
+
+    .containerQuestionAbout {
+        flex-direction: column;
+        margin-left: -9px;
+    }
+
+    .container1 {
+        width: 422.5px;
+        height: 13vh;
+        margin-bottom: 54px;
+    }
+
+    .container2 {
+        width: 422.5px;
+        height: 13vh;
+    }
+
+    .container2 p {
+        margin-top: -10px;
+    }
+
+    .container2 button {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .btn1 {
+        left: 100px;
+        width: 172px;
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .btn2 {        
+        left: 310px;
+        width: 172px;
+        font-size: 18px;
+        height: 50px;
+    }
+
+    .containerVolunteer {
+        background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+        background-image: linear-gradient(90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 75%, rgba(255,255,255,0) 75%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg'); 
+    
+    }
+    .containerVolunteer h3 {
+        margin-left: 61px;
+    }
+
+    .containerVolunteer P {
+        margin-left: 57px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 94px;
+    }
+
+
+    
+
+
+    .containerDonation {
+        background-image: url('../img/Untitled-4.png');
+        background-size: 700px;
+        background-image: linear-gradient(-90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 69%, rgba(255,255,255,0) 69%), url('../img/Untitled-4.png');    
+    }
+
+    .containerDonation h3 {
+        margin-right: 100px;
+    }
+
+    .containerDonation P {
+        margin-right: 69px;
+    }
+
+    .containerDonation button {
+        margin-right: 103px;
+    }
+
+    .containerQuestionAbout {
+        margin-left: -20px;
+    }
+
+    .container1{
+        width: 342.5px;
+    }
+
+    .container2{
+        width: 342.5px;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+    .btn1 {
+        top: 665px;
+        width: 160px;
+    }
+
+    .btn2 {
+        top: 665px;
+        left: 290px;
+        width: 160px;
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 50px;
+    }
+    .containerVolunteer p {
+        margin-left: 44px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 85px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 84px;
+    }
+    
+    .containerDonation p {
+        margin-right: 56px;
+    }
+
+    .containerDonation button {
+        margin-right: 86px;
+    }
+
+    .containerQuestionAbout{
+        margin-left: -25px;
+    }
+
+    .container1{
+        width: 293.5px;
+        height: 170px;
+
+    }
+
+    .container2{
+        width: 293.5px;
+        height: 170px;               
+    }
+
+    .container2 p {
+        font-size: 16px;
+    }
+
+    .container2 button {
+        margin-top: 22px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+    .btn1{
+        top: 637px;
+        left: 72px;
+    }
+
+    .btn2{    
+        top: 637px;
+        left: 250px;
+    }
+
+    .containerVolunteer{
+        background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.596) 100%, rgba(255,255,255,0) 75%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg'); 
+    
+
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 79px;
+    }
+
+    .containerVolunteer p {
+        max-width: 300px;
+        margin-left: 44px;
+        font-size: 17px;
+    }
+
+    .containerVolunteer button {
+        margin-right: -39px;
+        margin-top: 0px;
+    }
+
+    .containerDonation {
+        background-image: url('../img/Untitled-4.png');
+        background-size: 700px;
+        background-image: linear-gradient(-90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.596) 100%, rgba(255,255,255,0) 69%), url('../img/Untitled-4.png');
+    }
+
+    .containerDonation h3 {
+        margin-left: 79px;
+        margin-right: 109px;
+    }
+
+    .containerDonation p {
+        max-width: 300px;
+        margin-right: 35px;;
+        font-size: 17px;
+    }
+
+    .containerDonation button {
+        margin-right: 95px;
+        margin-top: 0px;
+    }
+
+    .containerQuestionAbout{
+        margin-left: -28px;
+    }
+
+    .container1{
+        width: 240.5px;
+    }
+    .container1 p {
+        font-size: 16px;
+    }
+
+    .container1 button {
+        margin-top: -8px;
+    }
+
+    .container2{
+        width: 240.5px;
+    }
+
+    .container2 button {
+        margin-top: 0px;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 320px) {
+    .mainContainer{
+        height: 52vh;
+    }
+
+    .mainContainer h1 {
+        font-size: 32px;
+        line-height: 2.5rem;
+        margin-left: 25px;
+    }
+
+    .btn1 {
+        top: 403px;
+        left: 56px;
+    }
+
+    .btn2 {
+        top: 477px;
+        left: 56px;
+    }
+
+    .containerVolunteer h3 {
+        font-size: 20px;
+        text-align: center;
+        margin-left: 31px;
+    }
+
+    .containerVolunteer p {
+        font-size: 14px;
+    }
+
+
+
+    .containerDonation h3 {
+        font-size: 20px;
+        text-align: center;
+        margin-right: 60px;
+        margin-left: 0px;
+    }
+
+    .containerDonation p {
+        font-size: 14.5px;
+        max-width: 200px;
+        margin-right: 29px;
+    }
+
+    .containerDonation button {
+        margin-right: 35px;
+
+    }
+
+    .containerQuestionAbout {
+        margin-left: -45px;
+    }
+
+    .container1{
+        width: 114.5px;
+        height: 374px;
+    }
+
+    .container2{
+        width: 114.5px;
+        height: 310px;
+    }
+}
+
+

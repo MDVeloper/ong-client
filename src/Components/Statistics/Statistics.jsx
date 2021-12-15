@@ -49,16 +49,18 @@ console.log(allProjects)
     }, [])
     console.log(dolar)
     return (
-        <div>
+        <div className={Styles.bkg}>
             <Grid
                 container
-                mt={1}
+                // mt={1}
                 spacing={3}
                 columns={{ xs: 3 }}
                 direction="row"
                 justifyContent="center"
-                alignItems="center">
-                <Grid item>
+                alignItems="center"
+                >
+                <Grid item xs={2}>
+
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={members} alt="statistics_proyects" />
@@ -72,7 +74,7 @@ console.log(allProjects)
                         <Item>
                             <img className={Styles.img} src={donations} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>${allDonationsAmount}</h1>
-                            <p className={Styles.p}>Toda la ayuda monetaria</p>
+                            <p className={Styles.p}>Cantidad de donaciones monetarias recibidas</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -80,9 +82,10 @@ console.log(allProjects)
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={qdonations} alt="statistics_proyects" />
+
                             <h1 className={Styles.h1}>{allDonations.filter(d => d.status === 'Approved').length}</h1>
                             <p className={Styles.p}>Cantidad de donaciones</p>
-                            
+ 
                         </Item>
                     </Card>
                 </Grid>
@@ -101,8 +104,9 @@ console.log(allProjects)
                         <Item>
                             <img className={Styles.img} src={projectCurso} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "InProgress").length}</h1>
+
                             <p className={Styles.p}>Proyectos en curso</p>
-                           
+
                         </Item>
                     </Card>
                 </Grid>

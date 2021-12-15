@@ -1,3 +1,13 @@
+.bkg{
+    margin-top: 80px;
+    background-color: #2EC4B6;
+    height: 50vh;
+    display: flex;
+    justify-items: center;
+    width: 100vw;
+}
+
+
 .img {
     width: 100px;
     height: 100px;
@@ -14,3 +24,4 @@
     letter-spacing: 1.5px;
     font-size: 22px;
 }
+

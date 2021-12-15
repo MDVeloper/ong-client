@@ -49,7 +49,7 @@ export default function Statistics() {
     }, [])
     console.log(dolar)
     return (
-        <div>
+        <div className={Styles.desaparecer}>
             <Grid
                 container
                 mt={1}

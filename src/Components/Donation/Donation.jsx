@@ -14,10 +14,9 @@ import axios from "axios";
 import jwt_decode from "jwt-decode"
 import mercadopagoLogo from '../img/mercadopago-logo.png';
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 function Donation({ history }) {
-
-
   const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
   const [donationAmountMercadoPago, setDonationAmountMercadoPago] = useState(1);
   const [userinfo, setuserinfo] = useState("")
@@ -101,6 +100,8 @@ function Donation({ history }) {
     borderTop: "1px solid rgba(0, 0, 0, .125)",
   }));
 
+  var detailProject = useSelector(state => state.articles.currentDetailProject)
+
   return (
     <div>
       <div className={styles.box_buttonMercadoPago}>
@@ -145,7 +146,7 @@ function Donation({ history }) {
                   // OPTIONAL: Call your server to save the transaction
                   return axios.post("/donations", {
                   amount: donationAmountPayPal,
-
+                  target: detailProject.id, 
                   date: details.create_time,
                   email: userinfo.email
                   });

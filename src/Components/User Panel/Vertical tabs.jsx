@@ -6,6 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import { createTheme } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import { useEffect } from 'react';
 import style from "./UserPanel.module.css";
@@ -113,8 +114,10 @@ export default function VerticalTabs({ history }) {
       >
         <Tab label="Donaciones" {...a11yProps(0)} />
         <Tab label="Proyectos" {...a11yProps(1)} />
-        <Tab label="Votaciones" {...a11yProps(2)} />
-        <Tab label="Cursos" {...a11yProps(3)} />
+        <Tab label="Cursos" {...a11yProps(2)} />
+        {userinfo.privilege === "Admin" ? 
+        <Tab label="Noticias" {...a11yProps(3)} /> :
+        console.log("No soy admin") }
       </Tabs>
       <TabPanel value={value} index={0}>
         <h2> Información de las donaciones </h2> 
@@ -161,29 +164,54 @@ export default function VerticalTabs({ history }) {
           projects.map( p => {
             return(
               <div>
-                <h5></h5>
+                <h5>{p.title}</h5>
+                <h5>{p.img}</h5>
+                <h5>{p.description}</h5>
+                <h5>{p.category}</h5>
+                <h5>{p.status}</h5>
+                <Link to={`/backoffice/form/${p.id}`}>Editar proyecto</Link>
               </div>
             )
-          }) : <h2>hola</h2>
+          }) : <p>Para votar por los proyectos que mas te gusten haciendo click <a href='/proyectos'>aquí</a></p>
 
         }
         
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Toda la información respectiva de las votaciones
+        <h2>Toda la información respectiva de los cursos</h2>
+        {
+          userinfo.privilege === "Admin"? 
+          <h2>info de admin</h2>
+          :
+          userinfo.articles? userinfo.articles.map(t => {
+             return (
+                 <div key={t.id} className={style.transactionDiv}>
+                  <h6>{t.id}</h6>
+                  <h6>{t.title}</h6>
+                   <h6>{t.description}</h6>
+                 </div>
+               )
+             }) : <h4>¿Aún no te inscribiste a ningun curso? Conocé todos los que hay disponibles <a href='/curse'>aquí</a>  </h4>
+
+
+        }
+
+
       </TabPanel>
-      <TabPanel value={value} index={3}>
-        Toda la informacion de los cursos tomados
-        {userinfo.articles && userinfo.articles.map(t => {
+
+       <TabPanel value={value} index={3}>
+       Toda la informacion de las noticias
+         {userinfo.articles && userinfo.articles.map(t => {
           return (
             <div key={t.id} className={style.transactionDiv}>
               <h6>{t.id}</h6>
-              <h6>{t.title}</h6>
+               <h6>{t.title}</h6>
               <h6>{t.description}</h6>
-            </div>
-          )
+             </div>
+           )
         })}
-      </TabPanel>
+       </TabPanel>
+      
     </Box>
   );
 }

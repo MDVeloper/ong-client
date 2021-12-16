@@ -644,6 +644,7 @@ a  {
 @media screen and (max-width: 1440px) {
     .mainContainer {
         width: 80.5vw;
+        height: 50vh;
     }
 
     .mainContainer h1 {
@@ -1109,6 +1110,10 @@ a  {
 }
 
 @media screen and (max-width: 600px) {
+
+    .mainContainer{
+        height: 44vh;
+    }
     .btn1 {
         left: 100px;
         width: 172px;
@@ -1322,7 +1327,7 @@ a  {
 
 @media screen and (max-width: 320px) {
     .mainContainer{
-        height: 52vh;
+        height: 34vh;
     }
 
     .mainContainer h1 {

@@ -37,15 +37,14 @@ html {
 }
 .div2 h1 {
     color: #2EC4B6;
-    font-size: 2rem;
 
-    margin: 0;
-    margin-bottom: .5rem;
-    margin-top: .5rem;
+    margin-top: -17px;
+    margin-bottom: -15px;
 }
-.div2 h4 {
-    margin: 0;
-    margin-bottom: 1rem;
+
+.div2 h4{
+    margin-bottom: -15px;
+
 }
 .div2 a {
     margin: 0;
@@ -88,6 +87,11 @@ html {
 
     border-radius: 23px;
     border: 1px solid #C8C8C8;
+}
+
+
+h2 {
+    margin-top: 4px;
 }
 
 .containerButtonTabs {
@@ -183,3 +187,4 @@ html {
     }
 
 }
+

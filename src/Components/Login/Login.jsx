@@ -36,7 +36,7 @@ export default function Login() {
   // const LOCAL_HOST_KEY = "6LeBD5sdAAAAAP7hM3JryC8L0QBgxwJvWIX0DMOm"
 
   const userOn = useSelector((state) => state.login.active);
-  // const error = useSelector((state) => state.login.error);
+  const error = useSelector((state) => state.login.error);
 
 
   const reCaptchaRef = React.createRef()

@@ -139,7 +139,7 @@ export default function Login() {
                       Ingresar
                     </Button>
 
-                    <p style={{ color: "#fff", margin: "1rem 0" }}> o </p>
+                    <p style={{ color: "#fff", margin: "1rem 0" }}></p>
 
                     
 

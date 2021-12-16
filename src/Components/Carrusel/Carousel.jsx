@@ -11,7 +11,7 @@ import { Button } from "@mui/material";
 export default function Carousel() {
   let projects = useSelector((state) => state.project.projects);
 
-
+  console.log(projects, "CARUUU")
   const settings = {
     dots: true,
     infinite: true,
@@ -24,7 +24,7 @@ export default function Carousel() {
 
   return (
     <div className={"container"}>
-      {projects.length > 5 && (
+      {projects.length >= 5 && (
         <div className={"containerCard"}>
           <h1> Galeria de proyectos </h1>
 

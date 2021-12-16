@@ -14,7 +14,7 @@ html {
 
 
     width: 70%;
-    height: auto;
+    height: 130px;
 
     background: rgba(243, 243, 243, 0.54);
     
@@ -29,10 +29,9 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: end;
-
     height: 100%;
     width: 50%;
-
+    margin-bottom: 3%;
     margin-left: 1rem;
 }
 .div2 h1 {

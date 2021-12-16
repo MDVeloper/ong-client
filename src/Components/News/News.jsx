@@ -114,7 +114,7 @@ export default function News(props) {
                           ...
                         </h4>
 
-                        <h5 style={{color:"#000"}}>{news.createdAt}</h5>
+                        <h5 style={{color:"#000"}}>{news.createdAt.slice(0, 10)}</h5>
                       </div>
 
                       <div className={Styles.viewMoreButton}>

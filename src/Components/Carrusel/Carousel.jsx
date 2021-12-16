@@ -11,7 +11,6 @@ import { Button } from "@mui/material";
 export default function Carousel() {
   let projects = useSelector((state) => state.project.projects);
 
-  console.log(projects, "CARUUU")
   const settings = {
     dots: true,
     infinite: true,

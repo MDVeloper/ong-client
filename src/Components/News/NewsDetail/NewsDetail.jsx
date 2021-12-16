@@ -13,6 +13,10 @@ export default function NewsDetail(props) {
 
   let news = newss.find((news) => news.id.toString() === id);
 
+  if (!localStorage.getItem("token")) {
+    alert("Tenes que estar logeado para ver esto")
+    window.location.href = "/login";
+  }
 
 
   return (

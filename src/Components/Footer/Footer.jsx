@@ -34,6 +34,13 @@ const Footer = () => {
                 </div>
 
                 <div className={s.filials}>
+                    <Link style={{color:"#fff"}} to="/filials">
+                        <h3>Filiales</h3>
+                        <p>Nuestras Filiales</p>
+                    </Link>
+                </div>
+
+                <div className={s.filials}>
                     <h3>Nuestras Redes</h3>
                     <ul className={s.socialImg}>
                         <li> <a href="https://twitter.com/home?lang=es"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="" /> </a></li>

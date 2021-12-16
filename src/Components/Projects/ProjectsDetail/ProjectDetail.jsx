@@ -28,7 +28,12 @@ export default function ProjectsDetail(props) {
 
   let project = projects.find((project) => project.id.toString() === id);
 
+  if (!localStorage.getItem("token")) {
+    alert("Debes ingresar a tu cuenta para votar proyectos")
 
+    window.location.href = '/login'
+  }
+  
   useEffect(() => {
     
   },[])

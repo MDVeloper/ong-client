@@ -17,6 +17,8 @@ export default function Curse({ history }, props) {
     userId: null,
     courseId: null,
   });
+
+  console.log(allArt)
   useEffect(() => {
     dispatch(getCategories("Course"));
   }, []);

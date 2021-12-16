@@ -263,12 +263,9 @@ export default function Register() {
                     <p style={{ color: "green" }}>{messageRegister}</p>
                     : ""
                   }
-                  <p style={{ color: "#fff", margin: "1rem 0" }}>  o  </p>
+                
 
-                  <button className={Styles.containerIcon}>
-                    <FcGoogle style={{ fontSize: "2rem" }} />
-                    <p>Registrate con google</p>
-                  </button>
+                  
 
                 </div>
 

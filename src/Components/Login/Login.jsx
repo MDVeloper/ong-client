@@ -141,10 +141,7 @@ export default function Login() {
 
                     <p style={{ color: "#fff", margin: "1rem 0" }}> o </p>
 
-                    <button className={Styles.containerIcon} onClick={googleOnClick}>
-                      <FcGoogle style={{ fontSize: "2rem" }} />
-                      <p>Ingresar con google</p>
-                    </button>
+                    
 
                     <p style={{ color: "#fff", marginTop: "1rem" }}>Si todavia no tenes tu cuenta puedes<Link style={{ color: "#2EC4B6" }} to="/register"> <b>registrarte aquí</b> </Link> </p>
 

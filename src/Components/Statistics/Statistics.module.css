@@ -25,7 +25,11 @@
     font-size: 22px;
 }
 
-
+.hide {
+    user-select: none;
+    color: transparent;
+    font-size: 22px;
+}
 
 @media screen and (max-width: 800px) {
     .desaparecer {

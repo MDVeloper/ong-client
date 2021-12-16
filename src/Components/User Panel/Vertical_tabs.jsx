@@ -358,7 +358,7 @@ const allTransactions = useSelector((state) => state.donations.allTransactions);
             </TableBody>
           </Table>
         </TableContainer>
-            : <h4>¿Aún no te inscribiste a ningun curso? Conocé todos los que hay disponibles <a href='/curse'>aquí</a>  </h4>
+            : <h4>¿Aún no te inscribiste a ningun curso? Conocé todos los que hay disponibles <a href='/course'>aquí</a>  </h4>
 
 
         }

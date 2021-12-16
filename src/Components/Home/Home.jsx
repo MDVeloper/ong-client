@@ -11,8 +11,11 @@ import Statistics from "../Statistics/Statistics";
 export default function Home() {
   return (
     <div>
-       <section className={s.mainContainer}>
+      <section className={s.mainContainer}>
+        <div className={s.containerTitle}>
           <h1>Donde la tecnología y las personas se unen para ayudar.</h1>
+        </div>
+
         <div className={s.btnContainer}>
           <Link to="/donaciones">
             <button className={s.btn1}>Apoya la causa</button>

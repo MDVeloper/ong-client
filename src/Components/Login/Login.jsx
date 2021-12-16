@@ -19,12 +19,14 @@ const validation = (value) => {
 
     errors.email = "Email is not valid";
   }
+
   if (!value.password) {
     errors.password = "Password is required";
   }  else if (!/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/i.test(value.password)) {
 
     errors.password = "La contraseña no coincide";
   }
+
   return errors;
 };
 
@@ -36,13 +38,16 @@ export default function Login() {
   const userOn = useSelector((state) => state.login.active);
   // const error = useSelector((state) => state.login.error);
 
+
   const reCaptchaRef = React.createRef()
   const dispatch = useDispatch();
 
   const [captcha, setcaptcha] = useState("")
 
   useEffect(() => {
+
   }, [userOn]);
+
 
   const handleSubmit = (value, { setSubmitting }) => {
     if (captcha) {
@@ -56,7 +61,6 @@ export default function Login() {
 
   function onChange(value) {
     setcaptcha(value)
-    console.log("Captcha value:", value);
   }
 
   const googleOnClick = () => {
@@ -98,11 +102,14 @@ export default function Login() {
                       name="email"
                       placeholder="Ingrese su correo electronico"
                     />
-                    {/* <ErrorMessage
+                    <ErrorMessage
                       name="email"
                       component="div"
                       className={Styles.errors}
-                    /> */}
+                    />
+                    {error === "Usuario no encontrado" ? <p style={{ color: "red" }}> Usuario no encontrado </p> : null}
+
+
                   </div>
 
                   <div className={Styles.containersLabelField}>
@@ -117,6 +124,7 @@ export default function Login() {
                       component="div"
                       className={Styles.errors}
                     />
+                    {error === "Contraseña no encontrada" ? <p style={{ color: "red" }}> Contraseña no valida </p> : null}
                   </div>
                   <form style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }} onSubmit={onSubmit} >
                     <ReCAPTCHA

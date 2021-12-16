@@ -5,6 +5,8 @@ html {
     sans-serif;
 }
 
+
+
 /* News component container */
 .newsContainer{
 
@@ -158,7 +160,6 @@ html {
 .buttonPrevNext:focus {
     outline: none;
 }
-
 
 
 

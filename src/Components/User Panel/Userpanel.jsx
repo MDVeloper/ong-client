@@ -9,6 +9,7 @@ import createPalette from '@mui/material/styles/createPalette'
 import Loading from '../Loading/Loading'
 
 
+
 export default function Userpanel({ history }) {
     const [userinfo, setuserinfo] = useState("")
     const [userid, setuserid] = useState("")
@@ -65,6 +66,8 @@ export default function Userpanel({ history }) {
                 </div>
 
                 <VerticalTabs />
+
+    
             </div>}
         </>)
 }

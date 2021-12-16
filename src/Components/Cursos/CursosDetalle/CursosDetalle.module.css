@@ -1,0 +1,189 @@
+html {
+    font-size: 16px;
+    font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Component container from news detail */
+.componentContainerFromNewsDetail {
+    width: 100%;
+    height: 100%;
+}
+
+
+    /* Container new detail */
+.containerDetailNews {
+    display: flex;
+    flex-direction : column;
+    
+    align-items: center;
+    text-align: center;
+
+    background-color: #282D32;
+
+    margin: 3rem;
+    border-radius: 10px;
+    padding: 1rem;
+
+    word-wrap: break-word;
+}
+
+/* Title */
+.containerDetailNews h1 {
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+
+    /* Cantainer img */
+.containerImg {
+    width: 40%;
+    height: auto;
+}
+
+/* Img */
+.containerDetailNews .containerImg img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 10px;
+
+}
+
+
+
+/* Description */
+.containerDetailNews h3 {
+    color: #fff;
+    font-size: 1.2rem;
+
+
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+
+
+
+
+/* Container edit icon */
+.containerEditIcon {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+
+    color: #FFBF69  ;   
+}   
+
+/* Icon edit */
+.editIcon {
+    font-size: 2rem;
+}
+
+
+
+
+
+
+@media screen and (max-width: 1200px) {
+    html { 
+        font-size: 15px;
+    }
+
+    /* Cantainer img */
+    .containerImg {
+        width: 70%;
+        height: 30rem;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    html { 
+        font-size: 14px;
+    }
+
+        /* Cantainer img */
+    .containerImg {
+    width: 70%;
+    height: 30rem;
+    }
+    
+}
+
+
+
+@media screen and (max-width: 768px) {
+    html { 
+        font-size: 13px;
+    }
+
+    
+     /* Title */
+     .containerDetailNews h1 {
+        font-size: 2rem;
+    }
+
+        /* Cantainer img */
+    .containerImg {
+        width: 90%;
+        height: 30rem;
+    }
+
+    /* Description */
+    .containerDetailNews h3 {
+        color: #fff;
+        font-size: 1.1rem;
+    
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    
+   
+
+}
+
+
+@media screen and (max-width: 480px) {
+    html { 
+        font-size: 13px;
+    }
+
+    
+     /* Title */
+     .containerDetailNews h1 {
+        font-size: 2rem;
+    }
+
+        /* Cantainer img */
+    .containerImg {
+        width: 100%;
+        height: 25rem;
+    }
+}
+
+
+
+@media screen and (max-width: 320px) {
+    html { 
+        font-size: 12px;
+    }
+
+        /* Cantainer img */
+    .containerImg {
+        width: 100%;
+        height: 20rem;
+    }
+
+     /* Description */
+     .containerDetailNews h3 {
+        color: #fff;
+        font-size: 1rem;
+    
+        margin-left: 1rem;
+        margin-right: 1rem;
+    } 
+
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 // import Button from '@mui/material/Button'
 // import Fab from '@mui/material/Fab';
 //import NavigationIcon from '@mui/icons-material/Navigation';
@@ -11,8 +11,8 @@ import Statistics from "../Statistics/Statistics";
 export default function Home() {
   return (
     <div>
-      <section className={s.mainContainer}>
-        <h1>Donde la tecnología y las personas se unen para ayudar.</h1>
+       <section className={s.mainContainer}>
+          <h1>Donde la tecnología y las personas se unen para ayudar.</h1>
         <div className={s.btnContainer}>
           <Link to="/donaciones">
             <button className={s.btn1}>Apoya la causa</button>
@@ -24,12 +24,11 @@ export default function Home() {
 
         </div>
       </section>
-      <div>
-        <Statistics />
-      </div>
+      
+      <Statistics />
 
       <div className={s.carouselContainer}>
-        <Carousel />
+        <Carousel/>
       </div>
 
 
@@ -56,12 +55,11 @@ export default function Home() {
 
 
       <section className={s.containerQuestionAbout}>
-        <div className={s.container1}>
-          <h3>CONOCE SOBRE NUESTROS CURSOS</h3>
-          <p>En Coding To Help no solo nos gusta ayudar si no que también capacitar para que todos tengan oportunidades de seguir avanzando en su vida con la ayuda de profesionales en el área.</p>
-
+       <div className={s.container1}>
+            <h3>CONOCE SOBRE NUESTROS CURSOS</h3>
+            <p>En Coding To Help no solo nos gusta ayudar si no que también capacitar para que todos tengan oportunidades de seguir avanzando en su vida con la ayuda de profesionales en el área.</p>
+            
           <Link to="/courses">
-
             {/* <Fab variant="extended" className={s.btn} aria-label="add">
               <NavigationIcon sx={{ mr: 1 }} />
               Sobre Nosotros

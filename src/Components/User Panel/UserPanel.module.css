@@ -37,14 +37,15 @@ html {
 }
 .div2 h1 {
     color: #2EC4B6;
+    font-size: 2rem;
 
-    margin-top: -17px;
-    margin-bottom: -15px;
+    margin: 0;
+    margin-bottom: .5rem;
+    margin-top: .5rem;
 }
-
-.div2 h4{
-    margin-bottom: -15px;
-
+.div2 h4 {
+    margin: 0;
+    margin-bottom: 1rem;
 }
 .div2 a {
     margin: 0;
@@ -89,61 +90,68 @@ html {
     border: 1px solid #C8C8C8;
 }
 
-
-h2 {
-    margin-top: 4px;
-}
-
 .containerButtonTabs {
     min-width: 20%;
 }
 
-@media screen and (max-width: 1200px) {
-    html { 
-        font-size: 15px;
-    }
+
+.divContainerinfo {
+    background-color: lawngreen;
+    width: 20rem;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.divContainerinfo h5 {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 
+/* @media screen and (max-width: 1200px) {
+    html { 
+        font-size: 15px;
+    }
+} */
+
+/* 
 @media screen and (max-width: 1024px) {
     html { 
         font-size: 14px;
     }
-}
+} */
 
 
-
+/* 
 @media screen and (max-width: 768px) {
     html { 
         font-size: 13px;
     }
 
-    /* Tamaño del nombre del usuario */
     .div2 h1 {
         font-size: 1.5rem;
     }
-}
+} */
 
 
-
+/* 
 @media screen and (max-width: 580px) {
     html { 
         font-size: 13px;
     }
 
-    /* H4 de div2 */
     .div2 h4 {
         font-size: .9rem;
     }
 
-    /* H4 de div3 */
     .div3 h4 {
         font-size: .9rem;
     }
 }
+ */
 
-
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
     html { 
         font-size: 12px;
     }
@@ -157,10 +165,10 @@ h2 {
         margin: 0;
         padding: 0;
     }
-}
+} */
 
 
-
+/* 
 @media screen and (max-width: 320px) {
     html { 
         font-size: 12px;
@@ -171,20 +179,17 @@ h2 {
         height: auto;
     }
 
-    /* H4 de div2 */
+
     .div2 h4 {
         font-size: .8rem;
     }
 
-    /* H4 de div3 */
     .div3 h4 {
         font-size: .8rem;
     }
 
-    /* Contenedor de proyectos, donaciones, etc */
     .userContainer button {
         font-size: .7rem;
     }
 
-}
-
+} */

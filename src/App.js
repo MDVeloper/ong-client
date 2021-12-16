@@ -23,6 +23,8 @@ import Filiales from "./Components/Filiales/Filiales.jsx";
 import ActualizarInfo from "./Components/ActualizarInfo/actualizar.jsx"
 import ActualizarContr from "./Components/ActualizarContraseña/Actualizar.jsx"
 import Voluntario from "./Components/Voluntariado/Voluntario.jsx";
+import CursosDetalle from "./Components/Cursos/CursosDetalle/CursosDetalle.jsx"
+
 
 function App() {
   let dispatch = useDispatch();
@@ -51,7 +53,8 @@ function App() {
         <Route exact path="/backoffice/form" component={Formulario} />
         <Route exact path="/backoffice/form/:id" component={Formulario} />
         <Route exact path="/users" component={Userpanel} />
-        <Route exact path="/curse" component={Curse} />
+        <Route exact path="/courses" component={Curse} />
+        <Route exact path="/courses/:id" component={CursosDetalle}/>
         <Route exact path="/Filials" component={Filiales} />
         <Route exact path="/actualizar" component={ActualizarInfo} />
         <Route exact path="/newpassword" component={ActualizarContr} />

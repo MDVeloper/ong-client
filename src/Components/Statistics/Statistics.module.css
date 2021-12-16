@@ -25,18 +25,13 @@
     font-size: 22px;
 }
 
-@media (min-width: 374px) {
+
+
+@media screen and (max-width: 800px) {
     .desaparecer {
         display: none;
     }
-}
-
-
-@media (min-width: 800px) {
-    .desaparecer {
-        display: block;
-    }
-
+    
     .p {
         /* font-weight: bold; */
         letter-spacing: 1px;
@@ -51,4 +46,5 @@
         width: 80px;
         height: 80px;
     }
+        
 }

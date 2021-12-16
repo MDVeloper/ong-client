@@ -106,10 +106,13 @@ function Donation({ history }) {
   return (
     <div>
       <div className={styles.box_buttonMercadoPago}>
+        
         <div className={styles.box_buttonMercadoPago_container}>
+
           <div className={styles.box_buttonMercadoPago_izq}>
             <img src={charityIMG} alt="IMG: Donation Box" />
           </div>
+
           <div className={styles.box_buttonMercadoPago_der}>
             <Typography
               className={styles.box_buttonMercadoPago_der_h2}
@@ -162,23 +165,27 @@ function Donation({ history }) {
                 </div>
 
               </div>
+
               <div className={styles.mpContainer}>
                 <label htmlFor="">Por donaciones en pesos:</label>
                 <input type='text' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}></input>
                 <button onClick={() => handleMp()}>
                   <img width="114.5" src={mercadopagoLogo} alt="" />
                 </button>
-
               </div>
+
             </div>
 
-
-
           </div>
+
         </div>
       </div>
 
-      <Carousel />
+      
+      <div>
+        <Carousel/>
+      </div>
+
 
       <div className={styles.box_preguntasFrecuentes}>
         <div className={styles.box_preguntasFrecuentes_container}>

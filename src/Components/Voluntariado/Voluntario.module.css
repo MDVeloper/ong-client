@@ -1,0 +1,124 @@
+.Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.volunteer {
+    height: 60vh;
+    font-family: Jazz LET;
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    width: 65%;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../img/Programas-de-voluntariado-internacional.webp");
+    box-shadow: 0px -8px 20px 12px #2EC4B6;
+    border-radius: 30px;
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.backtext {
+    background-color: #0000006b;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    box-shadow: 0px -8px 20px 12px #2EC4B6;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-break: break-word;
+}
+
+.backtext::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.backtext::-webkit-scrollbar-thumb {
+    background: #FF9F1C;
+    border-radius: 4px;
+}
+
+.backtext::-webkit-scrollbar-thumb:hover {
+    background: #FF9F1C;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.backtext::-webkit-scrollbar-thumb:active {
+    background-color: #FF9F1C;
+}
+
+.backtext::-webkit-scrollbar-track {
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.backtext::-webkit-scrollbar-track:hover,
+.backtext::-webkit-scrollbar-track:active {
+    background: #ffffff;
+}
+
+.title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.btn {
+    margin-top: 13px;
+    border: none;
+    height: 80px;
+    width: 180px;
+    border-radius: 50px;
+    background-color: #FF9F1C;
+    color: white;
+    font-family: Jazz LET;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 10px 0px;
+
+}
+
+.btn:hover {
+    background-color: white;
+    color: #FF9F1C;
+}
+
+/* Card container */
+.CardContainer {
+    height: 100%;
+    width: 50%;
+    margin: 2rem auto;
+    padding: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+/* Container inputs */
+.containerInputs {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    width: 90%;
+}

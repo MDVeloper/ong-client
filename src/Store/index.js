@@ -10,6 +10,7 @@ import articlesReducers from './Reducers/articlesReducers';
 import donationsReducers from './Reducers/donationsReducers';
 import refheshReducerArticles from './Reducers/refheshArticlesReducer'
 import statisticsReducer from "./Reducers/statisticsReducer.js";
+import voteCountReducer from "./Reducers/voteCountReducer.js"
 
 const initialData = loadState()
 
@@ -21,7 +22,8 @@ const rootReducer = combineReducers({
     articles: articlesReducers,
     donations: donationsReducers,
     refreshArticles : refheshReducerArticles,
-    statistics: statisticsReducer
+    statistics: statisticsReducer,
+    voteCount : voteCountReducer
 })
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

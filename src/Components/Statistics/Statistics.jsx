@@ -49,21 +49,20 @@ export default function Statistics() {
     }, [])
     console.log(dolar)
     return (
-        <div className={Styles.bkg}>
+        <div className={Styles.desaparecer}>
             <Grid
                 container
-                // mt={1}
+                mt={1}
                 spacing={3}
                 direction="row"
                 justifyContent="center"
-                alignItems="center"
-                >
+                alignItems="center">
                 <Grid item xs={2}>
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={members} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allUsers.length}</h1>
-                            <p className={Styles.p}>Cantidad de miembros de la comunidad</p>
+                            <p className={Styles.p}>Miembros de la comunidad</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -72,7 +71,7 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={donations} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>${allDonationsAmount}</h1>
-                            <p className={Styles.p}>Cantidad de donaciones monetarias recibidas</p>
+                            <p className={Styles.p}>Toda la ayuda monetaria</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -80,8 +79,9 @@ export default function Statistics() {
                     <Card border={2}>
                         <Item>
                             <img className={Styles.img} src={qdonations} alt="statistics_proyects" />
-                            <h1 className={Styles.h1}>{allDonations.length}</h1>
-                            <p className={Styles.p}>Cantidad de objetos donados en las sedes </p>
+                            <h1 className={Styles.h1}>{allDonations.filter(d => d.status === 'Approved').length}</h1>
+                            <p className={Styles.p}>Cantidad de donaciones</p>
+                            
                         </Item>
                     </Card>
                 </Grid>
@@ -90,7 +90,8 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={projectDone} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "Approved").length}</h1>
-                            <p className={Styles.p}>Cantidad de proyectos terminados</p>
+                            <p className={Styles.p}>Proyectos terminados</p>
+                            <p className={Styles.hide}>Filler</p>
                         </Item>
                     </Card>
                 </Grid>
@@ -99,7 +100,8 @@ export default function Statistics() {
                         <Item>
                             <img className={Styles.img} src={projectCurso} alt="statistics_proyects" />
                             <h1 className={Styles.h1}>{allProjects.filter(p => p.status === "InProgress").length}</h1>
-                            <p className={Styles.p}>Cantidad de proyectos votados en curso</p>
+                            <p className={Styles.p}>Proyectos en curso</p>
+                            <p className={Styles.hide}>Filler</p>
                         </Item>
                     </Card>
                 </Grid>

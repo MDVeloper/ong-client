@@ -13,6 +13,7 @@ import style from "./UserPanel.module.css";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import { useState } from 'react';
+
 import styles from "./UserPanel.module.css"
 import { getProject } from "../../Store/Actions/actionGetProjects.js"
 import { getAllTransactions } from '../../Store/Actions/actionDonations';
@@ -28,6 +29,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+
 
 
 
@@ -129,6 +131,12 @@ export default function VerticalTabs({ history }) {
     dispatch(getAllTransactions());
   }, [dispatch]);
 
+const allTransactions = useSelector((state) => state.donations.allTransactions);
+
+  useEffect(() => {
+    dispatch(getAllTransactions());
+  }, [dispatch]);
+
   return (
     <Box
       sx={{ flexGrow: 1, bgcolor: '#F3F3F3', display: 'flex', height: 600 } } className={style.userContainer}
@@ -140,6 +148,7 @@ export default function VerticalTabs({ history }) {
         onChange={handleChange}
         aria-label="Vertical tabs example"
         sx={{ borderRight: 1, borderColor: 'divider' }}
+        className={style.containerButtonTabs}
       >
         <Tab label="Donaciones" {...a11yProps(0)} />
         <Tab label="Proyectos" {...a11yProps(1)} />
@@ -148,6 +157,7 @@ export default function VerticalTabs({ history }) {
         <Tab label="Noticias" {...a11yProps(3)} /> :
         console.log("No soy admin") }
       </Tabs>
+
       <TabPanel value={value} index={0}>
         <h2> Información de las donaciones </h2> 
 
@@ -284,6 +294,7 @@ export default function VerticalTabs({ history }) {
 
         }
         
+
       </TabPanel>
       <TabPanel value={value} index={2}>
         <h2>Toda la información de los cursos</h2>

@@ -36,12 +36,12 @@ const Footer = () => {
                 <div className={s.filials}>
                     <h3>Nuestras Redes</h3>
                     <ul className={s.socialImg}>
-                        <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="" /> </Link></li>
-                        <li> <Link to="/redes"><img src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="" /> </Link></li>
-                        <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png" alt="" /> </Link></li>
-                        <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png" alt="" /> </Link></li>
-                        <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="" /> </Link></li>
-                        <li> <Link to="/redes"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Whatsapp2_colored_svg-128.png" alt="" /> </Link></li>
+                        <li> <a href="https://twitter.com/home?lang=es"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Twitter3_colored_svg-128.png" alt="" /> </a></li>
+                        <li> <a href="https://www.facebook.com/"><img src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="" /> </a></li>
+                        <li> <a href="https://www.instagram.com/"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png" alt="" /> </a></li>
+                        <li> <a href="https://www.youtube.com/"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png" alt="" /> </a></li>
+                        <li> <a href="https://www.linkedin.com/"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="" /> </a></li>
+                        <li> <a href="https://web.whatsapp.com/"><img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Whatsapp2_colored_svg-128.png" alt="" /> </a></li>
                     </ul>
                 </div>
                 
@@ -49,7 +49,7 @@ const Footer = () => {
             
             <div className={s.containerButtonDoneteAndOthers}>
                 <Fab className={s.btnFooter} aria-label="add">
-                    <Link to="/donaciones">
+                    <Link style={{color:"#000"}} to="/donaciones">
                         Dona
                     </Link>
                 </Fab>

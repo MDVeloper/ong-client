@@ -14,13 +14,15 @@ import axios from "axios";
 import jwt_decode from "jwt-decode"
 import mercadopagoLogo from '../img/mercadopago-logo.png';
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+
 
 function Donation({ history }) {
   const [donationAmountPayPal, setDonationAmountPayPal] = useState(1);
   const [donationAmountMercadoPago, setDonationAmountMercadoPago] = useState(1);
   const [userinfo, setuserinfo] = useState("")
   const [userid, setuserid] = useState("")
-  const dispatch = useDispatch();
+
 
   if (!localStorage.getItem("token")) {
     history.push('/login')
@@ -99,13 +101,18 @@ function Donation({ history }) {
     borderTop: "1px solid rgba(0, 0, 0, .125)",
   }));
 
+  var detailProject = useSelector(state => state.articles.currentDetailProject)
+
   return (
     <div>
       <div className={styles.box_buttonMercadoPago}>
+        
         <div className={styles.box_buttonMercadoPago_container}>
+
           <div className={styles.box_buttonMercadoPago_izq}>
             <img src={charityIMG} alt="IMG: Donation Box" />
           </div>
+
           <div className={styles.box_buttonMercadoPago_der}>
             <Typography
               className={styles.box_buttonMercadoPago_der_h2}
@@ -133,46 +140,52 @@ function Donation({ history }) {
                 <label htmlFor="">Por donaciones en dolares:</label>
                 <input className={styles.inputPaypal} type='number' placeholder="PAYPAL" onChange={handleInputPayPal} value={donationAmountPayPal} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }} />
                 <div className={styles.buttonPaypal}>
-                  <PayPalButton
-                    amount={donationAmountPayPal}
-                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                    onSuccess={(details, data) => {
-                      alert("Transaction completed");
-                      console.log(details, data)
+                   <PayPalButton
+                  amount={donationAmountPayPal}
+                  // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                  onSuccess={(details, data) => {
+                  alert("Transaction completed by " + details.payer.name.given_name);
+                  console.log(details, data)
 
-                      // OPTIONAL: Call your server to save the transaction
-                      return axios.post("/donations", {
-                        amount: donationAmountPayPal,
-                        estatus: details.status,
-                        date: details.create_time,
-                        email: userinfo.email
-                      });
-                    }}
-                    options={{
-                      clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
-                      disableFunding: 'credit,card'
-                    }}
-                  />
+                  // OPTIONAL: Call your server to save the transaction
+                  return axios.post("/donations", {
+                  amount: donationAmountPayPal,
+                  estatus: details.status,
+                  target: detailProject.id, 
+                  date: details.create_time,
+                  email: userinfo.email
+                  });
+                  }}
+                  options={{
+                  clientId: "ARAly0W3BAIu2BBAi77Fg9TzXzNcJAA4Hy8SJHEkHalrYB5WWGwwXDvJ5q8aIfxs8S13dGvk0NoQUddf",
+                  disableFunding: 'credit,card'
+                  }}
+                  /> 
+
                 </div>
 
               </div>
+
               <div className={styles.mpContainer}>
                 <label htmlFor="">Por donaciones en pesos:</label>
                 <input type='text' placeholder="MERCADOPAGO" onChange={handleInputMercadoPago} value={donationAmountMercadoPago} onKeyPress={(event) => { if (!/[0-9]/.test(event.key)) { event.preventDefault(); } }}></input>
                 <button onClick={() => handleMp()}>
                   <img width="114.5" src={mercadopagoLogo} alt="" />
                 </button>
-
               </div>
+
             </div>
 
-
-
           </div>
+
         </div>
       </div>
 
-      <Carousel />
+      
+      <div>
+        <Carousel/>
+      </div>
+
 
       <div className={styles.box_preguntasFrecuentes}>
         <div className={styles.box_preguntasFrecuentes_container}>

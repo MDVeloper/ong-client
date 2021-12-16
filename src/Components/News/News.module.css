@@ -117,6 +117,7 @@ html {
 
     margin: .5rem .3rem .8rem .3rem;
     font-size: 1.1rem;
+    color: #000;
 }
 
 
@@ -167,7 +168,6 @@ html {
 .buttonPrevNext:focus {
     outline: none;
 }
-
 
 
 

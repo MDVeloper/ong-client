@@ -1,72 +1,114 @@
-
+/* Contenedor principal */
 .mainContainer {
-background-image: url('../img/Group 18.png');
-width: 70vw;
-height: 70vh;
-background-position: center;
-background-repeat: no-repeat;
-background-size: cover;
-color: white;
-margin-left: auto;
-margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    text-align: center;
 
-}
+    background-image: url('../img/Group 18.png');
+    background-size: contain;
+    background-position: 0 ;
+    background-repeat: no-repeat;
 
-.btn1 {
-   color: white;
-   font-family: 'Code Next';
-   font-weight: bold;
-   font-size: 27px;
-   position: absolute;
-   width: 260px;
-   height: 70px;
-   left: 364px;
-   top: 736px;
-   background: #2EC4B6;
-   border-radius: 20px;
-   border: none;  
-   cursor: pointer;
-}
-
-.btn2 {
     color: white;
-   font-family: 'Code Next';
-   font-weight: bold;
-   font-size: 27px;
-   position: absolute;
-   width: 260px;
-   height: 70px;
-   left: 669px;
-   top: 736px;
-   background: #2EC4B6;
-   border-radius: 20px;
-   border: none;
-   cursor: pointer;  
+
+    word-wrap: break-word;
+
+    width: 80%;
+    height: auto;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+}
+
+
+/* Contenedor del titulo */
+.containerTitle {
+    width: 50%;
+    margin-left: 3rem;
+}
+
+/* Titulo */
+.mainContainer h1 {
+    font-size: 3rem;
+    font-family: 'Code Next';
+
+    text-align: start;
+}
+
+/* COntenedor de los botones */
+.btnContainer {
+    display: flex;
+
+    width: 50%;
+    height: 100%;
+
+    margin: 10rem 3rem 3rem 3rem;
+    gap: 1rem;
+}
+
+/* Boton 1 */
+.btn1 {
+
+    background: #2EC4B6;
+    color: white;
+
+    font-family: 'Code Next';
+    font-weight: bold;
+    font-size: 2rem;
+
+    width: 100%;
+
+    border-radius: 10px;
+    border: none;  
+
+    cursor: pointer;
 }
 
 .btn1:hover {
     background-color: white;
     color: #2EC4B6;
+    transition: all .5s;
+}
+
+/* Boton 2 */
+.btn2 {
+    background: #2EC4B6;
+    color: white;
+
+    font-family: 'Code Next';
+    font-weight: bold;
+    font-size: 2rem;
+
+    width: 100%;
+
+    border-radius: 10px;
+    border: none;
+
+    cursor: pointer;  
 }
 
 .btn2:hover {
     background-color: white;
     color: #2EC4B6;
+    transition: all .5s;
 }
-.mainContainer div {
-    margin-left: 50%;
-}
-/** Contenedor Volunteer **/
+
+    
+/* Contenedor Volunteer */
 .wrapperVolunteerDonation {
     max-width: 70%;
     margin: auto;
     
 }
+
 .containerVolunteerText {
     
     padding-top: 20px;
     padding-right: 30px;
-   
+    
     
 }
 .containerVolunteerText h3 {
@@ -90,6 +132,8 @@ margin-right: auto;
     background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
     background-image: linear-gradient(90deg, rgb(0 0 0 / 44%) 40%, rgba(0, 0, 0, 0) 4%, rgba(0, 0, 0, 0) 43.26%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
     background-size: cover;
+    margin-left: -29px;
+    width: 72.5vw;
     background-position: center;
     background-repeat: no-repeat;
     height: 300px;
@@ -98,7 +142,7 @@ margin-right: auto;
 }
 
 .btnVolunteer {
-    margin-right: 764px;
+    margin-right: 825px;
     margin-top: 13px;
     border: none;
     height: 47px;
@@ -113,6 +157,7 @@ margin-right: auto;
 .btnVolunteer:hover{
     background-color: white;
     color: #FF9F1C;
+    transition: all .5s;
 }
 
 .containerDonation {
@@ -124,6 +169,8 @@ margin-right: auto;
     height: 300px;
     color: white;
     text-align: center;
+    margin-left: -29px;
+    width: 72.5vw;
 }
 .containerDonationText {
     display: flex;
@@ -166,6 +213,7 @@ margin-right: auto;
 .btnDonation:hover{
     background-color: white;
     color: #FF9F1C;
+    transition: all .5s;
 }
 
 
@@ -173,9 +221,9 @@ margin-right: auto;
     display: flex;
     justify-content: center;    
     padding-left: 64px;
-    padding: 73px;
-    margin-left: 213px;
-    margin-right: 211px;
+    padding: 76px;
+    margin-left: 181px;
+    margin-right: 179px;
 }
 
 .container1{
@@ -281,3 +329,1056 @@ a  {
     text-decoration: none;
 }
 
+/*RESPONSIVE*/
+
+    @media screen and (max-width: 2560px) {
+
+
+
+
+
+
+    .containerVolunteer {
+        height: 38vh;
+    }
+
+    .containerVolunteerText h3 {
+        margin-left: 149px;
+        font-size: 48px;
+    }
+
+    .containerVolunteerText p {
+        margin-left: 118px;
+        font-size: 24px;
+        max-width: 500px;
+        font-weight: lighter;
+        
+    }
+
+    .btnVolunteer {
+        margin-right: 1106px;
+        height: 61px;
+        width: 303px;
+        font-size: 30px;
+    }
+
+    .containerDonation {
+        height: 38vh;
+    }
+
+    .containerDonationText h3 {
+        font-size: 48px;
+        margin-right: 197px;        
+    }
+
+    .containerDonationText p {
+        font-size: 24px;
+        max-width: 500px;
+        margin-right: 105px;
+    }
+
+    .btnDonation {
+        height: 61px;
+    width: 303px;
+    font-size: 30px;
+    margin-right: 205px;
+    }
+
+    .containerQuestionAbout{
+        padding: 148px;
+        max-width: 1856px;
+        margin-left: 208px;
+    }
+
+    .container1 {
+        width: 800px;
+        height: 400px;
+    }
+
+    .container1 h3 {
+        font-size: 30px;
+
+    }
+
+    .container1 p {
+        font-size: 28px
+
+    }
+
+    .container1 button {
+        width: 324px;
+        height: 63px;
+        font-size: 28px;
+    }
+
+    .container2 button {
+        width: 324px;
+        height: 63px;
+        font-size: 26px;
+    }
+    
+    .container2 p {
+        font-size: 28px
+    }
+
+    .container2 h3 {
+        font-size: 30px;
+
+    }
+
+    .container2 {
+        width: 800px;
+        height: 400px;
+    }
+
+
+} 
+
+@media screen and (max-width: 1920px) {
+
+
+
+
+    .containerVolunteer {
+        margin-left: -29px;
+        width: 72.5vw;
+        height: 300px;
+    }
+
+    .containerVolunteerText h3 {
+        font-size: 40px;
+        font-family: 'Code Next';
+        text-align: initial;
+        margin-left: 89px;
+        margin-top: 6px;
+        margin-bottom: -8px;
+    }
+
+    .containerVolunteerText p {
+        font-size: 16px;
+        font-family: 'Code Next';
+        padding-top: 4px;
+        margin-left: 45px;
+        max-width: 450px;
+    }
+
+    .containerDonationText h3 {
+        font-size: 40px;
+        font-family: 'Code Next';
+        text-align: start;
+        margin-right: 125px;
+        max-width: 450px;
+        margin-bottom: 4px;
+        margin-top: 20px;
+    }
+
+    .containerDonationText p {
+        font-size: 16px;
+        font-family: 'Code Next';
+        max-width: 450px;
+        margin-right: 40px;
+        margin-top: 5px;
+    }
+
+    .btnVolunteer{
+        margin-right: 825px;
+        margin-top: 13px;
+        border: none;
+        height: 47px;
+        width: 180px;
+        border-radius: 50px;
+        background-color: #FF9F1C;
+        color: white;
+        font-family: 'Code Next';
+        font-size: 20px;
+        cursor: pointer;
+
+    }
+
+    .containerDonation {
+        height: 300px;
+        color: white;
+        text-align: center;
+        margin-left: -29px;
+        width: 72.5vw;
+    }
+
+    .btnDonation {
+        border: none;
+        height: 47px;
+        width: 180px;
+        border-radius: 50px;
+        background-color: #FF9F1C;
+        color: white;
+        font-family: 'Code Next';
+        font-size: 20px;
+        cursor: pointer;
+        margin-top: 18px;
+        margin-right: 170px;
+    }
+
+    .containerQuestionAbout {
+        display: flex;
+        justify-content: center;    
+        padding-left: 64px;
+        padding: 76px;
+        margin-left: 181px;
+        margin-right: 179px;
+    }
+
+    .container1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        margin-right: 120px;
+        border: 7px solid;
+        border-color: #FFBF69;
+        padding: 70px 80px 70px 80px;
+        height: 270px;
+    }
+    .container1 p {
+        font-family: 'Ubuntu';
+        text-align: center;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    
+    .container1 h3 {
+        font-family: 'Code Next';
+        margin-bottom: 23px;
+        font-size: 24px;
+        color: #FFBF69;
+    }
+    
+    .container1 button {
+        margin-top: 35px;
+        width: 300px;
+        height: 40px;
+        background: #FFBF69;
+        border-radius: 109px;
+        border: none;
+        font-family: 'Ubuntu';
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 550px;
+    }
+
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 500px;
+        border: 7px solid;
+        border-color: #2EC4B6;
+        padding: 70px 80px 70px 80px;
+        height: 270px;
+    }
+    
+    .container2 h3 {
+        font-family: 'Code Next';
+        margin-bottom: 23px;
+        font-size: 24px;
+        color: #2EC4B6;
+    }
+    
+    .container2 p {
+        font-family: 'Ubuntu';
+        text-align: center;
+        font-weight: normal;
+        font-size: 18px;
+    }
+    
+    .container2 button {
+        margin-top: 35px;
+        width: 300px;
+        height: 40px;
+        background: #2EC4B6;
+        border-radius: 109px;
+        border: none;
+        font-family: 'Ubuntu';
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: 550px;
+    }
+} 
+    
+@media screen and (max-width: 1880px) {
+
+
+
+}  
+
+@media screen and (max-width: 1440px) {
+
+
+
+
+    .containerQuestionAbout{
+        max-width: 76.6%;
+    }
+
+    .containerVolunteer {
+        width: 80.6vw;
+        margin-left: -5.3vw;
+    }
+
+    .containerVolunteer p {
+        margin-left: 22px;
+        max-width: 426px;
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 56px;
+    }
+
+    .btnVolunteer {
+        margin-right: 655px;
+    }
+
+
+
+
+    .containerDonation{
+        width: 80.6vw;
+        margin-left: -5.3vw;
+    }
+
+    .containerDonation h3 {
+        margin-right: 92px;
+    }
+
+    .containerDonation p {
+        max-width: 400px;
+        margin-right: 31px;
+    }
+
+    .btnDonation {
+        margin-right: 135px;
+    }
+
+
+    .containerQuestionAbout {
+        max-width: 81%;
+        width: 1162px;
+        margin-left: 63px;
+    }
+
+    .container1 {
+        width: 550px;
+
+    }
+    .container1 h3 {
+        margin-top: -4px;
+        text-align: center;
+    }
+
+
+
+    .container2 {
+        width: 550px;
+    }
+    
+
+} 
+
+@media screen and (max-width: 1350px) {
+    .containerVolunteer h3 {
+        margin-left: 40px;
+    }
+    .containerVolunteer p {
+        margin-left: 14px;
+        max-width: 409px;
+    }
+
+    .btnVolunteer {
+        margin-right: 616px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 80px;
+    }
+
+    .containerDonation p {
+        margin-right: 17px;
+    }
+
+    .btnDonation {
+        margin-right: 118px;
+    }
+
+    .containerQuestionAbout {
+        width: 1090px;
+        margin-left: 55px;
+    }
+
+    .container2 h3 {
+        margin-top: -4px;
+        text-align: center;
+    }
+
+
+} 
+
+@media screen and (max-width: 1200px) {
+    .containerVolunteer h3 {
+        font-size: 30px;
+        margin-left: 60px;
+
+    }
+
+    .containerVolunteer p {
+        max-width: 359px;
+    }
+    
+    .btnVolunteer {
+        margin-right: 540px;
+    }
+
+    .containerDonation h3 {
+        font-size: 30px;
+        margin-right: 89px;
+    }
+
+    .containerDonation p {
+        max-width: 336px;
+        margin-right: 26px;
+    }
+
+    .btnDonation {
+        margin-right: 98px;
+    }
+
+    .containerQuestionAbout {
+        margin-left: 39px;
+    }
+
+    .container1 {
+        width: 250.5px;
+    }
+
+    .container1 button {
+        margin-top: 12px;
+    }
+
+    .container2 {
+        width: 250.5px;
+    }
+
+    
+} 
+
+@media screen and (max-width: 1024px) {
+
+    /* Contenedor del titulo */
+    .containerTitle {
+        width: 60%;
+        margin-top: 2rem;
+    }
+
+    /* Titulo */
+    .mainContainer h1 {
+        font-size: 2.5rem;
+    }
+
+
+
+    .containerVolunteer h3 {
+        margin-left: 29px;
+
+    }
+
+    .containerVolunteer p {
+        max-width: 306px;
+    }
+
+    .btnVolunteer {
+        margin-top: -2px;
+        margin-right: 465px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 60px;
+    }
+
+    .containerDonation p {
+        max-width: 279px;
+    }
+
+    .containerDonation button {
+        margin-right: 75px;
+        margin-top: 3px;
+    }
+
+    .containerQuestionAbout {
+        max-width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .container1 {
+        padding: 19px 65px 70px 65px;
+        width: 190.5px;
+        margin-right: 162px;
+    }
+
+    .container1 h3 {
+        font-size: 22px;
+    }
+
+    .container1 p {
+        margin-top: -13px;
+        font-size: 16px;
+    }
+
+    .container1 button {
+        width: 218px;
+    }
+
+    .container2 {
+        padding: 19px 65px 70px 65px;
+        width: 190.5px;
+    }
+
+    .container2 h3 {
+        font-size: 22px;
+    }
+
+    .container2 p {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+
+    .container2 button {
+        width: 218px;
+        margin-top: 12px;
+        font-size: 16px;
+
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .containerVolunteer h3 {
+        font-size: 25px;
+        margin-left: 22px;
+    }
+
+    .containerVolunteer p {
+        max-width: 244px;
+        font-size: 14px;
+    }
+    .containerVolunteer button {
+        margin-top: 13px;
+        margin-right: 378px;
+    }
+
+    .containerDonation h3 {
+        font-size: 25px;
+        margin-right: 50px;
+    }
+
+    .containerDonation p {
+        font-size: 14px;
+        max-width: 227px;
+    }
+
+    .containerDonation button {
+        margin-right: 46px;
+    }
+
+    .container1 {
+        margin-right: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Contenedor principal */
+    .mainContainer {
+        width: 80%;
+        height: auto;
+
+        margin-bottom: 1rem;
+    }
+
+    /* COntenedor de los botones */
+    .btnContainer {
+        display: flex;
+
+        width: 100%;
+        height: 100%;
+
+        margin: 3rem 3rem 3rem 3rem;
+        gap: 1rem;
+    }
+
+    /* Boton 1 */
+    .btn1 {
+        font-size: 2rem;
+
+        width: 100%;
+    }
+
+    /* Boton 2 */
+    .btn2 {
+        font-size: 2rem;
+
+        width: 100%;
+    }
+
+
+    .containerVolunteer {
+        background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+        background-image: linear-gradient(90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 55%, rgba(255,255,255,0) 55%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg'); 
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 54px;
+    }
+
+    .containerVolunteer p {
+        margin-left: 49px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 255px;
+    }
+
+    .containerDonation {
+        background-image: url('../img/Untitled-4.png');
+    background-image: linear-gradient(-90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 55%, rgba(255,255,255,0) 55%), url('../img/Untitled-4.png');
+    }
+
+    .containerDonation h3 {
+        margin-right: 85px;
+    }
+
+    .containerDonation p {
+        max-width: 238px;
+        margin-right: 50px;
+    }
+
+    .containerDonation button {
+        margin-right: 81px;
+        margin-top: 15px;
+    }
+
+    .containerQuestionAbout {
+        margin-left: 78px;
+    }
+
+    .container1 {
+        width: 150.5px;
+        margin-right: 35px;
+        height: 270px;;
+    }
+    
+    .container1 h3 {
+        font-size: 17px;
+    }
+
+    .container1 p {
+        font-size: 14px;
+
+    }
+
+    .container2 {
+        width: 150.5px;
+    }
+
+    .container2 h3 {
+        font-size: 17px;
+    }
+
+    .container2 p {
+        font-size: 14px;
+
+    }
+
+    .container2 button {
+        margin-top: 35px;
+    }
+
+
+}
+
+@media screen and (max-width: 700px) {
+    .btn1 {
+        width: 195px;
+        font-size: 20px;
+    }
+
+    .btn2 {
+        width: 195px;
+        left: 378px;
+        font-size: 20px;
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 40px;
+    }
+
+    .containerVolunteer p {
+        margin-left: 34px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 220px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 65px;
+    }
+
+    .containerDonation p {
+        margin-right: 35px;
+        
+    }
+
+    .containerDonation button {
+        margin-right: 65px;
+    }
+
+    .containerQuestionAbout {
+        flex-direction: column;
+        margin-left: -9px;
+    }
+
+    .container1 {
+        width: 422.5px;
+        height: 13vh;
+        margin-bottom: 54px;
+    }
+
+    .container2 {
+        width: 422.5px;
+        height: 13vh;
+    }
+
+    .container2 p {
+        margin-top: -10px;
+    }
+
+    .container2 button {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .containerVolunteer {
+        background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+        background-image: linear-gradient(90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 75%, rgba(255,255,255,0) 75%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg'); 
+    
+    }
+    .containerVolunteer h3 {
+        margin-left: 61px;
+    }
+
+    .containerVolunteer P {
+        margin-left: 57px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 94px;
+    }
+
+
+    
+
+
+    .containerDonation {
+        background-image: url('../img/Untitled-4.png');
+        background-size: 700px;
+        background-image: linear-gradient(-90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.4066001400560224) 69%, rgba(255,255,255,0) 69%), url('../img/Untitled-4.png');    
+    }
+
+    .containerDonation h3 {
+        margin-right: 100px;
+    }
+
+    .containerDonation P {
+        margin-right: 69px;
+    }
+
+    .containerDonation button {
+        margin-right: 103px;
+    }
+
+    .containerQuestionAbout {
+        margin-left: -20px;
+    }
+
+    .container1{
+        width: 342.5px;
+    }
+
+    .container2{
+        width: 342.5px;
+    }
+
+}
+
+@media screen and (max-width: 540px) {
+
+
+    .containerVolunteer h3 {
+        margin-left: 50px;
+    }
+    .containerVolunteer p {
+        margin-left: 44px;
+    }
+
+    .containerVolunteer button {
+        margin-right: 85px;
+    }
+
+    .containerDonation h3 {
+        margin-right: 84px;
+    }
+    
+    .containerDonation p {
+        margin-right: 56px;
+    }
+
+    .containerDonation button {
+        margin-right: 86px;
+    }
+
+    .containerQuestionAbout{
+        margin-left: -25px;
+    }
+
+    .container1{
+        width: 293.5px;
+        height: 170px;
+
+    }
+
+    .container2{
+        width: 293.5px;
+        height: 170px;               
+    }
+
+    .container2 p {
+        font-size: 16px;
+    }
+
+    .container2 button {
+        margin-top: 22px;
+    }
+
+
+
+}
+
+@media screen and (max-width: 480px) {
+
+    /* Contenedor principal */
+    .mainContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        text-align: center;
+
+        background-image: url('../img/Group 18.png');
+        background-size: cover;
+        background-position: 0 ;
+        background-repeat: no-repeat;
+
+        color: white;
+
+        word-wrap: break-word;
+
+        width: 80%;
+        height: auto;
+
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+    }
+
+    
+    /* Contenedor del titulo */
+    .containerTitle {
+        width: 70%;
+        margin-left: 3rem;
+    }
+
+    /* Titulo */
+    .mainContainer h1 {
+        font-size: 1.8rem;
+        font-family: 'Code Next';
+
+        margin-top: 0;
+        margin-bottom: 0;
+        text-align: start;
+    }
+
+
+     /* COntenedor de los botones */
+     .btnContainer {
+        display: flex;
+
+        width: 100%;
+        height: 100%;
+    }
+
+    /* Boton 1 */
+    .btn1 {
+        font-size: 1.2rem;
+
+        width: 100%;
+    }
+
+    /* Boton 2 */
+    .btn2 {
+        font-size: 1.2rem;
+
+        width: 100%;
+    }
+
+
+    .containerVolunteer{
+        background-image: url('../img/photo-1582826310241-0cd9cc92dbb1.jpg');
+        background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.596) 100%, rgba(255,255,255,0) 75%), url('../img/photo-1582826310241-0cd9cc92dbb1.jpg'); 
+    
+
+    }
+
+    .containerVolunteer h3 {
+        margin-left: 79px;
+    }
+
+    .containerVolunteer p {
+        max-width: 300px;
+        margin-left: 44px;
+        font-size: 17px;
+    }
+
+    .containerVolunteer button {
+        margin-right: -39px;
+        margin-top: 0px;
+    }
+
+    .containerDonation {
+        background-image: url('../img/Untitled-4.png');
+        background-size: 700px;
+        background-image: linear-gradient(-90deg, rgba(0,0,0,0.5466561624649859) 0%, rgba(0,0,0,0.596) 100%, rgba(255,255,255,0) 69%), url('../img/Untitled-4.png');
+    }
+
+    .containerDonation h3 {
+        margin-left: 79px;
+        margin-right: 109px;
+    }
+
+    .containerDonation p {
+        max-width: 300px;
+        margin-right: 35px;;
+        font-size: 17px;
+    }
+
+    .containerDonation button {
+        margin-right: 95px;
+        margin-top: 0px;
+    }
+
+    .containerQuestionAbout{
+        margin-left: -28px;
+    }
+
+    .container1{
+        width: 240.5px;
+    }
+    .container1 p {
+        font-size: 16px;
+    }
+
+    .container1 button {
+        margin-top: -8px;
+    }
+
+    .container2{
+        width: 240.5px;
+    }
+
+    .container2 button {
+        margin-top: 0px;
+    }
+
+    
+
+}
+
+@media screen and (max-width: 320px) {
+
+    /* Contenedor del titulo */
+    .containerTitle {
+        width: 80%;
+        margin-left: 3rem;
+    }
+
+    /* Titulo */
+    .mainContainer h1 {
+        font-size: 1.4rem;
+    }
+
+
+    /* Boton 1 */
+    .btn1 {
+        font-size: .8rem;
+    }
+
+    /* Boton 2 */
+    .btn2 {
+        font-size: .8rem;
+    }   
+
+    .containerVolunteer h3 {
+        font-size: 20px;
+        text-align: center;
+        margin-left: 31px;
+    }
+
+    .containerVolunteer p {
+        font-size: 14px;
+    }
+
+
+
+    .containerDonation h3 {
+        font-size: 20px;
+        text-align: center;
+        margin-right: 60px;
+        margin-left: 0px;
+    }
+
+    .containerDonation p {
+        font-size: 14.5px;
+        max-width: 200px;
+        margin-right: 29px;
+    }
+
+    .containerDonation button {
+        margin-right: 35px;
+
+    }
+
+    .containerQuestionAbout {
+        margin-left: -45px;
+    }
+
+    .container1{
+        width: 114.5px;
+        height: 374px;
+    }
+
+    .container2{
+        width: 114.5px;
+        height: 310px;
+    }
+}

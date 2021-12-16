@@ -6,12 +6,14 @@ import { useDispatch } from "react-redux";
 import Styles from "./Projects.module.css";
 import { Button } from "@mui/material";
 
+
+
 export default function Projects(props) {
 
   let projects = useSelector((state) => state.project.projects);
   const dispatch = useDispatch()
 
-  console.log("TOY AQUI",projects)
+ 
   // Paginacion
   // Estados de la paginacion
   let [currentPage, setCurrentPage] = useState(1);
@@ -89,6 +91,7 @@ export default function Projects(props) {
     pagesIncrementBtn = <li onClick={handleClickNext}>&hellip;</li>;
   }
 
+
   return (
     <>
       <div className={Styles.projectsContainer}>
@@ -106,18 +109,26 @@ export default function Projects(props) {
                 key={project.id}
               >
               <div className={Styles.blackEffect}>
+                <Link className={Styles.link} to={`/proyectos/${project.id}`}>
               
                   <div className={Styles.containerDescriptionAndTitle}>
                     <h2>{project.title}</h2>
+
                     <h4>{project.description.substr(0,500).replace(/<[^>]+>/g, '')}...</h4>
+                    
+
                   </div>
 
                   <div className={Styles.viewMoreButton}>
-                    <Link to={`/proyectos/${project.id}`}>
-                      <Button  variant="outlined">Ver mas</Button>
-                    </Link>
+
+                    <div className={Styles.containerStatus}>
+                      <h4 className={Styles.status}>{project.status === "Approved" ? "Estado: Aprobado" : project.status === "InProgress" ? "Estado: En proceso" : "Estado: Pausado" }</h4>
+                    </div>
+
+
+                      <Button style={{marginTop:"auto"}} variant="outlined">Ver mas</Button>
                   </div>
-                  
+                </Link>   
               </div>
             </div>
           ))

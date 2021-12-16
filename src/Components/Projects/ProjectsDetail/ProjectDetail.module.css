@@ -29,6 +29,36 @@ html {
     word-wrap: break-word;
 }
 
+    /* Container icons */
+.containerIcons{
+    display: flex;
+    align-items: center;
+    
+    width: 100%;
+}
+
+/* Container edit icon */
+.containerEditIcon {
+    display: flex;
+    align-items: center;
+
+    margin-left: auto;
+
+    color: #FFBF69  ;   
+}   
+
+/* Icon edit */
+.editIcon {
+    font-size: 2rem;
+}
+
+/* Vote icon */
+.heart{
+    display: block;
+    font-size: 2.5rem;
+    margin-right: auto;
+}
+
 /* Title */
 .containerDetailProject h1 {
     color: #fff;
@@ -58,8 +88,31 @@ html {
 /* Description */
 .containerDetailProject h3 {
     color: #fff;
-    font-size: 1rem;
-    width: 100%;
+    font-size: 1.2rem;
+
+    margin-left: 6rem;
+    margin-right: 6rem;
+}
+
+
+/* Button donate */
+.btnFooter {
+    color:  black !important;
+    background-color: #FFBF69 !important;
+  
+    border: 1px solid #FFBF69 !important;
+    border-radius: 20px !important;
+  
+    width: 9rem !important;
+    height: 1.4rem !important;
+  
+    margin-top: 1rem;
+  }
+
+
+/* Status */
+.status {
+    color: #fff;
 }
 
 
@@ -101,6 +154,17 @@ html {
         height: auto;
     }
 
+    /* Description */
+    .containerDetailProject h3 {
+    color: #fff;
+    font-size: 1.1rem;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    }
+    
+
+
 }
 
 
@@ -133,6 +197,16 @@ html {
     .containerImg {
         width: 70%;
         height: auto;
+    }
+
+    
+    /* Description */
+    .containerDetailProject h3 {
+        color: #fff;
+        font-size: 1rem;
+    
+        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
 }

@@ -6,21 +6,21 @@ const dataInitial = {
     message: ""
 }
 
-export default function loginReducers(state = dataInitial, action){
-    switch (action.type){
+export default function loginReducers(state = dataInitial, action) {
+    switch (action.type) {
         case "USER_INVALID":
-            return{
-                ...state, 
+            return {
+                ...state,
                 error: action.payload
             };
         case "USER_VALIDATE":
-            console.log("ACTION",action.payload)
-            return{
+            console.log("ACTION", action.payload)
+            return {
                 ...state,
                 active: action.payload
             };
         case "CLOSE_SESION":
-            return{
+            return {
                 ...state,
                 active: false
             };

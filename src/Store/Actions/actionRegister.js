@@ -6,7 +6,7 @@ export function loginRegister(values){
         try {
 
             const registerResponse = await axios.post(`/users/register`,values)
-            console.log("Holi",registerResponse)
+
 
             if(registerResponse){
                 localStorage.setItem("token", registerResponse.data.token)

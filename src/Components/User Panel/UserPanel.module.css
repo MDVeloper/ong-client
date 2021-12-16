@@ -1,41 +1,72 @@
-.parent {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    background: rgba(243, 243, 243, 0.54);
-    border: 1px solid #C8C8C8;
-    box-sizing: border-box;
-    border-radius: 23px;
-    height: 170px;
-    width: 81.5vw;
-    justify-content: center;
-    align-items: center;
-    margin: 100px;
-    margin-left: 153px;
+html {
+    font-size: 16px;
+    font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
 }
 
-.div1 {
-    width: 130px;
-    border-radius: 100px;
-    grid-area: 1 / 1 / 3 / 2;
-    margin-left: 40px;
+
+
+.parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+
+    width: 70%;
+    height: auto;
+
+    background: rgba(243, 243, 243, 0.54);
+    
+    
+    border: 1px solid #C8C8C8;
+    border-radius: 10px;
+    
+    margin: 4rem auto 4rem auto;
 }
 
 .div2 {
-    margin-left: -300px;
-    grid-area: 1 / 2 / 3 / 3;
-}
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 
+    height: 100%;
+    width: 50%;
+
+    margin-left: 1rem;
+}
 .div2 h1 {
     color: #2EC4B6;
-    margin-top: 35px;
+
+    margin-top: -17px;
+    margin-bottom: -15px;
 }
 
-.div3 {
-    grid-area: 1 / 3 / 3 / 4;
+.div2 h4{
+    margin-bottom: -15px;
+
 }
+.div2 a {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
+
+.div3 {
+    display: flex;
+    flex-direction: column;
+    
+    height: 100%;
+    width: 50%;   
+
+    margin-left: 1rem;
+    margin-top: auto;
+}
+.div3 h4 {
+    margin: 0;
+    margin-bottom: 1rem;
+}
+
 
 .transactionDiv {
     background-color: white;
@@ -51,8 +82,114 @@
 }
 
 .userContainer {
-    width: 81.5vw;
-    margin-left: 8vw;
+    width: 80%;
+    margin: 3rem auto 3rem auto;
+
     border-radius: 23px;
     border: 1px solid #C8C8C8;
 }
+
+
+h2 {
+    margin-top: 4px;
+}
+
+.containerButtonTabs {
+    min-width: 20%;
+}
+
+@media screen and (max-width: 1200px) {
+    html { 
+        font-size: 15px;
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    html { 
+        font-size: 14px;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    html { 
+        font-size: 13px;
+    }
+
+    /* Tamaño del nombre del usuario */
+    .div2 h1 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+@media screen and (max-width: 580px) {
+    html { 
+        font-size: 13px;
+    }
+
+    /* H4 de div2 */
+    .div2 h4 {
+        font-size: .9rem;
+    }
+
+    /* H4 de div3 */
+    .div3 h4 {
+        font-size: .9rem;
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    html { 
+        font-size: 12px;
+    }
+
+    .containerButtonTabs {
+        min-width: 35%;
+    }
+
+    .userContainer button {
+        font-size: .9rem;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+
+
+@media screen and (max-width: 320px) {
+    html { 
+        font-size: 12px;
+    }
+
+    .parent {
+        width: 90%;
+        height: auto;
+    }
+
+    /* H4 de div2 */
+    .div2 h4 {
+        font-size: .8rem;
+    }
+
+    /* H4 de div3 */
+    .div3 h4 {
+        font-size: .8rem;
+    }
+
+    /* Contenedor de proyectos, donaciones, etc */
+    .userContainer button {
+        font-size: .7rem;
+    }
+
+}
+
+.wrapper {
+    width: 400px;
+    word-break: break-word;
+    text-align: left;
+   }

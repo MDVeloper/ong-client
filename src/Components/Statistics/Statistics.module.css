@@ -1,3 +1,13 @@
+.bkg{
+    margin-top: 80px;
+    background-color: #2EC4B6;
+    height: 50vh;
+    display: flex;
+    justify-items: center;
+    width: 100vw;
+}
+
+
 .img {
     width: 100px;
     height: 100px;
@@ -16,7 +26,29 @@
 }
 
 .hide {
+    user-select: none;
     color: transparent;
     font-size: 22px;
-    user-select: none;
+}
+
+@media screen and (max-width: 800px) {
+    .desaparecer {
+        display: none;
+    }
+    
+    .p {
+        /* font-weight: bold; */
+        letter-spacing: 1px;
+        font-size: 16px;
+    }
+    .h1 {
+        font-size: 35px;
+        margin-bottom: 5px;
+        color: rgb(59, 59, 59);
+    }
+    .img {
+        width: 80px;
+        height: 80px;
+    }
+        
 }

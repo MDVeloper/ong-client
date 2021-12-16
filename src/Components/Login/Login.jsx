@@ -16,13 +16,17 @@ const validation = (value) => {
   if (!value.email) {
     errors.email = "Email is required";
   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(value.email)) {
+
     errors.email = "Email is not valid";
   }
+
   if (!value.password) {
     errors.password = "Password is required";
-  } else if (value.password.length < 5) {
-    errors.password = "Password must have 5 characters";
+  }  else if (!/^.*(?=.{8,})(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/i.test(value.password)) {
+
+    errors.password = "La contraseña no coincide";
   }
+
   return errors;
 };
 
@@ -34,13 +38,16 @@ export default function Login() {
   const userOn = useSelector((state) => state.login.active);
   const error = useSelector((state) => state.login.error);
 
+
   const reCaptchaRef = React.createRef()
   const dispatch = useDispatch();
 
   const [captcha, setcaptcha] = useState("")
 
   useEffect(() => {
+
   }, [userOn]);
+
 
   const handleSubmit = (value, { setSubmitting }) => {
     if (captcha) {
@@ -54,7 +61,6 @@ export default function Login() {
 
   function onChange(value) {
     setcaptcha(value)
-    console.log("Captcha value:", value);
   }
 
   const googleOnClick = () => {
@@ -101,6 +107,9 @@ export default function Login() {
                       component="div"
                       className={Styles.errors}
                     />
+                    {error === "Usuario no encontrado" ? <p style={{ color: "red" }}> Usuario no encontrado </p> : null}
+
+
                   </div>
 
                   <div className={Styles.containersLabelField}>
@@ -115,6 +124,7 @@ export default function Login() {
                       component="div"
                       className={Styles.errors}
                     />
+                    {error === "Contraseña no encontrada" ? <p style={{ color: "red" }}> Contraseña no valida </p> : null}
                   </div>
                   <form style={{ display: "flex", justifyContent: "center", marginTop: "2rem" }} onSubmit={onSubmit} >
                     <ReCAPTCHA
@@ -131,10 +141,7 @@ export default function Login() {
 
                     <p style={{ color: "#fff", margin: "1rem 0" }}> o </p>
 
-                    <button className={Styles.containerIcon} onClick={googleOnClick}>
-                      <FcGoogle style={{ fontSize: "2rem" }} />
-                      <p>Ingresar con google</p>
-                    </button>
+                    
 
                     <p style={{ color: "#fff", marginTop: "1rem" }}>Si todavia no tenes tu cuenta puedes<Link style={{ color: "#2EC4B6" }} to="/register"> <b>registrarte aquí</b> </Link> </p>
 

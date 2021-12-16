@@ -1,85 +1,189 @@
+html {
+  margin: 0;
+  padding: 0;
+
+  font-size: 16px;
+  font-family: 'Ubuntu', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Contenedor principal del donaciones */
 .box_buttonMercadoPago {
   display: flex;
+  flex-direction: row;
+  
   justify-content: center;
   align-items: center;
-  margin-bottom: 70px;
+
+  width: 100%;
+  height: auto;
+
+  word-wrap: break-word;
 }
 
+/* Contenedor de la card de donaciones */
 .box_buttonMercadoPago_container {
-  margin-top: 40px;
   display: flex;
-  width: 85%;
-  height: 55vh;
+  flex-direction: row;
+ 
   background-color: #fff;
-  border-radius: 5px;
+
+  width: 80%;
+
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
-.box_buttonMercadoPago_izq {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
-  height: 100%;
-  background-color: #fff;
-  overflow: hidden;
-}
 
+
+/* Contenedor izquierdo de la imagen */
+.box_buttonMercadoPago_izq {
+  width: 30%;
+  height: auto;
+}
 .box_buttonMercadoPago_izq > img {
-  position: relative;
   width: 100%;
   height: 100%;
 }
 
+
+
+
+/* Contenedor derecho donde se encuentras los textos y botones */
 .box_buttonMercadoPago_der {
   display: flex;
   flex-direction: column;
+
+  width: 70%;
+
   justify-content: center;
   align-items: center;
   text-align: center;
-  width: 60%;
-  height: 100%;
+  
   background-color: #ffbf69;
 }
 
+/* Titulo */
 .box_buttonMercadoPago_der_h2 {
   color: #fff;
   font-weight: 800;
-}
-.box_buttonMercadoPago_der_p {
-  font-size: 1.6rem;
-  margin: 0 150px;
-  margin-top: 20px!important;
-  margin-bottom: 20px;
-  letter-spacing: 0.1px;
-}
-.box_buttonMercadoPago_der > button {
-  font-size: 1.4rem;
-  margin: 0 150px;
-  background-color: #2ec4b6;
-  color: #fff;
-  border-radius: 30px;
-  width: 390px;
-  height: 49px;
-  margin-top: 10px;
-  font-weight: 700;
-  border-color: transparent;
-  opacity: 0.9;
-  cursor: pointer;
-}
-.box_buttonMercadoPago_der > button:hover {
-  font-size: 1.45rem;
-  width: 395px;
-  height: 49px;
-  opacity: 1;
-  transition: all 0.2s ease;
+  font-size: 3rem !important;
+  margin-top: 1rem;
 }
 
+/* Parrafo */
+.box_buttonMercadoPago_der_p {
+  font-size: 1.5rem;
+  margin: .8rem !important;
+}
+
+
+
+/* Contenedor unicamente de los botones */
+.containerPagos {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: 100%;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Contenedor de boton de paypal*/
+.paypalContainer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  gap: 1rem;
+
+  margin: 1rem
+}
+
+.paypalContainer input {
+  width: 55%;
+  height: 2rem;
+
+  font-size: 20px;
+  
+  border-radius: 3px;
+  border: none;
+}
+
+.paypalContainer label {
+  color: rgba(44, 43, 43, 0.938);
+
+  font-size: 15px;
+  font-weight: bold;
+
+  width: 60%;
+}
+
+
+/* Contenedor de boton de mercado pago */
+.mpContainer label {
+  color: rgba(44, 43, 43, 0.938);
+
+  width: 80%;
+
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.mpContainer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: flex-start;
+
+  width: 100%;
+  gap: 1rem;
+
+  margin: 1rem
+}
+
+.mpContainer input {
+  width: 55%;
+  height: 2rem;
+
+  font-size: 20px;
+  
+  border-radius: 3px;
+  border: none;
+}
+
+.mpContainer > button {
+  cursor: pointer;
+
+  border: none;
+  border-radius: 3px;
+
+  width: 55%;
+}
+.mpContainer > button:hover {
+  background-color: #2ec4b523;
+
+  border: none;
+}
+
+
+/* Contenedor de preguntas frecuentes */
 .box_preguntasFrecuentes {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 70px;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .box_preguntasFrecuentes_container {
@@ -87,11 +191,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
-  width: 85%;
-  height: 45vh;
+  margin-top: 150px;
+  width: 100%;
+  height: 70vh;
   background-color: #2ec4b6;
-  border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -105,73 +208,113 @@
 }
 
 
-.containerPagos {
-  display: flex;
-  justify-content: space-evenly;
-}
 
-.paypalContainer {
-  display: flex;
-  flex-direction: column;
-  width: 250px;
-  margin-right: 200px;
-  padding-top: 150px;
- 
-}
-.paypalContainer input {
-  width: 150px;
-  height: 25px;
-  font-size: 20px;
-  border-radius: 3px;
-  margin-left: 50px;
-  border: none;
-  margin-top: 7px;
-}
-.paypalContainer label {
-  color: rgba(44, 43, 43, 0.938);
-  font-size: 18px;
-  font-weight: bold;
-}
-.mpContainer label {
-  color: rgba(44, 43, 43, 0.938);
-  font-size: 18px;
-  font-weight: bold;
-}
-.inputPaypal {
-  margin-bottom: 40px;
-}
-.mpContainer {
-  display: flex;
-  flex-direction: column;
-  padding-top: 150px;
-  
-  width: 250px;
-}
-.mpContainer input {
-  width: 150px;
-  height: 25px;
-  font-size: 20px;
-  border-radius: 3px;
-  margin-left: 50px;
-  border: none;
-  margin-top: 7px;
-}
-.mpContainer > button {
-  margin-top: 40px;
-  cursor: pointer;
-  border: none;
-  border-radius: 3px;
-  margin-bottom: 5px;
-  
-}
-.mpContainer > button:hover {
-  background-color: #2ec4b523;
-  border: none;
-  
-}
+
+
+
+
 
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none; 
   margin: 0; 
+}
+
+
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  /* Contenedor de la card de donaciones */
+  .box_buttonMercadoPago_container {
+
+    width: 90%;
+
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+  }
+
+
+  /* Titulo */
+  .box_buttonMercadoPago_der_h2 {
+    font-size: 2rem !important;
+  }
+
+  /* Parrafo */
+  .box_buttonMercadoPago_der_p {
+    font-size: 1.2rem !important;
+    margin: .8rem !important;
+  }
+
+
+  /* Contenedor unicamente de los botones */
+  .containerPagos {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+
+  /* Contenedor de la card de donaciones */
+  .box_buttonMercadoPago_container {
+    display: flex;
+    flex-direction: column  ;
+  
+    background-color: #fff;
+
+    width: 80%;
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Contenedor izquierdo de la imagen */
+  .box_buttonMercadoPago_izq {
+    width: 100%;
+    height: auto;
+  }
+
+  
+  /* Contenedor derecho donde se encuentras los textos y botones */
+  .box_buttonMercadoPago_der {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    background-color: #ffbf69;
+  }
+
+
+    /* Titulo */
+    .box_buttonMercadoPago_der_h2 {
+      font-size: 1.5rem !important;
+    }
+  
+    /* Parrafo */
+    .box_buttonMercadoPago_der_p {
+      font-size: 1rem !important;
+      margin: .8rem !important;
+    }  
+
 }

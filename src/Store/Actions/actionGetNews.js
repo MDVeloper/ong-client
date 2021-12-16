@@ -7,6 +7,7 @@ export function getNews() {
         try {
 
             // Hablitar cuando se sepa la ruta que me trae las cosas del back
+
             const news = await axios.get(`/articles?category=News`)
 
             dispatch({

@@ -21,14 +21,16 @@ flex-direction: column;
 }
 .title {
     font-size: 1.5em;
-    font-family: var(--fontFamily);
+    font-family: 'Code Next';
     color: white;
 }
 .containerParagraph {
     background-color: var(--backgroundColor);
     height: 100%px;
+
 }
 .p {
+    max-width: 1000px;
     color: black;
     font-family: var(--fontFamily);
     font-weight: bold;
@@ -40,6 +42,9 @@ flex-direction: column;
 .containerP {
    width: 95vw;
    text-align: center;
+   display: flex;
+   flex-direction: column;
+    align-items: center;
 }
 
 .containerQuestionsTitle {
@@ -48,6 +53,10 @@ flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.containerQuestionsTitle h3 {
+    font-family: 'Code Next';
 }
 .box_preguntasFrecuentes_container {
     display: flex;

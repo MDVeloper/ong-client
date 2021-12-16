@@ -1,6 +1,7 @@
 const initialState = {
   article: [],
   categories: [],
+  currentDetailProject : {}
 };
 
 const executeGetCategories = (state, action) => {
@@ -41,6 +42,11 @@ const reducer = (state = initialState, action) => {
       return executePutArticles(state, action);
     case "DELETE_ARTICLES":
       return executeDeleteArticles(state, action);
+    case "SAVE_DETAIL":
+      return {
+        ...state,
+        currentDetailProject : action.payload
+      }
     default:
       return state;
   }

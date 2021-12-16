@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
-import Navbar from "../Navbar/Navbar"
-import Footer from "../Footer/Footer"
 import { Link } from 'react-router-dom'
 import VerticalTabs from './Vertical tabs'
 import style from "./UserPanel.module.css";
-import image from "./image-1.png"
 import jwt_decode from "jwt-decode"
 import axios from "axios"
 import createPalette from '@mui/material/styles/createPalette'

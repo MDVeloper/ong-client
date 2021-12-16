@@ -125,7 +125,7 @@ export default function Curse({ history }, props) {
           {currentItems.length > 0 ? (
             currentItems.map((cursos) => (
               <div>
-                <Link to={`/noticias`}>
+                <Link to={`/courses/${cursos.id}`}>
                   <div className={Styles.cardContainer} key={cursos.id}>
                     <div className={Styles.containerImg}>
                       <img
@@ -170,11 +170,11 @@ export default function Curse({ history }, props) {
                         style={{
                           color: "#2EC4B6",
                           borderColor: "#2EC4B6",
-                          margin: ".2rem .5rem 0 .5rem",
+                          margin: "1rem .5rem 0 .5rem",
                           fontSize: ".8rem",
                         }}
                       >
-                        Suscribirse
+                        Ver mas
                       </Button>
                     </div>
                   </div>

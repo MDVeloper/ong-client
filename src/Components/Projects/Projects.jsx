@@ -13,6 +13,10 @@ export default function Projects(props) {
   let projects = useSelector((state) => state.project.projects);
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(getProject())
+  }, [dispatch])
+
   // Paginacion
   // Estados de la paginacion
   let [currentPage, setCurrentPage] = useState(1);
@@ -22,9 +26,7 @@ export default function Projects(props) {
   let [maxPageNumberLimit, setmaxPageNumberLimit] = useState(5);
   let [minPagaNumberLimit, setminPagaNumberLimit] = useState(0);
 
-  useEffect(() => {
-    dispatch(getProject())
-}, [dispatch])
+
   // manejadores de los eventos de los clicks
   const handleClick = (e) => {
     setCurrentPage(Number(e.target.id));

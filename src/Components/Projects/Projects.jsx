@@ -13,7 +13,6 @@ export default function Projects(props) {
   let projects = useSelector((state) => state.project.projects);
   const dispatch = useDispatch()
 
- 
   // Paginacion
   // Estados de la paginacion
   let [currentPage, setCurrentPage] = useState(1);
@@ -93,7 +92,7 @@ export default function Projects(props) {
 
 
   return (
-    <>
+    <>''  ' 'Buenas las cosas no son tan faciles de decir cuando andan de frente y 
       <div className={Styles.projectsContainer}>
         <h1>Conoce nuestros proyectos</h1>
 
